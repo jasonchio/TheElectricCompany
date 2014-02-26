@@ -1,4 +1,4 @@
 easigreen
 =========
 
-Climate Model Simulator Project for Winter 2014
+Improving Sim City Project for Winter 2014
