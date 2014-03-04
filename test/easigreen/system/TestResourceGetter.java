@@ -37,7 +37,7 @@ public class TestResourceGetter
    public void setUp()
    {
       mShell = new Shell(true);
-      String folderName = System.getenv("PH") + File.separator + "lib";
+      String folderName = System.getenv("PROJECTHOME") + "/lib";
       mFolder = new File(folderName);
       try
       {
@@ -60,14 +60,28 @@ public class TestResourceGetter
          "https://sqlite4java.googlecode.com/files/sqlite4java-282.zip";
       String fileName1 = "sqlite4java-282/sqlite4java.jar";
       String osName = System.getProperty("os.name");
-      String fileName2 =
-         (osName.startsWith("Mac") ?
-          "sqlite4java-282/libsqlite4java-osx.jnilib" :
-          (osName.startsWith("Linux") ?
-           "sqlite4java-282/libsqlite4java-linux-amd64.so" :
-           (osName.startsWith("Windows") ?
-            "sqlite4java-282/sqlite4java-win32-x86.dll" :
-            "sqlite4java-282/libsqlite4java-android-armv7.so")));
+      String osArch = System.getProperty("os.arch");
+      String fileName2 = "";
+      if (osName.startsWith("Mac"))
+      {
+         fileName2 = "sqlite4java-282/libsqlite4java-osx.jnilib";
+      }
+      else if (osName.startsWith("Linux"))
+      {
+         fileName2 = (osArch.equals("i386") ?
+                      "sqlite4java-282/libsqlite4java-linux-i386.so" :
+                      "sqlite4java-282/libsqlite4java-linux-amd64.so");
+      }
+      else if (osName.startsWith("Windows"))
+      {
+         fileName2 = (osArch.equals("x86") ?
+                      "sqlite4java-282/sqlite4java-win32-x86.dll" :
+                      "sqlite4java-282/sqlite4java-win32-x64.dll");
+      }
+      else
+      {
+         fileName2 = "sqlite4java-282/libsqlite4java-android-armv7.so";
+      }
       String file1BaseName = fileName1.substring(fileName1.indexOf('/') + 1);
       String file2BaseName = fileName2.substring(fileName2.indexOf('/') + 1);
       File file1 = new File(mFolder, file1BaseName);

@@ -44,7 +44,8 @@ public class TestShell
       String[] echoCommand = {"echo", "does this work?"};
       assert (mShell.command(echoCommand) == 0);      
       String output = bStream.toString();
-      assert (output.equals(echoCommand[1] + "\n"));
+      assert (output.equals(echoCommand[1] +
+                            System.getProperty("line.separator")));
    }
 
    /**
@@ -59,6 +60,6 @@ public class TestShell
       String[] bcCommand = {"bc"};
       assert (mShell.command(bcCommand) == 0);
       String output = bStream.toString();
-      assert (output.equals("1\n"));
+      assert (output.equals("1" + System.getProperty("line.separator")));
    }
 }
