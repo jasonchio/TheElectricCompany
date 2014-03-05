@@ -4,17 +4,16 @@ import easigreen.service.*;
 
 import easigreen.system.*;
 
-import javafx.application.Application;
+import javafx.application.*;
 
-import javafx.scene.Group;
-import javafx.scene.Scene;
-import javafx.scene.control.ContentDisplay;
-import javafx.scene.control.Label;
-import javafx.scene.image.Image;
-import javafx.scene.image.ImageView;
-import javafx.scene.layout.VBox;
+import javafx.geometry.*;
 
-import javafx.stage.Stage;
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.image.*;
+import javafx.scene.layout.*;
+
+import javafx.stage.*;
 
 /**
  * Sample GUI class.
@@ -66,13 +65,21 @@ public class GUI
       Group root = new Group();
       primaryStage.setScene(new Scene(root));
 
-      VBox box = new VBox(10);
+      VBox vbox = new VBox(10);
       Image image = ImageGetter.getImage("duckling.png");
       ImageView imageView = new ImageView(image);
       Label label = new Label("Rubbber Ducky, You're The One!", imageView);
       label.setContentDisplay(ContentDisplay.TOP);
-      box.getChildren().add(label);
-      root.getChildren().add(box);
+
+      HBox hbox = new HBox(10);
+      hbox.setAlignment(Pos.CENTER);
+      Button button = new Button("Exit");
+      button.setOnAction(Action.get(button.getText(), this));
+
+      hbox.getChildren().add(button);
+      vbox.getChildren().add(label);
+      vbox.getChildren().add(hbox);
+      root.getChildren().add(vbox);
    }
 
    /**
@@ -88,12 +95,12 @@ public class GUI
    }
 
    /**
-    * Main isn't.
-    *
-    * @param args the command-line arguments.
+    * Exits the application.
     */
-   public static void main(String[] args)
+   public void exit()
    {
-      launch(args);
+      Action.showAll();
+      Platform.exit();
+      System.exit(0);
    }
 }
