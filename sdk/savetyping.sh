@@ -7,8 +7,8 @@
 #- declare and export shared environment variables
 export EDITOR=emacs
 export PH=${PROJECTHOME:=$PWD}
-export PRJCT=${PROJECT:=`basename $PH`}
-export PRKEY=${PROJECTKEY:=`echo $PRJCT | tr "[:upper:]" "[:lower:]"`}
+export PRJCT=${PROJECT:=$(basename $PH)}
+export PRKEY=${PROJECTKEY:=$(echo $PRJCT | tr "[:upper:]" "[:lower:]")}
 export BUILDDIR=$PH/build
 export PP1=${PRKEY}.desktop
 export PP2=${PRKEY}.service
@@ -19,6 +19,8 @@ export SHAREDLIB=$SHARED/lib
 export PATH=$SHAREDBIN:$PATH
 export CP=$BUILDDIR/class:$BUILDDIR/test:$PH:$PH/src:$PH/test:$PH/lib/\*:$SHAREDLIB/\*
 export CLASSPATH=$CP
+export TESTINGLIB=$PH/lib/testng-6.8.jar
+export RPABJAR=$PH/sdk/repackabeaut.jar
 
 # show help
 h()
@@ -49,8 +51,8 @@ export -f ph
 # connect to a module home directory given the module name (outer.inner)
 mh()
 {
-   outer=`echo $1 | cut -d . -f1`
-   inner=`echo $1 | cut -d . -f2`
+   outer=$(echo $1 | cut -d . -f1)
+   inner=$(echo $1 | cut -d . -f2)
    cd $PH/src/$outer/$inner
 }
 export -f mh
@@ -75,7 +77,7 @@ export -f de
 # build java source files in a module
 b()
 {
-   BASE=`basename $PWD`
+   BASE=$(basename $PWD)
    if [ "$BASE" = "$PRJCT" ]
    then
       b1
@@ -87,9 +89,9 @@ b()
    else
       JAR=$BUILDDIR/jar/${PRKEY}${BASE}.jar
       if [ -f $JAR ]; then
-	 FILES=`find . -name "*.java" -newer $JAR | tr "\n" " "`
+	 FILES=$(find . -name "*.java" -newer $JAR | tr "\n" " ")
       else
-	 FILES=`find . -name "*.java" | tr "\n" " "`
+	 FILES=$(find . -name "*.java" | tr "\n" " ")
       fi
       if [ -z "$FILES" ]; then
 	 echo "Nothing needs building in $BASE"
@@ -163,14 +165,19 @@ mj()
      MF=$PH/sdk/manifest.mf
    fi
    cp -r resources $BUILDDIR
-   cd $BUILDIR/class
+   pushd $BUILDDIR/class > /dev/null
    for lib in $PH/lib/*.jar
    do
-      echo Incorporating $(basename $lib) into $PRKEY.jar
-      jar xf $lib
+      if [ "$lib" = "$TESTINGLIB" ]
+      then
+         echo Skipping $(basename $lib)
+      else
+         echo Incorporating $(basename $lib) into $PRKEY.jar
+         jar xf $lib
+      fi
    done
    rm -rf META-INF
-   ph
+   popd > /dev/null
    if [ -f "$MF" ]
    then
       jar cfm $PRKEY.jar $MF -C $BUILDDIR/class . -C $BUILDDIR resources
@@ -204,11 +211,29 @@ jpg()
    for f in $PH/docs/*.uxf; do \
       java -jar $SHARED/Umlet/umlet.jar \
          -action=convert -format=jpg -filename=$f; \
-      output=`basename $f .uxf`.jpg
+      output=$(basename $f .uxf).jpg
       mv $PH/docs/$output $BUILDDIR/jdoc/resources
    done
 }
 export -f jpg
+# repackage and/or beautify code
+rpab()
+{
+   if [ ! -f $RPABJAR ]
+   then
+      curl -L http://goo.gl/X9NugD > $RPABJAR
+   fi
+   if [ "$1" = "rep" ]
+   then
+      java -Drepack=true -Duser.dir=$PH/src/$PRKEY -jar $RPABJAR
+   elif [ "$1" = "pre" ]
+   then
+      java -Dprefs=true -jar $RPABJAR
+   else
+      java -jar $RPABJAR $PH/src $PH/test
+   fi
+}
+export -f rpab
 # generate javadocs
 jdoc()
 {
@@ -239,9 +264,9 @@ export -f sj
 bt()
 {
    mkdir -p $PH/lib
-   if [ -f $PH/lib/testng-6.8.jar ]
+   if [ -f $TESTINGLIB ]
    then
-      echo Already have testng-6.8.jar
+      echo Already have $(basename $TESTINGLIB)
    else
       cd $PH/lib
       curl http://testng.org/testng-6.8.zip -O
@@ -251,7 +276,7 @@ bt()
       rm testng-6.8.zip
       cd $PH
    fi
-   javac -d $BUILDDIR/test `find $PH/test -name "*.java"`
+   javac -d $BUILDDIR/test $(find $PH/test -name "*.java")
 }
 export -f bt
 # run tests
