@@ -15,3 +15,21 @@ Next Week's Goals
 
     Meet with sponsor.
     Complete design document.
+
+Mar 6-11
+Accomplishments
+
+    10 hours
+        Talking with group about project.
+        Meeting with sponsor.
+        Research into ways of storung data
+        Some basic stub code
+        Finish Design Document
+
+Next Week's Goals
+
+    Meet with sponsor.
+    Finish stub code
+
+Questions
+    What is the best way to implement somthing that might be extra or unsure?
