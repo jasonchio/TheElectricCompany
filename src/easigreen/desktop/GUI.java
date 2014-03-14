@@ -16,11 +16,13 @@ import javafx.scene.layout.*;
 import javafx.stage.*;
 
 /**
- * Sample GUI class.
+ * The main Graphical User Interface for the "Sim City" Application
  */
 public class GUI
    extends Application
 {
+   private static final String GAME_NAME = "Sargeant City";
+
    /**
     * Holds the singleton instance.
     */
@@ -35,6 +37,36 @@ public class GUI
    {
       return cInstance;
    }
+
+    /**
+     * Contains the primary layout for the application.
+     */
+   private BorderPane windowArea;
+
+   /**
+    * Contains Graphical buttons for the main navigation of the system.
+    */
+   private NavPane mainNavigation;
+
+    /**
+    * Contains Graphical buttons for navigating within the country tab.
+    */
+    private NavPane countryNavigation;
+
+    /**
+    * Contains Graphical buttons for navigating within the energy tab.
+    */
+    private NavPane energyNavigation;
+
+    /**
+    * Contains Graphical buttons for navigating within the upgrade tab.
+    */
+    private NavPane upgradeNavigation;
+
+    /**
+    * Contains Graphical buttons for navigating within the goal tab.
+    */
+    private NavPane goalNavigation;
 
    /**
     * Creates a new GUI object.
@@ -62,24 +94,9 @@ public class GUI
     */
    private void init(Stage primaryStage)
    {
-      Group root = new Group();
-      primaryStage.setScene(new Scene(root));
-
-      VBox vbox = new VBox(10);
-      Image image = ImageGetter.getImage("duckling.png");
-      ImageView imageView = new ImageView(image);
-      Label label = new Label("Rubbber Ducky, You're The One!", imageView);
-      label.setContentDisplay(ContentDisplay.TOP);
-
-      HBox hbox = new HBox(10);
-      hbox.setAlignment(Pos.CENTER);
-      Button button = new Button("Exit");
-      button.setOnAction(Action.get(button.getText(), this));
-
-      hbox.getChildren().add(button);
-      vbox.getChildren().add(label);
-      vbox.getChildren().add(hbox);
-      root.getChildren().add(vbox);
+      initNav();
+      initWindow();
+      initStage(primaryStage);
    }
 
    /**
@@ -103,4 +120,75 @@ public class GUI
       Platform.exit();
       System.exit(0);
    }
+
+    private void initStage(Stage primaryStage)
+    {
+	 primaryStage.setScene(new Scene(windowArea));
+	 primaryStage.setMinHeight(600);
+	 primaryStage.setMinWidth(600);
+	 primaryStage.setTitle(GAME_NAME);
+    }
+
+    private void initNav()
+    {
+	initMainNav();
+	initEnergyNav();
+	initCountryNav();
+	initUpgradeNav();
+	initGoalNav();
+    }
+    
+    private void initWindow()
+    {
+	windowArea = new BorderPane();
+	windowArea.setLeft(mainNavigation);
+	windowArea.setRight(countryNavigation);
+    }
+
+    private void initMainNav()
+    {
+	mainNavigation    = new NavPane();
+	mainNavigation.addButton("Country.png");
+	mainNavigation.addButton("Energy.png");
+	mainNavigation.addButton("Upgrades.png");
+	mainNavigation.addButton("Goals.png");
+	mainNavigation.initialize();
+    }
+
+    private void initCountryNav()
+    {
+	countryNavigation = new NavPane();
+	countryNavigation.addButton("World.png");
+	countryNavigation.addButton("Political.png");
+	countryNavigation.addButton("Trade.png");
+	countryNavigation.initialize();
+    }
+    
+    private void initEnergyNav()
+    {
+	energyNavigation  = new NavPane();
+	energyNavigation.addButton("duckling.png");
+	energyNavigation.addButton("duckling.png");
+	energyNavigation.addButton("duckling.png");
+	energyNavigation.addButton("duckling.png");
+	energyNavigation.initialize();
+    }
+
+    private void initUpgradeNav()
+    {
+	upgradeNavigation = new NavPane();
+	upgradeNavigation.addButton("duckling.png");
+	upgradeNavigation.addButton("duckling.png");
+	upgradeNavigation.addButton("duckling.png");
+	upgradeNavigation.addButton("duckling.png");
+	upgradeNavigation.initialize();
+    }
+
+    private void initGoalNav()
+    {
+	goalNavigation    = new NavPane();
+	goalNavigation.addButton("duckling.png");
+	goalNavigation.addButton("duckling.png");
+	goalNavigation.initialize();
+    }
 }
