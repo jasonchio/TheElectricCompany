@@ -129,8 +129,10 @@ public class Simulator
 	mFossil = new FossilPlant();
 	mRenewable = new RenewablePlant();
 	mOil = new Oil();
-	mBudget = 10;
-	mPrice = 11;
+	mBudget       = 10;
+	mPrice        = 11;
+        mDemand       = 10;
+        mDemandGrowth = 1;
       
 	update();
     }
@@ -545,5 +547,60 @@ public class Simulator
     public void renewableEngineering(int actions)
     {
         mRenewable.setSecurity(mRenewable.getSecurity() + actions * .03);
+    }
+
+    /**
+     * This will use action points to influence the price
+     *
+     * @param actions the number of action points to be spent here
+     */
+    public void priceChange(int actions)
+    {
+        mPrice    += (actions * .8);
+        mApproval -= (actions * .5);
+    }
+
+    /**
+     * This will use action points to lobby
+     *
+     * @param actions the number of action points to be spent here
+     */
+    public void lobby(int actions)
+    {
+        mBudget   += (actions * 1);
+        mApproval -= (actions * .5);
+    }
+
+    /**
+     * This will use action points to influence oil drilling
+     * 
+     * @param actions the number of action points to be spent here
+     */
+    public void oilDrilling(int actions)
+    {
+        mOil.setSecurity(mOil.getSecurity() + (actions * 1.5));
+        mOil.setConsumption(mOil.getConsumption() - (actions * .5));
+    }
+
+    /**
+     * Emission credits are spent here
+     *
+     * @param credits the number of credits being spent
+     */
+    public void useEmissionCredits(int credits)
+    {
+        mEmissions -= (credits * 40);
+        mEmitCredits -= credits;
+    }
+
+    /**
+     * Market shares are spent here
+     *
+     * @param shares the amount of shares being used
+     */
+    public void useMarketShares(int shares)
+    {
+        mDemandGrowth += (shares * .1);
+        mMarketShares -= shares;
     }
 }

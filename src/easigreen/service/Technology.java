@@ -14,182 +14,190 @@ public class Technology
     /**
      * The budget change
      */
-    private int BudgetChange;
+    private int mBudgetChange;
 
     /**
      * The energy demand change
      */
-    private int NRGChange;
+    private int mNRGChange;
 
     /**
      * The change in net emissions
      */
-    private double EmissionsChange;
+    private double mEmissionsChange;
 
     /**
      * The change in the power production of a single nuclear plant
      */
-    private double Npow;
+    private double mNpow;
 
     /**
      * The change in the cost of a single nuclear plant
      */
-    private double Ncost;
+    private double mNcost;
 
     /**
      * The change in the approval rating of each nuclear plant
      */
-    private double Natt;
+    private double mNatt;
 
     /**
      * The change in the emissions of a single nuclear plant
      */
-    private double Nemit;
+    private double mNemit;
 
     /**
      * The change in the security of a single nuclear plant
      */
-    private double Nsec;
+    private double mNsec;
 
     /**
      * The change in the profit of a single nuclear plant
      */
-    private double Nprof;
+    private double mNprof;
 
     /**
      * The change in the power production of a single fossil plant
      */
-    private double Fpow;
+    private double mFpow;
    
     /**
      * The change in the cost of a single fossil plant
      */
-    private double Fcost;
+    private double mFcost;
    
     /**
      * The change in the approval rating of each fossil plant
      */
-    private double Fatt;
+    private double mFatt;
    
     /**
      * The change in the emissions of a single fossil plant
      */
-    private double Femit;
+    private double mFemit;
    
     /**
      * The change in the security of a single fossil plant
      */
-    private double Fsec;
+    private double mFsec;
    
     /**
      * The change in the profit of a single fossil plant
      */
-    private double Fprof;
+    private double mFprof;
 
     /**
      * The change in the power production of a single renewable plant
      */
-    private double Rpow;
+    private double mRpow;
    
     /**
      * The change in the cost of a single renewable plant
      */
-    private double Rcost;
+    private double mRcost;
    
     /**
      * The change in the approval rating of each renewable plant
      */
-    private double Ratt;
+    private double mRatt;
    
     /**
      * The change in the emissions of a single renewable plant
      */
-    private double Remit;
+    private double mRemit;
    
     /**
      * The change in the security of a single renewable plant
      */
-    private double Rsec;
+    private double mRsec;
    
     /**
      * The change in the profit of a single renewable plant
      */
-    private double Rprof;
+    private double mRprof;
 
     /**
      * The change in the daily oil consumption
      */
-    private double Oil;
+    private double mOil;
 
     /**
      * The change in the oil security
      */
-    private double OilSec;
+    private double mOilSec;
 
     /**
      * The change in the oil growth
      */
-    private double OilGrow;
+    private double mOilGrow;
+
+    /**
+     * Indicates whether or not this technology has already been implemented
+     */
+    private boolean hasBeenUsed;
 
 
     /// getters
-    public int getBudgetChange() { return BudgetChange; }
-    public int getNRGChange() { return NRGChange; }
-    public double getEmissionsChange() { return EmissionsChange; }
+    public int getBudgetChange() { return mBudgetChange; }
+    public int getNRGChange() { return mNRGChange; }
+    public double getEmissionsChange() { return mEmissionsChange; }
    
-    public double getNpow() { return Npow; }
-    public double getNcost() { return Ncost; }
-    public double getNatt() { return Natt; }
-    public double getNemit() { return Nemit; }
-    public double getNsec() { return Nsec; }
-    public double getNprof() { return Nprof; }
+    public double getNpow() { return mNpow; }
+    public double getNcost() { return mNcost; }
+    public double getNatt() { return mNatt; }
+    public double getNemit() { return mNemit; }
+    public double getNsec() { return mNsec; }
+    public double getNprof() { return mNprof; }
 
-    public double getFpow() { return Fpow; }
-    public double getFcost() { return Fcost; }
-    public double getFatt() { return Fatt; }
-    public double getFemit() { return Femit; }
-    public double getFsec() { return Fsec; }
-    public double getFprof() { return Fprof; }
+    public double getFpow() { return mFpow; }
+    public double getFcost() { return mFcost; }
+    public double getFatt() { return mFatt; }
+    public double getFemit() { return mFemit; }
+    public double getFsec() { return mFsec; }
+    public double getFprof() { return mFprof; }
 
-    public double getRpow() { return Rpow; }
-    public double getRcost() { return Rcost; }
-    public double getRatt() { return Ratt; }
-    public double getRemit() { return Remit; }
-    public double getRsec() { return Rsec; }
-    public double getRprof() { return Rprof; }
+    public double getRpow() { return mRpow; }
+    public double getRcost() { return mRcost; }
+    public double getRatt() { return mRatt; }
+    public double getRemit() { return mRemit; }
+    public double getRsec() { return mRsec; }
+    public double getRprof() { return mRprof; }
 
-    public double getOil() { return Oil; }
-    public double getOilSec() { return OilSec; }
-    public double getOilGrow() { return OilGrow; }
+    public double getOil() { return mOil; }
+    public double getOilSec() { return mOilSec; }
+    public double getOilGrow() { return mOilGrow; }
+    
+    public boolean getHasBeenUsed() { return hasBeenUsed; }
 
 
     /// setters
-    public void setBudgetChange(int pBudgetChange) { BudgetChange = pBudgetChange; }
-    public void setNRGChange(int pNRGChange) { NRGChange = pNRGChange; }
-    public void setEmissionsChange(double pEmissionsChange) { EmissionsChange = pEmissionsChange; }
+    public void setBudgetChange(int pBudgetChange) { mBudgetChange = pBudgetChange; }
+    public void setNRGChange(int pNRGChange) { mNRGChange = pNRGChange; }
+    public void setEmissionsChange(double pEmissionsChange) { mEmissionsChange = pEmissionsChange; }
 
-    public void setNpow(double pNpow) { Npow = pNpow; }
-    public void setNcost(double pNcost) { Ncost = pNcost; }
-    public void setNatt(double pNatt) { Natt = pNatt; }
-    public void setNemit(double pNemit) { Nemit = pNemit; }
-    public void setNsec(double pNsec) { Nsec = pNsec; }
-    public void setNprof(double pNprof) { Nprof = pNprof; }
+    public void setNpow(double pNpow) { mNpow = pNpow; }
+    public void setNcost(double pNcost) { mNcost = pNcost; }
+    public void setNatt(double pNatt) { mNatt = pNatt; }
+    public void setNemit(double pNemit) { mNemit = pNemit; }
+    public void setNsec(double pNsec) { mNsec = pNsec; }
+    public void setNprof(double pNprof) { mNprof = pNprof; }
 
-    public void setFpow(double pFpow) { Fpow = pFpow; }
-    public void setFcost(double pFcost) { Fcost = pFcost; }
-    public void setFatt(double pFatt) { Fatt = pFatt; }
-    public void setFemit(double pFemit) { Femit = pFemit; }
-    public void setFsec(double pFsec) { Fsec = pFsec; }
-    public void setFprof(double pFprof) { Fprof = pFprof; }
+    public void setFpow(double pFpow) { mFpow = pFpow; }
+    public void setFcost(double pFcost) { mFcost = pFcost; }
+    public void setFatt(double pFatt) { mFatt = pFatt; }
+    public void setFemit(double pFemit) { mFemit = pFemit; }
+    public void setFsec(double pFsec) { mFsec = pFsec; }
+    public void setFprof(double pFprof) { mFprof = pFprof; }
    
-    public void setRpow(double pRpow) { Rpow = pRpow; }
-    public void setRcost(double pRcost) { Rcost = pRcost; }
-    public void setRatt(double pRatt) { Ratt = pRatt; }
-    public void setRemit(double pRemit) { Remit = pRemit; }
-    public void setRsec(double pRsec) { Rsec = pRsec; }
-    public void setRprof(double pRprof) { Rprof = pRprof; }
+    public void setRpow(double pRpow) { mRpow = pRpow; }
+    public void setRcost(double pRcost) { mRcost = pRcost; }
+    public void setRatt(double pRatt) { mRatt = pRatt; }
+    public void setRemit(double pRemit) { mRemit = pRemit; }
+    public void setRsec(double pRsec) { mRsec = pRsec; }
+    public void setRprof(double pRprof) { mRprof = pRprof; }
 
-    public void setOil(double pOil) { Oil = pOil; }
-    public void setOilSec(double pOilSec) { Oil = pOilSec; }
-    public void setOilGrow(double pOilGrow) { Oil = pOilGrow; }
+    public void setOil(double pOil) { mOil = pOil; }
+    public void setOilSec(double pOilSec) { mOil = pOilSec; }
+    public void setOilGrow(double pOilGrow) { mOil = pOilGrow; }
+    public void setHasBeenUsed(boolean isUsed) { hasBeenUsed = isUsed; }
 }
