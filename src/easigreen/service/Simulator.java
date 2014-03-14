@@ -8,7 +8,7 @@ import java.util.ArrayList;
  *
  * @see java.util.ArrayList
  *
- * @version 0.1.1
+ * @version 0.1.2
  * @author Larson Caldwell
  * @author Sam Graham
  * @author Haru McClellan
@@ -372,40 +372,105 @@ public class Simulator
     public void setDemand(double pDemand) { mDemand = pDemand; }
     public void setDemandGrowth(double pGrowth) { mDemandGrowth = pGrowth; }
     
-    
+    /**
+     * This will add fossil plants and calculate changes in the variables
+     *
+     * @param amount the amount of fossil plants to add
+     */
     public void addFossil(int amount)
     {
 	mFossil.add(amount);
-	mBudget -= mFossil.getCostBuild();
+
+	mBudget     -= mFossil.getCostBuild();
+        mEmissions  += mFossil.getEmissions() * amount;
+        mApproval   += mFossil.getApproval() * amount;
+        mSecurity   += mFossil.getSecurity() * amount;
+        mProduction += mFossil.getProduction() * amount;
+        mProfit     += mFossil.getProfitPercent() * amount;
     }
     
+    /**
+     * This will remove fossil plants and calculate changes in the variables
+     *
+     * @param amount the amount of fossil plants to remove
+     */
     public void removeFossil(int amount)
     {
 	mFossil.remove(amount);
-	mBudget -= mFossil.getCostRemove();
+
+	mBudget     -= mFossil.getCostRemove();
+        mEmissions  -= mFossil.getEmissions() * amount;
+        mApproval   -= mFossil.getApproval() * amount;
+        mSecurity   -= mFossil.getSecurity() * amount;
+        mProduction -= mFossil.getProduction() * amount;
+        mProfit     -= mFossil.getProfitPercent() * amount;
     }
 
+    /**
+     * This will add nuclear plants and calculate changes in the variables
+     *
+     * @param amount the amount of nuclear plants to add
+     */
     public void addNuclear(int amount)
     {
 	mNuclear.add(amount);
-        mBudget -= mNuclear.getCostBuild();
+
+	mBudget     -= mNuclear.getCostBuild();
+        mEmissions  += mNuclear.getEmissions() * amount;
+        mApproval   += mNuclear.getApproval() * amount;
+        mSecurity   += mNuclear.getSecurity() * amount;
+        mProduction += mNuclear.getProduction() * amount;
+        mProfit     += mNuclear.getProfitPercent() * amount;
     }
 
+    /**
+     * This will remove nuclear plants and calculate changes in the variables
+     *
+     * @param amount the amount of nuclear plants to remove
+     */
     public void removeNuclear(int amount)
     {
         mNuclear.remove(amount);
-        mBudget -= mNuclear.getCostRemove();
+
+        mBudget     -= mNuclear.getCostRemove();
+        mEmissions  -= mNuclear.getEmissions() * amount;
+        mApproval   -= mNuclear.getApproval() * amount;
+        mSecurity   -= mNuclear.getSecurity() * amount;
+        mProduction -= mNuclear.getProduction() * amount;
+        mProfit     -= mNuclear.getProfitPercent() * amount;
     }
 
+    /**
+     * This will add renewable plants and calculate changes in the variables
+     *
+     * @param amount the amount of renewable plants to add
+     */
     public void addRenewable(int amount)
     {
         mRenewable.add(amount);
-        mBudget -= mRenewable.getCostBuild();
+
+        mBudget     -= mRenewable.getCostBuild();
+        mEmissions  += mRenewable.getEmissions() * amount;
+        mApproval   += mRenewable.getApproval() * amount;
+        mSecurity   += mRenewable.getSecurity() * amount;
+        mProduction += mRenewable.getProduction() * amount;
+        mProfit     += mRenewable.getProfitPercent() * amount;
     }
 
+    /**
+     * This will remove renewable plants and calculate changes in the variables
+     *
+     * @param amount amount the amount of renewable plants to remove
+     */
     public void removeRenewable(int amount)
     {
 	mRenewable.remove(amount);
-	mBudget -= mRenewable.getCostRemove();;
+
+	mBudget     -= mRenewable.getCostRemove();
+        mEmissions  -= mRenewable.getEmissions() * amount;
+        mApproval   -= mRenewable.getApproval() * amount;
+        mSecurity   -= mRenewable.getSecurity() * amount;
+        mProduction -= mRenewable.getProduction() * amount;
+        mProfit     -= mRenewable.getProfitPercent() * amount;
     }
 }
