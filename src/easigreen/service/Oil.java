@@ -1,43 +1,103 @@
+/**
+ * The oil class contains information about the current oil status.  This
+ * includes oil security, consumption and emissions.  These values can be
+ * adjusted through 
+ *
+ * @version 0.1.1
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
+ */
 public class Oil
 {
-   private double mConsumption;
-   private double mSecurity;
-   private double mGrowth;
+    //////////////////// Variables
+   
+    /**
+     * Daily consumption of oil
+     */
+    private double mConsumption;
 
-   public Oil()
-   {
-      mConsumption = 1.7;
-      mSecurity = -17;
-      mGrowth = 20;
-   }
+    /**
+     * Security rating of oil
+     */
+    private double mSecurity;
 
-   public double getConsumption()
-   {
-      return mConsumption;
-   }
+    /**
+     * Oil growth per round
+     */
+    private double mGrowth;
 
-   public double getSecurity()
-   {
-      return mSecurity;
-   }
+    //////////////////// Constructors
 
-   public double getGrowth()
-   {
-      return mGrowth;
-   }
+    /**
+     * Default values for oil
+     */
+    public Oil()
+    {
+	mConsumption = 1.7;
+	mSecurity = -17;
+	mGrowth = 20;
+    }
 
-   public void setConsumption(double pConsumption)
-   {
-      mConsumption = pConsumption;
-   }
+    //////////////////// Methods
 
-   public void setSecurity(double pSecurity)
-   {
-      mSecurity = pSecurity;
-   }
+    /**
+     * Gets the daily consumption of oil
+     *
+     * @return mConsumption the daily consumption of oil
+     */
+    public double getConsumption()
+    {
+	return mConsumption;
+    }
 
-   public void setGrowth(double pGrowth)
-   {
-      mGrowth = pGrowth;
-   }
+    /**
+     * Gets the security rating of oil
+     *
+     * @return mSecurity the security rating of oil
+     */
+    public double getSecurity()
+    {
+	return mSecurity;
+    }
+
+    /**
+     * Gets the growth of oil per round
+     *
+     * @return mGrowth the growth of oil per round
+     */
+    public double getGrowth()
+    {
+	return mGrowth;
+    }
+
+    /**
+     * Sets the daily consumption of oil
+     *
+     * @param pConsumption the new daily consumption of oil
+     */
+    public void setConsumption(double pConsumption)
+    {
+	mConsumption = pConsumption;
+    }
+
+    /**
+     * Sets the security rating of oil
+     *
+     * @param pSecurity the new security rating of oil
+     */
+    public void setSecurity(double pSecurity)
+    {
+	mSecurity = pSecurity;
+    }
+
+    /**
+     * Sets the growth of oil per round
+     *
+     * @param pGrowth the new growth of oil per round
+     */
+    public void setGrowth(double pGrowth)
+    {
+	mGrowth = pGrowth;
+    }
 }

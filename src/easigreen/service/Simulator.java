@@ -1,201 +1,313 @@
-import java.util.*;
+import java.util.ArrayList;
 
+/**
+ * The Plant class contains information that each different type of plant will
+ * use.  It will contain the number of a particular type of plant, the cost for
+ * each one, and the impacts that it will have on the short-term and long-term
+ * goals.
+ *
+ * @see java.util.ArrayList
+ *
+ * @version 0.1.1
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
+ */
 public class Simulator
 {
-   private String mName;
-   private ArrayList<String> mTeamMembers;
-   private int mRound;
+    //////////////////// Variables
    
-   private Plant mFossil;
-   private Plant mNuclear;
-   private Plant mRenewable;
-   private Oil mOil;
-   
-   private int mActionPoints;
-   private int mEmitCredits;
-   private int mMarketShares;
+    /**
+     * The name of the country
+     */
+    private String mName;
 
-   private double mBudget;
-   private double mApproval;
-   private double mProduction;
-   private double mEmissions;
-   private double mProfit;
-   private double mSecurity;
+    /**
+     * The names of the students
+     */
+    private ArrayList<String> mTeamMembers;
 
-   private double mDemand;
-   private double mDemandGrowth;
+    /**
+     * The round number
+     */
+    private int mRound;
 
-   private ArrayList<Technology> Techs;
+    /**
+     * The fossil plants
+     */
+    private Plant mFossil;
 
-   public Simulator()
-   {  
-      mNuclear = new NuclearPlant();
-      mFossil = new FossilPlant();
-      mRenewable = new RenewablePlant();
-      mOil = new Oil();
-      mBudget = 10;
+    /**
+     * The nuclear plants
+     */
+    private Plant mNuclear;
+
+    /**
+     * The renewable plants
+     */
+    private Plant mRenewable;
+
+    /**
+     * The oil for the country
+     */
+    private Oil mOil;
+
+    /**
+     * The number of action points
+     */
+    private int mActionPoints;
+
+    /**
+     * The number of emission credits
+     */
+    private int mEmitCredits;
+
+    /**
+     * The number of market shares
+     */
+    private int mMarketShares;
+
+    /**
+     * The total amount of funds (in billions)
+     */
+    private double mBudget;
+
+    /**
+     * The total public approval
+     */
+    private double mApproval;
+
+    /**
+     * The new power production
+     */
+    private double mProduction;
+
+    /**
+     * The total emissions from all the plants
+     */
+    private double mEmissions;
+
+    /**
+     * The net profit
+     */
+    private double mProfit;
+
+    /**
+     * The net security
+     */
+    private double mSecurity;
+
+    /**
+     * The price for selling energy
+     */
+    private double mPrice;
+
+    /**
+     * The country's energy demand
+     */
+    private double mDemand;
+
+    /**
+     * The growth of the demand for the next round
+     */
+    private double mDemandGrowth;
+
+    /**
+     * The implemented technologys
+     */
+    private ArrayList<Technology> Techs;
+
+    //////////////////// Constructors
+
+    /**
+     * Oil and each type of plant is set up.  The system is updated to show the
+     * starting values based on no action.
+     */
+    public Simulator()
+    {  
+	mNuclear = new NuclearPlant();
+	mFossil = new FossilPlant();
+	mRenewable = new RenewablePlant();
+	mOil = new Oil();
+	mBudget = 10;
+	mPrice = 11;
       
-      update();
-   }
+	update();
+    }
 
-   public void update()
-   {
-      mApproval = mFossil.getApproval() + mNuclear.getApproval()
-                   + mRenewable.getApproval();
+    //////////////////// Methods
+
+    /**
+     * This method updates the country's values according to the changes that
+     * have taken place.  This method may be called in intervals of time or it
+     * can be called at the press of a button.
+     */
+    public void update()
+    {
+	mApproval = mFossil.getApproval() + mNuclear.getApproval()
+	    + mRenewable.getApproval();
       
-      mProduction = (mFossil.getProduction() * mFossil.getAmount())
-         + (mNuclear.getProduction() * mNuclear.getAmount())
-         + (mRenewable.getProduction() * mRenewable.getAmount());
+	mProduction = (mFossil.getProduction() * mFossil.getAmount())
+	    + (mNuclear.getProduction() * mNuclear.getAmount())
+	    + (mRenewable.getProduction() * mRenewable.getAmount());
       
-      mEmissions = (mFossil.getEmissions() * mFossil.getAmount())
-         + (mNuclear.getEmissions() * mNuclear.getAmount())
-         + (mRenewable.getEmissions() * mRenewable.getAmount());
+	mEmissions = (mFossil.getEmissions() * mFossil.getAmount())
+	    + (mNuclear.getEmissions() * mNuclear.getAmount())
+	    + (mRenewable.getEmissions() * mRenewable.getAmount());
 
-      mProfit = (mFossil.getProfitPercent() * mFossil.getAmount())
-         + (mNuclear.getProfitPercent() * mNuclear.getAmount())
-         + (mRenewable.getProfitPercent() * mRenewable.getAmount());
+	mProfit = (mFossil.getProfitPercent() * mFossil.getAmount())
+	    + (mNuclear.getProfitPercent() * mNuclear.getAmount())
+	    + (mRenewable.getProfitPercent() * mRenewable.getAmount());
 
-      mSecurity = (mFossil.getSecurity() * mFossil.getAmount())
-         + (mNuclear.getSecurity() * mNuclear.getAmount())
-         + (mRenewable.getSecurity() * mRenewable.getAmount());
-   }
+	mSecurity = (mFossil.getSecurity() * mFossil.getAmount())
+	    + (mNuclear.getSecurity() * mNuclear.getAmount())
+	    + (mRenewable.getSecurity() * mRenewable.getAmount());
+    }
 
-   public void applyTechnology(Technology newTechnology)
-   {
-      mBudget += newTechnology.getBudgetChange();
-      mDemand += newTechnology.getNRGChange();
-      mEmissions += newTechnology.getEmissionsChange();
+    /**
+     * The new Technology is implemented.  All the changes that the given
+     * technology is designed to make take place within this method.
+     *
+     * @param newTechnology the new technology to be implemented
+     */
+    public void applyTechnology(Technology newTechnology)
+    {
+	mBudget += newTechnology.getBudgetChange();
+	mDemand += newTechnology.getNRGChange();
+	mEmissions += newTechnology.getEmissionsChange();
 
-      mNuclear.setProduction(mNuclear.getProduction()
-                             + newTechnology.getNpow());
-      mNuclear.setCost(mNuclear.getCost()
-                       + newTechnology.getNcost());
-      mNuclear.setApproval(mNuclear.getApproval()
-                          + newTechnology.getNatt());
-      mNuclear.setEmissions(mNuclear.getEmissions()
-                            + newTechnology.getNemit());
-      mNuclear.setSecurity(mNuclear.getSecurity()
-                           + newTechnology.getNsec());
-      mNuclear.setProfitPercent(mNuclear.getProfitPercent()
-                                + newTechnology.getNprof());
+	mNuclear.setProduction(mNuclear.getProduction()
+			       + newTechnology.getNpow());
+	mNuclear.setCostBuild(mNuclear.getCostBuild()
+			      + newTechnology.getNcost());
+	mNuclear.setApproval(mNuclear.getApproval()
+			     + newTechnology.getNatt());
+	mNuclear.setEmissions(mNuclear.getEmissions()
+			      + newTechnology.getNemit());
+	mNuclear.setSecurity(mNuclear.getSecurity()
+			     + newTechnology.getNsec());
+	mNuclear.setProfitPercent(mNuclear.getProfitPercent()
+				  + newTechnology.getNprof());
 
-      mFossil.setProduction(mFossil.getProduction()
-                            + newTechnology.getFpow());
-      mFossil.setCost(mFossil.getCost()
-                      + newTechnology.getFcost());
-      mFossil.setApproval(mFossil.getApproval()
-                         + newTechnology.getFatt());
-      mFossil.setEmissions(mFossil.getEmissions()
-                           + newTechnology.getFemit());
-      mFossil.setSecurity(mFossil.getSecurity()
-                          + newTechnology.getFsec());
-      mFossil.setProfitPercent(mFossil.getProfitPercent()
-                               + newTechnology.getFprof());
+	mFossil.setProduction(mFossil.getProduction()
+			      + newTechnology.getFpow());
+	mFossil.setCostBuild(mFossil.getCostBuild()
+			     + newTechnology.getFcost());
+	mFossil.setApproval(mFossil.getApproval()
+			    + newTechnology.getFatt());
+	mFossil.setEmissions(mFossil.getEmissions()
+			     + newTechnology.getFemit());
+	mFossil.setSecurity(mFossil.getSecurity()
+			    + newTechnology.getFsec());
+	mFossil.setProfitPercent(mFossil.getProfitPercent()
+				 + newTechnology.getFprof());
 
-      mRenewable.setProduction(mRenewable.getProduction()
-                               + newTechnology.getRpow());
-      mRenewable.setCost(mRenewable.getCost()
-                         + newTechnology.getRcost());
-      mRenewable.setApproval(mRenewable.getApproval()
-                            + newTechnology.getRatt());
-      mRenewable.setEmissions(mRenewable.getEmissions()
-                              + newTechnology.getRemit());
-      mRenewable.setSecurity(mRenewable.getSecurity()
-                             + newTechnology.getRsec());
-      mRenewable.setProfitPercent(mRenewable.getProfitPercent()
-                                  + newTechnology.getRprof());
+	mRenewable.setProduction(mRenewable.getProduction()
+				 + newTechnology.getRpow());
+	mRenewable.setCostBuild(mRenewable.getCostBuild()
+				+ newTechnology.getRcost());
+	mRenewable.setApproval(mRenewable.getApproval()
+			       + newTechnology.getRatt());
+	mRenewable.setEmissions(mRenewable.getEmissions()
+				+ newTechnology.getRemit());
+	mRenewable.setSecurity(mRenewable.getSecurity()
+			       + newTechnology.getRsec());
+	mRenewable.setProfitPercent(mRenewable.getProfitPercent()
+				    + newTechnology.getRprof());
 
-      mOil.setConsumption(mOil.getConsumption()
-                         + newTechnology.getOil());
-      mOil.setSecurity(mOil.getSecurity()
-                       + newTechnology.getOilSec());
-      mOil.setGrowth(mOil.getGrowth()
-                     + newTechnology.getOilGrow());
-   }
+	mOil.setConsumption(mOil.getConsumption()
+			    + newTechnology.getOil());
+	mOil.setSecurity(mOil.getSecurity()
+			 + newTechnology.getOilSec());
+	mOil.setGrowth(mOil.getGrowth()
+		       + newTechnology.getOilGrow());
+    }
 
-   ///  getters
-   public String getName() { return mName; }
-   public ArrayList<String> getTeamMembers() { return mTeamMembers; }
-   public int getRound() { return mRound; }
+    ///  getters
+    public String getName() { return mName; }
+    public ArrayList<String> getTeamMembers() { return mTeamMembers; }
+    public int getRound() { return mRound; }
    
-   public Plant getFossil() { return mFossil; }
-   public Plant getNuclear() { return mNuclear; }
-   public Plant getRenewable() { return mRenewable; }
-   public Oil getOil() { return mOil; }
+    public Plant getFossil() { return mFossil; }
+    public Plant getNuclear() { return mNuclear; }
+    public Plant getRenewable() { return mRenewable; }
+    public Oil getOil() { return mOil; }
    
-   public int getActionPoints() { return mActionPoints; }
-   public int getEmitCredits() { return mEmitCredits; }
-   public int getMarketShares() { return mMarketShares; }
+    public int getActionPoints() { return mActionPoints; }
+    public int getEmitCredits() { return mEmitCredits; }
+    public int getMarketShares() { return mMarketShares; }
 
-   public double getBudget() { return mBudget; }
-   public double getApproval() { return mApproval; }
-   public double getProduction() { return mProduction; }
-   public double getEmissions() { return mEmissions; }
-   public double getProfit() { return mProfit; }
-   public double getSecurity() { return mSecurity; }
+    public double getBudget() { return mBudget; }
+    public double getApproval() { return mApproval; }
+    public double getProduction() { return mProduction; }
+    public double getEmissions() { return mEmissions; }
+    public double getProfit() { return mProfit; }
+    public double getSecurity() { return mSecurity; }
+    public double getPrice() { return mPrice; }
+    
+    public double getDemand() { return mDemand; }
+    public double getDemandGrowth() { return mDemandGrowth; }
+    
+    ///  setters
+    public void setName(String pName) { mName = pName; }
+    public void setTeamMembers(ArrayList<String> pTeamMembers)
+    { mTeamMembers = pTeamMembers; }
+    public void setRound(int pRound) { mRound = pRound; }
+    
+    public void setFossil(Plant newPlant) { mFossil = newPlant; }
+    public void setNuclear(Plant newPlant) { mNuclear = newPlant; }
+    public void setRenewable(Plant newPlant) { mRenewable = newPlant; }
+    public void setOil(Oil newOil) { mOil = newOil; }
+    
+    public void setActionPoints(int amount) { mActionPoints = amount; }
+    public void setEmitCredits(int amount) { mEmitCredits = amount; }
+    public void setMarketShares(int amount) { mMarketShares = amount; }
+    
+    public void setBudget(double pBudget) { mBudget = pBudget; }
+    public void setApproval(double pApproval) { mApproval = pApproval; }
+    public void setProduction(double pProduction) { mProduction = pProduction; }
+    public void setEmissions(double pEmissions) { mEmissions = pEmissions; }
+    public void setProfit(double pProfit) { mProfit = pProfit; }
+    public void setSecurity(double pSecurity) { mSecurity = pSecurity; }
+    public void setPrice(double pPrice) { mPrice = pPrice; }
+    
+    public void setDemand(double pDemand) { mDemand = pDemand; }
+    public void setDemandGrowth(double pGrowth) { mDemandGrowth = pGrowth; }
+    
+    
+    public void addFossil(int amount)
+    {
+	mFossil.add(amount);
+	mBudget -= mFossil.getCostBuild();
+    }
+    
+    public void removeFossil(int amount)
+    {
+	mFossil.remove(amount);
+	mBudget -= mFossil.getCostRemove();
+    }
 
-   public double getDemand() { return mDemand; }
-   public double getDemandGrowth() { return mDemandGrowth; }
+    public void addNuclear(int amount)
+    {
+	mNuclear.add(amount);
+        mBudget -= mNuclear.getCostBuild();
+    }
 
-   ///  setters
-   public void setName(String pName) { mName = pName; }
-   public void setTeamMembers(ArrayList<String> pTeamMembers)
-   { mTeamMembers = pTeamMembers; }
-   public void setRound(int pRound) { mRound = pRound; }
-   
-   public void setFossil(Plant newPlant) { mFossil = newPlant; }
-   public void setNuclear(Plant newPlant) { mNuclear = newPlant; }
-   public void setRenewable(Plant newPlant) { mRenewable = newPlant; }
-   public void setOil(Oil newOil) { mOil = newOil; }
-   
-   public void setActionPoints(int amount) { mActionPoints = amount; }
-   public void setEmitCredits(int amount) { mEmitCredits = amount; }
-   public void setMarketShares(int amount) { mMarketShares = amount; }
+    public void removeNuclear(int amount)
+    {
+        mNuclear.remove(amount);
+        mBudget -= mNuclear.getCostRemove();
+    }
 
-   public void setBudget(double pBudget) { mBudget = pBudget; }
-   public void setApproval(double pApproval) { mApproval = pApproval; }
-   public void setProduction(double pProduction) { mProduction = pProduction; }
-   public void setEmissions(double pEmissions) { mEmissions = pEmissions; }
-   public void setProfit(double pProfit) { mProfit = pProfit; }
-   public void setSecurity(double pSecurity) { mSecurity = pSecurity; }
+    public void addRenewable(int amount)
+    {
+        mRenewable.add(amount);
+        mBudget -= mRenewable.getCostBuild();
+    }
 
-   public void setDemand(double pDemand) { mDemand = pDemand; }
-   public void setDemandGrowth(double pGrowth) { mDemandGrowth = pGrowth; }
-
-
-   public void addFossil(int amount)
-   {
-      mFossil.add(amount);
-      mBudget -= .5;
-   }
-
-   public void removeFossil(int amount)
-   {
-      mFossil.remove(amount);
-      mBudget -= .1;
-   }
-
-   public void addNuclear(int amount)
-   {
-      mNuclear.add(amount);
-      mBudget -= 2;
-   }
-
-   public void removeNuclear(int amount)
-   {
-      mNuclear.remove(amount);
-      mBudget -= 1;
-   }
-
-   public void addRenewable(int amount)
-   {
-      mRenewable.add(amount);
-      mBudget -= .1;
-   }
-
-   public void removeRenewable(int amount)
-   {
-      mRenewable.remove(amount);
-      mBudget += .1;
-   }
+    public void removeRenewable(int amount)
+    {
+	mRenewable.remove(amount);
+	mBudget -= mRenewable.getCostRemove();;
+    }
 }
