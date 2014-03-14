@@ -473,4 +473,77 @@ public class Simulator
         mProduction -= mRenewable.getProduction() * amount;
         mProfit     -= mRenewable.getProfitPercent() * amount;
     }
+
+    /**
+     * This will place action points into the fossil science upgrade
+     *
+     * @param actions the number of action points to be spent here
+     */
+    public void fossilScience(int actions)
+    {
+	mFossil.setApproval(mFossil.getApproval() + actions * .5);
+	mFossil.setSecurity(mFossil.getSecurity() + actions * .02);
+    }
+
+    /**
+     * This will place action points into the nuclear science upgrade
+     *
+     * @param actions the number of action points to be spent here
+     */
+    public void nuclearScience(int actions)
+    {
+        mNuclear.setApproval(mNuclear.getApproval() + actions * .3);
+	mNuclear.setSecurity(mNuclear.getSecurity() + actions * .05);
+    }
+
+    /**
+     * This will place action points into the renewable science upgrade
+     *
+     * @param actions the number of action points to be spent here
+     */
+    public void renewableScience(int actions)
+    {
+        mRenewable.setApproval(mRenewable.getApproval() + actions * .1);
+	mRenewable.setSecurity(mRenewable.getSecurity() + actions * .01);
+    }
+
+    /**
+     * This will place action points into the oil science upgrade
+     *
+     * @param actions the number of action points to be spent here
+     */
+    public void oilScience(int actions)
+    {
+        mOil.setSecurity(mOil.getSecurity() + actions * .8);
+    }
+
+    /**
+     * This will place action points into the fossil science engineering
+     *
+     * @param actions the number of action points to be spent here
+     */
+    public void fossilEngineering(int actions)
+    {
+        mFossil.setSecurity(mFossil.getSecurity() + actions * .08);
+    }
+
+    /**
+     * This will place action points into the nuclear science engineering
+     * 
+     * @param actions the number of action points to be spent here
+     */
+    public void nuclearEngineering(int actions)
+    {
+        mNuclear.setSecurity(mNuclear.getSecurity() + actions * .2);
+    }
+
+    /**
+     * This will place action points into the renewable science engineering
+     *
+     * @param actions the number of action points to be spent here
+     */
+    public void renewableEngineering(int actions)
+    {
+        mRenewable.setSecurity(mRenewable.getSecurity() + actions * .03);
+    }
 }
