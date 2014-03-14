@@ -59,9 +59,9 @@ public class SimCity
     {
 	for(int i = mRound; i < 7; i++)
 	    {
-		mName.get(i).getFossil().setAmount(
-						   mName.get(i).getFossil().getAmount()
-						   + display.getFossilAmountChange);
+		mName.get(i).getFossil().add(
+					     mName.get(i).getFossil().getAmount());
+						   //+ display.getFossilAmountChange);
 		// and so on...
 	    }
     }
