@@ -223,21 +223,119 @@ public class Simulator
 		       + newTechnology.getOilGrow());
     }
 
-    ///  getters
-    public String getName() { return mName; }
-    public ArrayList<String> getTeamMembers() { return mTeamMembers; }
-    public int getRound() { return mRound; }
-   
-    public Plant getFossil() { return mFossil; }
-    public Plant getNuclear() { return mNuclear; }
-    public Plant getRenewable() { return mRenewable; }
-    public Oil getOil() { return mOil; }
-   
-    public int getActionPoints() { return mActionPoints; }
-    public int getEmitCredits() { return mEmitCredits; }
-    public int getMarketShares() { return mMarketShares; }
+    /**
+     * returns country's name
+     *
+     * @return mName the country's name
+     */
+    public String getName() 
+    { 
+       return mName; 
+    }
 
-    public double getBudget() { return mBudget; }
+    /**
+     * Returns the names of the group members
+     *
+     * @return mTeamMembers the names of the group members
+     */
+    public ArrayList<String> getTeamMembers() 
+    { 
+       return mTeamMembers; 
+    }
+
+    /**
+     * Gets the round number
+     *
+     * @return mRound the round number
+     */
+    public int getRound() 
+    { 
+       return mRound; 
+    }
+   
+    /**
+     * Gets the fossil plants
+     *
+     * @return mFossil the fossil plants  
+     */
+    public Plant getFossil() 
+    { 
+       return mFossil; 
+    }
+
+    /**
+     * Gets the nuclear plants
+     *
+     * @return mNuclear the nuclear plants   
+     */
+    public Plant getNuclear() 
+    { 
+       return mNuclear; 
+    }
+
+    /**
+     * Gets the renewable plants
+     *
+     * @retrun mRenewable the renewable plants
+     */
+    public Plant getRenewable() 
+    { 
+       return mRenewable; 
+    }
+
+    /**
+     * Gets the oil
+     *
+     * @retrun mOil the oil
+     */
+    public Oil getOil() 
+    { 
+       return mOil; 
+    }
+   
+    /**
+     * Gets the action points
+     *
+     * @return mActionPoints the action points
+     */
+    public int getActionPoints() 
+    { 
+       return mActionPoints; 
+    }
+
+    /**
+     * Gets the emission credits
+     *
+     * @return mEmitCredits the emission credits
+     */
+    public int getEmitCredits() 
+    { 
+       return mEmitCredits; 
+    }
+
+    /**
+     * Gets the market shares
+     *
+     * @return mMarketShares the market shares
+     */
+    public int getMarketShares() 
+    { 
+       return mMarketShares; 
+    }
+
+    /**
+     * Gets the budget
+     *
+     * @return mBudget the budget
+     */
+    public double getBudget() 
+    { 
+       return mBudget; 
+    }
+
+    /**
+     * 
+     */
     public double getApproval() { return mApproval; }
     public double getProduction() { return mProduction; }
     public double getEmissions() { return mEmissions; }
