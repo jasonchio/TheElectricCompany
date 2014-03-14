@@ -1,0 +1,66 @@
+package easigreen.desktop;
+
+import easigreen.service.*;
+
+import easigreen.system.*;
+
+import java.util.List;
+import java.util.ArrayList;
+
+import javafx.application.*;
+
+import javafx.geometry.*;
+
+import javafx.scene.*;
+import javafx.scene.control.*;
+import javafx.scene.image.*;
+import javafx.scene.layout.*;
+
+import javafx.stage.*;
+
+/**
+ * Navigation Pane for navigating the GUI
+ */
+public class NavPane
+   extends VBox
+{
+   private List<Button> buttons;
+
+   /**
+    * Creates a new Navigation Pane object.
+    */
+   public NavPane()
+   {
+      super();
+      buttons = new ArrayList<Button>();
+   }
+
+   /**
+    * Adds a button to the Navigation Pane
+    */
+    public void addButton(String url) // In future, add Action to parameter
+   {
+       Button button = new ImageButton(url);
+       buttons.add(button);
+   }
+
+   /**
+    * Adds the buttons to the Navigation Pane
+    */
+   public void initialize()
+   {
+       for (Button button : buttons)
+       {
+	   getChildren().add(button);
+       }
+   }
+
+   /**
+    * Enables the Navigation making it visible
+    */
+   public void enable()
+   {
+       
+   }
+
+}
