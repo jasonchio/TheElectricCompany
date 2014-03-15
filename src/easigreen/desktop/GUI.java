@@ -148,47 +148,47 @@ public class GUI
     private void initMainNav()
     {
 	mainNavigation    = new NavPane();
-	mainNavigation.addButton("Country.png");
-	mainNavigation.addButton("Energy.png");
-	mainNavigation.addButton("Upgrades.png");
-	mainNavigation.addButton("Goals.png");
+	mainNavigation.addButton("country.png");
+	mainNavigation.addButton("energy.png");
+	mainNavigation.addButton("upgrades.png");
+	mainNavigation.addButton("goals.png");
 	mainNavigation.initialize();
     }
 
     private void initCountryNav()
     {
 	countryNavigation = new NavPane();
-	countryNavigation.addButton("World.png");
-	countryNavigation.addButton("Political.png");
-	countryNavigation.addButton("Trade.png");
+	countryNavigation.addButton("world.png");
+	countryNavigation.addButton("politicalresources.png");
+	countryNavigation.addButton("trade.png");
 	countryNavigation.initialize();
     }
     
     private void initEnergyNav()
     {
 	energyNavigation  = new NavPane();
-	energyNavigation.addButton("duckling.png");
-	energyNavigation.addButton("duckling.png");
-	energyNavigation.addButton("duckling.png");
-	energyNavigation.addButton("duckling.png");
+	energyNavigation.addButton("nuclear.png");
+	energyNavigation.addButton("fossilfuel.png");
+	energyNavigation.addButton("renewable.png");
+	energyNavigation.addButton("oil.png");
 	energyNavigation.initialize();
     }
 
     private void initUpgradeNav()
     {
 	upgradeNavigation = new NavPane();
-	upgradeNavigation.addButton("duckling.png");
-	upgradeNavigation.addButton("duckling.png");
-	upgradeNavigation.addButton("duckling.png");
-	upgradeNavigation.addButton("duckling.png");
+	upgradeNavigation.addButton("science.png");
+	upgradeNavigation.addButton("engineering.png");
+	upgradeNavigation.addButton("policies.png");
+	upgradeNavigation.addButton("technologies1.png");
 	upgradeNavigation.initialize();
     }
 
     private void initGoalNav()
     {
 	goalNavigation    = new NavPane();
-	goalNavigation.addButton("duckling.png");
-	goalNavigation.addButton("duckling.png");
+	goalNavigation.addButton("shortterm.png");
+	goalNavigation.addButton("longterm.png");
 	goalNavigation.initialize();
     }
 }
