@@ -24,6 +24,9 @@ import javafx.stage.*;
 public class NavPane
    extends VBox
 {
+    /**
+     * The list of buttons to add to the nav pane
+     */
    private List<Button> buttons;
 
    /**

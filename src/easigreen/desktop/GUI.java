@@ -121,6 +121,11 @@ public class GUI
       System.exit(0);
    }
 
+    /**
+     * Initializes the Primary Stage
+     *
+     * @param primaryStage the primary Stage.
+     */
     private void initStage(Stage primaryStage)
     {
 	 primaryStage.setScene(new Scene(windowArea));
@@ -129,6 +134,9 @@ public class GUI
 	 primaryStage.setTitle(GAME_NAME);
     }
 
+    /**
+     * Initializes Navigation Panels
+     */
     private void initNav()
     {
 	initMainNav();
@@ -138,6 +146,9 @@ public class GUI
 	initGoalNav();
     }
     
+    /**
+     * Initializes Main Window Layout
+     */
     private void initWindow()
     {
 	windowArea = new BorderPane();
@@ -145,6 +156,9 @@ public class GUI
 	windowArea.setRight(countryNavigation);
     }
 
+    /**
+     * Initializes Main Navigation
+     */
     private void initMainNav()
     {
 	mainNavigation    = new NavPane();
@@ -155,6 +169,9 @@ public class GUI
 	mainNavigation.initialize();
     }
 
+    /**
+     * Initializes Country Navigation
+     */
     private void initCountryNav()
     {
 	countryNavigation = new NavPane();
@@ -164,6 +181,9 @@ public class GUI
 	countryNavigation.initialize();
     }
     
+    /**
+     * Initializes Energy Navigation
+     */
     private void initEnergyNav()
     {
 	energyNavigation  = new NavPane();
@@ -174,6 +194,9 @@ public class GUI
 	energyNavigation.initialize();
     }
 
+    /**
+     * Initializes Upgrade Navigation
+     */
     private void initUpgradeNav()
     {
 	upgradeNavigation = new NavPane();
@@ -184,6 +207,9 @@ public class GUI
 	upgradeNavigation.initialize();
     }
 
+    /**
+     * Initializes Goals Navigation
+     */
     private void initGoalNav()
     {
 	goalNavigation    = new NavPane();

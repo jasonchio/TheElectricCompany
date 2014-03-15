@@ -16,16 +16,27 @@ import javafx.scene.input.MouseEvent;
  */
 public class ImageButton extends Button
 {
-    
+
+    /**
+     * Style for when a button is normal
+     */
     private final String STYLE_NORMAL = "-fx-background-color: transparent; -fx-padding: 5, 5, 5, 5;";
+
+    /**
+     * Style for whena button is pressed
+     */
     private final String STYLE_PRESSED = "-fx-background-color: transparent; -fx-padding: 6 4 4 6;";
-    
+
+    /**
+     * Constructor for Image Button
+     *
+     * @param imageurl the url for an image the button will look like
+     */
     public ImageButton(String imageurl) 
     {
 	Image     image = ImageGetter.getImage(imageurl);
 	ImageView graphic = new ImageView(image);
 	setGraphic(graphic);
-        //setGraphic(new ImageView(new Image(getClass().getResourceAsStream(imageurl))));
         setStyle(STYLE_NORMAL);
         
         setOnMousePressed(new EventHandler<MouseEvent>() {
