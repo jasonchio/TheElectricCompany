@@ -224,155 +224,6 @@ public class Simulator
 	mOil.setGrowth(mOil.getGrowth()
 		       + newTechnology.getOilGrow());
     }
-
-    /**
-     * returns country's name
-     *
-     * @return mName the country's name
-     */
-    public String getName() 
-    { 
-       return mName; 
-    }
-
-    /**
-     * Returns the names of the group members
-     *
-     * @return mTeamMembers the names of the group members
-     */
-    public ArrayList<String> getTeamMembers() 
-    { 
-       return mTeamMembers; 
-    }
-
-    /**
-     * Gets the round number
-     *
-     * @return mRound the round number
-     */
-    public int getRound() 
-    { 
-       return mRound; 
-    }
-   
-    /**
-     * Gets the fossil plants
-     *
-     * @return mFossil the fossil plants  
-     */
-    public Plant getFossil() 
-    { 
-       return mFossil; 
-    }
-
-    /**
-     * Gets the nuclear plants
-     *
-     * @return mNuclear the nuclear plants   
-     */
-    public Plant getNuclear() 
-    { 
-       return mNuclear; 
-    }
-
-    /**
-     * Gets the renewable plants
-     *
-     * @retrun mRenewable the renewable plants
-     */
-    public Plant getRenewable() 
-    { 
-       return mRenewable; 
-    }
-
-    /**
-     * Gets the oil
-     *
-     * @retrun mOil the oil
-     */
-    public Oil getOil() 
-    { 
-       return mOil; 
-    }
-   
-    /**
-     * Gets the action points
-     *
-     * @return mActionPoints the action points
-     */
-    public int getActionPoints() 
-    { 
-       return mActionPoints; 
-    }
-
-    /**
-     * Gets the emission credits
-     *
-     * @return mEmitCredits the emission credits
-     */
-    public int getEmitCredits() 
-    { 
-       return mEmitCredits; 
-    }
-
-    /**
-     * Gets the market shares
-     *
-     * @return mMarketShares the market shares
-     */
-    public int getMarketShares() 
-    { 
-       return mMarketShares; 
-    }
-
-    /**
-     * Gets the budget
-     *
-     * @return mBudget the budget
-     */
-    public double getBudget() 
-    { 
-       return mBudget; 
-    }
-
-    /**
-     * 
-     */
-    public double getApproval() { return mApproval; }
-    public double getProduction() { return mProduction; }
-    public double getEmissions() { return mEmissions; }
-    public double getProfit() { return mProfit; }
-    public double getSecurity() { return mSecurity; }
-    public double getPrice() { return mPrice; }
-    
-    public double getDemand() { return mDemand; }
-    public double getDemandGrowth() { return mDemandGrowth; }
-    
-    ///  setters
-    public void setName(String pName) { mName = pName; }
-    public void setTeamMembers(ArrayList<String> pTeamMembers)
-    { mTeamMembers = pTeamMembers; }
-    public void setRound(int pRound) { mRound = pRound; }
-    
-    public void setFossil(Plant newPlant) { mFossil = newPlant; }
-    public void setNuclear(Plant newPlant) { mNuclear = newPlant; }
-    public void setRenewable(Plant newPlant) { mRenewable = newPlant; }
-    public void setOil(Oil newOil) { mOil = newOil; }
-    
-    public void setActionPoints(int amount) { mActionPoints = amount; }
-    public void setEmitCredits(int amount) { mEmitCredits = amount; }
-    public void setMarketShares(int amount) { mMarketShares = amount; }
-    
-    public void setBudget(double pBudget) { mBudget = pBudget; }
-    public void setApproval(double pApproval) { mApproval = pApproval; }
-    public void setProduction(double pProduction) { mProduction = pProduction; }
-    public void setEmissions(double pEmissions) { mEmissions = pEmissions; }
-    public void setProfit(double pProfit) { mProfit = pProfit; }
-    public void setSecurity(double pSecurity) { mSecurity = pSecurity; }
-    public void setPrice(double pPrice) { mPrice = pPrice; }
-    
-    public void setDemand(double pDemand) { mDemand = pDemand; }
-    public void setDemandGrowth(double pGrowth) { mDemandGrowth = pGrowth; }
     
     /**
      * This will add fossil plants and calculate changes in the variables
@@ -603,4 +454,404 @@ public class Simulator
         mDemandGrowth += (shares * .1);
         mMarketShares -= shares;
     }
+
+    /**
+     * Action points can be traded for money here
+     *
+     * @param actions amount of action points to trade for cash
+     */
+    public void cashInActionPoints(int amount)
+    {
+	mActionPoints -= amount;
+        mBudget += (amount * .5);
+    }
+
+    /**
+     * Technologies can be traded for money with this method
+     *
+     * @param techs amount of technologies to trade for cash
+     */
+    public void cashInTechnologies(int techs)
+    {
+	mBudget += (techs * .5);
+    }
+
+    //////////////////// Getters
+
+    /**
+     * returns country's name
+     *
+     * @return mName the country's name
+     */
+    public String getName()
+    {
+	return mName;
+    }
+
+    /**
+     * Returns the names of the group members
+     *
+     * @return mTeamMembers the names of the group members
+     */
+    public ArrayList<String> getTeamMembers()
+    {
+	return mTeamMembers;
+    }
+
+    /**
+     * Gets the round number
+     *
+     * @return mRound the round number
+     */
+    public int getRound()
+    {
+	return mRound;
+    }
+
+    /**
+     * Gets the fossil plants
+     *
+     * @return mFossil the fossil plants
+     */
+    public Plant getFossil()
+    {
+	return mFossil;
+    }
+
+    /**
+     * Gets the nuclear plants
+     *
+     * @return mNuclear the nuclear plants
+     */
+    public Plant getNuclear()
+    {
+	return mNuclear;
+    }
+
+    /**
+     * Gets the renewable plants
+     *
+     * @retrun mRenewable the renewable plants
+     */
+    public Plant getRenewable()
+    {
+	return mRenewable;
+    }
+
+    /**
+     * Gets the oil
+     *
+     * @retrun mOil the oil
+     */
+    public Oil getOil()
+    {
+	return mOil;
+    }
+
+    /**
+     * Gets the action points
+     *
+     * @return mActionPoints the action points
+     */
+    public int getActionPoints()
+    {
+	return mActionPoints;
+    }
+
+
+    /**
+     * Gets the emission credits
+     *
+     * @return mEmitCredits the emission credits
+     */
+    public int getEmitCredits()
+    {
+	return mEmitCredits;
+    }
+
+    /**
+     * Gets the market shares
+     *
+     * @return mMarketShares the market shares
+     */
+    public int getMarketShares()
+    {
+	return mMarketShares;
+    }
+
+    /**
+     * Gets the budget
+     *
+     * @return mBudget the budget
+     */
+    public double getBudget()
+    {
+	return mBudget;
+    }
+
+    /**
+     * Get the approval rating
+     *
+     * @return mApproval the approval
+     */
+    public double getApproval()
+    {
+	return mApproval;
+    }
+
+    /**
+     * Gets the total production
+     *
+     * @return mProduction the total production
+     */
+    public double getProduction()
+    {
+	return mProduction;
+    }
+
+    /**
+     * Gets the total emissions
+     *
+     * @return mEmissions the total national emissions
+     */
+    public double getEmissions()
+    {
+	return mEmissions;
+    }
+
+    /**
+     * Gets the net country's profit
+     *
+     * @return mProfit the country's net profit
+     */
+    public double getProfit()
+    {
+	return mProfit;
+    }
+
+    /**
+     * Gets the overall security
+     *
+     * @return mSecurity the overall security
+     */
+    public double getSecurity()
+    {
+	return mSecurity;
+    }
+
+    /**
+     * Gets the price of energy
+     *
+     * @return mPrice the energy price
+     */
+    public double getPrice()
+    {
+	return mPrice;
+    }
+
+    /**
+     * Gets the energy demand
+     *
+     * @return mDemend the energy demand
+     */
+    public double getDemand()
+    {
+	return mDemand;
+    }
+
+    /**
+     * Gets the growth of the energy demand
+     *
+     * @return mDemandGrowth the energy demand's growth
+     */
+    public double getDemandGrowth() { return mDemandGrowth; }
+
+    //////////////////// Setters
+
+    /**
+     * Sets the group name
+     *
+     * @param pName the new name of the country
+     */
+    public void setName(String pName) 
+    { 
+       mName = pName; 
+    }
+
+    /**
+     * Sets the team member names
+     *
+     * @param pTeamMembers the names of the team members
+     */
+    public void setTeamMembers(ArrayList<String> pTeamMembers)
+    { 
+       mTeamMembers = pTeamMembers; 
+    }
+
+    /**
+     * Sets the round number
+     *
+     * @param pRound the round
+     */
+    public void setRound(int pRound) 
+    { 
+       mRound = pRound; 
+    }
+
+    /**
+     * Sets the fossil plant as a new plant
+     *
+     * @param newPlant the new plant
+     */
+    public void setFossil(Plant newPlant) 
+    { 
+       mFossil = newPlant; 
+    }
+
+    /**
+     * Sets the nuclear plant as a new plant
+     *
+     * @param newPlant the new plant
+     */
+    public void setNuclear(Plant newPlant) 
+    { 
+       mNuclear = newPlant; 
+    }
+
+    /**
+     * Sets the renewable plant as a new plant
+     *
+     * @param newPlant the new plant
+     */
+    public void setRenewable(Plant newPlant) 
+    { 
+       mRenewable = newPlant; 
+    }
+
+    /**
+     * Sets the current oil as a new oil
+     *
+     * @param newOil the new oil
+     */
+    public void setOil(Oil newOil) 
+    {
+       mOil = newOil; 
+    }
+
+    /**
+     * Sets the action points to a new value
+     *
+     * @param amount the new amount of action points
+     */
+    public void setActionPoints(int amount) 
+    { 
+       mActionPoints = amount; 
+    }
+
+    /**
+     * Sets the emission credits to a new amount
+     *
+     * @param amount the new amount of emission credits
+     */
+    public void setEmitCredits(int amount) 
+    { 
+       mEmitCredits = amount; 
+    }
+
+    /**
+     * Sets the number of market shares to a new amount
+     *
+     * @param amount the new amount of market shares
+     */
+    public void setMarketShares(int amount) 
+    { 
+       mMarketShares = amount; 
+    }
+
+    /**
+     * Sets the budget to a new value
+     *
+     * @param pBudget the new budget value
+     */
+    public void setBudget(double pBudget) 
+    { 
+       mBudget = pBudget; 
+    }
+
+    /**
+     * Sets the approval to a new value
+     *
+     * @param pApproval the new approval rating
+     */
+    public void setApproval(double pApproval) 
+    { 
+       mApproval = pApproval; 
+    }
+
+    /**
+     * Sets the production to a new value
+     *
+     * @param pProduction the new production value
+     */
+    public void setProduction(double pProduction) 
+    { 
+       mProduction = pProduction; 
+    }
+
+    /**
+     * Sets the emissions to a new value
+     *
+     * @param pEmissions the new amount of emissions
+     */
+    public void setEmissions(double pEmissions) 
+    { 
+       mEmissions = pEmissions; 
+    }
+
+    /**
+     * Sets the profit to a new value
+     *
+     * @param pProfit the new profit
+     */
+    public void setProfit(double pProfit) 
+    { 
+       mProfit = pProfit; 
+    }
+
+    /**
+     * Sets the security to a new value
+     *
+     * @param pSecurity the new security value
+     */
+    public void setSecurity(double pSecurity) 
+    { 
+       mSecurity = pSecurity; 
+    }
+
+    /**
+     * Sets the price to a new value
+     *
+     * @param pPrice the new price for production
+     */
+    public void setPrice(double pPrice) 
+    { 
+       mPrice = pPrice; 
+    }
+
+    /**
+     * Sets the demand to a new value
+     *
+     * @param pDemand the new demand value
+     */
+    public void setDemand(double pDemand) 
+    { 
+       mDemand = pDemand; 
+    }
+
+    /**
+     * Sets the growth of demand to a new value
+     *
+     * @param pGrowth the new growth of demand
+     */
+    public void setDemandGrowth(double pGrowth) { mDemandGrowth = pGrowth; }
 }
