@@ -136,6 +136,47 @@ public class Technology
      */
     private boolean hasBeenUsed;
 
+    //////////////////// Constructors
+
+    public Technology()
+    {
+    }
+
+    public Technology(int pBudgetChange, int pNRGChange, 
+                      double pEmissionsChange, double pNpow, double pNcost,
+                      double pNatt, double pNemit, double pNsec, 
+                      double pNprof, double pFpow, double pFcost,
+                      double pFatt, double pFemit, double pFsec,
+                      double pFprof, double pRpow, double pRcost,
+                      double pRatt, double pRemit, double pRsec,
+                      double pRprof, double pOil, double pOilSec, 
+                      double pOilGrow)
+    {
+        mBudgetChange = pBudgetChange;
+        mNRGChange = pNRGChange;
+        mEmissionsChange = pEmissionsChange;
+        mNpow = pNpow;
+        mNcost = pNcost;
+        mNatt = pNatt;
+        mNemit = pNemit;
+        mNsec = pNsec;
+        mNprof = pNprof;
+	mFpow =pFpow;
+	mFcost = pFcost;
+	mFatt =pFatt;
+	mFemit = pFemit;
+	mFsec =pFsec;
+	mFprof = pFprof;
+	mRpow =pRpow;
+	mRcost = pRcost;
+	mRatt =pRatt;
+	mRemit = pRemit;
+	mRsec =pRsec;
+	mRprof = pRprof;
+        mOil = pOil;
+        mOilSec = pOilSec;
+        mOilGrow = pOilGrow;
+    }
 
     /// getters
     public int getBudgetChange() { return mBudgetChange; }
