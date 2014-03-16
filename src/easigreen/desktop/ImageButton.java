@@ -2,6 +2,7 @@ package easigreen.desktop;
 
 import easigreen.service.*;
 import easigreen.system.*;
+import easigreen.desktop.*;
 
 import javafx.event.*;
 import javafx.scene.control.Button;
@@ -31,11 +32,14 @@ public class ImageButton extends Button
      * Constructor for Image Button
      *
      * @param imageurl the url for an image the button will look like
+     * @param actionName name of action to perform when button is pressed
      */
-    public ImageButton(String imageurl) 
+    public ImageButton(String imageurl, EventHandler<ActionEvent> action) 
     {
 	Image     image = ImageGetter.getImage(imageurl);
 	ImageView graphic = new ImageView(image);
+	setOnAction(action);
+
 	setGraphic(graphic);
         setStyle(STYLE_NORMAL);
         
