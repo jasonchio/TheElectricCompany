@@ -126,6 +126,7 @@ public class GUI
    {
       initializeEvents();
       initializeNavigation();
+      initializeContent();
       initializeWindow();
       initializeStage(primaryStage);
    }
@@ -136,6 +137,7 @@ public class GUI
     private void initializeEvents()
     {
 	events = new HashMap<String, EventHandler<ActionEvent>>();
+	// Initialize Main Menu Events
 	for (String nav : mainNavNames)
 	{
 	   events.put(nav, new EventHandler<ActionEvent>()
@@ -145,6 +147,20 @@ public class GUI
 		   windowArea.setRight(subNavigation.get(nav));
 	       }
 	   });
+	}
+	// Initialize Sub Menu Events
+	for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
+	{
+	    for (String subNavName : subNavNames[navNumber])
+	    {
+		events.put(subNavName, new EventHandler<ActionEvent>()
+			   {
+			       public void handle(ActionEvent event)
+			       {
+				   windowArea.setCenter(content.get(subNavName));
+			       }
+			   });
+	    }
 	}
     }
 
@@ -167,6 +183,20 @@ public class GUI
 	    subNavigation.put(mainNavNames[mainNavNum], newNav);
 	}
 	mainNavigation.initialize();
+    }
+
+    private void initializeContent()
+    {
+	content = new HashMap<String, ContentPane>();
+	for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
+	{
+	    for (String subNavName : subNavNames[navNumber])
+	    {
+		ContentPane newContent = new ContentPane();
+		newContent.add(new Label(subNavName), 0, 0);
+		content.put(subNavName, newContent);
+	    }
+	}
     }
 
     /**
