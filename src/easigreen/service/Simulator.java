@@ -174,7 +174,7 @@ public class Simulator
      */
     public void applyTechnology(Technology newTechnology)
     {
-	mBudget += newTechnology.getBudgetChange();
+        mBudget += newTechnology.getBudgetChange();
 	mDemand += newTechnology.getNRGChange();
 	mEmissions += newTechnology.getEmissionsChange();
 
@@ -853,5 +853,8 @@ public class Simulator
      *
      * @param pGrowth the new growth of demand
      */
-    public void setDemandGrowth(double pGrowth) { mDemandGrowth = pGrowth; }
+    public void setDemandGrowth(double pGrowth) 
+    { 
+       mDemandGrowth = pGrowth; 
+    }
 }
