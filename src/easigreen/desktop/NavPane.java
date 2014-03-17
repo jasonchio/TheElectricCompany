@@ -9,6 +9,8 @@ import java.util.ArrayList;
 
 import javafx.application.*;
 
+import javafx.event.*;
+
 import javafx.geometry.*;
 
 import javafx.scene.*;
@@ -24,6 +26,9 @@ import javafx.stage.*;
 public class NavPane
    extends VBox
 {
+    /**
+     * The list of buttons to add to the nav pane
+     */
    private List<Button> buttons;
 
    /**
@@ -38,9 +43,9 @@ public class NavPane
    /**
     * Adds a button to the Navigation Pane
     */
-    public void addButton(String url) // In future, add Action to parameter
+    public void addButton(String url, EventHandler<ActionEvent> event)
    {
-       Button button = new ImageButton(url);
+       Button button = new ImageButton(url + ".png", event);
        buttons.add(button);
    }
 

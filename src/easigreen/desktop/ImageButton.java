@@ -2,6 +2,7 @@ package easigreen.desktop;
 
 import easigreen.service.*;
 import easigreen.system.*;
+import easigreen.desktop.*;
 
 import javafx.event.*;
 import javafx.scene.control.Button;
@@ -16,16 +17,30 @@ import javafx.scene.input.MouseEvent;
  */
 public class ImageButton extends Button
 {
-    
+
+    /**
+     * Style for when a button is normal
+     */
     private final String STYLE_NORMAL = "-fx-background-color: transparent; -fx-padding: 5, 5, 5, 5;";
+
+    /**
+     * Style for whena button is pressed
+     */
     private final String STYLE_PRESSED = "-fx-background-color: transparent; -fx-padding: 6 4 4 6;";
-    
-    public ImageButton(String imageurl) 
+
+    /**
+     * Constructor for Image Button
+     *
+     * @param imageurl the url for an image the button will look like
+     * @param actionName name of action to perform when button is pressed
+     */
+    public ImageButton(String imageurl, EventHandler<ActionEvent> action) 
     {
 	Image     image = ImageGetter.getImage(imageurl);
 	ImageView graphic = new ImageView(image);
+	setOnAction(action);
+
 	setGraphic(graphic);
-        //setGraphic(new ImageView(new Image(getClass().getResourceAsStream(imageurl))));
         setStyle(STYLE_NORMAL);
         
         setOnMousePressed(new EventHandler<MouseEvent>() {

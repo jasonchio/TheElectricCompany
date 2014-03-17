@@ -4,7 +4,12 @@ import easigreen.service.*;
 
 import easigreen.system.*;
 
+import java.util.*;
+
 import javafx.application.*;
+
+
+import javafx.event.*;
 
 import javafx.geometry.*;
 
@@ -21,9 +26,7 @@ import javafx.stage.*;
 public class GUI
    extends Application
 {
-   private static final String GAME_NAME = "Sargeant City";
-
-   /**
+  /**
     * Holds the singleton instance.
     */
    private static GUI cInstance = null;
@@ -37,36 +40,41 @@ public class GUI
    {
       return cInstance;
    }
+ 
+   private static final String GAME_NAME = "Sargeant City";
+   
+   private static final String[]   mainNavNames = new String[]{"country", "energy", "upgrades", "goals"};
+   
+   private static final String[][] subNavNames  = new String[][]{{"world", "politicalresources", "trade"},
+								 {"nuclear", "fossilfuel", "renewable", "oil"},
+								 {"science", "engineering", "policies", "technologies1"},
+								 {"shortterm", "longterm"}};
 
-    /**
-     * Contains the primary layout for the application.
-     */
-   private BorderPane windowArea;
-
+    
    /**
     * Contains Graphical buttons for the main navigation of the system.
     */
    private NavPane mainNavigation;
 
     /**
-    * Contains Graphical buttons for navigating within the country tab.
-    */
-    private NavPane countryNavigation;
+     * A map of Strings to navigation panes
+     */
+    private static Map<String, NavPane> subNavigation;
 
     /**
-    * Contains Graphical buttons for navigating within the energy tab.
-    */
-    private NavPane energyNavigation;
+     * A Map of string (button names) to the events they handle
+     */
+    private static Map<String, EventHandler<ActionEvent>> events;
 
     /**
-    * Contains Graphical buttons for navigating within the upgrade tab.
-    */
-    private NavPane upgradeNavigation;
-
+     * Maps strings to the content page it provides
+     */
+    private static Map<String, ContentPane> content;
+ 
     /**
-    * Contains Graphical buttons for navigating within the goal tab.
-    */
-    private NavPane goalNavigation;
+     * Contains the primary layout for the application.
+     */
+   private BorderPane windowArea;
 
    /**
     * Creates a new GUI object.
@@ -88,18 +96,6 @@ public class GUI
    }
 
    /**
-    * Initializes the GUI.
-    *
-    * @param primaryStage the primary stage.
-    */
-   private void init(Stage primaryStage)
-   {
-      initNav();
-      initWindow();
-      initStage(primaryStage);
-   }
-
-   /**
     * Starts the GUI.
     *
     * @param primaryStage the primary stage.
@@ -107,7 +103,7 @@ public class GUI
    @Override
    public void start(Stage primaryStage)
    {
-      init(primaryStage);
+      initialize(primaryStage);
       primaryStage.show();
    }
 
@@ -121,74 +117,108 @@ public class GUI
       System.exit(0);
    }
 
-    private void initStage(Stage primaryStage)
+   /**
+    * Initializes the GUI.
+    *
+    * @param primaryStage the primary stage.
+    */
+   private void initialize(Stage primaryStage)
+   {
+      initializeEvents();
+      initializeNavigation();
+      initializeContent();
+      initializeWindow();
+      initializeStage(primaryStage);
+   }
+
+    /**
+     * Initializes action events for buttons
+     */
+    private void initializeEvents()
+    {
+	events = new HashMap<String, EventHandler<ActionEvent>>();
+	// Initialize Main Menu Events
+	for (String nav : mainNavNames)
+	{
+	   events.put(nav, new EventHandler<ActionEvent>()
+	   {
+	       public void handle(ActionEvent event)
+	       {
+		   windowArea.setRight(subNavigation.get(nav));
+	       }
+	   });
+	}
+	// Initialize Sub Menu Events
+	for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
+	{
+	    for (String subNavName : subNavNames[navNumber])
+	    {
+		events.put(subNavName, new EventHandler<ActionEvent>()
+			   {
+			       public void handle(ActionEvent event)
+			       {
+				   windowArea.setCenter(content.get(subNavName));
+			       }
+			   });
+	    }
+	}
+    }
+
+    /**
+     * Initialize Primary Navigation
+     */
+    private void initializeNavigation()
+    {
+	mainNavigation = new NavPane();
+	subNavigation  = new HashMap<String, NavPane>();
+	for (int mainNavNum = 0; mainNavNum < mainNavNames.length; mainNavNum++)
+	{
+	    mainNavigation.addButton(mainNavNames[mainNavNum], events.get(mainNavNames[mainNavNum]));
+	    NavPane newNav = new NavPane();
+	    for (int subNavNum = 0; subNavNum < subNavNames[mainNavNum].length; subNavNum++)
+	    {
+		newNav.addButton(subNavNames[mainNavNum][subNavNum], events.get(subNavNames[mainNavNum][subNavNum]));
+	    }
+	    newNav.initialize();
+	    subNavigation.put(mainNavNames[mainNavNum], newNav);
+	}
+	mainNavigation.initialize();
+    }
+
+    private void initializeContent()
+    {
+	content = new HashMap<String, ContentPane>();
+	for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
+	{
+	    for (String subNavName : subNavNames[navNumber])
+	    {
+		ContentPane newContent = new ContentPane();
+		newContent.add(new Label(subNavName), 0, 0);
+		content.put(subNavName, newContent);
+	    }
+	}
+    }
+
+    /**
+     * Initializes Main Window Layout
+     */
+    private void initializeWindow()
+    {
+	windowArea = new BorderPane();
+	windowArea.setLeft(mainNavigation);
+	windowArea.setRight(subNavigation.get(mainNavNames[0]));
+    }
+
+    /**
+     * Initializes the Primary Stage
+     *
+     * @param primaryStage the primary Stage.
+     */
+    private void initializeStage(Stage primaryStage)
     {
 	 primaryStage.setScene(new Scene(windowArea));
 	 primaryStage.setMinHeight(600);
 	 primaryStage.setMinWidth(600);
 	 primaryStage.setTitle(GAME_NAME);
-    }
-
-    private void initNav()
-    {
-	initMainNav();
-	initEnergyNav();
-	initCountryNav();
-	initUpgradeNav();
-	initGoalNav();
-    }
-    
-    private void initWindow()
-    {
-	windowArea = new BorderPane();
-	windowArea.setLeft(mainNavigation);
-	windowArea.setRight(countryNavigation);
-    }
-
-    private void initMainNav()
-    {
-	mainNavigation    = new NavPane();
-	mainNavigation.addButton("Country.png");
-	mainNavigation.addButton("Energy.png");
-	mainNavigation.addButton("Upgrades.png");
-	mainNavigation.addButton("Goals.png");
-	mainNavigation.initialize();
-    }
-
-    private void initCountryNav()
-    {
-	countryNavigation = new NavPane();
-	countryNavigation.addButton("World.png");
-	countryNavigation.addButton("Political.png");
-	countryNavigation.addButton("Trade.png");
-	countryNavigation.initialize();
-    }
-    
-    private void initEnergyNav()
-    {
-	energyNavigation  = new NavPane();
-	energyNavigation.addButton("duckling.png");
-	energyNavigation.addButton("duckling.png");
-	energyNavigation.addButton("duckling.png");
-	energyNavigation.addButton("duckling.png");
-	energyNavigation.initialize();
-    }
-
-    private void initUpgradeNav()
-    {
-	upgradeNavigation = new NavPane();
-	upgradeNavigation.addButton("duckling.png");
-	upgradeNavigation.addButton("duckling.png");
-	upgradeNavigation.addButton("duckling.png");
-	upgradeNavigation.addButton("duckling.png");
-	upgradeNavigation.initialize();
-    }
-
-    private void initGoalNav()
-    {
-	goalNavigation    = new NavPane();
-	goalNavigation.addButton("duckling.png");
-	goalNavigation.addButton("duckling.png");
-	goalNavigation.initialize();
     }
 }
