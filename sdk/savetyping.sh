@@ -199,12 +199,6 @@ rj()
    java -jar $PRKEY.jar $*
 }
 export -f rj
-# source file packager
-sfp()
-{
-    java -Duser.dir=$PH/src/$PRKEY -jar $SHAREDLIB/sfp.jar
-}
-export -f sfp
 # makes all .jpg files from all .uxf files in $PH/docs
 jpg()
 {
@@ -237,10 +231,9 @@ export -f rpab
 # generate javadocs
 jdoc()
 {
-   cd $PH
    javadoc -quiet -author -link http://docs.oracle.com/javase/7/docs/api/\
-       -d build/jdoc -sourcepath src -classpath build/class\
-       -extdirs lib -private -subpackages $PP1 $PP2 $PP3
+       -d $PH/build/jdoc -sourcepath $PH/src -classpath $CP \
+       -extdirs $PH/lib/ext -private -subpackages $PP1 $PP2 $PP3
 }
 export -f jdoc
 # generate a key store
