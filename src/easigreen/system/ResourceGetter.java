@@ -105,12 +105,12 @@ public class ResourceGetter
 
    /**
     * Extracts a file or files from a URL-retrieved web resource
-    * and saves it/them to the local filesystem.
+    * and saves it/them to the local file system.
     *
     * @param pSpecification the URL specification.
     * @param pFoldername the name of the folder in which to save it,
                          which must already exist.
-    * @param pFilenames the filenames in the URL resource.
+    * @param pFilenames the file names in the URL resource.
     */
    public static void extractToFile(String pSpecification,
                                     String pFoldername,
