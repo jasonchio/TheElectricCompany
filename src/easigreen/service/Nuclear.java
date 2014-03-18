@@ -38,7 +38,7 @@ public class Nuclear
      * @param pSecurity the security of each unit
      * @param pProfitPercent the profit made with each unit
      */
-    public NuclearPlant(int pAmount, double pCostBuild, double pCostRemove,
+    public Nuclear(int pAmount, double pCostBuild, double pCostRemove,
                         double pApproval, double pProduction, double pEmissions,
                         double pSecurity, double pProfitPercent)
     {
