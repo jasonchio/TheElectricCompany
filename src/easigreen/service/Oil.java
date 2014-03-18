@@ -1,7 +1,7 @@
 /**
  * The oil class contains information about the current oil status.  This
  * includes oil security, consumption and emissions.  These values can be
- * adjusted through 
+ * adjusted through
  *
  * @version 0.1.1
  * @author Larson Caldwell
@@ -11,7 +11,7 @@
 public class Oil
 {
     //////////////////// Variables
-   
+
     /**
      * Daily consumption of oil
      */
@@ -34,9 +34,9 @@ public class Oil
      */
     public Oil()
     {
-	mConsumption = 1.7;
-	mSecurity = -17;
-	mGrowth = 20;
+        mConsumption = 1.7;
+        mSecurity = -17;
+        mGrowth = 20;
     }
 
     //////////////////// Methods
@@ -48,7 +48,7 @@ public class Oil
      */
     public double getConsumption()
     {
-	return mConsumption;
+        return mConsumption;
     }
 
     /**
@@ -58,7 +58,7 @@ public class Oil
      */
     public double getSecurity()
     {
-	return mSecurity;
+        return mSecurity;
     }
 
     /**
@@ -68,7 +68,7 @@ public class Oil
      */
     public double getGrowth()
     {
-	return mGrowth;
+        return mGrowth;
     }
 
     /**
@@ -78,7 +78,7 @@ public class Oil
      */
     public void setConsumption(double pConsumption)
     {
-	mConsumption = pConsumption;
+        mConsumption = pConsumption;
     }
 
     /**
@@ -88,7 +88,7 @@ public class Oil
      */
     public void setSecurity(double pSecurity)
     {
-	mSecurity = pSecurity;
+        mSecurity = pSecurity;
     }
 
     /**
@@ -98,6 +98,6 @@ public class Oil
      */
     public void setGrowth(double pGrowth)
     {
-	mGrowth = pGrowth;
+        mGrowth = pGrowth;
     }
 }
