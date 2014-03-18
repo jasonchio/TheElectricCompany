@@ -147,9 +147,9 @@ public class Shell
    }
 
    /**
-    * Gets if slient mode is or not
+    * Gets if silent mode is or not
     *
-    * @return true or false for slience mode
+    * @return true or false for silence mode
     */
    public boolean getSilent()
    {
@@ -815,7 +815,7 @@ public class Shell
    /**
     * Intrinsic echo command
     *
-    * @param pArguments A string arrary of arguments
+    * @param pArguments A string array of arguments
     *
     * @throws Throwable Throws if echo command is not working
     */
@@ -894,7 +894,7 @@ public class Shell
    }
 
    /**
-    * Intrinsic mkdirs command
+    * Intrinsic "mkdir" command
     *
     * @param pArguments A string array of arguments which is command
     *
