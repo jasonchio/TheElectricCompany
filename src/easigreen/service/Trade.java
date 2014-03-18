@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 /**
- * The trade class contains the information about a specific trade senario.
- * The tradable commodities are budget, market shares, emission credits, and
- * technologies.  These values are plased into trades from the simulator.
+ * The trade class contains the information about a specific trade scenario.
+ * The trade commodities are budget, market shares, emission credits, and
+ * technologies.  These values are placed into trades from the simulator.
  *
  * @see java.util.ArrayList
  *
@@ -17,22 +17,22 @@ public class Trade
     //////////////////// Variables
    
     /**
-     * The budget that has been plased into the trade
+     * The budget that has been placed into the trade
      */
     private int mBudget;
 
     /**
-     * The emission credits that has been plased into the trade
+     * The emission credits that has been placed into the trade
      */
     private int mEmissionCredits;
 
     /**
-     * The market shares that has been plased into the trade
+     * The market shares that has been placed into the trade
      */
     private int mMarketShares;
 
     /**
-     * The budget that has been plased into the trade
+     * The budget that has been placed into the trade
      */
     private ArrayList<Technology> mTechnologies;
 
@@ -50,10 +50,10 @@ public class Trade
     public Trade(int pBudget, int pEmissionCredits, int pMarketShares,
 		 ArrayList<Technology> pTechnologies)
     {
-	mBudget = pBudget;
-	mEmissionCredits = pEmissionCredits;
-	mMarketShares = pMarketShares;
-	mTechnologies = pTechnologies;
+	   mBudget = pBudget;
+	   mEmissionCredits = pEmissionCredits;
+	   mMarketShares = pMarketShares;
+	   mTechnologies = pTechnologies;
     }
 
     //////////////////// Methods
@@ -65,7 +65,7 @@ public class Trade
      */
     public int getBudget()
     {
-	return mBudget;
+	   return mBudget;
     }
 
     /**
@@ -75,7 +75,7 @@ public class Trade
      */
     public int getEmissionCredits()
     {
-	return mEmissionCredits;
+	   return mEmissionCredits;
     }
 
     /**
@@ -85,7 +85,7 @@ public class Trade
      */
     public int getMarketShares()
     {
-	return mMarketShares;
+	   return mMarketShares;
     }
 
     /**
@@ -95,6 +95,6 @@ public class Trade
      */
     public ArrayList<Technology> getTechnologies()
     {
-	return mTechnologies;
+	   return mTechnologies;
     }
 }
