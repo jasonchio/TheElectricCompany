@@ -21,7 +21,7 @@ public class Tester
    {
       game = new Simulator();
 
-      getStats();
+      printStats();
 
       game.addFossil(5);
       game.removeNuclear(4);
