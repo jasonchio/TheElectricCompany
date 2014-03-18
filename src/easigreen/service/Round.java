@@ -13,7 +13,7 @@ import java.util.ArrayList;
  * @author Sam Graham
  * @author Haru McClellan
  */
-public class Simulator
+public class Round
 {
     //////////////////// Variables
    
@@ -123,7 +123,7 @@ public class Simulator
      * Oil and each type of plant is set up.  The system is updated to show the
      * starting values based on no action.
      */
-    public Simulator()
+    public Round()
     {  
 	mNuclear = new NuclearPlant();
 	mFossil = new FossilPlant();

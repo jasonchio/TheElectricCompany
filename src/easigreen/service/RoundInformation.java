@@ -19,7 +19,7 @@ public class RoundInformation
     /**
      * The simulator being stored
      */
-    private Simulator mSimulator;
+    private Round mRound;
 
     //////////////////// Constructors
    
@@ -46,24 +46,24 @@ public class RoundInformation
     }
 
     /**
-     * Get the simulator
+     * Get the round informaion
      *
-     * @return mSimulator
+     * @return mRound the round information
      */
-    public Simulator getSimulator()
+    public Round getRound()
     {
-        return mSimulator;
+        return mRound;
     }
 
     //////////////////// Setters
 
     /**
-     * Set the simulator to and existing one
+     * Set the round information to and existing one
      *
-     * @param pSimulator the existing simulator to be stored
+     * @param pRound the existing round to be stored
      */
-    public void setSimulator(Simulator pSimulator)
+    public void setSimulator(Round pRound)
     {
-	mSimulator = pSimulator;
+	mRound = pRound;
     }
 }

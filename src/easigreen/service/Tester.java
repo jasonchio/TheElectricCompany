@@ -3,7 +3,7 @@ public class Tester
    /**
     * Holds a game
     */
-   private Simulator game;
+   private Round game;
    
    /**
     * Main Class for the tester
@@ -19,7 +19,7 @@ public class Tester
 	*/
    public void run()
    {
-      game = new Simulator();
+      game = new Round();
 
       printStats();
 
@@ -29,7 +29,7 @@ public class Tester
 
       game.update();
 
-      getStats();
+      printStats();
    }
 
    /**
