@@ -25,7 +25,7 @@ public class SimCity
     /**
      * The Suimlators, representing the different rounds and thier changes
      */
-    private ArrayList<Simulator> mName;
+    private ArrayList<Round> mName;
 
     //////////////////// Constructors
 
@@ -36,9 +36,9 @@ public class SimCity
     public SimCity()
     {
 	for(int i = 0; i < 7; i++)
-	    {
-		mName.add(new Simulator());
-	    }
+        {
+            mName.add(new Round());
+        }
     }
 
     //////////////////// Methods
@@ -49,7 +49,12 @@ public class SimCity
      */
     public void run()
     {
-      
+	Technology test1 = new Technology(-10, 2, -20,      // general
+                                          5, 0, 0, 0, 0, 0, // fossil
+                                          5, 0, 0, 0, 0, 0, // nuclear
+                                          0, 0, 0, 0, 0, 0, // renewable
+                                          0, 0, 0);         // oil
+        mName.get(0).applyTechnology(test1);
     }
 
     /**
