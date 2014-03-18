@@ -14,7 +14,7 @@ public class Plant
     //////////////////// Variables
    
     /**
-     * The number of plants
+     * The number of plants  FINNAL
      */
     protected int mAmount;
 
