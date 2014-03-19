@@ -117,7 +117,7 @@ public class Round
     private double mDemandGrowth;
 
     /**
-     * The implemented technologys
+     * The implemented technologies
      */
     private ArrayList<Technology> Techs;
 
@@ -129,10 +129,10 @@ public class Round
      */
     public Round()
     {
-        mNuclear = new NuclearPlant();
-        mFossil = new FossilPlant();
-        mRenewable = new RenewablePlant();
-        mOil = new Oil();
+        mNuclear      = new Nuclear();
+        mFossil       = new Fossil();
+        mRenewable    = new Renewable();
+        mOil          = new Oil();
         mBudget       = 10;
         mPrice        = 11;
         mDemand       = 10;
@@ -229,6 +229,43 @@ public class Round
                        + newTechnology.getOilGrow());
     }
 
+	/**
+	 * Adds a plant
+	 *
+	 * @param pAmount an integer
+	 * @param pPlant a Plant
+	 */
+	private void addPlant(int pAmount, Plant pPlant)
+	{
+	   pPlant.add(pAmount);
+	   
+	   mBudget     -= pPlant.getCostBuild() * amount;
+       mEmissions  += pPlant.getEmissions() * amount;
+       mApproval   += pPlant.getApproval() * amount;
+       mSecurity   += pPlant.getSecurity() * amount;
+       mProduction += pPlant.getProduction() * amount;
+       mProfit     += pPlant.getProfitPercent() * amount;
+	}
+	
+	/**
+	 * Removes a plant
+	 *
+	 * @param pAmount an integer
+	 * @param pPlant a Plant
+	 */
+	private void removePlant(int pAmount, Plant pPlant)
+	{
+	   pPlant.remove(pAmount);
+	   
+	   mBudget     -= pPlant.getCostBuild() * amount;
+       mEmissions  -= pPlant.getEmissions() * amount;
+       mApproval   -= pPlant.getApproval() * amount;
+       mSecurity   -= pPlant.getSecurity() * amount;
+       mProduction -= pPlant.getProduction() * amount;
+       mProfit     -= pPlant.getProfitPercent() * amount;
+	}
+	
+	
     /**
      * This will add fossil plants and calculate changes in the variables
      *
@@ -236,14 +273,7 @@ public class Round
      */
     public void addFossil(int amount)
     {
-        mFossil.add(amount);
-
-        mBudget     -= mFossil.getCostBuild();
-        mEmissions  += mFossil.getEmissions() * amount;
-        mApproval   += mFossil.getApproval() * amount;
-        mSecurity   += mFossil.getSecurity() * amount;
-        mProduction += mFossil.getProduction() * amount;
-        mProfit     += mFossil.getProfitPercent() * amount;
+	   addPlant(amount, mFossil);
     }
 
     /**
@@ -253,14 +283,7 @@ public class Round
      */
     public void removeFossil(int amount)
     {
-        mFossil.remove(amount);
-
-        mBudget     -= mFossil.getCostRemove();
-        mEmissions  -= mFossil.getEmissions() * amount;
-        mApproval   -= mFossil.getApproval() * amount;
-        mSecurity   -= mFossil.getSecurity() * amount;
-        mProduction -= mFossil.getProduction() * amount;
-        mProfit     -= mFossil.getProfitPercent() * amount;
+	   removePlant(amount, mFossil);
     }
 
     /**
@@ -270,14 +293,7 @@ public class Round
      */
     public void addNuclear(int amount)
     {
-        mNuclear.add(amount);
-
-        mBudget     -= mNuclear.getCostBuild();
-        mEmissions  += mNuclear.getEmissions() * amount;
-        mApproval   += mNuclear.getApproval() * amount;
-        mSecurity   += mNuclear.getSecurity() * amount;
-        mProduction += mNuclear.getProduction() * amount;
-        mProfit     += mNuclear.getProfitPercent() * amount;
+        addPlant(amount, mNuclear);
     }
 
     /**
@@ -287,14 +303,7 @@ public class Round
      */
     public void removeNuclear(int amount)
     {
-        mNuclear.remove(amount);
-
-        mBudget     -= mNuclear.getCostRemove();
-        mEmissions  -= mNuclear.getEmissions() * amount;
-        mApproval   -= mNuclear.getApproval() * amount;
-        mSecurity   -= mNuclear.getSecurity() * amount;
-        mProduction -= mNuclear.getProduction() * amount;
-        mProfit     -= mNuclear.getProfitPercent() * amount;
+	   removePlant(amount, mNuclear);
     }
 
     /**
@@ -304,14 +313,7 @@ public class Round
      */
     public void addRenewable(int amount)
     {
-        mRenewable.add(amount);
-
-        mBudget     -= mRenewable.getCostBuild();
-        mEmissions  += mRenewable.getEmissions() * amount;
-        mApproval   += mRenewable.getApproval() * amount;
-        mSecurity   += mRenewable.getSecurity() * amount;
-        mProduction += mRenewable.getProduction() * amount;
-        mProfit     += mRenewable.getProfitPercent() * amount;
+        addPlant(amount, mRenewable);
     }
 
     /**
@@ -321,14 +323,7 @@ public class Round
      */
     public void removeRenewable(int amount)
     {
-        mRenewable.remove(amount);
-
-        mBudget     -= mRenewable.getCostRemove();
-        mEmissions  -= mRenewable.getEmissions() * amount;
-        mApproval   -= mRenewable.getApproval() * amount;
-        mSecurity   -= mRenewable.getSecurity() * amount;
-        mProduction -= mRenewable.getProduction() * amount;
-        mProfit     -= mRenewable.getProfitPercent() * amount;
+        removePlant(amount, mRenewable);
     }
 
     /**
@@ -338,8 +333,8 @@ public class Round
      */
     public void fossilScience(int actions)
     {
-        mFossil.setApproval(mFossil.getApproval() + actions * .5);
-        mFossil.setSecurity(mFossil.getSecurity() + actions * .02);
+        mFossil.setApproval(mFossil.getApproval() + actions * 0.5);
+        mFossil.setSecurity(mFossil.getSecurity() + actions * 0.02);
     }
 
     /**
@@ -349,8 +344,8 @@ public class Round
      */
     public void nuclearScience(int actions)
     {
-        mNuclear.setApproval(mNuclear.getApproval() + actions * .3);
-        mNuclear.setSecurity(mNuclear.getSecurity() + actions * .05);
+        mNuclear.setApproval(mNuclear.getApproval() + actions * 0.3);
+        mNuclear.setSecurity(mNuclear.getSecurity() + actions * 0.05);
     }
 
     /**
@@ -483,7 +478,7 @@ public class Round
     //////////////////// Getters
 
     /**
-     * returns country's name
+     * Returns the Country's name
      *
      * @return mName the country's name
      */
@@ -535,7 +530,7 @@ public class Round
     /**
      * Gets the renewable plants
      *
-     * @retrun mRenewable the renewable plants
+     * @return mRenewable the renewable plants
      */
     public Plant getRenewable()
     {
@@ -545,7 +540,7 @@ public class Round
     /**
      * Gets the oil
      *
-     * @retrun mOil the oil
+     * @return mOil the oil
      */
     public Oil getOil()
     {
