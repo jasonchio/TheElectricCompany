@@ -9,6 +9,7 @@ import easigreen.system.*;
 import java.lang.reflect.*;
 
 import java.util.*;
+import java.util.prefs.*;
 
 import javafx.application.*;
 
@@ -271,5 +272,22 @@ public class GUI
 	 primaryStage.setMinHeight(600);
 	 primaryStage.setMinWidth(600);
 	 primaryStage.setTitle(GAME_NAME);
+    }
+	
+	private void setLocation()
+    {
+       Preferences prefs = Preferences.userNodeForPackage(GUI.class);
+       mPrimaryStage.setX(prefs.getDouble("locationX", 100.0));
+       mPrimaryStage.setY(prefs.getDouble("locationY", 100.0));
+    }
+	
+	/**
+     * Saves the location of the GUI as a user preference.
+     */
+    private void saveLocation()
+    {
+       Preferences prefs = Preferences.userNodeForPackage(GUI.class);
+       prefs.putDouble("locationX", mPrimaryStage.getX());
+       prefs.putDouble("locationY", mPrimaryStage.getY());
     }
 }
