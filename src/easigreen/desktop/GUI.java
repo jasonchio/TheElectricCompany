@@ -76,7 +76,7 @@ public class GUI
     /**
      * Maps strings to the content page it provides
      */
-    private static Map<String, Pane> content;
+    private static Map<String, Pane> mContent;
  
     /**
      * The Primary Stage for this application
@@ -176,8 +176,8 @@ public class GUI
 	   {
 	       public void handle(ActionEvent event)
 	       {
-		   windowArea.setRight(subNavigation.get(nav));
-		   windowArea.setCenter(content.get(nav));
+             windowArea.setRight(subNavigation.get(nav));
+             windowArea.setCenter(mContent.get(nav));
 	       }
 	   });
 	}
@@ -186,11 +186,11 @@ public class GUI
 	{
 	    for (final String subNavName : subNavNames[navNumber])
 	    {
-		events.put(subNavName, new EventHandler<ActionEvent>()
+          events.put(subNavName, new EventHandler<ActionEvent>()
 			   {
 			       public void handle(ActionEvent event)
 			       {
-				   windowArea.setCenter(content.get(subNavName));
+                   windowArea.setCenter(mContent.get(subNavName));
 			       }
 			   });
 	    }
@@ -220,45 +220,31 @@ public class GUI
 
     private void initializeContent()
     {
-	content = new HashMap<String, Pane>();
-	/**	String currentClass = "";
-	try
-	{
-	    for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
-	    {
-		currentClass = mainClassNames[navNumber];
-		Constructor mainConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
-		content.put(mainNavNames[navNumber], (GridPane) mainConstruct.newInstance(model));
-		for (int subNavNum = 0; subNavNum < subNavNames[navNumber].length; subNavNum++)
-		{
-		    currentClass = subClassNames[navNumber][subNavNum];
-		    Constructor subConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
-		    content.put(subNavNames[navNumber][subNavNum], (GridPane) subConstruct.newInstance(model));
-		}
-	    }
-	}
-	catch (Exception e)
-	{
-	    System.out.println("Fatal Error: " + currentClass + " class not found");
-	    exit();
-	    }*/
-        content.put("country"           , new CountryPane(model));
-	content.put("energy"            , new EnergyPane(model));
-	content.put("upgrades"          , new UpgradesPane(model));
-	content.put("goals"             , new GoalsPane(model));
-	content.put("world"             , new WorldPane(model));
-	content.put("politicalresources", new PoliticalPane(model));
-	content.put("trade"             , new TradePane(model));
-	content.put("nuclear"           , new NuclearPane(model));
-	content.put("fossilfuel"        , new FossilPane(model));
-	content.put("renewable"         , new RenewablePane(model));
-	content.put("oil"               , new OilPane(model));
-	content.put("science"           , new SciencePane(model));
-	content.put("engineering"       , new EngineeringPane(model));
-	content.put("policies"          , new PoliciesPane(model));
-	content.put("technologies1"     , new TechnologiesPane(model));
-	content.put("shortterm"         , new ShortTermPane(model));
-	content.put("longterm"          , new LongTermPane(model));
+       mContent = new HashMap<String, Pane>();
+       String currentClass = "";
+       try
+       {
+          for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
+          {
+             String packagePrefix = getClass().getName();
+             int lastDotIndex = packagePrefix.lastIndexOf('.');
+             packagePrefix = packagePrefix.substring(0, lastDotIndex + 1);
+             currentClass = packagePrefix + mainClassNames[navNumber];
+             Constructor mainConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
+             mContent.put(mainNavNames[navNumber], (GridPane) mainConstruct.newInstance(model));
+             for (int subNavNum = 0; subNavNum < subNavNames[navNumber].length; subNavNum++)
+             {
+                currentClass = packagePrefix + subClassNames[navNumber][subNavNum];
+                Constructor subConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
+                mContent.put(subNavNames[navNumber][subNavNum], (GridPane) subConstruct.newInstance(model));
+             }
+          }
+       }
+       catch (Exception e)
+       {
+          System.out.println("Fatal Error: " + currentClass + " class not found");
+          exit();
+       }
     }
 
     /**
