@@ -12,6 +12,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
@@ -32,6 +33,14 @@ public class NewTradePane
     public NewTradePane(SimCity pModel)
    {
        model = pModel;
-       add(new Label("New Trade"), 0, 0);
+       setup();
    }
+
+    private void setup()
+    {
+        Label title = new Label("New Trade");
+	title.setFont(new Font("Arial", 40));
+        setHalignment(title, HPos.CENTER);
+        add(title, 0, 0);
+    }
 }

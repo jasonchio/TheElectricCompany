@@ -12,6 +12,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
@@ -32,6 +33,14 @@ public class ShortTermPane
     public ShortTermPane(SimCity pModel)
    {
        model = pModel;
-       add(new Label("Short Term Goals"), 0, 0);
+       setup();
    }
+
+    private void setup()
+    {
+        Label title = new Label("Short Term Goals");
+	title.setFont(new Font("Arial", 40));
+        setHalignment(title, HPos.CENTER);
+        add(title, 0, 0);
+    }
 }

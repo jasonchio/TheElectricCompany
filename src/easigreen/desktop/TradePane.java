@@ -12,6 +12,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
@@ -35,12 +36,15 @@ public class TradePane
    {
        model = pModel;
        newTradePane = new NewTradePane(model);
-       setUp();
+       setup();
    }
 
-    private void setUp()
+    private void setup()
     {
 	Label  title = new Label("Trade");
+	title.setFont(new Font("Arial", 40));
+        setHalignment(title, HPos.CENTER);
+
 	Button newTrade = new Button("New Trade");
 	newTrade.setOnAction(new EventHandler<ActionEvent>()
 			     {

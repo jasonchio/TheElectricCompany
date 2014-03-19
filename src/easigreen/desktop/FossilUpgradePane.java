@@ -12,6 +12,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
@@ -32,6 +33,14 @@ public class FossilUpgradePane
     public FossilUpgradePane(SimCity pModel)
    {
        model = pModel;
-       add(new Label("Fossil Fuel Upgrades"), 0, 0);
+       setup();
    }
+
+    private void setup()
+    {
+        Label title = new Label("Fossil Fuel Upgrades");
+        title.setFont(new Font("Arial", 40));
+        setHalignment(title, HPos.CENTER);
+	add(title, 0, 0);
+    }
 }
