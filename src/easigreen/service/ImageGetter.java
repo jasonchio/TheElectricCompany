@@ -1,9 +1,7 @@
 package easigreen.service;
 
 import easigreen.system.*;
-
 import java.io.*;
-
 import javafx.scene.image.Image;
 
 /**

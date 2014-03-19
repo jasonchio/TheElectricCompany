@@ -1,7 +1,6 @@
 package easigreen.service;
 
 import easigreen.system.*;
-
 import java.util.ArrayList;
 
 /**
@@ -25,7 +24,7 @@ public class SimCity
      * The round number
      */
     private int mRound;
-   
+
     /**
      * The Simulators, representing the different rounds and thier changes
      */
@@ -39,9 +38,9 @@ public class SimCity
      */
     public SimCity()
     {
-	// This is throwing a null pointer exception right now, and I need
-	// This class for testing purposes.
-	//for(int i = 0; i < 7; i++)
+        // This is throwing a null pointer exception right now, and I need
+        // This class for testing purposes.
+        //for(int i = 0; i < 7; i++)
         //{
         //    mName.add(new Round());
         //}
@@ -55,7 +54,7 @@ public class SimCity
      */
     public void run()
     {
-	Technology test1 = new Technology(-10, 2, -20,      // general
+        Technology test1 = new Technology(-10, 2, -20,      // general
                                           5, 0, 0, 0, 0, 0, // fossil
                                           5, 0, 0, 0, 0, 0, // nuclear
                                           0, 0, 0, 0, 0, 0, // renewable
@@ -68,13 +67,12 @@ public class SimCity
      */
     public void forecast()
     {
-	for(int i = mRound; i < 7; i++)
-	    {
-		mName.get(i).getFossil().add(
-					     mName.get(i).getFossil().getAmount());
-						   //+ display.getFossilAmountChange);
-		// and so on...
-	    }
+        for(int i = mRound; i < 7; i++) {
+            mName.get(i).getFossil().add(
+                mName.get(i).getFossil().getAmount());
+            //+ display.getFossilAmountChange);
+            // and so on...
+        }
     }
 
     /**
@@ -82,6 +80,6 @@ public class SimCity
      */
     public static void main(String[] args)
     {
-	new SimCity().run();
+        new SimCity().run();
     }
 }

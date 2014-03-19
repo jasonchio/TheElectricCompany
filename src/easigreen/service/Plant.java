@@ -16,7 +16,7 @@ import easigreen.system.*;
 public class Plant
 {
     //////////////////// Variables
-   
+
     /**
      * The number of plants  FINNAL
      */
@@ -64,14 +64,14 @@ public class Plant
      */
     public Plant()
     {
-	mAmount        = 0;
-	mCostBuild     = 0;
-	mCostRemove    = 0;
-	mApproval      = 0;
-	mProduction    = 0;
-	mEmissions     = 0;
-	mSecurity      = 0;
-	mProfitPercent = 0;
+        mAmount        = 0;
+        mCostBuild     = 0;
+        mCostRemove    = 0;
+        mApproval      = 0;
+        mProduction    = 0;
+        mEmissions     = 0;
+        mSecurity      = 0;
+        mProfitPercent = 0;
     }
 
     /**
@@ -87,17 +87,17 @@ public class Plant
      * @param pProfitPercent the profit made with each unit
      */
     public Plant(int pAmount, double pCostBuild, double pCostRemove,
-		 double pApproval, double pProduction, double pEmissions,
-		 double pSecurity, double pProfitPercent)
+                 double pApproval, double pProduction, double pEmissions,
+                 double pSecurity, double pProfitPercent)
     {
-	mAmount = pAmount;
-	mCostBuild = pCostBuild;
-	mCostRemove = pCostRemove;
-	mApproval = pApproval;
-	mProduction = pProduction;
-	mEmissions = pEmissions;
-	mSecurity = pSecurity;
-	mProfitPercent = pProfitPercent;
+        mAmount = pAmount;
+        mCostBuild = pCostBuild;
+        mCostRemove = pCostRemove;
+        mApproval = pApproval;
+        mProduction = pProduction;
+        mEmissions = pEmissions;
+        mSecurity = pSecurity;
+        mProfitPercent = pProfitPercent;
     }
 
     //////////////////// Methods
@@ -109,7 +109,7 @@ public class Plant
      */
     public void add(int pAmount)
     {
-	mAmount += pAmount;
+        mAmount += pAmount;
     }
 
     /**
@@ -119,15 +119,12 @@ public class Plant
      */
     public boolean remove(int pAmount)
     {
-	if (mAmount - pAmount >= 0)
-	    {
-		mAmount -= pAmount;
-		return true;
-	    }
-	else
-	    {
-		return false;
-	    }
+        if (mAmount - pAmount >= 0) {
+            mAmount -= pAmount;
+            return true;
+        } else {
+            return false;
+        }
     }
 
     /**
@@ -137,7 +134,7 @@ public class Plant
      */
     public int getAmount()
     {
-	return mAmount;
+        return mAmount;
     }
 
     /**
@@ -147,7 +144,7 @@ public class Plant
      */
     public double getCostBuild()
     {
-	return mCostBuild;
+        return mCostBuild;
     }
 
     /**
@@ -157,7 +154,7 @@ public class Plant
      */
     public double getCostRemove()
     {
-	return mCostRemove;
+        return mCostRemove;
     }
 
     /**
@@ -167,7 +164,7 @@ public class Plant
      */
     public double getApproval()
     {
-	return mApproval;
+        return mApproval;
     }
 
     /**
@@ -177,7 +174,7 @@ public class Plant
      */
     public double getProduction()
     {
-	return mProduction;
+        return mProduction;
     }
 
     /**
@@ -187,7 +184,7 @@ public class Plant
      */
     public double getEmissions()
     {
-	return mEmissions;
+        return mEmissions;
     }
 
     /**
@@ -197,7 +194,7 @@ public class Plant
      */
     public double getSecurity()
     {
-	return mSecurity;
+        return mSecurity;
     }
 
     /**
@@ -207,7 +204,7 @@ public class Plant
      */
     public double getProfitPercent()
     {
-	return mProfitPercent;
+        return mProfitPercent;
     }
 
     /**
@@ -217,7 +214,7 @@ public class Plant
      */
     public void setCostBuild(double pCostBuild)
     {
-	mCostBuild = pCostBuild;
+        mCostBuild = pCostBuild;
     }
 
     /**
@@ -227,7 +224,7 @@ public class Plant
      */
     public void setCostRemove(double pCostRemove)
     {
-	mCostRemove = pCostRemove;
+        mCostRemove = pCostRemove;
     }
 
     /**
@@ -237,7 +234,7 @@ public class Plant
      */
     public void setApproval(double pApproval)
     {
-	mApproval = pApproval;
+        mApproval = pApproval;
     }
 
     /**
@@ -247,7 +244,7 @@ public class Plant
      */
     public void setProduction(double pProduction)
     {
-	mProduction = pProduction;
+        mProduction = pProduction;
     }
 
     /**
@@ -257,7 +254,7 @@ public class Plant
      */
     public void setEmissions(double pEmissions)
     {
-	mEmissions = pEmissions;
+        mEmissions = pEmissions;
     }
 
     /**
@@ -267,7 +264,7 @@ public class Plant
      */
     public void setSecurity(double pSecurity)
     {
-	mSecurity = pSecurity;
+        mSecurity = pSecurity;
     }
 
     /**
@@ -277,6 +274,6 @@ public class Plant
      */
     public void setProfitPercent(double pProfitPercent)
     {
-	mProfitPercent = pProfitPercent;
+        mProfitPercent = pProfitPercent;
     }
 }

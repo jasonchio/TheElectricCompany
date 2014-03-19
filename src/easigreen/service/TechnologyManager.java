@@ -20,9 +20,9 @@ public class TechnologyManager
     private ArrayList<Technology> implemented;
 
     /**
-     * The avalible technologies
+     * The available technologies
      */
-    private ArrayList<Technology> avalible;
+    private ArrayList<Technology> available;
 
     /**
      * All of the technologies  
@@ -42,13 +42,13 @@ public class TechnologyManager
     }
 
     /**
-     * Gets the avalible technologies
+     * Gets the available technologies
      *
-     * @return avalible the avalible technologies
+     * @return available the available technologies
      */
     public ArrayList<Technology> getAvalible()
     {
-        return avalible;
+        return available;
     }
 
     /**
@@ -74,13 +74,13 @@ public class TechnologyManager
     }
 
     /**
-     * Sets the avalible technologies
+     * Sets the available technologies
      *
-     * @param pAvalible the new avalible technologies
+     * @param pAvalible the new available technologies
      */
-    public void setAvalible(ArrayList<Technology> pAvalible)
+    public void setAvalible(ArrayList<Technology> pavailable)
     {
-        avalible = pAvalible;
+        available = pAvailable;
     }
 
     /**

@@ -22,7 +22,7 @@ public class RoundInformation
     private Round mRound;
 
     //////////////////// Constructors
-   
+
     /**
      * Sets round number to a specified value.
      *
@@ -42,7 +42,7 @@ public class RoundInformation
      */
     public int getRoundNumber()
     {
-	return mRoundNumber;
+        return mRoundNumber;
     }
 
     /**
@@ -64,6 +64,6 @@ public class RoundInformation
      */
     public void setSimulator(Round pRound)
     {
-	mRound = pRound;
+        mRound = pRound;
     }
 }
