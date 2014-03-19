@@ -1,3 +1,8 @@
+
+package easigreen.service;
+
+import easigreen.system.*;
+
 /**
  * This class contains the default values for an unmodified fossil plant.  It
  * will assign these values unless they are passed into the constructor.

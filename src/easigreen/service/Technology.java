@@ -1,3 +1,7 @@
+package easigreen.service;
+
+import easigreen.system.*;
+
 /**
  * The technology class contains the information about what will be changed
  * when it is implemented.
