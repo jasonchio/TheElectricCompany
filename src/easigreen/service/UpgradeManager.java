@@ -227,7 +227,7 @@ public class UpgradeManager
     /**
      * Gets the oil
      *
-     * @retrun mOil the oil
+     * @return mOil the oil
      */
     public Oil getOil()
     {

@@ -78,7 +78,7 @@ public class TechnologyManager
     /**
      * Sets the available technologies
      *
-     * @param pAvalible the new available technologies
+     * @param pAvailable the new available technologies
      */
     public void setAvalible(ArrayList<Technology> pAvailable)
     {
@@ -88,7 +88,7 @@ public class TechnologyManager
     /**
      * Sets all technologies
      *
-     * @return all all of the new technologies
+     * @param pAll all of the new technologies
      */
     public void setAll(ArrayList<Technology> pAll)
     {
