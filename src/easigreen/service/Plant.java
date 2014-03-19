@@ -8,7 +8,7 @@ import easigreen.system.*;
  * each one, and the impacts that it will have on the short-term and long-term
  * goals.
  *
- * @version 0.1.1
+ * @version 0.1.5
  * @author Larson Caldwell
  * @author Sam Graham
  * @author Haru McClellan
@@ -18,7 +18,7 @@ public class Plant
     //////////////////// Variables
 
     /**
-     * The number of plants  FINNAL
+     * The number of plants
      */
     protected int mAmount;
 
@@ -100,7 +100,7 @@ public class Plant
         mProfitPercent = pProfitPercent;
     }
 
-    //////////////////// Methods
+    //////////////////// Getters
 
     /**
      * New plants are added.
@@ -205,75 +205,5 @@ public class Plant
     public double getProfitPercent()
     {
         return mProfitPercent;
-    }
-
-    /**
-     * Sets the cost to build each plant
-     *
-     * @param pCostBuild the new cost to build each plant
-     */
-    public void setCostBuild(double pCostBuild)
-    {
-        mCostBuild = pCostBuild;
-    }
-
-    /**
-     * Sets the cost to remove each plant
-     *
-     * @param pCostRemove the new cost to remove each plant
-     */
-    public void setCostRemove(double pCostRemove)
-    {
-        mCostRemove = pCostRemove;
-    }
-
-    /**
-     * Sets the approval rating of each plant
-     *
-     * @param pApproval the new approval rating of each plant
-     */
-    public void setApproval(double pApproval)
-    {
-        mApproval = pApproval;
-    }
-
-    /**
-     * Sets the power production of each plant
-     *
-     * @param pProduction the new power production of each plant
-     */
-    public void setProduction(double pProduction)
-    {
-        mProduction = pProduction;
-    }
-
-    /**
-     * Sets the emissions of each plant
-     *
-     * @param pEmissions the new emissions of each plant
-     */
-    public void setEmissions(double pEmissions)
-    {
-        mEmissions = pEmissions;
-    }
-
-    /**
-     * Sets the security rating of each plant
-     *
-     * @param pSecurity the new security rating of each plant
-     */
-    public void setSecurity(double pSecurity)
-    {
-        mSecurity = pSecurity;
-    }
-
-    /**
-     * Sets the profit of each plant
-     *
-     * @param pProfit the new profit of each plant
-     */
-    public void setProfitPercent(double pProfitPercent)
-    {
-        mProfitPercent = pProfitPercent;
-    }
+    }   
 }
