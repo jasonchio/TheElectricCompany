@@ -25,6 +25,8 @@ public class TradePane
     */
    private SimCity model = null;
 
+    private Pane newTradePane;
+
    /**
     * Constructor
     * @param SimCity pModel the current sim city Model
@@ -32,6 +34,22 @@ public class TradePane
     public TradePane(SimCity pModel)
    {
        model = pModel;
-       add(new Label("Trade"), 0, 0);
+       newTradePane = new NewTradePane(model);
+       setUp();
    }
+
+    private void setUp()
+    {
+	Label  title = new Label("Trade");
+	Button newTrade = new Button("New Trade");
+	newTrade.setOnAction(new EventHandler<ActionEvent>()
+			     {
+				 public void handle(ActionEvent event)
+				 {
+				     GUI.getInstance().getWindow().setCenter(newTradePane);
+				 }
+			     });
+	add(title, 0, 0);
+	add(newTrade, 0, 1);
+    }
 }
