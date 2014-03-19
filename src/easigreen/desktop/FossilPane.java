@@ -12,6 +12,7 @@ import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
+import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
@@ -35,12 +36,15 @@ public class FossilPane
    {
        model = pModel;
        fossilUpgradesPane = new FossilUpgradePane(model);
-       setUp();
+       setup();
    }
 
-    private void setUp()
+    private void setup()
     {
         Label  title = new Label("Fossil Fuel");
+	title.setFont(new Font("Arial", 40));
+        setHalignment(title, HPos.CENTER);
+
         EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
 	{
 	    public void handle(ActionEvent event)
