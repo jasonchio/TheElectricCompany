@@ -25,6 +25,8 @@ public class RenewablePane
     */
    private SimCity model = null;
 
+    private Pane renewableUpgradesPane;
+
    /**
     * Constructor
     * @param SimCity pModel the current sim city Model
@@ -32,6 +34,24 @@ public class RenewablePane
     public RenewablePane(SimCity pModel)
    {
        model = pModel;
-       add(new Label("Renewable"), 0, 0);
+       renewableUpgradesPane = new RenewableUpgradePane(model);
+       setUp();
    }
+
+    private void setUp()
+    {
+        Label  title = new Label("Renewable");
+        EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
+	{
+	    public void handle(ActionEvent event)
+	    {
+		GUI.getInstance().getWindow().setCenter(renewableUpgradesPane);
+	    }
+	};
+        Button renewableUpgrades = new ImageButton("renewableupgrade.png", upgradeEvent);
+
+        add(title, 0, 0);
+        add(renewableUpgrades, 0, 1);
+    }
+
 }
