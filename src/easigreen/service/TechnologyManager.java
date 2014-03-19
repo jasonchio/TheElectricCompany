@@ -75,6 +75,11 @@ public class TechnologyManager
         implemented = pImplemented;
     }
 
+    public void implementTechnology(Technology pTech)
+    {
+	implemented.add(pTech);
+    }
+
     /**
      * Sets the available technologies
      *
@@ -83,6 +88,11 @@ public class TechnologyManager
     public void setAvalible(ArrayList<Technology> pAvailable)
     {
         available = pAvailable;
+    }
+
+    public void addTechnology(Technology pTech)
+    {
+	available.add(pTech);
     }
 
     /**

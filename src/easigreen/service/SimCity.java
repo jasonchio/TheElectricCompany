@@ -63,15 +63,13 @@ public class SimCity
      */
     public void run()
     {
-	mEnergyManager = new EnergyManager(mUpgradeManager, new Nuclear(),
-                                           new Fossil(), new Renewable(), 
-                                           new Oil());
 	mResourceManager = new ResourceManager();
-        mUpgradeManager = new UpgradeManager();
+	mUpgradeManager = new UpgradeManager(mResourceManager);
+	mEnergyManager = new EnergyManager(mUpgradeManager);
 	mGoalManager = new GoalManager(mEnergyManager, mResourceManager,
                                        mUpgradeManager);
 	mWorldManager = new WorldManager();
-	mTradeManager = new TradeManager(new TechnologyManager(), 
+	mTradeManager = new TradeManager(mUpgradeManager.getTechnologyManager(), 
                                          mResourceManager);
     }
 

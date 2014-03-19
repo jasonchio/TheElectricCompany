@@ -12,7 +12,7 @@ import easigreen.system.*;
  * @author Haru McClellan
  */
 public class Fossil
-    extends Plant
+    extends Energy
 {
     //////////////////// Constructors
 
@@ -29,24 +29,5 @@ public class Fossil
         mEmissions = 2;
         mSecurity = .09;
         mProfitPercent = 45;
-    }
-
-    /**
-     * Sets passed values to a fossil plant.
-     *
-     * @param pAmount number of plants
-     * @param pCost cost of each new plant
-     * @param pApproval approval rating per unit
-     * @param pProduction power production per unit
-     * @param pEmissions emissions produced per unit
-     * @param pSecurity the security of each unit
-     * @param pProfitPercent the profit made with each unit
-     */
-    public Fossil(int pAmount, double pCostBuild, double pCostRemove,
-                  double pApproval, double pProduction, double pEmissions,
-                  double pSecurity, double pProfitPercent)
-    {
-        super (pAmount, pCostBuild, pCostRemove, pApproval, pProduction,
-               pEmissions, pSecurity, pProfitPercent);
     }
 }

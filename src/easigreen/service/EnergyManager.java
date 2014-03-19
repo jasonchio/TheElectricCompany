@@ -37,13 +37,12 @@ public class EnergyManager
 	 */
 	private Oil mOil;
 	
-	public EnergyManager(UpgradeManager pUpgradeManager, Nuclear pNuclear, 
-	                     Fossil pFossil, Renewable pRenewable, Oil pOil)
+	public EnergyManager(UpgradeManager pUpgradeManager)
 	{
-	   mUpgradeManager = pUpgradeManager;
-	   mNuclear        = pNuclear;
-	   mFossil         = pFossil;
-	   mRenewable      = pRenewable;
-	   mOil            = pOil;
+           mUpgradeManager = pUpgradeManager;
+	   mNuclear        = new Nuclear();
+	   mFossil         = new Fossil();
+	   mRenewable      = new Renewable();
+	   mOil            = new Oil();
 	}
 }
