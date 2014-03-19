@@ -25,6 +25,8 @@ public class OilPane
     */
    private SimCity model = null;
 
+    private Pane oilUpgradesPane;
+
    /**
     * Constructor
     * @param SimCity pModel the current sim city Model
@@ -32,6 +34,24 @@ public class OilPane
     public OilPane(SimCity pModel)
    {
        model = pModel;
-       add(new Label("Oil"), 0, 0);
+       oilUpgradesPane = new OilUpgradePane(model);
+       setUp();
    }
+
+    private void setUp()
+    {
+        Label  title = new Label("Oil");
+        EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
+	{
+	    public void handle(ActionEvent event)
+	    {
+		GUI.getInstance().getWindow().setCenter(oilUpgradesPane);
+	    }
+	};
+        Button oilUpgrades = new ImageButton("oilupgrade.png", upgradeEvent);
+
+        add(title, 0, 0);
+        add(oilUpgrades, 0, 1);
+    }
+
 }
