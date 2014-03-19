@@ -1,11 +1,9 @@
-import java.util.ArrayList;
+package easigreen.service;
 
 /**
  * The Trade Manager class.
  *
- * @see java.util.ArrayList
- *
- * @version 0.1.2
+ * @version 0.1.1
  * @author Larson Caldwell
  * @author Sam Graham
  * @author Haru McClellan
@@ -23,6 +21,12 @@ public class TradeManager
      * The resource manager
      */
     private ResourceManager mResourceManager;
+	
+	public TradeManager(TechnologyManager pTechnologyManager, ResourceManager pResourceManager)
+	{
+	   mTechnologyManager = pTechnologyManager;
+	   mResourceManager   = pResourceManager;
+	}
 
     //////////////////// Getters
 

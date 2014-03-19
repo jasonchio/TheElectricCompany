@@ -22,17 +22,17 @@ public class UpgradeManager
     //////////////////// Variables
 
     /**
-     * The fossil plants
+     * The fossil plant object
      */
     private Plant mFossil;
 
     /**
-     * The nuclear plants
+     * The nuclear plant object
      */
     private Plant mNuclear;
 
     /**
-     * The renewable plants
+     * The renewable plant object
      */
     private Plant mRenewable;
 
@@ -101,8 +101,8 @@ public class UpgradeManager
     private int oilDrilling;
     private int lobby;
     private int priceChange;
-    //private TechnologyManager mTechnologyManager;
-    //private RecourceManager mRecourceManager;
+    private TechnologyManager mTechnologyManager;
+    private ResourceManager mResourceManager;
 
     //////////////////// Methods
 
