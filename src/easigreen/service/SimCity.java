@@ -1,3 +1,7 @@
+package easigreen.service;
+
+import easigreen.system.*;
+
 import java.util.ArrayList;
 
 /**
@@ -35,10 +39,12 @@ public class SimCity
      */
     public SimCity()
     {
-	for(int i = 0; i < 7; i++)
-        {
-            mName.add(new Round());
-        }
+	// This is throwing a null pointer exception right now, and I need
+	// This class for testing purposes.
+	//for(int i = 0; i < 7; i++)
+        //{
+        //    mName.add(new Round());
+        //}
     }
 
     //////////////////// Methods

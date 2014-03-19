@@ -1,3 +1,8 @@
+
+package easigreen.service;
+
+import easigreen.system.*;
+
 /**
  * The oil class contains information about the current oil status.  This
  * includes oil security, consumption and emissions.  These values can be

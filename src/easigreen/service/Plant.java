@@ -1,3 +1,7 @@
+package easigreen.service;
+
+import easigreen.system.*;
+
 /**
  * The Plant class contains information that each different type of plant will
  * use.  It will contain the number of a particular type of plant, the cost for

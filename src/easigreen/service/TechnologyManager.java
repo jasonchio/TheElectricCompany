@@ -1,8 +1,11 @@
+import java.util.ArrayList;
+
 /**
- * This is the manager for the technology classes
+ * The Trade Manager class.
  *
+ * @see java.util.ArrayList
  *
- * @version 0.1.0
+ * @version 0.1.2
  * @author Larson Caldwell
  * @author Sam Graham
  * @author Haru McClellan
@@ -12,21 +15,81 @@ public class TechnologyManager
     //////////////////// Variables
 
     /**
-     * Daily consumption of oil
+     * The implemented technologies
      */
-    private List<Technology> mImplemented;
+    private ArrayList<Technology> implemented;
 
     /**
-     * Security rating of oil
+     * The avalible technologies
      */
-    private List<Technology> mAvailable;
+    private ArrayList<Technology> avalible;
 
     /**
-     * Oil growth per round
+     * All of the technologies  
      */
-    private List<Technology> mAll;
+    private ArrayList<Technology> all;
 
-    //////////////////// Constructors
+    //////////////////// Getters
 
-    
+    /**
+     * Gets the implemented technologies
+     *
+     * @return implemented the implemented technologies
+     */
+    public ArrayList<Technology> getImplemented()
+    {
+	return implemented;
+    }
+
+    /**
+     * Gets the avalible technologies
+     *
+     * @return avalible the avalible technologies
+     */
+    public ArrayList<Technology> getAvalible()
+    {
+        return avalible;
+    }
+
+    /**
+     * Gets all technologies
+     *
+     * @return all all of the technologies
+     */
+    public ArrayList<Technology> getAll()
+    {
+        return all;
+    }
+
+    //////////////////// Setters
+
+    /**
+     * Sets the implemented technologies
+     *
+     * @param pImplemented the new implemented technologies
+     */
+    public void setImplemented(ArrayList<Technology> pImplemented)
+    {
+        implemented = pImplemented;
+    }
+
+    /**
+     * Sets the avalible technologies
+     *
+     * @param pAvalible the new avalible technologies
+     */
+    public void setAvalible(ArrayList<Technology> pAvalible)
+    {
+        avalible = pAvalible;
+    }
+
+    /**
+     * Sets all technologies
+     *
+     * @return all all of the new technologies
+     */
+    public void setAll(ArrayList<Technology> pAll)
+    {
+        all = pAll;
+    }
 }
