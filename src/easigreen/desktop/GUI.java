@@ -1,28 +1,20 @@
 package easigreen.desktop;
 
 import easigreen.desktop.*;
-
 import easigreen.service.*;
-
 import easigreen.system.*;
 
 import java.lang.reflect.*;
-
 import java.util.*;
 import java.util.prefs.*;
 
 import javafx.application.*;
-
-
 import javafx.event.*;
-
 import javafx.geometry.*;
-
 import javafx.scene.*;
 import javafx.scene.control.*;
 import javafx.scene.image.*;
 import javafx.scene.layout.*;
-
 import javafx.stage.*;
 
 /**
@@ -62,6 +54,8 @@ public class GUI
 								      "PoliciesPane", "TechnologiesPane"},
 								     {"ShortTermPane", "LongTermPane"}};
 
+    
+
     private SimCity model;
     
    /**
@@ -84,6 +78,11 @@ public class GUI
      */
     private static Map<String, GridPane> content;
  
+    /**
+     * The Primary Stage for this application
+     */
+    private Stage mPrimaryStage;
+
     /**
      * Contains the primary layout for the application.
      */
@@ -116,8 +115,10 @@ public class GUI
    @Override
    public void start(Stage primaryStage)
    {
-      initialize(primaryStage);
-      primaryStage.show();
+       mPrimaryStage = primaryStage;
+       setLocation();
+       initialize();
+       mPrimaryStage.show();
    }
 
    /**
@@ -125,6 +126,7 @@ public class GUI
     */
    public void exit()
    {
+      saveLocation();
       Action.showAll();
       Platform.exit();
       System.exit(0);
@@ -135,14 +137,14 @@ public class GUI
     *
     * @param primaryStage the primary stage.
     */
-   private void initialize(Stage primaryStage)
+   private void initialize()
    {
       initializeModel();
       initializeEvents();
       initializeNavigation();
       initializeContent();
       initializeWindow();
-      initializeStage(primaryStage);
+      initializeStage();
    }
 
     /**
@@ -266,22 +268,40 @@ public class GUI
      *
      * @param primaryStage the primary Stage.
      */
-    private void initializeStage(Stage primaryStage)
+    private void initializeStage()
     {
-	 primaryStage.setScene(new Scene(windowArea));
-	 primaryStage.setMinHeight(600);
-	 primaryStage.setMinWidth(600);
-	 primaryStage.setTitle(GAME_NAME);
+	 mPrimaryStage.setScene(new Scene(windowArea));
+	 mPrimaryStage.setMinHeight(600);
+	 mPrimaryStage.setMinWidth(600);
+	 mPrimaryStage.setTitle(GAME_NAME);
+	 setCloseOperation();
     }
-	
-	private void setLocation()
+
+    /**
+     * Sets the exit button to use exit method to exit
+     */
+    private void setCloseOperation()
+    {
+	mPrimaryStage.setOnCloseRequest(new EventHandler<WindowEvent>()
+					{
+					    public void handle(WindowEvent event)
+					    {
+						exit();
+					    }
+					});
+    }
+    
+    /**
+     * Sets the location of the window
+     */
+    private void setLocation()
     {
        Preferences prefs = Preferences.userNodeForPackage(GUI.class);
        mPrimaryStage.setX(prefs.getDouble("locationX", 100.0));
        mPrimaryStage.setY(prefs.getDouble("locationY", 100.0));
     }
 	
-	/**
+     /**
      * Saves the location of the GUI as a user preference.
      */
     private void saveLocation()
