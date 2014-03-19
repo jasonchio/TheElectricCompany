@@ -30,3 +30,25 @@ Next Weeks Goals
 
     Completely finish user interface design without missing anything.
     Start coding user interface
+
+Mar 12 - 17
+Accomplishments
+
+    37.2 Hours
+      Finished user interface design
+      Finished creating graphics for user interface
+      Got signatures for design document
+      Set up PDE
+      Finished implementing navigation
+      Worked on model
+      Created classes for content panes
+      Confirmed approval from sponsor
+      
+Next Weeks Goals
+
+    Finish user interface implementation
+    Finish model
+    
+Questions
+
+    I can't figure out how to dynamically load a class from inside a jar
