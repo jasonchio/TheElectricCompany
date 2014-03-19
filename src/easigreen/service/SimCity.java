@@ -19,7 +19,17 @@ import java.util.ArrayList;
 public class SimCity
 {
     //////////////////// Variables
-
+    
+	/**
+	 * Manager for the energy
+	 */
+	private EnergyManager mEnergyManager;
+	
+	/**
+	 * Manager for the upgrades.
+	 */
+	private UpgradeManager mUpgradeManager;
+	
     /**
      * The round number
      */

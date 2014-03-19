@@ -22,7 +22,14 @@ public class TradeManager
      */
     private ResourceManager mResourceManager;
 	
-	public TradeManager(TechnologyManager pTechnologyManager, ResourceManager pResourceManager)
+	/**
+	 * The Constructor for this class
+	 *
+	 * @param pTechnologyManager the technology manager
+	 * @param pResourceManager   the resource manager
+	 */
+	public TradeManager(TechnologyManager pTechnologyManager, 
+	                    ResourceManager pResourceManager)
 	{
 	   mTechnologyManager = pTechnologyManager;
 	   mResourceManager   = pResourceManager;

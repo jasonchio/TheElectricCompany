@@ -1,12 +1,5 @@
-import java.util.ArrayList;
-
 /**
- * The Simulator class contains information that each different type of plant
- * will use.  It will contain the number of a particular type of plant, the
- * cost for each one, and the impacts that it will have on the short-term and
- * long-term goals.
- *
- * @see java.util.ArrayList
+ * The ResourceManager Manages Resources
  *
  * @version 0.1.2
  * @author Larson Caldwell
