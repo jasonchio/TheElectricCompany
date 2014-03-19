@@ -22,7 +22,7 @@ Accomplishments
     10 hours
         Talking with group about project.
         Meeting with sponsor.
-        Research into ways of storung data
+        Research into ways of storing data
         Some basic stub code
         Finish Design Document
 
@@ -33,3 +33,17 @@ Next Week's Goals
 
 Questions
     What is the best way to implement somthing that might be extra or unsure?
+    
+Mar 12-18
+Accomplishments
+
+    10.2 hours
+        Meet with sponsor.
+        Researched into Equella
+        Wrote some new classes
+        Meet over design
+
+Next Week's Goals
+
+    Finish data model
+
