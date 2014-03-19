@@ -16,7 +16,7 @@ import java.util.ArrayList;
  * @author Sam Graham
  * @author Haru McClellan
  */
-public class SimCity
+public class SimCitySafe
 {
     //////////////////// Variables
     
@@ -46,7 +46,7 @@ public class SimCity
      * The list of simulators is instantiated. This constructor creates a list
      * of seven simulators.
      */
-    public SimCity()
+    public SimCitySafe()
     {
         // This is throwing a null pointer exception right now, and I need
         // This class for testing purposes.

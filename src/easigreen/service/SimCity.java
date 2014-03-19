@@ -19,42 +19,41 @@ import java.util.ArrayList;
 public class SimCity
 {
     //////////////////// Variables
-    
-	/**
-	 * Manager for the energy
-	 */
-	private EnergyManager mEnergyManager;
-	
-	/**
-	 * Manager for the upgrades.
-	 */
-	private UpgradeManager mUpgradeManager;
-	
+
     /**
      * The round number
      */
-    private int mRound;
+    private int roundNumber;    
 
     /**
-     * The Simulators, representing the different rounds and their changes
+     * Manager for the energy
      */
-    private ArrayList<Round> mName;
-
-    //////////////////// Constructors
+    private EnergyManager mEnergyManager;
+	
+    /**
+     * Manager for the upgrades.
+     */
+    private UpgradeManager mUpgradeManager;
+    
+    /**
+     * Manager for the goals
+     */
+    private GoalManager mGoalManager;
 
     /**
-     * The list of simulators is instantiated. This constructor creates a list
-     * of seven simulators.
+     * Manager for the world
      */
-    public SimCity()
-    {
-        // This is throwing a null pointer exception right now, and I need
-        // This class for testing purposes.
-        //for(int i = 0; i < 7; i++)
-        //{
-        //    mName.add(new Round());
-        //}
-    }
+    private WorldManager mWorldManager;
+
+    /**
+     * Manager for the resources
+     */
+    private ResourceManager mResourceManager;
+
+    /**
+     * Manager for the trades
+     */
+    private TradeManager mTradeManager;
 
     //////////////////// Methods
 
@@ -64,25 +63,16 @@ public class SimCity
      */
     public void run()
     {
-        Technology test1 = new Technology(-10, 2, -20,      // general
-                                          5, 0, 0, 0, 0, 0, // fossil
-                                          5, 0, 0, 0, 0, 0, // nuclear
-                                          0, 0, 0, 0, 0, 0, // renewable
-                                          0, 0, 0);         // oil
-        // mName.get(0).applyTechnology(test1);
-    }
-
-    /**
-     * This method changes future rounds based on actions taken.
-     */
-    public void forecast()
-    {
-        for(int i = mRound; i < 7; i++) {
-            mName.get(i).getFossil().add(
-                mName.get(i).getFossil().getAmount());
-            //+ display.getFossilAmountChange);
-            // and so on...
-        }
+	mEnergyManager = new EnergyManager(mUpgradeManager, new Nuclear(),
+                                           new Fossil(), new Renewable(), 
+                                           new Oil());
+	mResourceManager = new ResourceManager();
+        mUpgradeManager = new UpgradeManager();
+	mGoalManager = new GoalManager(mEnergyManager, mResourceManager,
+                                       mUpgradeManager);
+	mWorldManager = new WorldManager();
+	mTradeManager = new TradeManager(new TechnologyManager(), 
+                                         mResourceManager);
     }
 
     /**
