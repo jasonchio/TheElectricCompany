@@ -40,3 +40,22 @@ Questions For the Class
     Should we promise our sponsor that other students will continue on our project next semester?
     How much code should be written as a group?
     How should assignments be submitted?
+
+
+
+Mar 4 - Mar 19
+Accomplishments
+
+    18.1 hours
+        Meeting with sponsor to discuss layout and features.
+        Writing most of the importaint code.
+        Disscusing new ideas and connections.
+
+Next Week's Goals
+
+    Get the entire program functioning as the sponsor has requested.
+    
+Questions For the Class
+
+    When does practicality outweigh functionality?
+    Should we listen to new requests from the sponsor even though the design has already been made?
