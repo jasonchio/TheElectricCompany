@@ -25,6 +25,8 @@ public class NuclearPane
     */
    private SimCity model = null;
 
+    private Pane nuclearUpgradesPane;
+
    /**
     * Constructor
     * @param SimCity pModel the current sim city Model
@@ -32,6 +34,24 @@ public class NuclearPane
     public NuclearPane(SimCity pModel)
    {
        model = pModel;
-       add(new Label("Nuclear"), 0, 0);
+       nuclearUpgradesPane = new NuclearUpgradePane(model);
+       setUp();
    }
+
+    private void setUp()
+    {
+        Label  title = new Label("Nuclear");
+	EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
+	    {
+		public void handle(ActionEvent event)
+		{
+		    GUI.getInstance().getWindow().setCenter(nuclearUpgradesPane);
+		}
+	    };
+	Button nuclearUpgrades = new ImageButton("nuclearupgrade.png", upgradeEvent);
+
+        add(title, 0, 0);
+        add(nuclearUpgrades, 0, 1);
+    }
+
 }
