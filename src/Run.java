@@ -1,8 +1,11 @@
 /**
  * The main entry point for the program.
  *
- * Could include displaying a splash screen,
- * or other incidentals.
+ * @version 0.2.1
+ * @author Rick Neff
+ * @author Sam Graham
+ * @author Haru McClellan
+ * @author Larson Caldwell
  */
 public class Run
 {

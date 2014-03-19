@@ -1,9 +1,9 @@
 import java.util.ArrayList;
 
 /**
- * The Simulator class contains information that each different type of plant 
- * will use.  It will contain the number of a particular type of plant, the 
- * cost for each one, and the impacts that it will have on the short-term and 
+ * The Simulator class contains information that each different type of plant
+ * will use.  It will contain the number of a particular type of plant, the
+ * cost for each one, and the impacts that it will have on the short-term and
  * long-term goals.
  *
  * @see java.util.ArrayList
@@ -78,7 +78,7 @@ public class ResourceManager
      */
     public void cashInActionPoints(int amount)
     {
-	mActionPoints -= amount;
+        mActionPoints -= amount;
         mBudget += (amount * .5);
     }
 
@@ -89,7 +89,7 @@ public class ResourceManager
      */
     public void cashInTechnologies(int techs)
     {
-	mBudget += (techs * .5);
+        mBudget += (techs * .5);
     }
 
     //////////////////// Getters
@@ -101,7 +101,7 @@ public class ResourceManager
      */
     public int getActionPoints()
     {
-	return mActionPoints;
+        return mActionPoints;
     }
 
     /**
@@ -111,7 +111,7 @@ public class ResourceManager
      */
     public int getEmitCredits()
     {
-	return mEmitCredits;
+        return mEmitCredits;
     }
 
     /**
@@ -121,7 +121,7 @@ public class ResourceManager
      */
     public int getMarketShares()
     {
-	return mMarketShares;
+        return mMarketShares;
     }
 
     /**
@@ -131,7 +131,7 @@ public class ResourceManager
      */
     public double getBudget()
     {
-	return mBudget;
+        return mBudget;
     }
 
     /**
@@ -141,17 +141,17 @@ public class ResourceManager
      */
     public double getEmissions()
     {
-	return mEmissions;
+        return mEmissions;
     }
 
     /**
      * Gets the growth of the energy demand
      *
-     * @return mDemandGrowth the energy demand's growth
+     * @return mDemandGrowth the energy demands growth
      */
-    public double getDemandGrowth() 
-    { 
-       return mDemandGrowth; 
+    public double getDemandGrowth()
+    {
+        return mDemandGrowth;
     }
 
     //////////////////// Setters
@@ -161,9 +161,9 @@ public class ResourceManager
      *
      * @param amount the new amount of action points
      */
-    public void setActionPoints(int amount) 
-    { 
-       mActionPoints = amount; 
+    public void setActionPoints(int amount)
+    {
+        mActionPoints = amount;
     }
 
     /**
@@ -171,9 +171,9 @@ public class ResourceManager
      *
      * @param amount the new amount of emission credits
      */
-    public void setEmitCredits(int amount) 
-    { 
-       mEmitCredits = amount; 
+    public void setEmitCredits(int amount)
+    {
+        mEmitCredits = amount;
     }
 
     /**
@@ -181,9 +181,9 @@ public class ResourceManager
      *
      * @param amount the new amount of market shares
      */
-    public void setMarketShares(int amount) 
-    { 
-       mMarketShares = amount; 
+    public void setMarketShares(int amount)
+    {
+        mMarketShares = amount;
     }
 
     /**
@@ -191,9 +191,9 @@ public class ResourceManager
      *
      * @param pBudget the new budget value
      */
-    public void setBudget(double pBudget) 
-    { 
-       mBudget = pBudget; 
+    public void setBudget(double pBudget)
+    {
+        mBudget = pBudget;
     }
 
     /**
@@ -201,9 +201,9 @@ public class ResourceManager
      *
      * @param pEmissions the new amount of emissions
      */
-    public void setEmissions(double pEmissions) 
-    { 
-	mEmissions = pEmissions; 
+    public void setEmissions(double pEmissions)
+    {
+        mEmissions = pEmissions;
     }
 
     /**
@@ -211,8 +211,8 @@ public class ResourceManager
      *
      * @param pGrowth the new growth of demand
      */
-    public void setDemandGrowth(double pGrowth) 
-    { 
-	mDemandGrowth = pGrowth; 
+    public void setDemandGrowth(double pGrowth)
+    {
+        mDemandGrowth = pGrowth;
     }
 }

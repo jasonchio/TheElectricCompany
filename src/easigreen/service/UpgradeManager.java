@@ -5,9 +5,9 @@ import easigreen.system.*;
 import java.util.ArrayList;
 
 /**
- * The Simulator class contains information that each different type of plant 
- * will use.  It will contain the number of a particular type of plant, the 
- * cost for each one, and the impacts that it will have on the short-term and 
+ * The Simulator class contains information that each different type of plant
+ * will use.  It will contain the number of a particular type of plant, the
+ * cost for each one, and the impacts that it will have on the short-term and
  * long-term goals.
  *
  * @see java.util.ArrayList
@@ -20,7 +20,7 @@ import java.util.ArrayList;
 public class UpgradeManager
 {
     //////////////////// Variables
-   
+
     /**
      * The fossil plants
      */
@@ -87,7 +87,7 @@ public class UpgradeManager
     private double mDemandGrowth;
 
     /**
-     * The implemented technologys
+     * The implemented technologies
      */
     private ArrayList<Technology> Techs;
 
@@ -113,8 +113,8 @@ public class UpgradeManager
      */
     public void fossilScience(int actions)
     {
-	mFossil.setApproval(mFossil.getApproval() + actions * .5);
-	mFossil.setSecurity(mFossil.getSecurity() + actions * .02);
+        mFossil.setApproval(mFossil.getApproval() + actions * .5);
+        mFossil.setSecurity(mFossil.getSecurity() + actions * .02);
         fossilSci += actions;
     }
 
@@ -126,7 +126,7 @@ public class UpgradeManager
     public void nuclearScience(int actions)
     {
         mNuclear.setApproval(mNuclear.getApproval() + actions * .3);
-	mNuclear.setSecurity(mNuclear.getSecurity() + actions * .05);
+        mNuclear.setSecurity(mNuclear.getSecurity() + actions * .05);
         nuclearSci += actions;
     }
 
@@ -138,7 +138,7 @@ public class UpgradeManager
     public void renewableScience(int actions)
     {
         mRenewable.setApproval(mRenewable.getApproval() + actions * .1);
-	mRenewable.setSecurity(mRenewable.getSecurity() + actions * .01);
+        mRenewable.setSecurity(mRenewable.getSecurity() + actions * .01);
         renewableSci += actions;
     }
 
@@ -166,7 +166,7 @@ public class UpgradeManager
 
     /**
      * This will place action points into the nuclear science engineering
-     * 
+     *
      * @param actions the number of action points to be spent here
      */
     public void nuclearEngineering(int actions)
@@ -212,7 +212,7 @@ public class UpgradeManager
 
     /**
      * This will use action points to influence oil drilling
-     * 
+     *
      * @param actions the number of action points to be spent here
      */
     public void oilDrilling(int actions)
@@ -231,7 +231,7 @@ public class UpgradeManager
      */
     public Oil getOil()
     {
-	return mOil;
+        return mOil;
     }
 
     /**
@@ -241,7 +241,7 @@ public class UpgradeManager
      */
     public double getBudget()
     {
-	return mBudget;
+        return mBudget;
     }
 
     /**
@@ -251,7 +251,7 @@ public class UpgradeManager
      */
     public double getApproval()
     {
-	return mApproval;
+        return mApproval;
     }
 
     /**
@@ -261,7 +261,7 @@ public class UpgradeManager
      */
     public double getProduction()
     {
-	return mProduction;
+        return mProduction;
     }
 
     /**
@@ -271,7 +271,7 @@ public class UpgradeManager
      */
     public double getEmissions()
     {
-	return mEmissions;
+        return mEmissions;
     }
 
     /**
@@ -281,7 +281,7 @@ public class UpgradeManager
      */
     public double getProfit()
     {
-	return mProfit;
+        return mProfit;
     }
 
     /**
@@ -291,7 +291,7 @@ public class UpgradeManager
      */
     public double getSecurity()
     {
-	return mSecurity;
+        return mSecurity;
     }
 
     /**
@@ -301,7 +301,7 @@ public class UpgradeManager
      */
     public double getPrice()
     {
-	return mPrice;
+        return mPrice;
     }
 
     /**
@@ -311,7 +311,7 @@ public class UpgradeManager
      */
     public double getDemand()
     {
-	return mDemand;
+        return mDemand;
     }
 
     /**
@@ -319,7 +319,10 @@ public class UpgradeManager
      *
      * @return mDemandGrowth the energy demand's growth
      */
-    public double getDemandGrowth() { return mDemandGrowth; }
+    public double getDemandGrowth()
+    {
+        return mDemandGrowth;
+    }
 
     //////////////////// Setters
 
@@ -328,9 +331,9 @@ public class UpgradeManager
      *
      * @param newPlant the new plant
      */
-    public void setFossil(Plant newPlant) 
-    { 
-	mFossil = newPlant; 
+    public void setFossil(Plant newPlant)
+    {
+        mFossil = newPlant;
     }
 
     /**
@@ -338,9 +341,9 @@ public class UpgradeManager
      *
      * @param newPlant the new plant
      */
-    public void setNuclear(Plant newPlant) 
-    { 
-	mNuclear = newPlant; 
+    public void setNuclear(Plant newPlant)
+    {
+        mNuclear = newPlant;
     }
 
     /**
@@ -348,9 +351,9 @@ public class UpgradeManager
      *
      * @param newPlant the new plant
      */
-    public void setRenewable(Plant newPlant) 
-    { 
-	mRenewable = newPlant; 
+    public void setRenewable(Plant newPlant)
+    {
+        mRenewable = newPlant;
     }
 
     /**
@@ -358,9 +361,9 @@ public class UpgradeManager
      *
      * @param newOil the new oil
      */
-    public void setOil(Oil newOil) 
+    public void setOil(Oil newOil)
     {
-	mOil = newOil; 
+        mOil = newOil;
     }
 
     /**
@@ -368,9 +371,9 @@ public class UpgradeManager
      *
      * @param pBudget the new budget value
      */
-    public void setBudget(double pBudget) 
-    { 
-	mBudget = pBudget; 
+    public void setBudget(double pBudget)
+    {
+        mBudget = pBudget;
     }
 
     /**
@@ -378,9 +381,9 @@ public class UpgradeManager
      *
      * @param pApproval the new approval rating
      */
-    public void setApproval(double pApproval) 
-    { 
-	mApproval = pApproval; 
+    public void setApproval(double pApproval)
+    {
+        mApproval = pApproval;
     }
 
     /**
@@ -388,9 +391,9 @@ public class UpgradeManager
      *
      * @param pProduction the new production value
      */
-    public void setProduction(double pProduction) 
-    { 
-	mProduction = pProduction; 
+    public void setProduction(double pProduction)
+    {
+        mProduction = pProduction;
     }
 
     /**
@@ -398,9 +401,9 @@ public class UpgradeManager
      *
      * @param pEmissions the new amount of emissions
      */
-    public void setEmissions(double pEmissions) 
-    { 
-	mEmissions = pEmissions; 
+    public void setEmissions(double pEmissions)
+    {
+        mEmissions = pEmissions;
     }
 
     /**
@@ -408,9 +411,9 @@ public class UpgradeManager
      *
      * @param pProfit the new profit
      */
-    public void setProfit(double pProfit) 
-    { 
-	mProfit = pProfit; 
+    public void setProfit(double pProfit)
+    {
+        mProfit = pProfit;
     }
 
     /**
@@ -418,9 +421,9 @@ public class UpgradeManager
      *
      * @param pSecurity the new security value
      */
-    public void setSecurity(double pSecurity) 
-    { 
-	mSecurity = pSecurity; 
+    public void setSecurity(double pSecurity)
+    {
+        mSecurity = pSecurity;
     }
 
     /**
@@ -428,9 +431,9 @@ public class UpgradeManager
      *
      * @param pPrice the new price for production
      */
-    public void setPrice(double pPrice) 
-    { 
-	mPrice = pPrice; 
+    public void setPrice(double pPrice)
+    {
+        mPrice = pPrice;
     }
 
     /**
@@ -438,9 +441,9 @@ public class UpgradeManager
      *
      * @param pDemand the new demand value
      */
-    public void setDemand(double pDemand) 
-    { 
-	mDemand = pDemand; 
+    public void setDemand(double pDemand)
+    {
+        mDemand = pDemand;
     }
 
     /**
@@ -448,8 +451,8 @@ public class UpgradeManager
      *
      * @param pGrowth the new growth of demand
      */
-    public void setDemandGrowth(double pGrowth) 
-    { 
-	mDemandGrowth = pGrowth; 
+    public void setDemandGrowth(double pGrowth)
+    {
+        mDemandGrowth = pGrowth;
     }
 }

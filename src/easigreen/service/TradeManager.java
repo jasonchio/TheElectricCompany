@@ -20,7 +20,7 @@ public class TradeManager
     private TechnologyManager mTechnologyManager;
 
     /**
-     * The recource manager
+     * The resource manager
      */
     private ResourceManager mResourceManager;
 
@@ -33,17 +33,17 @@ public class TradeManager
      */
     public TechnologyManager getTechnologyManager()
     {
-	return mTechnologyManager;
+        return mTechnologyManager;
     }
 
     /**
      * Gets the resource manager
      *
-     * @return pResourceManager the new recource manager
+     * @return pResourceManager the new resource manager
      */
     public ResourceManager getResourceManager()
     {
-	return mResourceManager;
+        return mResourceManager;
     }
 
     //////////////////// Setters
@@ -53,9 +53,9 @@ public class TradeManager
      *
      * @param pTechnologyManager the new technology manager
      */
-    public void setTechnologyManager(TechnologyManager pTechnologyManager) 
-    { 
-	mTechnologyManager = pTechnologyManager;
+    public void setTechnologyManager(TechnologyManager pTechnologyManager)
+    {
+        mTechnologyManager = pTechnologyManager;
     }
 
     /**
@@ -65,6 +65,6 @@ public class TradeManager
      */
     public void setResourceManager(ResourceManager pResourceManager)
     {
-	mResourceManager = pResourceManager;
+        mResourceManager = pResourceManager;
     }
 }
