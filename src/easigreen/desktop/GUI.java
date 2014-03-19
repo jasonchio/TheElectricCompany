@@ -76,7 +76,7 @@ public class GUI
     /**
      * Maps strings to the content page it provides
      */
-    private static Map<String, GridPane> content;
+    private static Map<String, Pane> content;
  
     /**
      * The Primary Stage for this application
@@ -106,6 +106,14 @@ public class GUI
          cInstance = this;
       }
    }
+
+    /**
+     * Allows access to the main window area
+     */
+    public BorderPane getWindow()
+    {
+	return windowArea;
+    }
 
    /**
     * Starts the GUI.
@@ -212,7 +220,7 @@ public class GUI
 
     private void initializeContent()
     {
-	content = new HashMap<String, GridPane>();
+	content = new HashMap<String, Pane>();
 	/**	String currentClass = "";
 	try
 	{
