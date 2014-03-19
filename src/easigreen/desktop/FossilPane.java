@@ -25,6 +25,8 @@ public class FossilPane
     */
    private SimCity model = null;
 
+    private Pane fossilUpgradesPane;
+
    /**
     * Constructor
     * @param SimCity pModel the current sim city Model
@@ -32,6 +34,24 @@ public class FossilPane
     public FossilPane(SimCity pModel)
    {
        model = pModel;
-       add(new Label("Fossil Fuel"), 0, 0);
+       fossilUpgradesPane = new FossilUpgradePane(model);
+       setUp();
    }
+
+    private void setUp()
+    {
+        Label  title = new Label("Fossil Fuel");
+        EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
+	{
+	    public void handle(ActionEvent event)
+	    {
+		GUI.getInstance().getWindow().setCenter(fossilUpgradesPane);
+	    }
+	};
+        Button fossilUpgrades = new ImageButton("fossilfuelupgrade.png", upgradeEvent);
+
+        add(title, 0, 0);
+        add(fossilUpgrades, 0, 1);
+    }
+
 }
