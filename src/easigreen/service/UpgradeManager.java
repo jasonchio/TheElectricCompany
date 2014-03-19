@@ -317,7 +317,7 @@ public class UpgradeManager
     /**
      * Gets the growth of the energy demand
      *
-     * @return mDemandGrowth the energy demand's growth
+     * @return mDemandGrowth the energy demands growth
      */
     public double getDemandGrowth()
     {
