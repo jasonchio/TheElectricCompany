@@ -27,14 +27,14 @@ public class SimCity
     private int mRound;
    
     /**
-     * The Suimlators, representing the different rounds and thier changes
+     * The Simulators, representing the different rounds and thier changes
      */
     private ArrayList<Round> mName;
 
     //////////////////// Constructors
 
     /**
-     * The list of simulators is instansiated. This constructor creates a list
+     * The list of simulators is instantiated. This constructor creates a list
      * of seven simulators.
      */
     public SimCity()

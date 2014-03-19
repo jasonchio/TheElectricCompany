@@ -1,6 +1,6 @@
 /**
  * This class contains information about a specific round.  This information
- * is stored as a simulator to be accessed at anytime.
+ * is stored as a simulator to be accessed at any time.
  *
  * @version 0.1.1
  * @author Larson Caldwell
@@ -46,7 +46,7 @@ public class RoundInformation
     }
 
     /**
-     * Get the round informaion
+     * Get the round information
      *
      * @return mRound the round information
      */
