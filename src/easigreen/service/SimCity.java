@@ -36,7 +36,7 @@ public class SimCity
     private int mRound;
 
     /**
-     * The Simulators, representing the different rounds and thier changes
+     * The Simulators, representing the different rounds and their changes
      */
     private ArrayList<Round> mName;
 
@@ -69,7 +69,7 @@ public class SimCity
                                           5, 0, 0, 0, 0, 0, // nuclear
                                           0, 0, 0, 0, 0, 0, // renewable
                                           0, 0, 0);         // oil
-        mName.get(0).applyTechnology(test1);
+        // mName.get(0).applyTechnology(test1);
     }
 
     /**

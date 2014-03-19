@@ -1,3 +1,5 @@
+package easigreen.service;
+
 /**
  * The GoalManager Manages Goals
  *

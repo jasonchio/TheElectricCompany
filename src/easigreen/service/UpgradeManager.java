@@ -113,8 +113,8 @@ public class UpgradeManager
      */
     public void fossilScience(int actions)
     {
-        mFossil.setApproval(mFossil.getApproval() + actions * .5);
-        mFossil.setSecurity(mFossil.getSecurity() + actions * .02);
+        // mFossil.setApproval(mFossil.getApproval() + actions * .5);
+        // mFossil.setSecurity(mFossil.getSecurity() + actions * .02);
         fossilSci += actions;
     }
 
@@ -125,8 +125,8 @@ public class UpgradeManager
      */
     public void nuclearScience(int actions)
     {
-        mNuclear.setApproval(mNuclear.getApproval() + actions * .3);
-        mNuclear.setSecurity(mNuclear.getSecurity() + actions * .05);
+        // mNuclear.setApproval(mNuclear.getApproval() + actions * .3);
+        // mNuclear.setSecurity(mNuclear.getSecurity() + actions * .05);
         nuclearSci += actions;
     }
 
@@ -137,8 +137,8 @@ public class UpgradeManager
      */
     public void renewableScience(int actions)
     {
-        mRenewable.setApproval(mRenewable.getApproval() + actions * .1);
-        mRenewable.setSecurity(mRenewable.getSecurity() + actions * .01);
+        // mRenewable.setApproval(mRenewable.getApproval() + actions * .1);
+        // mRenewable.setSecurity(mRenewable.getSecurity() + actions * .01);
         renewableSci += actions;
     }
 
@@ -149,7 +149,7 @@ public class UpgradeManager
      */
     public void oilScience(int actions)
     {
-        mOil.setSecurity(mOil.getSecurity() + actions * .8);
+        // mOil.setSecurity(mOil.getSecurity() + actions * .8);
         oilSci += actions;
     }
 
@@ -160,7 +160,7 @@ public class UpgradeManager
      */
     public void fossilEngineering(int actions)
     {
-        mFossil.setSecurity(mFossil.getSecurity() + actions * .08);
+        // mFossil.setSecurity(mFossil.getSecurity() + actions * .08);
         fossilEng += actions;
     }
 
@@ -171,7 +171,7 @@ public class UpgradeManager
      */
     public void nuclearEngineering(int actions)
     {
-        mNuclear.setSecurity(mNuclear.getSecurity() + actions * .2);
+        // mNuclear.setSecurity(mNuclear.getSecurity() + actions * .2);
         nuclearEng += actions;
     }
 
@@ -182,7 +182,7 @@ public class UpgradeManager
      */
     public void renewableEngineering(int actions)
     {
-        mRenewable.setSecurity(mRenewable.getSecurity() + actions * .03);
+        // mRenewable.setSecurity(mRenewable.getSecurity() + actions * .03);
         renewableEng += actions;
     }
 
@@ -217,8 +217,8 @@ public class UpgradeManager
      */
     public void oilDrilling(int actions)
     {
-        mOil.setSecurity(mOil.getSecurity() + (actions * 1.5));
-        mOil.setConsumption(mOil.getConsumption() - (actions * .5));
+        // mOil.setSecurity(mOil.getSecurity() + (actions * 1.5));
+        // mOil.setConsumption(mOil.getConsumption() - (actions * .5));
         oilDrilling += actions;
     }
 

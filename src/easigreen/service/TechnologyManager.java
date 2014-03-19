@@ -1,3 +1,5 @@
+package easigreen.service;
+
 import java.util.ArrayList;
 
 /**
@@ -78,7 +80,7 @@ public class TechnologyManager
      *
      * @param pAvalible the new available technologies
      */
-    public void setAvalible(ArrayList<Technology> pavailable)
+    public void setAvalible(ArrayList<Technology> pAvailable)
     {
         available = pAvailable;
     }

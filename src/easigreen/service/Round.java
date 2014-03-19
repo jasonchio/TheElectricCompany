@@ -170,64 +170,6 @@ public class Round
                     + (mRenewable.getSecurity() * mRenewable.getAmount());
     }
 
-    /**
-     * The new Technology is implemented.  All the changes that the given
-     * technology is designed to make take place within this method.
-     *
-     * @param newTechnology the new technology to be implemented
-     */
-    public void applyTechnology(Technology newTechnology)
-    {
-        mBudget += newTechnology.getBudgetChange();
-        mDemand += newTechnology.getNRGChange();
-        mEmissions += newTechnology.getEmissionsChange();
-
-        mNuclear.setProduction(mNuclear.getProduction()
-                               + newTechnology.getNpow());
-        mNuclear.setCostBuild(mNuclear.getCostBuild()
-                              + newTechnology.getNcost());
-        mNuclear.setApproval(mNuclear.getApproval()
-                             + newTechnology.getNatt());
-        mNuclear.setEmissions(mNuclear.getEmissions()
-                              + newTechnology.getNemit());
-        mNuclear.setSecurity(mNuclear.getSecurity()
-                             + newTechnology.getNsec());
-        mNuclear.setProfitPercent(mNuclear.getProfitPercent()
-                                  + newTechnology.getNprof());
-
-        mFossil.setProduction(mFossil.getProduction()
-                              + newTechnology.getFpow());
-        mFossil.setCostBuild(mFossil.getCostBuild()
-                             + newTechnology.getFcost());
-        mFossil.setApproval(mFossil.getApproval()
-                            + newTechnology.getFatt());
-        mFossil.setEmissions(mFossil.getEmissions()
-                             + newTechnology.getFemit());
-        mFossil.setSecurity(mFossil.getSecurity()
-                            + newTechnology.getFsec());
-        mFossil.setProfitPercent(mFossil.getProfitPercent()
-                                 + newTechnology.getFprof());
-
-        mRenewable.setProduction(mRenewable.getProduction()
-                                 + newTechnology.getRpow());
-        mRenewable.setCostBuild(mRenewable.getCostBuild()
-                                + newTechnology.getRcost());
-        mRenewable.setApproval(mRenewable.getApproval()
-                               + newTechnology.getRatt());
-        mRenewable.setEmissions(mRenewable.getEmissions()
-                                + newTechnology.getRemit());
-        mRenewable.setSecurity(mRenewable.getSecurity()
-                               + newTechnology.getRsec());
-        mRenewable.setProfitPercent(mRenewable.getProfitPercent()
-                                    + newTechnology.getRprof());
-
-        mOil.setConsumption(mOil.getConsumption()
-                            + newTechnology.getOil());
-        mOil.setSecurity(mOil.getSecurity()
-                         + newTechnology.getOilSec());
-        mOil.setGrowth(mOil.getGrowth()
-                       + newTechnology.getOilGrow());
-    }
 
 	/**
 	 * Adds a plant
@@ -239,12 +181,12 @@ public class Round
 	{
 	   pPlant.add(pAmount);
 	   
-	   mBudget     -= pPlant.getCostBuild() * amount;
-       mEmissions  += pPlant.getEmissions() * amount;
-       mApproval   += pPlant.getApproval() * amount;
-       mSecurity   += pPlant.getSecurity() * amount;
-       mProduction += pPlant.getProduction() * amount;
-       mProfit     += pPlant.getProfitPercent() * amount;
+	   mBudget     -= pPlant.getCostBuild() * pAmount;
+       mEmissions  += pPlant.getEmissions() * pAmount;
+       mApproval   += pPlant.getApproval() * pAmount;
+       mSecurity   += pPlant.getSecurity() * pAmount;
+       mProduction += pPlant.getProduction() * pAmount;
+       mProfit     += pPlant.getProfitPercent() * pAmount;
 	}
 	
 	/**
@@ -257,12 +199,12 @@ public class Round
 	{
 	   pPlant.remove(pAmount);
 	   
-	   mBudget     -= pPlant.getCostBuild() * amount;
-       mEmissions  -= pPlant.getEmissions() * amount;
-       mApproval   -= pPlant.getApproval() * amount;
-       mSecurity   -= pPlant.getSecurity() * amount;
-       mProduction -= pPlant.getProduction() * amount;
-       mProfit     -= pPlant.getProfitPercent() * amount;
+	   mBudget     -= pPlant.getCostBuild() * pAmount;
+       mEmissions  -= pPlant.getEmissions() * pAmount;
+       mApproval   -= pPlant.getApproval() * pAmount;
+       mSecurity   -= pPlant.getSecurity() * pAmount;
+       mProduction -= pPlant.getProduction() * pAmount;
+       mProfit     -= pPlant.getProfitPercent() * pAmount;
 	}
 	
 	
@@ -333,8 +275,9 @@ public class Round
      */
     public void fossilScience(int actions)
     {
-        mFossil.setApproval(mFossil.getApproval() + actions * 0.5);
-        mFossil.setSecurity(mFossil.getSecurity() + actions * 0.02);
+	    // TODO Re-factor this
+        // mFossil.setApproval(mFossil.getApproval() + actions * 0.5);
+        // mFossil.setSecurity(mFossil.getSecurity() + actions * 0.02);
     }
 
     /**
@@ -344,8 +287,8 @@ public class Round
      */
     public void nuclearScience(int actions)
     {
-        mNuclear.setApproval(mNuclear.getApproval() + actions * 0.3);
-        mNuclear.setSecurity(mNuclear.getSecurity() + actions * 0.05);
+        // mNuclear.setApproval(mNuclear.getApproval() + actions * 0.3);
+        // mNuclear.setSecurity(mNuclear.getSecurity() + actions * 0.05);
     }
 
     /**
@@ -355,8 +298,8 @@ public class Round
      */
     public void renewableScience(int actions)
     {
-        mRenewable.setApproval(mRenewable.getApproval() + actions * .1);
-        mRenewable.setSecurity(mRenewable.getSecurity() + actions * .01);
+        // mRenewable.setApproval(mRenewable.getApproval() + actions * .1);
+        // mRenewable.setSecurity(mRenewable.getSecurity() + actions * .01);
     }
 
     /**
@@ -366,7 +309,7 @@ public class Round
      */
     public void oilScience(int actions)
     {
-        mOil.setSecurity(mOil.getSecurity() + actions * .8);
+        // mOil.setSecurity(mOil.getSecurity() + actions * .8);
     }
 
     /**
@@ -376,7 +319,7 @@ public class Round
      */
     public void fossilEngineering(int actions)
     {
-        mFossil.setSecurity(mFossil.getSecurity() + actions * .08);
+        // mFossil.setSecurity(mFossil.getSecurity() + actions * .08);
     }
 
     /**
@@ -386,7 +329,7 @@ public class Round
      */
     public void nuclearEngineering(int actions)
     {
-        mNuclear.setSecurity(mNuclear.getSecurity() + actions * .2);
+        // mNuclear.setSecurity(mNuclear.getSecurity() + actions * .2);
     }
 
     /**
@@ -396,7 +339,7 @@ public class Round
      */
     public void renewableEngineering(int actions)
     {
-        mRenewable.setSecurity(mRenewable.getSecurity() + actions * .03);
+        // mRenewable.setSecurity(mRenewable.getSecurity() + actions * .03);
     }
 
     /**
@@ -428,8 +371,8 @@ public class Round
      */
     public void oilDrilling(int actions)
     {
-        mOil.setSecurity(mOil.getSecurity() + (actions * 1.5));
-        mOil.setConsumption(mOil.getConsumption() - (actions * .5));
+        // mOil.setSecurity(mOil.getSecurity() + (actions * 1.5));
+        // mOil.setConsumption(mOil.getConsumption() - (actions * .5));
     }
 
     /**
