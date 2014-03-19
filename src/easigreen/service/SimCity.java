@@ -87,6 +87,7 @@ public class SimCity
 
     /**
      * Main starts the run method
+	 * @param args the command line arguments
      */
     public static void main(String[] args)
     {

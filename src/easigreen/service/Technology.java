@@ -217,6 +217,7 @@ public class Technology
 
 	/**
 	 * Get the change in budget
+	 * @return the change in budget
 	 */
     public int getBudgetChange()
     {
@@ -225,6 +226,7 @@ public class Technology
 	
 	/**
 	 * Get the change in national energy demand
+	 * @return the change in national energy demand
 	 */
     public int getNRGChange()
     {
@@ -233,6 +235,7 @@ public class Technology
 	
 	/**
 	 * Get the change in emissions
+	 * @return the change in emissions
 	 */
     public double getEmissionsChange()
     {
@@ -241,6 +244,7 @@ public class Technology
 	
 	/**
 	 * Get the change in national power
+	 * @return the change in national power
 	 */
     public double getNpow()
     {
@@ -249,6 +253,7 @@ public class Technology
 	
 	/**
 	 * Get the change in nuclear cost
+	 * @return change in nuclear cost
 	 */
     public double getNcost()
     {
@@ -257,6 +262,7 @@ public class Technology
 	
 	/**
 	 * Get the change in nuclear approval rating
+	 * @return the change in nuclear approval rating
 	 */
     public double getNatt()
     {
@@ -265,6 +271,7 @@ public class Technology
 	
 	/**
 	 * Get the change in Nuclear Emissions
+	 * @return the change in nuclear emissions
 	 */
     public double getNemit()
     {
@@ -273,6 +280,7 @@ public class Technology
 	
 	/**
 	 * Get the change in Nuclear Security
+	 * @return the change in nuclear security
 	 */
     public double getNsec()
     {
@@ -281,6 +289,7 @@ public class Technology
 	
 	/**
 	 * Get the change in nuclear profit
+	 * @return the change in nuclear profit
 	 */
     public double getNprof()
     {
@@ -289,6 +298,7 @@ public class Technology
 
 	/**
 	 * Get the change in fossil power
+	 * @return the change in fossil power
 	 */
     public double getFpow()
     {
@@ -297,6 +307,7 @@ public class Technology
 	
 	/**
 	 * Get the change in fossil cost
+	 * @return the change in fossil cost
 	 */
     public double getFcost()
     {
@@ -305,6 +316,7 @@ public class Technology
 	
 	/**
 	 * Get the change in fossil approval rating
+	 * @return the change in fossil approval rating
 	 */
     public double getFatt()
     {
@@ -313,6 +325,7 @@ public class Technology
 	
 	/**
 	 * Get the change in fossil emissions
+	 * @return the change in fossil emissions
 	 */
     public double getFemit()
     {
@@ -321,6 +334,7 @@ public class Technology
 	
 	/**
 	 * Get the change in fossil security
+	 * @return the change in fossil security
 	 */
     public double getFsec()
     {
@@ -329,6 +343,7 @@ public class Technology
 	
 	/**
 	 * Get the change in fossil profit
+	 * @return the change in fossil profit
 	 */
     public double getFprof()
     {
@@ -337,6 +352,7 @@ public class Technology
 
 	/**
 	 * Get the change in renewable power
+	 * @return the change in renewable power
 	 */
     public double getRpow()
     {
@@ -345,6 +361,7 @@ public class Technology
 	
 	/**
 	 * Get the change in renewable cost
+	 * @return the change in renewable cost
 	 */
     public double getRcost()
     {
@@ -352,7 +369,8 @@ public class Technology
     }
 	
 	/**
-	 * Get the change in already rating of renewable
+	 * Get the change in approval rating of renewable
+	 * @return the change in approval rating of renewable
 	 */
     public double getRatt()
     {
@@ -361,6 +379,7 @@ public class Technology
 	
 	/**
 	 * Get the change in renewable emissions
+	 * @return the change in Renewable emissions
 	 */
     public double getRemit()
     {
@@ -369,6 +388,7 @@ public class Technology
 	
 	/**
 	 * Get the change in renewable security
+	 * @return the change in renewable security
 	 */
     public double getRsec()
     {
@@ -377,6 +397,7 @@ public class Technology
 	
 	/**
 	 * Get the change in renewable profit
+	 * @return the change in renewable profit
 	 */
     public double getRprof()
     {
@@ -385,6 +406,7 @@ public class Technology
 
 	/**
 	 * Get the change in daily oil consumption
+	 * @return the change in daily oil consumption
 	 */
     public double getOil()
     {
@@ -393,6 +415,7 @@ public class Technology
 	
 	/**
 	 * Get the change in oil security
+	 * @return the change in oil security
 	 */
     public double getOilSec()
     {
@@ -401,6 +424,7 @@ public class Technology
 	
 	/**
 	 * Get the change in oil growth
+	 * @return the change in oil growth
 	 */
     public double getOilGrow()
     {
@@ -409,6 +433,7 @@ public class Technology
 
 	/**
 	 * Get the whether or not the technology has been implemented
+	 * @return whether or not the technology has been implemented
 	 */
     public boolean getHasBeenUsed()
     {
@@ -419,6 +444,7 @@ public class Technology
 	
 	/**
 	 * Set the change in budget
+	 * @param pBudgetChange change in budget
 	 */
     public void setBudgetChange(int pBudgetChange)
     {
@@ -427,6 +453,7 @@ public class Technology
 	
 	/**
 	 * Set the change in national energy demand
+	 * @param pNRGChange change in national energy demand
 	 */
     public void setNRGChange(int pNRGChange)
     {
@@ -435,6 +462,7 @@ public class Technology
 	
 	/**
 	 * Set the change in emissions
+	 * @param pEmissionsChange a double
 	 */
     public void setEmissionsChange(double pEmissionsChange)
     {
@@ -443,6 +471,7 @@ public class Technology
 
 	/**
 	 * Set the change in nuclear power
+	 * @param pNpow a double
 	 */
     public void setNpow(double pNpow)
     {
@@ -451,6 +480,7 @@ public class Technology
 	
 	/**
 	 * Set the change in nuclear cost
+	 * @param pNcost a double
 	 */
     public void setNcost(double pNcost)
     {
@@ -459,6 +489,7 @@ public class Technology
 	
 	/**
 	 * Set the change in nuclear approval rating
+	 * @param pNatt a double
 	 */
     public void setNatt(double pNatt)
     {
@@ -467,6 +498,7 @@ public class Technology
 	
 	/**
 	 * Set the change in nuclear emissions
+	 * @param pNemit a double
 	 */
     public void setNemit(double pNemit)
     {
@@ -475,6 +507,7 @@ public class Technology
 	
 	/**
 	 * Set the change in nuclear security
+	 * @param pNsec a double
 	 */
     public void setNsec(double pNsec)
     {
@@ -483,6 +516,7 @@ public class Technology
 	
 	/**
 	 * Set the change in nuclear profit
+	 * @param pNprof
 	 */
     public void setNprof(double pNprof)
     {
@@ -491,6 +525,7 @@ public class Technology
 
 	/**
 	 * Set the change in fossil power
+	 * @param pFpow a double
 	 */
     public void setFpow(double pFpow)
     {
@@ -499,6 +534,7 @@ public class Technology
 	
 	/**
 	 * Set the change in fossil cost
+	 * @param pFcost a double
 	 */
     public void setFcost(double pFcost)
     {
@@ -507,6 +543,7 @@ public class Technology
 	
 	/**
 	 * Set the change in fossil approval rating
+	 * @param pFatt a double
 	 */
     public void setFatt(double pFatt)
     {
@@ -515,6 +552,7 @@ public class Technology
 	
 	/**
 	 * Set the change in fossil emissions
+	 * @param pFemit a double
 	 */
     public void setFemit(double pFemit)
     {
@@ -523,6 +561,7 @@ public class Technology
 	
 	/**
 	 * Set the change in fossil security
+	 * @param pFsec a double
 	 */
     public void setFsec(double pFsec)
     {
@@ -531,6 +570,7 @@ public class Technology
 	
 	/**
 	 * Set the change in fossil profit
+	 * @param pFprof a double
 	 */
     public void setFprof(double pFprof)
     {
@@ -539,6 +579,7 @@ public class Technology
 
 	/**
 	 * Set the change in renewable power
+	 * @param pRpow a double
 	 */
     public void setRpow(double pRpow)
     {
@@ -547,6 +588,7 @@ public class Technology
 	
 	/**
 	 * Set the change in renewable cost
+	 * @param pRcost a double
 	 */
     public void setRcost(double pRcost)
     {
@@ -555,6 +597,7 @@ public class Technology
 	
 	/**
 	 * Set the change in renewable approval rating
+	 * @param pRatt a double
 	 */
     public void setRatt(double pRatt)
     {
@@ -563,6 +606,7 @@ public class Technology
 	
 	/**
 	 * Set the change in renewable emissions
+	 * @param pRemit a double
 	 */
     public void setRemit(double pRemit)
     {
@@ -571,6 +615,7 @@ public class Technology
 	
 	/**
 	 * Set the change in renewable security
+	 * @param pRsec a double
 	 */
     public void setRsec(double pRsec)
     {
@@ -579,6 +624,7 @@ public class Technology
 	
 	/**
 	 * Set the change in renewable profit
+	 * @param pRprof a double
 	 */
     public void setRprof(double pRprof)
     {
@@ -587,6 +633,7 @@ public class Technology
 
 	/**
 	 * Set the change in daily oil consumption
+	 * @param pOil
 	 */
     public void setOil(double pOil)
     {
@@ -595,6 +642,7 @@ public class Technology
 	
 	/**
 	 * Set the change in oil security
+	 * @param pOilSec a double
 	 */
     public void setOilSec(double pOilSec)
     {
@@ -603,6 +651,7 @@ public class Technology
 	
 	/**
 	 * Set the change in oil growth
+	 * @param pOilGrow a double
 	 */
     public void setOilGrow(double pOilGrow)
     {
@@ -611,6 +660,7 @@ public class Technology
 	
 	/**
 	 * Set if the technology has been used
+	 * @param isUsed a boolean
 	 */
     public void setHasBeenUsed(boolean isUsed)
     {
