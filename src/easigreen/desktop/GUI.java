@@ -1,8 +1,12 @@
 package easigreen.desktop;
 
+import easigreen.desktop.*;
+
 import easigreen.service.*;
 
 import easigreen.system.*;
+
+import java.lang.reflect.*;
 
 import java.util.*;
 
@@ -50,6 +54,14 @@ public class GUI
 								 {"science", "engineering", "policies", "technologies1"},
 								 {"shortterm", "longterm"}};
 
+    private static final String[]   mainClassNames = new String[]{"CountryPane", "EnergyPane", "UpgradesPane", "GoalsPane"};
+    private static final String[][] subClassNames  = new String[][] {{"WorldPane", "PoliticalPane", "TradePane"},
+								     {"NuclearPane", "FossilPane", "RenewablePane", "OilPane"},
+								     {"SciencePane", "EngineeringPane",
+								      "PoliciesPane", "TechnologiesPane"},
+								     {"ShortTermPane", "LongTermPane"}};
+
+    private SimCity model;
     
    /**
     * Contains Graphical buttons for the main navigation of the system.
@@ -69,7 +81,7 @@ public class GUI
     /**
      * Maps strings to the content page it provides
      */
-    private static Map<String, ContentPane> content;
+    private static Map<String, GridPane> content;
  
     /**
      * Contains the primary layout for the application.
@@ -124,6 +136,7 @@ public class GUI
     */
    private void initialize(Stage primaryStage)
    {
+      initializeModel();
       initializeEvents();
       initializeNavigation();
       initializeContent();
@@ -132,26 +145,35 @@ public class GUI
    }
 
     /**
+     * Initializes the model
+     */
+    private void initializeModel()
+    {
+	model = new SimCity();
+    }
+
+    /**
      * Initializes action events for buttons
      */
     private void initializeEvents()
     {
 	events = new HashMap<String, EventHandler<ActionEvent>>();
 	// Initialize Main Menu Events
-	for (String nav : mainNavNames)
+	for (final String nav : mainNavNames)
 	{
 	   events.put(nav, new EventHandler<ActionEvent>()
 	   {
 	       public void handle(ActionEvent event)
 	       {
 		   windowArea.setRight(subNavigation.get(nav));
+		   windowArea.setCenter(content.get(nav));
 	       }
 	   });
 	}
 	// Initialize Sub Menu Events
 	for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
 	{
-	    for (String subNavName : subNavNames[navNumber])
+	    for (final String subNavName : subNavNames[navNumber])
 	    {
 		events.put(subNavName, new EventHandler<ActionEvent>()
 			   {
@@ -187,16 +209,45 @@ public class GUI
 
     private void initializeContent()
     {
-	content = new HashMap<String, ContentPane>();
-	for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
+	content = new HashMap<String, GridPane>();
+	/**	String currentClass = "";
+	try
 	{
-	    for (String subNavName : subNavNames[navNumber])
+	    for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
 	    {
-		ContentPane newContent = new ContentPane();
-		newContent.add(new Label(subNavName), 0, 0);
-		content.put(subNavName, newContent);
+		currentClass = mainClassNames[navNumber];
+		Constructor mainConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
+		content.put(mainNavNames[navNumber], (GridPane) mainConstruct.newInstance(model));
+		for (int subNavNum = 0; subNavNum < subNavNames[navNumber].length; subNavNum++)
+		{
+		    currentClass = subClassNames[navNumber][subNavNum];
+		    Constructor subConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
+		    content.put(subNavNames[navNumber][subNavNum], (GridPane) subConstruct.newInstance(model));
+		}
 	    }
 	}
+	catch (Exception e)
+	{
+	    System.out.println("Fatal Error: " + currentClass + " class not found");
+	    exit();
+	    }*/
+        content.put("country"           , new CountryPane(model));
+	content.put("energy"            , new EnergyPane(model));
+	content.put("upgrades"          , new UpgradesPane(model));
+	content.put("goals"             , new GoalsPane(model));
+	content.put("world"             , new WorldPane(model));
+	content.put("politicalresources", new PoliticalPane(model));
+	content.put("trade"             , new TradePane(model));
+	content.put("nuclear"           , new NuclearPane(model));
+	content.put("fossilfuel"        , new FossilPane(model));
+	content.put("renewable"         , new RenewablePane(model));
+	content.put("oil"               , new OilPane(model));
+	content.put("science"           , new SciencePane(model));
+	content.put("engineering"       , new EngineeringPane(model));
+	content.put("policies"          , new PoliciesPane(model));
+	content.put("technologies1"     , new TechnologiesPane(model));
+	content.put("shortterm"         , new ShortTermPane(model));
+	content.put("longterm"          , new LongTermPane(model));
     }
 
     /**
