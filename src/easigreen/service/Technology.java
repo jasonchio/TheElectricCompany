@@ -16,6 +16,11 @@ public class Technology
     //////////////////// Variables
 
     /**
+     * 1 to 10 scale of the technology quality
+     */
+    private int mQuality;
+
+    /**
      * The budget change
      */
     private int mBudgetChange;
@@ -214,6 +219,11 @@ public class Technology
     }
 
     ////////////////////////////// Getters
+
+    public int getQuality()
+    {
+        return mQuality;
+    }
 
 	/**
 	 * Get the change in budget
@@ -442,6 +452,11 @@ public class Technology
 	
     //////////////////////// Setters
 	
+    public void setQuality(int pQuality)
+    {
+        mQuality = pQuality;
+    }
+
 	/**
 	 * Set the change in budget
 	 * @param pBudgetChange change in budget

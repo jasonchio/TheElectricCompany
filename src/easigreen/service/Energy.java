@@ -3,7 +3,7 @@ package easigreen.service;
 import easigreen.system.*;
 
 /**
- * The Plant class contains information that each different type of plant will
+ * The Energy class contains information that each different type of plant will
  * use.  It will contain the number of a particular type of plant, the cost for
  * each one, and the impacts that it will have on the short-term and long-term
  * goals.
@@ -13,7 +13,7 @@ import easigreen.system.*;
  * @author Sam Graham
  * @author Haru McClellan
  */
-public class Plant
+public class Energy
 {
     //////////////////// Variables
 
@@ -62,43 +62,17 @@ public class Plant
     /**
      * To assign values is pointless because we dont know what plant it is.
      */
-    public Plant()
-    {
-        mAmount        = 0;
-        mCostBuild     = 0;
-        mCostRemove    = 0;
-        mApproval      = 0;
-        mProduction    = 0;
-        mEmissions     = 0;
-        mSecurity      = 0;
-        mProfitPercent = 0;
-    }
-
-    /**
-     * Sets passed values to a non-specific plant
-     *
-     * @param pAmount number of plants
-     * @param pCostBuild cost to build each new plant
-     * @param pCostRemove cost to remove each existing plant
-     * @param pApproval approval rating per unit
-     * @param pProduction power production per unit
-     * @param pEmissions emissions produced per unit
-     * @param pSecurity the security of each unit
-     * @param pProfitPercent the profit made with each unit
-     */
-    public Plant(int pAmount, double pCostBuild, double pCostRemove,
-                 double pApproval, double pProduction, double pEmissions,
-                 double pSecurity, double pProfitPercent)
-    {
-        mAmount = pAmount;
-        mCostBuild = pCostBuild;
-        mCostRemove = pCostRemove;
-        mApproval = pApproval;
-        mProduction = pProduction;
-        mEmissions = pEmissions;
-        mSecurity = pSecurity;
-        mProfitPercent = pProfitPercent;
-    }
+    //public Energy()
+    //{
+    //    mAmount        = 0;
+    //    mCostBuild     = 0;
+    //    mCostRemove    = 0;
+    //    mApproval      = 0;
+    //    mProduction    = 0;
+    //    mEmissions     = 0;
+    //    mSecurity      = 0;
+    //    mProfitPercent = 0;
+    //}
 
     //////////////////// Getters
 
