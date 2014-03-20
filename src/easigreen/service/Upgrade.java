@@ -21,168 +21,283 @@ public class Upgrade
 {
     //////////////////// Variables
 
-    private int mNuclearSci;
-    private int mFossilSci;
-    private int mRenewableSci;
-    private int mOilSci;
-    private int mNuclearEng;
-    private int mFossilEng;
-    private int mRenewableEng;
-    private int mOilDrilling;
-    private int mLobby;
-    private int mPriceChange;
-
-    //////////////////// Methods
+    /**
+     * The budget change
+     */
+    private double mBudgetChange;
 
     /**
-     * This will place action points into the fossil science upgrade
-     *
-     * @param actions the number of action points to be spent here
+     * The price change
      */
-    public void addFossilScience(int actions)
-    {
-        mFossilSci += actions;
-    }
+    private double mPriceChange;
 
     /**
-     * This will place action points into the nuclear science upgrade
-     *
-     * @param actions the number of action points to be spent here
+     * The approval Change
      */
-    public void addNuclearScience(int actions)
-    {
-        mNuclearSci += actions;
-    }
+    private double mApprovalChange;
 
     /**
-     * This will place action points into the renewable science upgrade
-     *
-     * @param actions the number of action points to be spent here
+     * The change in the approval rating of each nuclear plant
      */
-    public void addRenewableScience(int actions)
-    {
-        mRenewableSci += actions;
-    }
+    private double mNatt;
 
     /**
-     * This will place action points into the oil science upgrade
-     *
-     * @param actions the number of action points to be spent here
+     * The change in the security of a single nuclear plant
      */
-    public void addOilScience(int actions)
-    {
-        mOilSci += actions;
-    }
+    private double mNsec;
 
     /**
-     * This will place action points into the fossil science engineering
-     *
-     * @param actions the number of action points to be spent here
+     * The change in the approval rating of each fossil plant
      */
-    public void addFossilEngineering(int actions)
-    {
-        mFossilEng += actions;
-    }
+    private double mFatt;
 
     /**
-     * This will place action points into the nuclear science engineering
-     *
-     * @param actions the number of action points to be spent here
+     * The change in the security of a single fossil plant
      */
-    public void addNuclearEngineering(int actions)
-    {
-        mNuclearEng += actions;
-    }
+    private double mFsec;
 
     /**
-     * This will place action points into the renewable science engineering
-     *
-     * @param actions the number of action points to be spent here
+     * The change in the approval rating of each renewable plant
      */
-    public void addRenewableEngineering(int actions)
-    {
-        mRenewableEng += actions;
-    }
+    private double mRatt;
 
     /**
-     * This will use action points to influence the price
-     *
-     * @param actions the number of action points to be spent here
+     * The change in the security of a single renewable plant
      */
-    public void addPriceChange(int actions)
-    {
-        mPriceChange += actions;
-    }
+    private double mRsec;
 
     /**
-     * This will use action points to lobby
-     *
-     * @param actions the number of action points to be spent here
+     * The change in the daily oil consumption
      */
-    public void addLobby(int actions)
-    {
-        mLobby += actions;
-    }
+    private double mOil;
 
     /**
-     * This will use action points to influence oil drilling
-     *
-     * @param actions the number of action points to be spent here
+     * The change in the oil security
      */
-    public void addOilDrilling(int actions)
+    private double mOilSec;
+
+    /**
+     * The change in the oil growth
+     */
+    private double mOilGrow;
+
+    ////////////////////////////// Getters
+
+    /**
+     * Get the change in budget
+     * @return the change in budget
+     */
+    public double getBudgetChange()
     {
-        mOilDrilling += actions;
+        return mBudgetChange;
     }
-
-    //////////////////// Getters
-
-    public int getNuclearScience()
-    {
-	return mNuclearSci;
-    }
-
-    public int getFossilScience()
-    {
-        return mFossilSci;
-    }
-
-    public int getRenewableScience()
-    {
-        return mRenewableSci;
-    }
-
-    public int getOilScience()
-    {
-        return mOilSci;
-    }
-
-    public int getNuclearEngenering()
-    {
-        return mNuclearEng;
-    }
-
-    public int getFossilEngenering()
-    {
-        return mFossilEng;
-    }
-
-    public int getRenewableEngenering()
-    {
-        return mRenewableEng;
-    }
-
-    public int getOilDrilling()
-    {
-        return mOilDrilling;
-    }
-
-    public int getLobby()
-    {
-        return mLobby;
-    }
-
-    public int getPriceChange()
+    
+    /**
+     * Get the change in energy price
+     * @return the change in the energy price
+     */
+    public double getPriceChange()
     {
         return mPriceChange;
+    }
+    
+    /**
+     * Get the change in approval
+     * @return the change in approval
+     */
+    public double getApprovalChange()
+    {
+        return mApprovalChange;
+    }
+    
+    /**
+     * Get the change in nuclear approval rating
+     * @return the change in nuclear approval rating
+     */
+    public double getNatt()
+    {
+        return mNatt;
+    }
+    
+    /**
+     * Get the change in Nuclear Security
+     * @return the change in nuclear security
+     */
+    public double getNsec()
+    {
+        return mNsec;
+    }
+    
+    /**
+     * Get the change in fossil approval rating
+     * @return the change in fossil approval rating
+     */
+    public double getFatt()
+    {
+        return mFatt;
+    }
+
+    /** 
+     * Get the change in fossil security
+     * @return the change in fossil security
+     */
+    public double getFsec()
+    {
+        return mFsec;
+    }
+    
+    /**
+     * Get the change in approval rating of renewable
+     * @return the change in approval rating of renewable
+     */
+    public double getRatt()
+    {
+        return mRatt;
+    }
+
+    /**
+     * Get the change in renewable security
+     * @return the change in renewable security
+     */
+    public double getRsec()
+    {
+        return mRsec;
+    }
+
+    /**
+     * Get the change in daily oil consumption
+     * @return the change in daily oil consumption
+     */
+    public double getOil()
+    {
+        return mOil;
+    }
+    
+    /**
+     * Get the change in oil security
+     * @return the change in oil security
+     */
+    public double getOilSec()
+    {
+        return mOilSec;
+    }
+    
+    /**
+     * Get the change in oil growth
+     * @return the change in oil growth
+     */
+    public double getOilGrow()
+    {
+        return mOilGrow;
+    }
+
+    //////////////////////// Setters
+    
+    /**
+     * Set the change in budget
+     * @param pBudgetChange change in budget
+     */
+    public void setBudgetChange(int pBudgetChange)
+    {
+        mBudgetChange = pBudgetChange;
+    }
+    
+    /**
+     * Set the change in the energy price
+     * @param pNRGChange change in the energy price
+     */
+    public void setPriceChange(int pPriceChange)
+    {
+        mPriceChange = pPriceChange;
+    }
+    
+    /**
+     * Set the change in approval
+     * @param pEmissionsChange change in approval
+     */
+    public void setApprovalChange(double pApprovalChange)
+    {
+        mApprovalChange = pApprovalChange;
+    }
+    
+    /**
+     * Set the change in nuclear approval rating
+     * @param pNatt a double
+     */
+    public void setNatt(double pNatt)
+    {
+        mNatt = pNatt;
+    }
+    
+    /**
+     * Set the change in nuclear security
+     * @param pNsec a double
+     */
+    public void setNsec(double pNsec)
+    {
+        mNsec = pNsec;
+    }
+    
+    /**
+     * Set the change in fossil approval rating
+     * @param pFatt a double
+     */
+    public void setFatt(double pFatt)
+    {
+        mFatt = pFatt;
+    }
+    
+    /**
+     * Set the change in fossil security
+     * @param pFsec a double
+     */
+    public void setFsec(double pFsec)
+    {
+        mFsec = pFsec;
+    }
+    
+    /**
+     * Set the change in renewable approval rating
+     * @param pRatt a double
+     */
+    public void setRatt(double pRatt)
+    {
+        mRatt = pRatt;
+    }
+    
+    /**
+     * Set the change in renewable security
+     * @param pRsec a double
+     */
+    public void setRsec(double pRsec)
+    {
+        mRsec = pRsec;
+    }
+
+    /**
+     * Set the change in daily oil consumption
+     * @param pOil
+     */
+    public void setOil(double pOil)
+    {
+        mOil = pOil;
+    }
+    
+    /**
+     * Set the change in oil security
+     * @param pOilSec a double
+     */
+    public void setOilSec(double pOilSec)
+    {
+        mOil = pOilSec;
+    }
+    
+    /**
+     * Set the change in oil growth
+     * @param pOilGrow a double
+     */
+    public void setOilGrow(double pOilGrow)
+    {
+        mOil = pOilGrow;
     }
 }
