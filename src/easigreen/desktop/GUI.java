@@ -40,9 +40,9 @@ public class GUI
  
    private static final String GAME_NAME = "Sargeant City";
    
-   private static final String[]   mainNavNames = new String[]{"country", "energy", "upgrades", "goals"};
+    private static final String[]   mainNavNames = new String[]{"country", "energy", "upgrades", "goals"};
    
-   private static final String[][] subNavNames  = new String[][]{{"world", "politicalresources", "trade"},
+    private static final String[][] subNavNames  = new String[][]{{"world", "politicalresources", "trade"},
 								 {"nuclear", "fossilfuel", "renewable", "oil"},
 								 {"science", "engineering", "policies", "technologies1"},
 								 {"shortterm", "longterm"}};
@@ -176,8 +176,9 @@ public class GUI
 	   {
 	       public void handle(ActionEvent event)
 	       {
-             windowArea.setRight(subNavigation.get(nav));
-             windowArea.setCenter(mContent.get(nav));
+		   windowArea.setRight(subNavigation.get(nav));
+		   mContent.get(nav).update();
+		   windowArea.setCenter(mContent.get(nav));
 	       }
 	   });
 	}
@@ -186,11 +187,12 @@ public class GUI
 	{
 	    for (final String subNavName : subNavNames[navNumber])
 	    {
-          events.put(subNavName, new EventHandler<ActionEvent>()
+		events.put(subNavName, new EventHandler<ActionEvent>()
 			   {
 			       public void handle(ActionEvent event)
 			       {
-                   windowArea.setCenter(mContent.get(subNavName));
+				   mContent.get(subNavName).update();
+				   windowArea.setCenter(mContent.get(subNavName));
 			       }
 			   });
 	    }
@@ -240,10 +242,36 @@ public class GUI
              }
           }
        }
-       catch (Exception e)
+       catch (ClassNotFoundException e)
        {
           System.out.println("Fatal Error: " + currentClass + " class not found");
           exit();
+       }
+       catch (InstantiationException e)
+       {
+	   System.out.println("Fatal Error: Could not instantiate " + currentClass);
+	   exit();
+       }
+       catch (NoSuchMethodException e)
+       {
+	   System.out.println("Fatal Error: Constructor for " + currentClass + "Not Found");
+	   exit();
+       }
+       catch (IllegalAccessException e)
+       {
+	   System.out.println("Fatal Error: Cannot access " + currentClass);
+	   exit();
+       }
+       catch (InvocationTargetException e)
+       {
+	   System.out.println("Fatal Error: Invocation Target Exception");
+	   System.out.println(e.getCause() + " caused by " + currentClass);
+	   exit();
+       }
+       catch (Exception e)
+       {
+	   System.out.println("Error Initializing " + currentClass);
+	   e.printStackTrace();
        }
     }
 
@@ -255,6 +283,7 @@ public class GUI
 	windowArea = new BorderPane();
 	windowArea.setLeft(mainNavigation);
 	windowArea.setRight(subNavigation.get(mainNavNames[0]));
+	windowArea.setCenter(mContent.get(mainNavNames[0]));
     }
 
     /**
