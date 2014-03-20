@@ -1,8 +1,17 @@
 import java.lang.Math;
 
+/**
+ * Checks to see if an imput and a set code are the same number.
+ *
+ * @author Larson Caldwell
+ * @author Haru McClellan
+ * @author Sam Graham
+ */
 public class CodeVerifier
 {
     private int mCode;
+
+    // can construct itself if ya want
 
     //public CodeVerifier()
     //{
