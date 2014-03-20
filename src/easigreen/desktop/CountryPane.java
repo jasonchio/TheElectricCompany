@@ -30,14 +30,14 @@ public class CountryPane
 			    "",
 			    "Energy Supplied", "Available Funds", "Public Approval", "Oil Consumption",
 			    "",
-			    "Total Profit", "Total Security", "Total Emissions",
-			    "",
-			    "Technologies Implemented"};
+			    "Total Profit", "Total Security", "Total Emissions"};
     }
 
     protected String[] mCategories;
 
     protected Label[] mLabels;
+
+    protected ImplementedTechList mTechs;
 
     protected int[] getColumns()
     {
@@ -46,7 +46,7 @@ public class CountryPane
 
     protected int[] getRows()
     {
-	return new int[] {16, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 32};
+	return new int[] {16, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 28, 4};
     }
 
     protected String getTitle()
@@ -69,7 +69,8 @@ public class CountryPane
 	initializeLabels();
 
 	add(getTitleLabel(), 1, 0, 3, 1);
-	for (int i = 0; i < mCategories.length; i++)
+	int i;
+	for (i = 0; i < mCategories.length; i++)
 	{
 	    if (!mCategories[i].equals(""))
 	    {
@@ -77,6 +78,8 @@ public class CountryPane
 		add(mValues.get(mCategories[i]), 3, i + 1);
 	    }
 	}
+	add(new Label("Technologies Implemented:"), 2, ++i + 1);
+	add(mTechs, 2, ++i + 1, 2, 1);
     }
 
     
@@ -94,6 +97,7 @@ public class CountryPane
 	    }
 	}
 
+	mTechs = new ImplementedTechList(mModel);
 	update();
     }
 
@@ -111,8 +115,8 @@ public class CountryPane
 	mValues.get("Total Profit"      ).setText("0");
 	mValues.get("Total Security"    ).setText("0");
 	mValues.get("Total Emissions"   ).setText("0");
-	
-	mValues.get("Technologies Implemented").setText("0");
+
+	mTechs.update();
     }
 
 }
