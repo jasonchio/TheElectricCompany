@@ -67,6 +67,10 @@ public class ContentPane
    {
    }
 
+    protected void update()
+    {
+    }
+
    protected void setGrid()
    {
       int[] columns = getColumns();
