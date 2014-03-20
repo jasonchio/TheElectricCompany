@@ -19,14 +19,33 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class TradePane
-   extends GridPane
+   extends ContentPane
 {
-  /**
-    * Holds a reference to the model
-    */
-   private SimCity model = null;
+    private ContentPane mNewTradePane;
+    private Button      mNewTrade;
 
-    private Pane newTradePane;
+    protected int[] getColumns()
+    {
+	return new int[] {};
+    }
+
+    protected int[] getRows()
+    {
+	return new int[] {};
+    }
+
+    protected String getTitle()
+    {
+	return "Trade";
+    }
+
+    protected void init()
+    {
+	mNewTradePane = new NewTradePane(mModel);
+	EventHandler<ActionEvent> newTradeEvent = new PanelChangeEvent(mNewTradePane);
+	mNewTrade = new Button("New Trade");
+	mNewTrade.setOnAction(newTradeEvent);
+    }
 
    /**
     * Constructor
@@ -34,26 +53,12 @@ public class TradePane
     */
     public TradePane(SimCity pModel)
    {
-       model = pModel;
-       newTradePane = new NewTradePane(model);
-       setup();
+       super(pModel);
    }
 
-    private void setup()
-    {
-	Label  title = new Label("Trade");
-	title.setFont(new Font("Arial", 40));
-        setHalignment(title, HPos.CENTER);
-
-	Button newTrade = new Button("New Trade");
-	newTrade.setOnAction(new EventHandler<ActionEvent>()
-			     {
-				 public void handle(ActionEvent event)
-				 {
-				     GUI.getInstance().getWindow().setCenter(newTradePane);
-				 }
-			     });
-	add(title, 0, 0);
-	add(newTrade, 0, 1);
+    protected void setup()
+    {        
+        add(getTitleLabel(), 0, 0);
+        add(mNewTrade, 0, 1);
     }
 }

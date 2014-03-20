@@ -19,14 +19,32 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class RenewablePane
-   extends GridPane
+   extends ContentPane
 {
-  /**
-    * Holds a reference to the model
-    */
-   private SimCity model = null;
+    private ContentPane mRenewableUpgradesPane;
+    private Button      mRenewableUpgrades;
 
-    private Pane renewableUpgradesPane;
+    protected int[] getColumns()
+    {
+	return new int[] {};
+    }
+
+    protected int[] getRows()
+    {
+	return new int[] {};
+    }
+
+    protected String getTitle()
+    {
+	return "Renewable";
+    }
+
+    protected void init()
+    {
+	mRenewableUpgradesPane = new RenewableUpgradePane(mModel);
+	EventHandler<ActionEvent> upgradeEvent = new PanelChangeEvent(mRenewableUpgradesPane);
+        mRenewableUpgrades = new ImageButton("renewableupgrade.png", upgradeEvent);
+    }
 
    /**
     * Constructor
@@ -34,28 +52,12 @@ public class RenewablePane
     */
     public RenewablePane(SimCity pModel)
    {
-       model = pModel;
-       renewableUpgradesPane = new RenewableUpgradePane(model);
-       setup();
+       super(pModel);
    }
 
-    private void setup()
-    {
-        Label  title = new Label("Renewable");
-	title.setFont(new Font("Arial", 40));
-        setHalignment(title, HPos.CENTER);
-
-        EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
-	{
-	    public void handle(ActionEvent event)
-	    {
-		GUI.getInstance().getWindow().setCenter(renewableUpgradesPane);
-	    }
-	};
-        Button renewableUpgrades = new ImageButton("renewableupgrade.png", upgradeEvent);
-
-        add(title, 0, 0);
-        add(renewableUpgrades, 0, 1);
+    protected void setup()
+    {        
+        add(getTitleLabel(), 0, 0);
+        add(mRenewableUpgrades, 0, 1);
     }
-
 }

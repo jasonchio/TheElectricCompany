@@ -48,16 +48,20 @@ public class ContentPane
    protected void setup()
    {
       setGrid();
-      Label title = new Label(getTitle());
-      title.setFont(new Font("Arial", 40));
-      setHalignment(title, HPos.CENTER);
-      add(title, 1, 0);
    }
 
    protected String getTitle()
    {
       return "Unknown";
    }
+
+    protected Label getTitleLabel()
+    {
+	Label title = new Label(getTitle());
+	title.setFont(new Font("Arial", 40));
+	setHalignment(title, HPos.CENTER);
+	return title;
+    }
 
    protected void init()
    {

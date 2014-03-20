@@ -19,14 +19,32 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class FossilPane
-   extends GridPane
+   extends ContentPane
 {
-  /**
-    * Holds a reference to the model
-    */
-   private SimCity model = null;
+    private ContentPane mFossilUpgradesPane;
+    private Button      mFossilUpgrades;
 
-    private Pane fossilUpgradesPane;
+    protected int[] getColumns()
+    {
+	return new int[] {};
+    }
+
+    protected int[] getRows()
+    {
+	return new int[] {};
+    }
+
+    protected String getTitle()
+    {
+	return "Fossil Fuel";
+    }
+
+    protected void init()
+    {
+	mFossilUpgradesPane = new FossilUpgradePane(mModel);
+	EventHandler<ActionEvent> upgradeEvent = new PanelChangeEvent(mFossilUpgradesPane);
+        mFossilUpgrades = new ImageButton("fossilfuelupgrade.png", upgradeEvent);
+    }
 
    /**
     * Constructor
@@ -34,28 +52,12 @@ public class FossilPane
     */
     public FossilPane(SimCity pModel)
    {
-       model = pModel;
-       fossilUpgradesPane = new FossilUpgradePane(model);
-       setup();
+       super(pModel);
    }
 
-    private void setup()
-    {
-        Label  title = new Label("Fossil Fuel");
-	title.setFont(new Font("Arial", 40));
-        setHalignment(title, HPos.CENTER);
-
-        EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
-	{
-	    public void handle(ActionEvent event)
-	    {
-		GUI.getInstance().getWindow().setCenter(fossilUpgradesPane);
-	    }
-	};
-        Button fossilUpgrades = new ImageButton("fossilfuelupgrade.png", upgradeEvent);
-
-        add(title, 0, 0);
-        add(fossilUpgrades, 0, 1);
+    protected void setup()
+    {        
+        add(getTitleLabel(), 0, 0);
+        add(mFossilUpgrades, 0, 1);
     }
-
 }

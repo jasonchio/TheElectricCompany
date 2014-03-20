@@ -76,7 +76,7 @@ public class GUI
     /**
      * Maps strings to the content page it provides
      */
-    private static Map<String, Pane> mContent;
+    private static Map<String, ContentPane> mContent;
  
     /**
      * The Primary Stage for this application
@@ -220,7 +220,7 @@ public class GUI
 
     private void initializeContent()
     {
-       mContent = new HashMap<String, Pane>();
+       mContent = new HashMap<String, ContentPane>();
        String currentClass = "";
        try
        {
@@ -231,12 +231,12 @@ public class GUI
              packagePrefix = packagePrefix.substring(0, lastDotIndex + 1);
              currentClass = packagePrefix + mainClassNames[navNumber];
              Constructor mainConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
-             mContent.put(mainNavNames[navNumber], (GridPane) mainConstruct.newInstance(model));
+             mContent.put(mainNavNames[navNumber], (ContentPane) mainConstruct.newInstance(model));
              for (int subNavNum = 0; subNavNum < subNavNames[navNumber].length; subNavNum++)
              {
                 currentClass = packagePrefix + subClassNames[navNumber][subNavNum];
                 Constructor subConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
-                mContent.put(subNavNames[navNumber][subNavNum], (GridPane) subConstruct.newInstance(model));
+                mContent.put(subNavNames[navNumber][subNavNum], (ContentPane) subConstruct.newInstance(model));
              }
           }
        }

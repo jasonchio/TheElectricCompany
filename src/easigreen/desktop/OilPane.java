@@ -19,14 +19,32 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class OilPane
-   extends GridPane
+   extends ContentPane
 {
-  /**
-    * Holds a reference to the model
-    */
-   private SimCity model = null;
+    private ContentPane mOilUpgradesPane;
+    private Button      mOilUpgrades;
 
-    private Pane oilUpgradesPane;
+    protected int[] getColumns()
+    {
+	return new int[] {};
+    }
+
+    protected int[] getRows()
+    {
+	return new int[] {};
+    }
+
+    protected String getTitle()
+    {
+	return "Oil";
+    }
+
+    protected void init()
+    {
+	mOilUpgradesPane = new OilUpgradePane(mModel);
+	EventHandler<ActionEvent> upgradeEvent = new PanelChangeEvent(mOilUpgradesPane);
+        mOilUpgrades = new ImageButton("oilupgrade.png", upgradeEvent);
+    }
 
    /**
     * Constructor
@@ -34,28 +52,12 @@ public class OilPane
     */
     public OilPane(SimCity pModel)
    {
-       model = pModel;
-       oilUpgradesPane = new OilUpgradePane(model);
-       setup();
+       super(pModel);
    }
 
-    private void setup()
-    {
-        Label  title = new Label("Oil");
-	title.setFont(new Font("Arial", 40));
-        setHalignment(title, HPos.CENTER);
-
-        EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
-	{
-	    public void handle(ActionEvent event)
-	    {
-		GUI.getInstance().getWindow().setCenter(oilUpgradesPane);
-	    }
-	};
-        Button oilUpgrades = new ImageButton("oilupgrade.png", upgradeEvent);
-
-        add(title, 0, 0);
-        add(oilUpgrades, 0, 1);
+    protected void setup()
+    {        
+        add(getTitleLabel(), 0, 0);
+        add(mOilUpgrades, 0, 1);
     }
-
 }

@@ -19,14 +19,32 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class NuclearPane
-   extends GridPane
+   extends ContentPane
 {
-  /**
-    * Holds a reference to the model
-    */
-   private SimCity model = null;
+    private ContentPane mNuclearUpgradesPane;
+    private Button      mNuclearUpgrades;
 
-    private Pane nuclearUpgradesPane;
+    protected int[] getColumns()
+    {
+	return new int[] {};
+    }
+
+    protected int[] getRows()
+    {
+	return new int[] {};
+    }
+
+    protected String getTitle()
+    {
+	return "Nuclear";
+    }
+
+    protected void init()
+    {
+	mNuclearUpgradesPane = new NuclearUpgradePane(mModel);
+	EventHandler<ActionEvent> upgradeEvent = new PanelChangeEvent(mNuclearUpgradesPane);
+        mNuclearUpgrades = new ImageButton("nuclearupgrade.png", upgradeEvent);
+    }
 
    /**
     * Constructor
@@ -34,28 +52,12 @@ public class NuclearPane
     */
     public NuclearPane(SimCity pModel)
    {
-       model = pModel;
-       nuclearUpgradesPane = new NuclearUpgradePane(model);
-       setup();
+       super(pModel);
    }
 
-    private void setup()
-    {
-        Label  title = new Label("Nuclear");
-	title.setFont(new Font("Arial", 40));
-        setHalignment(title, HPos.CENTER);
-
-	EventHandler<ActionEvent> upgradeEvent = new EventHandler<ActionEvent>()
-	    {
-		public void handle(ActionEvent event)
-		{
-		    GUI.getInstance().getWindow().setCenter(nuclearUpgradesPane);
-		}
-	    };
-	Button nuclearUpgrades = new ImageButton("nuclearupgrade.png", upgradeEvent);
-
-        add(title, 0, 0);
-        add(nuclearUpgrades, 0, 1);
+    protected void setup()
+    {        
+        add(getTitleLabel(), 0, 0);
+        add(mNuclearUpgrades, 0, 1);
     }
-
 }

@@ -19,15 +19,22 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class CountryPane
-   extends GridPane
+   extends ContentPane
 {
-  /**
-    * Holds a reference to the model
-    */
-       private SimCity model = null;
+    protected int[] getColumns()
+    {
+	return new int[] {12, 76, 12};
+    }
 
-    private static final int[] COLUMNS = new int[] {12, 76, 12};
-    private static final int[] ROWS    = new int[] {16, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 32};
+    protected int[] getRows()
+    {
+	return new int[] {16, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 32};
+    }
+
+    protected String getTitle()
+    {
+	return "Country";
+    }
 
    /**
     * Constructor
@@ -35,33 +42,12 @@ public class CountryPane
     */
     public CountryPane(SimCity pModel)
    {
-       model = pModel;
-       setup();
+       super(pModel);
    }
 
-    private void setup()
+    protected void setup()
     {
 	setGrid();
-	Label title = new Label("Country");
-	title.setFont(new Font("Arial", 40));
-	setHalignment(title, HPos.CENTER);
-	add(title, 1, 0);
-    }
-
-    private void setGrid()
-    {
-	for (int i = 0; i < COLUMNS.length; i++)
-	{
-	    ColumnConstraints column = new ColumnConstraints();
-	    column.setPercentWidth(COLUMNS[i]);
-	    getColumnConstraints().add(column);
-	}
-
-	for (int i = 0; i < ROWS.length; i++)
-	{
-	    RowConstraints row = new RowConstraints();
-	    row.setPercentHeight(ROWS[i]);
-	    getRowConstraints().add(row);
-	}
+	add(getTitleLabel(), 1, 0);
     }
 }

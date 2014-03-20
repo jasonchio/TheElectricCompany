@@ -19,12 +19,22 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class UpgradesPane
-   extends GridPane
+   extends ContentPane
 {
-  /**
-    * Holds a reference to the model
-    */
-   private SimCity model = null;
+    protected int[] getColumns()
+    {
+	return new int[] {};
+    }
+
+    protected int[] getRows()
+    {
+	return new int[] {};
+    }
+
+    protected String getTitle()
+    {
+	return "Upgrades";
+    }
 
    /**
     * Constructor
@@ -32,15 +42,12 @@ public class UpgradesPane
     */
     public UpgradesPane(SimCity pModel)
    {
-       model = pModel;
-       setup();
+       super(pModel);
    }
 
-    private void setup()
+    protected void setup()
     {
-        Label title = new Label("Upgrades");
-	title.setFont(new Font("Arial", 40));
-        setHalignment(title, HPos.CENTER);
-        add(title, 0, 0);
+	setGrid();
+	add(getTitleLabel(), 1, 0);
     }
 }
