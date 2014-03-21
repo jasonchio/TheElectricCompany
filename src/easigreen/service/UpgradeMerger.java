@@ -146,7 +146,7 @@ public class UpgradeMerger
     public double getEmissionsChange() {return mEmissionsChange;}
     public double getPriceChange() {return mPriceChange;}
     public double getDemandChange() {return mDemandChange;}
-    public double geDemandRateChange() {return mDemandRateChange;}
+    public double getDemandRateChange() {return mDemandRateChange;}
 
     /**
      * Get the change in national power
