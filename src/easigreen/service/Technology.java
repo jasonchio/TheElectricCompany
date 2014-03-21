@@ -1,6 +1,7 @@
 package easigreen.service;
 
 import easigreen.system.*;
+import easigreen.service.*;
 
 /**
  * The technology class contains the information about what will be changed
@@ -216,6 +217,108 @@ public class Technology
         mOil = pOil;
         mOilSec = pOilSec;
         mOilGrow = pOilGrow;
+    }
+
+    public UpgradeManager update()
+    {
+        UpgradeMerger upgradeEffects = new UpgradeMerger();
+
+        upgradeEffects.setBudgetChange(
+           upgradeEffects.getBudgetChange() + mBudgetChange);
+        upgradeEffects.setDemandRateChange(
+	   upgradeEffects.getDemandRateChange() + mNRGChange);
+        upgradeEffects.setEmissionsChange(
+	   upgradeEffects.getEmissionsChange() + mEmissionsChnge);
+
+        upgradeEffects.setNpow(upgradeEffects.getNpow() + mNpow);
+	upgradeEffects.setNcost(upgradeEffects.getNcost() + mNcost);
+	upgradeEffects.setNatt(upgradeEffects.getNatt() + mNatt);
+	upgradeEffects.setNemit(upgradeEffects.getNemit() + mNemit);
+	upgradeEffects.setNsec(upgradeEffects.getNsec() + mNsec);
+	upgradeEffects.setNprof(upgradeEffects.getNprof() + mNprof);
+
+	upgradeEffects.setFpow(upgradeEffects.getFpow() + mFpow);
+	upgradeEffects.setFcost(upgradeEffects.getFcost() + mFcost);
+	upgradeEffects.setFatt(upgradeEffects.getFatt() + mFatt);
+	upgradeEffects.setFemit(upgradeEffects.getFemit() + mFemit);
+	upgradeEffects.setFsec(upgradeEffects.getFsec() + mFsec);
+	upgradeEffects.setFprof(upgradeEffects.getFprof() + mFprof);
+
+	upgradeEffects.setRpow(upgradeEffects.getRpow() + mRpow);
+	upgradeEffects.setRcost(upgradeEffects.getRcost() + mRcost);
+	upgradeEffects.setRatt(upgradeEffects.getRatt() + mRatt);
+	upgradeEffects.setRemit(upgradeEffects.getRemit() + mRemit);
+	upgradeEffects.setRsec(upgradeEffects.getRsec() + mRsec);
+	upgradeEffects.setRprof(upgradeEffects.getRprof() + mRprof);
+
+        upgradeEffects.setOil(upgradeEffects.getOil() + mOil);
+	upgradeEffects.setOilSec(upgradeEffects.getOilSec() + mOilSec);
+	upgradeEffects.setOilGrow(upgradeEffects.getOilGrow() + mOilGrow);
+
+        // Bellow is code for if you want to go through an entire array list 
+	// of technologies
+
+	/**
+	for (int i = 0; i < implemented.size(); i++)
+	{
+         int quality = implemented.get(i).getQuality();
+         int strange = implemented.get(i).iWantQuality();
+
+		mBudgetChange += implemented.get(i).getBudgetChange()
+		    * implemented.get(i).getQuality();
+		mDemandRateChange += implemented.get(i).getNRGChange()
+		    * implemented.get(i).getQuality();
+		mEmissionsChange += implemented.get(i).getEmissionsChange()
+		    * implemented.get(i).getQuality();
+
+		mNpowChange += implemented.get(i).getNpow()
+		    * implemented.get(i).getQuality();
+		mNcostChange += implemented.get(i).getNcost()
+		    * implemented.get(i).getQuality();
+		mNattChange += implemented.get(i).getNatt()
+		    * implemented.get(i).getQuality();
+		mNemitChange += implemented.get(i).getNemit()
+		    * implemented.get(i).getQuality();
+		mNsecChange += implemented.get(i).getNsec()
+		    * implemented.get(i).getQuality();
+		mNprofChange += implemented.get(i).getNprof()
+		    * implemented.get(i).getQuality();
+
+		mFpowChange += implemented.get(i).getFpow()
+		    * implemented.get(i).getQuality();
+		mFcostChange += implemented.get(i).getFcost()
+		    * implemented.get(i).getQuality();
+		mFattChange += implemented.get(i).getFatt()
+		    * implemented.get(i).getQuality();
+		mFemitChange += implemented.get(i).getFemit()
+		    * implemented.get(i).getQuality();
+		mFsecChange += implemented.get(i).getFsec()
+		    * implemented.get(i).getQuality();
+		mFprofChange += implemented.get(i).getFprof()
+		    * implemented.get(i).getQuality();
+
+		mRpowChange += implemented.get(i).getRpow()
+		    * implemented.get(i).getQuality();
+		mRcostChange += implemented.get(i).getRcost()
+		    * implemented.get(i).getQuality();
+		mRattChange += implemented.get(i).getRatt()
+		    * implemented.get(i).getQuality();
+		mRemitChange += implemented.get(i).getRemit()
+		    * implemented.get(i).getQuality();
+		mRsecChange += implemented.get(i).getRsec()
+		    * implemented.get(i).getQuality();
+		mRprofChange += implemented.get(i).getRprof()
+		    * implemented.get(i).getQuality();
+
+		mOilChange += implemented.get(i).getOil()
+		    * implemented.get(i).getQuality();
+		mOilSecChange += implemented.get(i).getOilSec()
+		    * implemented.get(i).getQuality();
+		mOilGrowChange += implemented.get(i).getOilGrow()
+		    * implemented.get(i).getQuality();
+		}
+	*/
+	return upgradeEffects;
     }
 
     ////////////////////////////// Getters
