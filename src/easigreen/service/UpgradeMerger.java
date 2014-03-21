@@ -1,3 +1,8 @@
+package easigreen.service;
+
+import easigreen.service.*;
+import easigreen.system.*;
+
 import java.util.ArrayList;
 
 public class UpgradeMerger
@@ -346,7 +351,8 @@ public class UpgradeMerger
        {mPriceChange = pPriceChange;}
     public void setDemandChange(double pDemandChange) 
        {mDemandChange = pDemandChange;}
-    public void seDemandRateChange(double pDemandRateChange) 
+
+    public void setDemandRateChange(double pDemandRateChange) 
        {mDemandRateChange = pDemandRateChange;}
 
     public void setEmissionsChange(double pEmissionsChange)
