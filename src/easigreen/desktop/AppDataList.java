@@ -27,7 +27,7 @@ class AppDataList
     {
 	mDataNames = new ArrayList<String>();
 	setItems(mData);
-	setPrefSize(250, 100);
+	setPrefSize(50, 50);
 	update();
     }
 

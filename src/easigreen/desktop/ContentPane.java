@@ -42,12 +42,12 @@ public class ContentPane
    {
        mModel = pModel;
        init();
+       setGrid();
        setup();
    }
 
    protected void setup()
    {
-      setGrid();
    }
 
    protected String getTitle()

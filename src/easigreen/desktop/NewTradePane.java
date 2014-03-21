@@ -21,19 +21,38 @@ import javafx.stage.*;
 public class NewTradePane
    extends ContentPane
 {
+    protected Button mSubmit;
+
+    protected TradeBasePane mOffer;
+    protected TradeBasePane mRequest;
+
     protected int[] getColumns()
     {
-	return new int[] {};
+	return new int[] {12, 76, 12};
     }
 
     protected int[] getRows()
     {
-	return new int[] {};
+	return new int[] {10, 40, 40, 10};
     }
 
     protected String getTitle()
     {
 	return "New Trade";
+    }
+
+    protected void init()
+    {
+	mOffer   = new TradeOfferPane(mModel);
+	mRequest = new TradeRequestPane(mModel);
+	mSubmit  = new Button("Submit");
+	setHalignment(mSubmit, HPos.CENTER);
+	mSubmit.setOnAction(new EventHandler<ActionEvent>()
+			    {
+				public void handle(ActionEvent event)
+				{
+				}
+			    });
     }
 
    /**
@@ -47,7 +66,9 @@ public class NewTradePane
 
     protected void setup()
     {
-	setGrid();
 	add(getTitleLabel(), 1, 0);
+	add(mOffer         , 1, 1);
+	add(mRequest       , 1, 2);
+	add(mSubmit        , 1, 3);
     }
 }

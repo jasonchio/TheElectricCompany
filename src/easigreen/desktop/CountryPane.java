@@ -22,6 +22,8 @@ public class CountryPane
    extends ContentPane
 {
 
+    protected String mCountryName;
+
     Map<String, Label> mValues;
 
     protected String[] getCategories()
@@ -37,6 +39,8 @@ public class CountryPane
 
     protected Label[] mLabels;
 
+    Label mTitle;
+
     protected ImplementedTechList mTechs;
 
     protected int[] getColumns()
@@ -51,7 +55,7 @@ public class CountryPane
 
     protected String getTitle()
     {
-	return "Country";
+	return "mCountryName";
     }
 
    /**
@@ -59,16 +63,17 @@ public class CountryPane
     * @param SimCity pModel the current sim city Model
     */
     public CountryPane(SimCity pModel)
-   {
-       super(pModel);
-   }
+    {
+	super(pModel);
+    }
 
     protected void setup()
     {
-	setGrid();
+	mCountryName = "Your Country";
+	mTitle = getTitleLabel();
 	initializeLabels();
 
-	add(getTitleLabel(), 1, 0, 3, 1);
+	add(mTitle, 1, 0, 3, 1);
 	int i;
 	for (i = 0; i < mCategories.length; i++)
 	{
@@ -82,6 +87,11 @@ public class CountryPane
 	add(mTechs, 2, ++i + 1, 2, 1);
     }
 
+    public void setCountry(String pCountry)
+    {
+	mCountryName = pCountry;
+	update();
+    }
     
     protected void initializeLabels()
     {
@@ -102,7 +112,9 @@ public class CountryPane
     }
 
     protected void update()
-    {
+    { 
+	mTitle.setText(mCountryName);
+
 	mValues.get("Nuclear Plants"    ).setText("0"); // Zeros represent Updated model data
 	mValues.get("Fossil Fuel Plants").setText("0");
 	mValues.get("Renewable Plants"  ).setText("0");

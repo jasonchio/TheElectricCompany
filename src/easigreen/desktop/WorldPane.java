@@ -21,19 +21,38 @@ import javafx.stage.*;
 public class WorldPane
    extends ContentPane
 {
+    protected CountryList mCountries;
+    protected CountryPane mCountryPane;
+    protected Button mView;
+
     protected int[] getColumns()
     {
-	return new int[] {};
+	return new int[] {20, 60, 20};
     }
 
     protected int[] getRows()
     {
-	return new int[] {};
+	return new int[] {12, 4, 70, 2, 6, 6};
     }
 
     protected String getTitle()
     {
-	return "World";
+	return "Country Rankings";
+    }
+
+    protected void init()
+    {
+        mCountryPane = new CountryPane(mModel);
+        EventHandler<ActionEvent> newTradeEvent = new EventHandler<ActionEvent>()
+	    {
+		public void handle(ActionEvent event)
+		{
+		    mCountryPane.setCountry("Another Country");
+		    GUI.getInstance().getWindow().setCenter(mCountryPane);
+		}
+	    };
+        mView = new Button("View");
+        mView.setOnAction(newTradeEvent);
     }
 
    /**
@@ -47,7 +66,15 @@ public class WorldPane
 
     protected void setup()
     {
-	setGrid();
-	add(getTitleLabel(), 1, 0);
+	mCountries = new CountryList(mModel);
+	add(getTitleLabel(), 0, 0, 3, 1);
+	add(mCountries, 1, 2, 1, 1);
+	setHalignment(mView, HPos.CENTER);
+	add(mView, 1, 4);
+    }
+
+    protected void update()
+    {
+	mCountries.update();
     }
 }
