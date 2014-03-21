@@ -1,7 +1,8 @@
 import java.lang.Math;
+import java.
 
 /**
- * Checks to see if an imput and a set code are the same number.
+ * Checks to see if an input and a set code are the same number.
  *
  * @author Larson Caldwell
  * @author Haru McClellan
@@ -9,18 +10,19 @@ import java.lang.Math;
  */
 public class CodeVerifier
 {
+    /**
+	 * 
+	 */ 
     private int mCode;
 
-    // can construct itself if ya want
-
-    //public CodeVerifier()
-    //{
-    //    mCode = (Math().Random() * 1000);
-    //}
+	
+    public void CodeVerifier()
+	{
+	}
 
     public boolean check(int input)
     {
-	if (mCode == input)
+	    if (mCode == input)
         {
             return true;
         }
