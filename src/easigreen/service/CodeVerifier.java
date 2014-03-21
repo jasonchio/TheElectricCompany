@@ -1,5 +1,4 @@
 import java.lang.Math;
-import java.
 
 /**
  * Checks to see if an input and a set code are the same number.
