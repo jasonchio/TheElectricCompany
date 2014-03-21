@@ -1,4 +1,5 @@
 import java.util.ArrayList;
+import java.lang.Math;
 
 public class CodeGenerator
 {
@@ -7,16 +8,16 @@ public class CodeGenerator
     /**
      * the codes to be generated for each tech
      */
-    private ArrayList<int> mTechnologies;
+    private ArrayList<Integer> mTechnologies;
 
     /**
      * Codes are generated for each technology
      */
     public void generate(ArrayList<Technology> allTechnology)
     {
-        for (int i = 0, i < allTechnology.size(), i++)
+        for (int i = 0; i < allTechnology.size(); i++)
         {
-            int newCode = Math().Random() * 2000000000;
+            int newCode = (int)(Math.random() * 2000000000);
             mTechnologies.add(newCode);
         }
     }
