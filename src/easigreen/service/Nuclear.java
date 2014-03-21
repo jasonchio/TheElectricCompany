@@ -14,6 +14,48 @@ import easigreen.system.*;
 public class Nuclear
     extends Energy
 {
+    //////////////////// Variables
+
+    /**
+     * The number of plants
+     */
+    final private int mAmount;
+
+    /**
+     * The cost to build each new plant
+     */
+    final private double mCostBuild;
+
+    /**
+     * The cost to remove each existing plant
+     */
+    final private double mCostRemove;
+
+    /**
+     * The approval rating per unit
+     */
+    final private double mApproval;
+
+    /**
+     * The power production per unit
+     */
+    final private double mProduction;
+
+    /**
+     * The emissions produced per unit
+     */
+    final private double mEmissions;
+
+    /**
+     * The security of each unit
+     */
+    final private double mSecurity;
+
+    /**
+     * The profit made with each unit
+     */
+    final private double mProfitPercent;
+
     //////////////////// Constructors
 
     /**
