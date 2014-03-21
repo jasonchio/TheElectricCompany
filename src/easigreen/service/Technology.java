@@ -219,7 +219,7 @@ public class Technology
         mOilGrow = pOilGrow;
     }
 
-    public UpgradeManager update()
+    public UpgradeMerger update()
     {
         UpgradeMerger upgradeEffects = new UpgradeMerger();
 
@@ -228,7 +228,7 @@ public class Technology
         upgradeEffects.setDemandRateChange(
 	   upgradeEffects.getDemandRateChange() + mNRGChange);
         upgradeEffects.setEmissionsChange(
-	   upgradeEffects.getEmissionsChange() + mEmissionsChnge);
+	   upgradeEffects.getEmissionsChange() + mEmissionsChange);
 
         upgradeEffects.setNpow(upgradeEffects.getNpow() + mNpow);
 	upgradeEffects.setNcost(upgradeEffects.getNcost() + mNcost);
