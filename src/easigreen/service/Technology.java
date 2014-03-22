@@ -330,6 +330,11 @@ public class Technology
         return mQuality;
     }
 
+    public int iWantQuality()
+    {
+        return 5;
+    }
+
 	/**
 	 * Get the change in budget
 	 * @return the change in budget
