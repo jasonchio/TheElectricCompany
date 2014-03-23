@@ -33,13 +33,89 @@ public class TechnologyManager
 
     //////////////////// Methods
 
-    public void update()
+    public UpgradeMerger update()
     {
+	UpgradeMerger oneSet = new UpgradeMerger();
         for (int i = 0; i < implemented.size(); i++)
         {
-            implemented.get(i).update();
-        }
+            oneSet.setBudgetChange(oneSet.getBudgetChange() 
+                                   + implemented.get(i).update()
+                                     .getBudgetChange());
+
+	    oneSet.setDemandRateChange(oneSet.getDemandRateChange()
+                                       + implemented.get(i).update()
+				         .getDemandRateChange());
+
+	    oneSet.setEmissionsChange(oneSet.getEmissionsChange()
+                                       + implemented.get(i).update()
+				       .getEmissionsChange());
+
+	    oneSet.setNpow(oneSet.getNpow()
+                           + implemented.get(i).update().getNpow());
+
+	    oneSet.setNcost(oneSet.getNcost()
+                            + implemented.get(i).update().getNcost());
+
+	    oneSet.setNatt(oneSet.getNatt()
+                           + implemented.get(i).update().getNatt());
+
+	    oneSet.setNemit(oneSet.getNemit()
+                            + implemented.get(i).update().getNemit());
+
+	    oneSet.setNsec(oneSet.getNsec()
+                           + implemented.get(i).update().getNsec());
+
+	    oneSet.setNprof(oneSet.getNprof()
+                           + implemented.get(i).update().getNprof());
+
+	    oneSet.setFpow(oneSet.getFpow()
+                           + implemented.get(i).update().getFpow());
+
+            oneSet.setFcost(oneSet.getFcost()
+                            + implemented.get(i).update().getFcost());
+
+            oneSet.setFatt(oneSet.getFatt()
+                           + implemented.get(i).update().getFatt());
+
+            oneSet.setFemit(oneSet.getFemit()
+                            + implemented.get(i).update().getFemit());
+
+            oneSet.setFsec(oneSet.getFsec()
+                           + implemented.get(i).update().getFsec());
+
+            oneSet.setFprof(oneSet.getFprof()
+			    + implemented.get(i).update().getFprof());
+
+	    oneSet.setRpow(oneSet.getRpow()
+                           + implemented.get(i).update().getRpow());
+
+            oneSet.setRcost(oneSet.getRcost()
+                            + implemented.get(i).update().getRcost());
+
+            oneSet.setRatt(oneSet.getRatt()
+                           + implemented.get(i).update().getRatt());
+
+            oneSet.setRemit(oneSet.getRemit()
+                            + implemented.get(i).update().getRemit());
+
+            oneSet.setRsec(oneSet.getRsec()
+                           + implemented.get(i).update().getRsec());
+
+            oneSet.setRprof(oneSet.getRprof()
+			    + implemented.get(i).update().getRprof());
+
+	    oneSet.setOil(oneSet.getOil()
+                            + implemented.get(i).update().getOil());
+
+	    oneSet.setOilSec(oneSet.getOilSec()
+			  + implemented.get(i).update().getOilSec());
+
+	    oneSet.setOilGrow(oneSet.getOilGrow()
+			  + implemented.get(i).update().getOilGrow());
+	}
+        return oneSet;
     }
+
 
     //////////////////// Getters
 
