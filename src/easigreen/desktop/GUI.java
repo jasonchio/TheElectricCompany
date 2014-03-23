@@ -295,7 +295,7 @@ public class GUI
     {
 	 mPrimaryStage.setScene(new Scene(windowArea));
 	 mPrimaryStage.setMinHeight(600);
-	 mPrimaryStage.setMinWidth(700);
+	 mPrimaryStage.setMinWidth(750);
 	 mPrimaryStage.setTitle(GAME_NAME);
 	 setCloseOperation();
     }
