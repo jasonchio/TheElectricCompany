@@ -1,5 +1,7 @@
 package easigreen.service;
 
+import easigreen.service.*;
+
 public class Test
 {
     public static void main(String[] args)
@@ -29,5 +31,12 @@ public class Test
                                                0, 0, 3, 0, 0, 0, // renewable
                                                2, 3, 4,          // oil
 					       9);               // quality
+
+        TechnologyManager techManager = new TechnologyManager();
+        techManager.addTechnology(tech1);
+        techManager.addTechnology(techNorm);
+        techManager.addTechnology(techSuper);
+
+        techManager.update();
     }
 }
