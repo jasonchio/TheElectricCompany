@@ -1,3 +1,5 @@
+package easigreen.service;
+
 import java.util.ArrayList;
 import java.lang.Math;
 

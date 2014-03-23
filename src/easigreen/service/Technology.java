@@ -24,12 +24,12 @@ public class Technology
     /**
      * The budget change
      */
-    private int mBudgetChange;
+    private double mBudgetChange;
 
     /**
      * The energy demand change
      */
-    private int mNRGChange;
+    private double mNRGChange;
 
     /**
      * The change in net emissions
@@ -182,8 +182,9 @@ public class Technology
      * @param pOil the change in daily oil consumption
      * @param pOilSec the change in oil security
      * @param pOilGrow the change in oil growth
+     * @param pQuality the quality of the technology
      */
-    public Technology(int pBudgetChange, int pNRGChange,
+    public Technology(double pBudgetChange, double pNRGChange,
                       double pEmissionsChange, double pNpow, double pNcost,
                       double pNatt, double pNemit, double pNsec,
                       double pNprof, double pFpow, double pFcost,
@@ -191,7 +192,7 @@ public class Technology
                       double pFprof, double pRpow, double pRcost,
                       double pRatt, double pRemit, double pRsec,
                       double pRprof, double pOil, double pOilSec,
-                      double pOilGrow)
+                      double pOilGrow, int pQuality)
     {
         mBudgetChange = pBudgetChange;
         mNRGChange = pNRGChange;
@@ -217,6 +218,7 @@ public class Technology
         mOil = pOil;
         mOilSec = pOilSec;
         mOilGrow = pOilGrow;
+        mQuality = pQuality;
     }
 
     public UpgradeMerger update()
@@ -328,11 +330,16 @@ public class Technology
         return mQuality;
     }
 
+    public int iWantQuality()
+    {
+        return 5;
+    }
+
 	/**
 	 * Get the change in budget
 	 * @return the change in budget
 	 */
-    public int getBudgetChange()
+    public double getBudgetChange()
     {
         return mBudgetChange;
     }
@@ -341,7 +348,7 @@ public class Technology
 	 * Get the change in national energy demand
 	 * @return the change in national energy demand
 	 */
-    public int getNRGChange()
+    public double getNRGChange()
     {
         return mNRGChange;
     }
@@ -555,6 +562,11 @@ public class Technology
 	
     //////////////////////// Setters
 	
+    /**
+     * Set the quality of the technology to a new value
+     *
+     * @return pQuality the new quality
+     */
     public void setQuality(int pQuality)
     {
         mQuality = pQuality;
@@ -564,7 +576,7 @@ public class Technology
 	 * Set the change in budget
 	 * @param pBudgetChange change in budget
 	 */
-    public void setBudgetChange(int pBudgetChange)
+    public void setBudgetChange(double pBudgetChange)
     {
         mBudgetChange = pBudgetChange;
     }
@@ -573,7 +585,7 @@ public class Technology
 	 * Set the change in national energy demand
 	 * @param pNRGChange change in national energy demand
 	 */
-    public void setNRGChange(int pNRGChange)
+    public void setNRGChange(double pNRGChange)
     {
         mNRGChange = pNRGChange;
     }
