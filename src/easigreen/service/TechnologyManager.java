@@ -31,6 +31,16 @@ public class TechnologyManager
      */
     private ArrayList<Technology> all;
 
+    //////////////////// Methods
+
+    public void update()
+    {
+        for (int i = 0; i < implemented.size(); i++)
+        {
+            implemented.get(i).update();
+        }
+    }
+
     //////////////////// Getters
 
     /**
