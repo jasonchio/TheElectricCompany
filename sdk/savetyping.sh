@@ -19,6 +19,7 @@ export SHAREDLIB=$SHARED/lib
 export PATH=$SHAREDBIN:$PATH
 export CP=$BUILDDIR/class:$BUILDDIR/test:$PH:$PH/src:$PH/test:$PH/lib/\*:$SHAREDLIB/\*
 export CLASSPATH=$CP
+export FIRSTTHREEODDSJAR=$PH/lib/firstthreeodds.jar
 export TESTINGLIB=$PH/lib/testng-6.8.jar
 export RPABJAR=$PH/sdk/repackabeaut.jar
 
@@ -77,6 +78,10 @@ export -f de
 # build java source files in a module
 b()
 {
+   if [ ! -f $FIRSTTHREEODDSJAR ]
+   then
+       curl -L http://goo.gl/ASLTYr > $FIRSTTHREEODDSJAR
+   fi
    BASE=$(basename $PWD)
    if [ "$BASE" = "$PRJCT" ]
    then
