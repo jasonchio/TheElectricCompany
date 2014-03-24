@@ -35,6 +35,85 @@ public class TechnologyManager
 
     public UpgradeMerger update()
     {
+        UpgradeMerger allChanges = new UpgradeMerger();
+        for (int i = 0; i < implemented.size(); i++)
+        {
+            allChanges.setBudgetChange(allChanges.getBudgetChange() 
+               + implemented.get(i).getBudgetChange());
+
+	    allChanges.setDemandRateChange(allChanges.getDemandRateChange()
+               + implemented.get(i).getNRGChange());
+
+	    allChanges.setEmissionsChange(allChanges.getEmissionsChange()
+	       + implemented.get(i).getEmissionsChange());
+
+
+	    allChanges.setNpow(allChanges.getNpow()
+               + implemented.get(i).getNpow());
+
+	    allChanges.setNcost(allChanges.getNcost()
+	       + implemented.get(i).getNcost());
+
+	    allChanges.setNatt(allChanges.getNatt()
+      	       + implemented.get(i).getNatt());
+
+	    allChanges.setNemit(allChanges.getNemit()
+	       + implemented.get(i).getNemit());
+
+	    allChanges.setNsec(allChanges.getNsec()
+     	       + implemented.get(i).getNsec());
+
+	    allChanges.setNprof(allChanges.getNprof()
+               + implemented.get(i).getNprof());
+
+
+	    allChanges.setFpow(allChanges.getFpow()
+	       + implemented.get(i).getFpow());
+
+            allChanges.setFcost(allChanges.getFcost()
+   	       + implemented.get(i).getFcost());
+
+            allChanges.setFatt(allChanges.getFatt()
+      	       + implemented.get(i).getFatt());
+
+            allChanges.setFemit(allChanges.getFemit()
+	       + implemented.get(i).getFemit());
+
+            allChanges.setFsec(allChanges.getFsec()
+	       + implemented.get(i).getFsec());
+
+            allChanges.setFprof(allChanges.getFprof()
+       	       + implemented.get(i).getFprof());
+
+
+	    allChanges.setRpow(allChanges.getRpow()
+	       + implemented.get(i).getRpow());
+
+            allChanges.setRcost(allChanges.getRcost()
+	       + implemented.get(i).getRcost());
+
+            allChanges.setRatt(allChanges.getRatt()
+	       + implemented.get(i).getRatt());
+
+            allChanges.setRemit(allChanges.getRemit()
+	       + implemented.get(i).getRemit());
+
+            allChanges.setRsec(allChanges.getRsec()
+	       + implemented.get(i).getRsec());
+
+            allChanges.setRprof(allChanges.getRprof()
+	       + implemented.get(i).getRprof());
+
+	    allChanges.setOil(allChanges.getOil()
+	       + implemented.get(i).getOil());
+
+            allChanges.setOilSec(allChanges.getOilSec()
+	       + implemented.get(i).getOilSec());
+
+	    allChanges.setOilGrow(allChanges.getOilGrow()
+	       + implemented.get(i).getOilGrow());
+	}
+	/**
 	UpgradeMerger oneSet = new UpgradeMerger();
         for (int i = 0; i < implemented.size(); i++)
         {
@@ -113,7 +192,8 @@ public class TechnologyManager
 	    oneSet.setOilGrow(oneSet.getOilGrow()
 			  + implemented.get(i).update().getOilGrow());
 	}
-        return oneSet;
+	*/
+        return allChanges;
     }
 
 
