@@ -11,6 +11,8 @@ public class Test
 
     public void run()
     {
+        SimCity mSimCity = new SimCity();
+
         Technology tech1 = new Technology(-10, 2, -20,      // general
                                           5, 0, 0, 0, 0, 0, // fossil
                                           5, 0, 0, 0, 0, 0, // nuclear
@@ -38,5 +40,10 @@ public class Test
         techManager.addTechnology(techSuper);
 
         techManager.update();
+
+        ResourceManager mResourceManager = new ResourceManager();
+
+        UpgradeManager mUpgradeManager = new UpgradeManager(mResourceManager, 
+                                                            techManager);
     }
 }

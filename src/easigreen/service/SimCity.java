@@ -23,7 +23,7 @@ public class SimCity
     /**
      * The round number
      */
-    private int roundNumber;    
+    private int mRoundNumber;
 
     /**
      * Manager for the energy
@@ -81,4 +81,27 @@ public class SimCity
     {
         new SimCity().run();
     }
+
+    public int getRoundNumber() {return mRoundNumber;}
+    public EnergyManager getEnergyManager() {return mEnergyManager;}
+    public UpgradeManager getUpgradeManager() {return mUpgradeManager;}
+    public GoalManager getGoalManager() {return mGoalManager;}
+    public WorldManager getWorldManager() {return mWorldManager;}
+    public ResourceManager getResourceManager() {return mResourceManager;}
+    public TradeManager getTradeManager() {return mTradeManager;}
+
+    public void setRoundNumber(int pRoundNumber) 
+       {mRoundNumber = pRoundNumber;}
+    public void setEnergyManager(EnergyManager pEnergyManager) 
+       {mEnergyManager = pEnergyManager;}
+    public void setUpgradeManager(UpgradeManager pUpgradeManager) 
+       {mUpgradeManager = pUpgradeManager;}
+    public void setGoalManager(GoalManager pGoalManager) 
+       {mGoalManager = pGoalManager;}
+    public void setWorldManager(WorldManager pWorldManager) 
+       {mWorldManager = pWorldManager;}
+    public void setResourceManager(ResourceManager pResourceManager) 
+       {mResourceManager = pResourceManager;}
+    public void setTradeManager(TradeManager pTradeManager) 
+       {mTradeManager = pTradeManager;}
 }

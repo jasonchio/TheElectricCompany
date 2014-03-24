@@ -36,7 +36,8 @@ public class UpgradeManager
 
     //////////////////// Constructors
 
-    public UpgradeManager(ResourceManager pResourceManager)
+    public UpgradeManager(ResourceManager pResourceManager, 
+                          TechnologyManager pTechnologyManager)
     {
         mNuclearSci   = 0;
 	mFossilSci    = 0;
@@ -49,7 +50,7 @@ public class UpgradeManager
 	mLobby        = 0;
 	mPriceChange  = 0;
 	mResourceManager = pResourceManager;
-        mTechnologyManager = new TechnologyManager();
+        mTechnologyManager = pTechnologyManager;
     }
 
     //////////////////// Methods
