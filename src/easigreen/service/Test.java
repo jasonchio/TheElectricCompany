@@ -1,16 +1,26 @@
 package easigreen.service;
 
-import easigreen.service.*;
-
 public class Test
 {
+    //public static final Logger logger = 
+    //    Logger.getLogger(LoggingExample.class.getName());
+
     public static void main(String[] args)
     {
+        //logger.entering(getClass().getName(), "doIt");
+
         new Test().run();
     }
 
     public void run()
     {
+	TechnologyManager techManager = new TechnologyManager();
+
+	ResourceManager mResourceManager = new ResourceManager();
+
+	UpgradeManager mUpgradeManager = new UpgradeManager(mResourceManager,
+                                                            techManager);
+
         SimCity mSimCity = new SimCity();
 
         Technology tech1 = new Technology(-10, 2, -20,      // general
@@ -34,16 +44,21 @@ public class Test
                                                2, 3, 4,          // oil
 					       9);               // quality
 
-        TechnologyManager techManager = new TechnologyManager();
         techManager.addTechnology(tech1);
         techManager.addTechnology(techNorm);
         techManager.addTechnology(techSuper);
 
-        techManager.update();
+        UpgradeMerger mUpgradeMerger = new UpgradeMerger();
 
-        ResourceManager mResourceManager = new ResourceManager();
+        mUpgradeMerger = techManager.update();
 
-        UpgradeManager mUpgradeManager = new UpgradeManager(mResourceManager, 
-                                                            techManager);
+        mSimCity.setUpgradeManager(mUpgradeManager);
+
+        situation();
+    }
+
+    public void situation()
+    {
+        //mSimCity.getEnergyManager().
     }
 }
