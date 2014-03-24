@@ -49,6 +49,11 @@ public class SimCity
      * Manager for the resources
      */
     private ResourceManager mResourceManager;
+	
+	/**
+     * Technology Manager
+     */
+    private TechnologyManager pTechnologyManager;
 
     /**
      * Manager for the trades
@@ -63,14 +68,14 @@ public class SimCity
      */
     public void run()
     {
-	mResourceManager = new ResourceManager();
-	mUpgradeManager = new UpgradeManager(mResourceManager);
-	mEnergyManager = new EnergyManager(mUpgradeManager);
-	mGoalManager = new GoalManager(mEnergyManager, mResourceManager,
-                                       mUpgradeManager);
-	mWorldManager = new WorldManager();
-	mTradeManager = new TradeManager(mUpgradeManager.getTechnologyManager(), 
-                                         mResourceManager);
+	   mResourceManager = new ResourceManager();
+	   mUpgradeManager = new UpgradeManager(mResourceManager, pTechnologyManager);
+	   mEnergyManager = new EnergyManager(mUpgradeManager);
+	   mGoalManager = new GoalManager(mEnergyManager, mResourceManager,
+                                          mUpgradeManager);
+	   mWorldManager = new WorldManager();
+	   mTradeManager = new TradeManager(mUpgradeManager.getTechnologyManager(), 
+                                            mResourceManager);
     }
 
     /**
