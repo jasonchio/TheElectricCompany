@@ -41,6 +41,7 @@ public class ContentPane
    public ContentPane(SimCity pModel)
    {
        mModel = pModel;
+       setPrefSize(0, 0);
        init();
        setGrid();
        setup();
