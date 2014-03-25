@@ -85,12 +85,12 @@ public class UpgradeItem
    protected void setup()
    {
        setLabels();
-       add(mTitle, 0, 0, 2, 1);
+       add(mTitle, 0, 0, 3, 1);
 
        String[] tipNames = getTips();
        for (int i = 0; i < tipNames.length; i++)
        {
-	   add(mTips.get(tipNames[i]), 1, i + 1);
+	   add(mTips.get(tipNames[i]), 1, i + 1, 2, 1);
        }
 
        add(mValue, 2, 0, 1, 4);
@@ -110,7 +110,7 @@ public class UpgradeItem
 	for (String tip : tipNames)
 	{
 	    Label newTip = new Label(tip);
-	    newTip.setFont(new Font("Arial", 8));
+	    newTip.setFont(new Font("Arial", 12));
 	    mTips.put(tip, newTip);
 	}
 	update();
