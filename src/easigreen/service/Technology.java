@@ -221,6 +221,7 @@ public class Technology
         mQuality = pQuality;
     }
 
+    /**
     public UpgradeMerger update()
     {
         UpgradeMerger upgradeEffects = new UpgradeMerger();
@@ -260,7 +261,7 @@ public class Technology
         // Bellow is code for if you want to go through an entire array list 
 	// of technologies
 
-	/**
+	
 	for (int i = 0; i < implemented.size(); i++)
 	{
          int quality = implemented.get(i).getQuality();
@@ -319,9 +320,10 @@ public class Technology
 		mOilGrowChange += implemented.get(i).getOilGrow()
 		    * implemented.get(i).getQuality();
 		}
-	*/
+	
 	return upgradeEffects;
     }
+    */
 
     ////////////////////////////// Getters
 

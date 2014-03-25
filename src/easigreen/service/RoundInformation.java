@@ -1,3 +1,5 @@
+package easigreen.service;
+
 /**
  * This class contains information about a specific round.  This information
  * is stored as a simulator to be accessed at any time.
@@ -19,7 +21,7 @@ public class RoundInformation
     /**
      * The simulator being stored
      */
-    private Round mRound;
+    private SimCity mRound = new SimCity();
 
     //////////////////// Constructors
 
@@ -50,7 +52,7 @@ public class RoundInformation
      *
      * @return mRound the round information
      */
-    public Round getRound()
+    public SimCity getRound()
     {
         return mRound;
     }
@@ -62,7 +64,7 @@ public class RoundInformation
      *
      * @param pRound the existing round to be stored
      */
-    public void setSimulator(Round pRound)
+    public void setSimulator(SimCity pRound)
     {
         mRound = pRound;
     }

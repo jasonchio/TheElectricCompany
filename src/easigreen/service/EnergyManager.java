@@ -12,7 +12,7 @@ public class EnergyManager
 {
     //////////////////// Variables
 
-    /**
+        /**
 	 * The Manager of Energy
 	 */
 	private UpgradeManager mUpgradeManager;
@@ -20,17 +20,17 @@ public class EnergyManager
 	/**
 	 * The Nuclear Plant Object
 	 */
-	private Nuclear mNuclear;
+	private Energy mNuclear;
 	
 	/**
 	 * The Fossil Plant Object
 	 */
-	private Fossil mFossil;
+	private Energy mFossil;
 	
 	/**
 	 * The Renewable Plant Object
 	 */
-	private Renewable mRenewable;
+	private Energy mRenewable;
 	
 	/**
 	 * The Oil Object
@@ -45,4 +45,10 @@ public class EnergyManager
 	   mRenewable      = new Renewable();
 	   mOil            = new Oil();
 	}
+
+    public UpgradeManager getUpgradeManager() {return mUpgradeManager;}
+    public Energy getNuclear() {return mNuclear;}
+    public Energy getFossil() {return mFossil;}
+    public Energy getRenewable() {return mRenewable;}
+    public Oil getOil() {return mOil;}
 }
