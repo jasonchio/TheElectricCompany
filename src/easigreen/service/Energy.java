@@ -62,17 +62,17 @@ public class Energy
     /**
      * To assign values is pointless because we dont know what plant it is.
      */
-    //public Energy()
-    //{
-    //    mAmount        = 0;
-    //    mCostBuild     = 0;
-    //    mCostRemove    = 0;
-    //    mApproval      = 0;
-    //    mProduction    = 0;
-    //    mEmissions     = 0;
-    //    mSecurity      = 0;
-    //    mProfitPercent = 0;
-    //}
+    public Energy()
+    {
+        mAmount        = 0;
+        mCostBuild     = 0;
+        mCostRemove    = 0;
+        mApproval      = 0;
+        mProduction    = 0;
+        mEmissions     = 0;
+        mSecurity      = 0;
+        mProfitPercent = 0;
+    }
 
     //////////////////// Getters
 
@@ -180,4 +180,41 @@ public class Energy
     {
         return mProfitPercent;
     }   
+
+    //////////////////// Setters
+
+    public void setAmount(int pAmount)
+    {
+        mAmount = pAmount;
+    }
+
+    public void setCostBuild(double pCostBuild)
+    {
+        mCostBuild = pCostBuild;
+    }
+
+    public void setCostRemove(double pCostRemove)
+    {
+        mCostRemove = pCostRemove;
+    }
+
+    public void setApproval(double pApproval)
+    {
+        mApproval = pApproval;
+    }
+    
+    public void setProduction(double pProduction)
+    {
+        mProduction = pProduction;
+    }
+
+    public void setEmissions(double pEmissions)
+    {
+        mEmissions = pEmissions;
+    }
+
+    public void setSecurity(double pSecurity)
+    {
+        mSecurity = pSecurity;
+    }
 }

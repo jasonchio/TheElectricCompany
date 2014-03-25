@@ -55,6 +55,39 @@ public class UpgradeManager
 
     //////////////////// Methods
 
+    public UpgradeMerger update()
+    {
+        UpgradeMerger allChanges = new UpgradeMerger();
+	
+        allChanges.setBudgetChange(mLobby);
+
+        allChanges.setApprovalChange(mLobby * -1 + mPriceChange * -1);
+
+        allChanges.setEmissionsChange(mResourceManager.getEmitCredits());
+
+        allChanges.setPriceChange(mPriceChange);
+
+        allChanges.setDemandChange(mResourceManager.getMarketShares());
+
+        allChanges.setNatt(mNuclearSci + mNuclearEng);
+
+        allChanges.setNsec(mNuclearSci);
+
+	allChanges.setFatt(mFossilSci + mFossilEng);
+
+	allChanges.setFsec(mFossilSci);
+
+	allChanges.setRatt(mRenewableSci + mRenewableEng);
+
+	allChanges.setRsec(mRenewableSci);
+
+        allChanges.setOilSec(mOilSci + mOilDrilling);
+
+        allChanges.setOilGrow(mOilDrilling);
+
+        return allChanges;
+    }
+
     /**
      * This will place action points into the fossil science upgrade
      *

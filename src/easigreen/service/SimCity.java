@@ -69,13 +69,15 @@ public class SimCity
     public void run()
     {
 	   mResourceManager = new ResourceManager();
-	   mUpgradeManager = new UpgradeManager(mResourceManager, pTechnologyManager);
-	   mEnergyManager = new EnergyManager(mUpgradeManager);
+	   mUpgradeManager = new UpgradeManager(mResourceManager, 
+                                                pTechnologyManager);
+	   mEnergyManager = new EnergyManager(mUpgradeManager, 
+              mUpgradeManager.getTechnologyManager());
 	   mGoalManager = new GoalManager(mEnergyManager, mResourceManager,
                                           mUpgradeManager);
 	   mWorldManager = new WorldManager();
-	   mTradeManager = new TradeManager(mUpgradeManager.getTechnologyManager(), 
-                                            mResourceManager);
+	   mTradeManager = new TradeManager(
+              mUpgradeManager.getTechnologyManager(), mResourceManager);
     }
 
     /**
