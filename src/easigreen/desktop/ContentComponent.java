@@ -14,8 +14,13 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
+ * Component extension for Easigreen
  *
- */
+ * @version 0.2.1
+ * @author Sam Graham
+ * @author Haru McClellan
+ * @author Larson Caldwell
+ */ 
 public class ContentComponent
     extends GridPane
 {
@@ -24,16 +29,27 @@ public class ContentComponent
      */
     protected SimCity mModel;
 
+    /**
+     * Returns a list of columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {};
     }
 
+    /**
+     * Returns a list of rows
+     * @return integer array of rows
+     */
     protected int[] getRows()
     {
         return new int[] {};
     }
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
     }

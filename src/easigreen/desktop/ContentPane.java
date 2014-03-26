@@ -15,6 +15,8 @@ import javafx.scene.text.*;
 
 /**
  * A Panel for the center data region of the GUI interface
+ * @version 0.1.0
+ * @author Haru McClellan
  */
 public class ContentPane
     extends GridPane
@@ -24,11 +26,19 @@ public class ContentPane
      */
     protected SimCity mModel;
 
+    /**
+     * Retrieves a list of columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {12, 76, 12};
     }
 
+    /**
+     * Retrieves a list of rows
+     * @return integer array of rows
+     */
     protected int[] getRows()
     {
         return new int[] {16, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 32};
@@ -47,15 +57,26 @@ public class ContentPane
         setup();
     }
 
+    /**
+     * Set up needs to be implemented by child
+     */
     protected void setup()
     {
     }
 
+    /**
+     * Retrieves the title
+     * @return the title, a String
+     */
     protected String getTitle()
     {
         return "Unknown";
     }
 
+    /**
+     * Retrieves the Title Label
+     * @return a Label
+     */
     protected Label getTitleLabel()
     {
         Label title = new Label(getTitle());
@@ -64,14 +85,23 @@ public class ContentPane
         return title;
     }
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
     }
 
+    /**
+     * Sets the grid
+     */
     protected void setGrid()
     {
         int[] columns = getColumns();
