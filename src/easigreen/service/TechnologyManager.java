@@ -3,7 +3,7 @@ package easigreen.service;
 import java.util.ArrayList;
 
 /**
- * The Trade Manager class.
+ * The Technology Manager class.
  *
  * @see java.util.ArrayList
  *

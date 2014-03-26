@@ -145,7 +145,54 @@ public class Technology
      * Indicates whether or not this technology has already been implemented
      */
     private boolean hasBeenUsed;
+	
+	/**
+     * Name of the Technology
+     */
+    private String mName;
 
+	
+	/**
+     * Name of the Technology Code one
+     */
+    private String mTec1;
+	/**
+     * Name of the Technology Code two
+     */
+    private String mTec2;
+	/**
+     * Name of the Technology Code three
+     */
+    private String mTec3;
+	/**
+     * Name of the Technology Code four
+     */
+    private String mTec4;
+	/**
+     * Name of the Technology Code five
+     */
+    private String mTec5;
+	/**
+     * Name of the Technology Code six
+     */
+    private String mTec6;
+	/**
+     * Name of the Technology Code seven
+     */
+    private String mTec7;
+	/**
+     * Name of the Technology Code eight
+     */
+    private String mTec8;
+	/**
+     * Name of the Technology Code nine
+     */
+    private String mTec9;
+	/**
+     * Name of the Technology Code ten
+     */
+    private String mTec10;
+	
     //////////////////// Constructors
 
     /**
@@ -219,6 +266,90 @@ public class Technology
         mOilSec = pOilSec;
         mOilGrow = pOilGrow;
         mQuality = pQuality;
+    }
+	
+	
+	/**
+     * Pass in constructor
+     *
+     * @param pBudgetChange the change in the budget
+     * @param pNRGChange the change in energy demand
+     * @param pEmissionsChange the change in Emissions
+     * @param pNpow the change in the power production of nuclear plants
+     * @param pNcost the change in the cost of a nuclear plant
+     * @param pNatt the change in the approval rating of a nuclear plant
+     * @param pNemit the change in emissions of a nuclear plant
+     * @param pNsec the change in security of a nuclear plant
+     * @param pNprof the change in profit of a nuclear plant
+     * @param pFpow the change in power production of fossil plant
+     * @param pFcost the change in cost of fossil production
+     * @param pFatt the change in the approval rating of fossil plants
+     * @param pFemit the change in the emissions of fossil plants
+     * @param pFsec the change in the security of fossil plants
+     * @param pFprof the change in the profit of fossil plants
+     * @param pRpow the change in the power production of renewable plants
+     * @param pRcost the change in the cost of a renewable plant
+     * @param pRatt the change in the approval rating of a renewable plant
+     * @param pRemit the change in emissions of a renewable plant
+     * @param pRsec the change in security of a renewable plant
+     * @param pRprof the change in profit of a renewable plant
+     * @param pOil the change in daily oil consumption
+     * @param pOilSec the change in oil security
+     * @param pOilGrow the change in oil growth
+     * @param pQuality the quality of the technology
+     */
+    public Technology(double pBudgetChange, double pNRGChange,
+                      double pEmissionsChange, double pNpow, double pNcost,
+                      double pNatt, double pNemit, double pNsec,
+                      double pNprof, double pFpow, double pFcost,
+                      double pFatt, double pFemit, double pFsec,
+                      double pFprof, double pRpow, double pRcost,
+                      double pRatt, double pRemit, double pRsec,
+                      double pRprof, double pOil, double pOilSec,
+                      double pOilGrow, int pQuality,
+					  String pName, String pTec1, String pTec2, 
+					  String pTec3, String pTec4, String pTec5,
+					  String pTec6, String pTec7, String pTec8,
+					  String pTec9, String pTec10)
+    {
+        mBudgetChange = pBudgetChange;
+        mNRGChange = pNRGChange;
+        mEmissionsChange = pEmissionsChange;
+        mNpow = pNpow;
+        mNcost = pNcost;
+        mNatt = pNatt;
+        mNemit = pNemit;
+        mNsec = pNsec;
+        mNprof = pNprof;
+        mFpow =pFpow;
+        mFcost = pFcost;
+        mFatt =pFatt;
+        mFemit = pFemit;
+        mFsec =pFsec;
+        mFprof = pFprof;
+        mRpow =pRpow;
+        mRcost = pRcost;
+        mRatt =pRatt;
+        mRemit = pRemit;
+        mRsec =pRsec;
+        mRprof = pRprof;
+        mOil = pOil;
+        mOilSec = pOilSec;
+        mOilGrow = pOilGrow;
+        mQuality = pQuality;
+		mName = pName;
+		mTec1 = pTec1;
+		mTec2 = pTec2;
+		mTec3 = pTec3;
+		mTec4 = pTec4;
+		mTec5 = pTec5;
+		mTec6 = pTec6;
+		mTec7 = pTec7;
+		mTec8 = pTec8;
+		mTec9 = pTec9;
+		mTec10 = pTec10;
+		
+		
     }
 
     /**
@@ -327,6 +458,18 @@ public class Technology
 
     ////////////////////////////// Getters
 
+    /**
+     * The name of the technology
+     * @return the String of the name
+     */
+    public String getName()
+    {
+       return mName;
+    }
+    
+    /**
+     * @return the quality of the technology
+     */
     public int getQuality()
     {
         return mQuality;
