@@ -4,12 +4,11 @@ import easigreen.system.*;
 import java.util.ArrayList;
 
 /**
- * The sim city is the main class of the application.  It uses the user
+ * The Sim city is the main class of the application.  It uses the user
  * interface to communicate with the user, uses the simulator to process the
  * data, and uses the CSV getter to create and access files containing saved
  * changes.
  *
- * @see java.util.ArrayList
  *
  * @version 0.1.1
  * @author Larson Caldwell
@@ -80,6 +79,7 @@ public class SimCity
             mUpgradeManager.getTechnologyManager(), mResourceManager);
     }
 
+    
     /**
      * Main starts the run method
      * @param args the command line arguments
@@ -89,59 +89,131 @@ public class SimCity
         new SimCity().run();
     }
 
+    ////////////////////////////////// Getters
+    
+    /**
+     * Gets the current round
+     * @return the round number
+     */
     public int getRoundNumber()
     {
         return mRoundNumber;
     }
+    
+    /**
+     * Gets the EnergyManager
+     * @return the EnergyManager
+     */
     public EnergyManager getEnergyManager()
     {
         return mEnergyManager;
     }
+    
+    /**
+     * Gets the UpgradeManager
+     * @return the UpgradeManager
+     */
     public UpgradeManager getUpgradeManager()
     {
         return mUpgradeManager;
     }
+    
+    /**
+     * Gets the GoalManager
+     * @return the GoalManager
+     */
     public GoalManager getGoalManager()
     {
         return mGoalManager;
     }
+    
+    /**
+     * Gets the WorldManager
+     * @return the WorldManager
+     */
     public WorldManager getWorldManager()
     {
         return mWorldManager;
     }
+    
+    /**
+     * Gets the ResourceManager
+     * @return the ResourceManager
+     */
     public ResourceManager getResourceManager()
     {
         return mResourceManager;
     }
+    
+    /**
+     * Gets the TradeManager
+     * @return the TradeManager
+     */
     public TradeManager getTradeManager()
     {
         return mTradeManager;
     }
 
+    //////////////////////////// Setters
+    
+    /**
+     * Sets the RoundNumber
+     * @param pRoundNumber the round number
+     */
     public void setRoundNumber(int pRoundNumber)
     {
         mRoundNumber = pRoundNumber;
     }
+    
+    /**
+     * Sets the EnergyManager 
+     * @param pEnergyManager
+     */
     public void setEnergyManager(EnergyManager pEnergyManager)
     {
         mEnergyManager = pEnergyManager;
     }
+    
+    /**
+     * Sets the upgrade manager
+     * @param pUpgradeManager
+     */
     public void setUpgradeManager(UpgradeManager pUpgradeManager)
     {
         mUpgradeManager = pUpgradeManager;
     }
+    
+    /**
+     * Sets the goal manager
+     * @param pGoalManager
+     */
     public void setGoalManager(GoalManager pGoalManager)
     {
         mGoalManager = pGoalManager;
     }
+    
+    /**
+     * Sets the world manager
+     * @param pWorldManager
+     */
     public void setWorldManager(WorldManager pWorldManager)
     {
         mWorldManager = pWorldManager;
     }
+    
+    /**
+     * Sets the resource manager
+     * @param pResourceManager
+     */
     public void setResourceManager(ResourceManager pResourceManager)
     {
         mResourceManager = pResourceManager;
     }
+    
+    /**
+     * Sets the trade manager
+     * @param pTradeManager
+     */
     public void setTradeManager(TradeManager pTradeManager)
     {
         mTradeManager = pTradeManager;

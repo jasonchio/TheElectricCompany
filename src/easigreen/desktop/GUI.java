@@ -38,17 +38,33 @@ public class GUI
         return cInstance;
     }
 
+    /**
+     * Holds Game Name
+     */
     private static final String GAME_NAME = "Sargeant City";
 
+    /**
+     * Holds Navigation Names
+     */
     private static final String[]   mainNavNames = new String[] {"country", "energy", "upgrades", "goals"};
 
+    /**
+     * Holds The Sub Classes of the main navigation panes
+     */
     private static final String[][] subNavNames  = new String[][] {{"world", "politicalresources", "trade"},
         {"nuclear", "fossilfuel", "renewable", "oil"},
         {"science", "engineering", "policies", "technologies1"},
         {"shortterm", "longterm"}
     };
 
+    /**
+     * Holds Class Names
+     */
     private static final String[]   mainClassNames = new String[] {"CountryPane", "EnergyPane", "UpgradesPane", "GoalsPane"};
+    
+    /**
+     * Holds Holds Sub Class names
+     */
     private static final String[][] subClassNames  = new String[][] {{"WorldPane", "PoliticalPane", "TradePane"},
         {"NuclearPane", "FossilPane", "RenewablePane", "OilPane"},
         {
@@ -58,8 +74,9 @@ public class GUI
         {"ShortTermPane", "LongTermPane"}
     };
 
-
-
+    /**
+     * Holds the model
+     */
     private SimCity model;
 
     /**
