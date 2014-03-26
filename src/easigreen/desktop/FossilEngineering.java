@@ -24,7 +24,9 @@ import javafx.scene.text.*;
 public class FossilEngineering
     extends UpgradeItem
 {
-
+    /**
+     * Gets the title of this 
+     */
     protected String getTitle()
     {
         return new String("Fossil Fuel Engineering");
