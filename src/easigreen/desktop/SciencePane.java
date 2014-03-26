@@ -16,21 +16,51 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Content Pane for Renewable Upgrades
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class SciencePane
     extends ContentPane
 {
-
+    /**
+     * Holds the NuclearScience Object
+     */ 
     protected NuclearScience   mNucSci;
+    
+    /**
+     * Holds the FossilScience Object
+     */ 
     protected FossilScience    mFosSci;
+    
+    /**
+     * Holds the Renewable Science Object
+     */ 
     protected RenewableScience mRenSci;
+    
+    /**
+     * Holds the OilScience Object
+     */ 
     protected OilScience       mOilSci;
 
+    /**
+     * Label for the action 
+     */
     protected Label            mActionLabel;
+    
+    /**
+     * Label displaying the action
+     */
     protected Label            mActionValue;
+    
+    /**
+     * Button for the action
+     */
     protected Button           mActionButton;
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
         mActionButton = new Button("Apply");
@@ -41,6 +71,9 @@ public class SciencePane
         setHalignment(mActionButton, HPos.LEFT);
     }
 
+    /**
+     * Set up non GUI components
+     */
     protected void setComponents()
     {
         mNucSci = new NuclearScience  (mModel);
@@ -54,21 +87,36 @@ public class SciencePane
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
         mActionValue.setText("0");
     }
 
+    /**
+     * Gets a list of the columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {12, 25, 26, 25, 12};
     }
 
+    /**
+     * Gets a list of the rows
+     * @return integer array of rows
+     */
     protected int[] getRows()
     {
         return new int[] {12, 19, 19, 19, 19, 12};
     }
 
+    /**
+     * Gets the title of the Pane
+     * @return the title as a string
+     */
     protected String getTitle()
     {
         return "Science Upgrades";
@@ -83,6 +131,9 @@ public class SciencePane
         super(pModel);
     }
 
+    /**
+     * Set up the visible elements
+     */
     protected void setup()
     {
         //setGridLinesVisible(true);
