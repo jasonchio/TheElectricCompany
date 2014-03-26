@@ -21,36 +21,85 @@ import javafx.stage.*;
 public class NuclearPane
     extends ContentPane
 {
+    /**
+     * Holds the pane for the upgrades
+     */ 
     private ContentPane mNuclearUpgradesPane;
+    
+    /**
+     * Holds a Button
+     */
     private Button      mNuclearUpgrades;
+    
+    /**
+     * Holds a Button
+     */
     private Button      mApply;
+    
+    /**
+     * Holds a Button
+     */
     private Button      mUp;
+    
+    /**
+     * Holds a Button
+     */
     private Button      mDown;
 
+    /**
+     * Holds label names
+     */
     protected static String[] mLabelNames = new String[] {"Plants in Operation", "Supply Provided",
             "Cost", "Public Approval", "Emissions",
             "Security", "Profit"
-                                                         };
+    
+    };
+    
+    /**
+     * Holds the upgrade name for a label
+     */
     protected static String mUpgradeName = new String("Nuclear Upgrades");
 
+    /**
+     * Holds a mapping of labels to appropriate strings
+     */
     protected Map<String, Label> mLabels;
+    
+    /**
+     * Holds a mapping of labels to appropriate strings
+     */
     protected Map<String, Label> mValues;
 
+    /**
+     * Returns an array of columns
+     * @return int array of columns     
+     */
     protected int[] getColumns()
     {
         return new int[] {10, 34, 4, 10, 16, 16, 10};
     }
 
+    /**
+     * Returns an array of rows
+     * @return int array of rows     
+     */
     protected int[] getRows()
     {
         return new int[] {12, 7, 7, 6, 5, 5, 5, 4, 5, 5, 5, 4, 27, 3};
     }
 
+    /**
+     * Returns the title of the Pane
+     * @return the title a String
+     */
     protected String getTitle()
     {
         return "Nuclear";
     }
 
+    /**
+     * Initializes the Pane
+     */
     protected void init()
     {
         mNuclearUpgradesPane = new NuclearUpgradePane(mModel);
@@ -88,6 +137,9 @@ public class NuclearPane
         super(pModel);
     }
 
+    /**
+     * Sets up the Pane
+     */
     protected void setup()
     {
         //setGridLinesVisible(true);
@@ -116,6 +168,9 @@ public class NuclearPane
         add(mValues.get("Profit"             ), 4, 10, 1, 1);
     }
 
+    /**
+     * Sets Labels for the Pane
+     */
     protected void setLabels()
     {
         mLabels = new HashMap<String, Label>();
@@ -139,6 +194,9 @@ public class NuclearPane
         update();
     }
 
+    /**
+     * Update Method
+     */
     protected void update()
     {
         mValues.get("Plants in Operation").setText("0");

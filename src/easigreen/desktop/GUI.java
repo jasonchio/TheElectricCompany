@@ -230,6 +230,9 @@ public class GUI
         mainNavigation.initialize();
     }
 
+    /**
+     * Initializes Content
+     */
     private void initializeContent()
     {
         mContent = new HashMap<String, ContentPane>();
@@ -284,7 +287,6 @@ public class GUI
     /**
      * Initializes the Primary Stage
      *
-     * @param primaryStage the primary Stage.
      */
     private void initializeStage()
     {
