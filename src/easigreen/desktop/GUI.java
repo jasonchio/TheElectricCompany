@@ -112,7 +112,7 @@ public class GUI
      */
     public BorderPane getWindow()
     {
-	return windowArea;
+	   return windowArea;
     }
 
    /**
@@ -160,7 +160,7 @@ public class GUI
      */
     private void initializeModel()
     {
-	model = new SimCity();
+	   model = new SimCity();
     }
 
     /**
@@ -168,35 +168,35 @@ public class GUI
      */
     private void initializeEvents()
     {
-	events = new HashMap<String, EventHandler<ActionEvent>>();
-	// Initialize Main Menu Events
-	for (final String nav : mainNavNames)
-	{
-	   events.put(nav, new EventHandler<ActionEvent>()
+	   events = new HashMap<String, EventHandler<ActionEvent>>();
+	   // Initialize Main Menu Events
+	   for (final String nav : mainNavNames)
 	   {
-	       public void handle(ActionEvent event)
+	      events.put(nav, new EventHandler<ActionEvent>()
+	      {
+	          public void handle(ActionEvent event)
+	          {
+	   	   windowArea.setRight(subNavigation.get(nav));
+	   	   mContent.get(nav).update();
+	   	   windowArea.setCenter(mContent.get(nav));
+	          }
+	      });
+	   }
+	   // Initialize Sub Menu Events
+	   for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
+	   {
+	       for (final String subNavName : subNavNames[navNumber])
 	       {
-		   windowArea.setRight(subNavigation.get(nav));
-		   mContent.get(nav).update();
-		   windowArea.setCenter(mContent.get(nav));
+	   	events.put(subNavName, new EventHandler<ActionEvent>()
+	   		   {
+	   		       public void handle(ActionEvent event)
+	   		       {
+	   			   mContent.get(subNavName).update();
+	   			   windowArea.setCenter(mContent.get(subNavName));
+	   		       }
+	   		   });
 	       }
-	   });
-	}
-	// Initialize Sub Menu Events
-	for (int navNumber = 0; navNumber < mainNavNames.length; navNumber++)
-	{
-	    for (final String subNavName : subNavNames[navNumber])
-	    {
-		events.put(subNavName, new EventHandler<ActionEvent>()
-			   {
-			       public void handle(ActionEvent event)
-			       {
-				   mContent.get(subNavName).update();
-				   windowArea.setCenter(mContent.get(subNavName));
-			       }
-			   });
-	    }
-	}
+	   }
     }
 
     /**
@@ -204,20 +204,20 @@ public class GUI
      */
     private void initializeNavigation()
     {
-	mainNavigation = new NavPane();
-	subNavigation  = new HashMap<String, NavPane>();
-	for (int mainNavNum = 0; mainNavNum < mainNavNames.length; mainNavNum++)
-	{
-	    mainNavigation.addButton(mainNavNames[mainNavNum], events.get(mainNavNames[mainNavNum]));
-	    NavPane newNav = new NavPane();
-	    for (int subNavNum = 0; subNavNum < subNavNames[mainNavNum].length; subNavNum++)
-	    {
-		newNav.addButton(subNavNames[mainNavNum][subNavNum], events.get(subNavNames[mainNavNum][subNavNum]));
-	    }
-	    newNav.initialize();
-	    subNavigation.put(mainNavNames[mainNavNum], newNav);
-	}
-	mainNavigation.initialize();
+	   mainNavigation = new NavPane();
+	   subNavigation  = new HashMap<String, NavPane>();
+	   for (int mainNavNum = 0; mainNavNum < mainNavNames.length; mainNavNum++)
+	   {
+	       mainNavigation.addButton(mainNavNames[mainNavNum], events.get(mainNavNames[mainNavNum]));
+	       NavPane newNav = new NavPane();
+	       for (int subNavNum = 0; subNavNum < subNavNames[mainNavNum].length; subNavNum++)
+	       {
+	   	newNav.addButton(subNavNames[mainNavNum][subNavNum], events.get(subNavNames[mainNavNum][subNavNum]));
+	       }
+	       newNav.initialize();
+	       subNavigation.put(mainNavNames[mainNavNum], newNav);
+	   }
+	   mainNavigation.initialize();
     }
 
     private void initializeContent()
@@ -249,29 +249,29 @@ public class GUI
        }
        catch (InstantiationException e)
        {
-	   System.out.println("Fatal Error: Could not instantiate " + currentClass);
-	   exit();
+	      System.out.println("Fatal Error: Could not instantiate " + currentClass);
+	      exit();
        }
        catch (NoSuchMethodException e)
        {
-	   System.out.println("Fatal Error: Constructor for " + currentClass + "Not Found");
-	   exit();
+	      System.out.println("Fatal Error: Constructor for " + currentClass + "Not Found");
+	      exit();
        }
        catch (IllegalAccessException e)
        {
-	   System.out.println("Fatal Error: Cannot access " + currentClass);
-	   exit();
+	      System.out.println("Fatal Error: Cannot access " + currentClass);
+	      exit();
        }
        catch (InvocationTargetException e)
        {
-	   System.out.println("Fatal Error: Invocation Target Exception");
-	   System.out.println(e.getCause() + " caused by " + currentClass);
-	   exit();
+	      System.out.println("Fatal Error: Invocation Target Exception");
+	      System.out.println(e.getCause() + " caused by " + currentClass);
+	      exit();
        }
        catch (Exception e)
        {
-	   System.out.println("Error Initializing " + currentClass);
-	   e.printStackTrace();
+	      System.out.println("Error Initializing " + currentClass);
+	      e.printStackTrace();
        }
     }
 
@@ -280,10 +280,10 @@ public class GUI
      */
     private void initializeWindow()
     {
-	windowArea = new BorderPane();
-	windowArea.setLeft(mainNavigation);
-	windowArea.setRight(subNavigation.get(mainNavNames[0]));
-	windowArea.setCenter(mContent.get(mainNavNames[0]));
+	   windowArea = new BorderPane();
+	   windowArea.setLeft(mainNavigation);
+	   windowArea.setRight(subNavigation.get(mainNavNames[0]));
+	   windowArea.setCenter(mContent.get(mainNavNames[0]));
     }
 
     /**
@@ -293,11 +293,11 @@ public class GUI
      */
     private void initializeStage()
     {
-	 mPrimaryStage.setScene(new Scene(windowArea));
-	 mPrimaryStage.setMinHeight(600);
-	 mPrimaryStage.setMinWidth(750);
-	 mPrimaryStage.setTitle(GAME_NAME);
-	 setCloseOperation();
+	   mPrimaryStage.setScene(new Scene(windowArea));
+	   mPrimaryStage.setMinHeight(600);
+	   mPrimaryStage.setMinWidth(750);
+	   mPrimaryStage.setTitle(GAME_NAME);
+	   setCloseOperation();
     }
 
     /**
@@ -305,13 +305,13 @@ public class GUI
      */
     private void setCloseOperation()
     {
-	mPrimaryStage.setOnCloseRequest(new EventHandler<WindowEvent>()
-					{
-					    public void handle(WindowEvent event)
-					    {
-						exit();
-					    }
-					});
+	  mPrimaryStage.setOnCloseRequest(new EventHandler<WindowEvent>()
+	  				{
+	  				    public void handle(WindowEvent event)
+	  				    {
+	  					exit();
+	  				    }
+	  				});
     }
     
     /**
