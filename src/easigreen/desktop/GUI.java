@@ -61,7 +61,7 @@ public class GUI
      * Holds Class Names
      */
     private static final String[]   mainClassNames = new String[] {"CountryPane", "EnergyPane", "UpgradesPane", "GoalsPane"};
-    
+
     /**
      * Holds Holds Sub Class names
      */

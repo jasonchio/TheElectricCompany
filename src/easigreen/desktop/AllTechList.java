@@ -15,7 +15,7 @@ class AllTechList
 
     public AllTechList(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()

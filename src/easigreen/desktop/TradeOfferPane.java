@@ -19,30 +19,30 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class TradeOfferPane
-   extends TradeBasePane
+    extends TradeBasePane
 {
     protected String getTitle()
     {
-	return "Offering";
+        return "Offering";
     }
 
     protected void init()
     {
-	mTechs           = new AppDataList(mModel);
-	mInsert          = new TextArea();
-	mInsert.setMinSize(0, 0);
-	mInsert.setWrapText(true);
-	mInsert.setEditable(false);
-	mAdd             = new Button("Add");
+        mTechs           = new AppDataList(mModel);
+        mInsert          = new TextArea();
+        mInsert.setMinSize(0, 0);
+        mInsert.setWrapText(true);
+        mInsert.setEditable(false);
+        mAdd             = new Button("Add");
     }
 
-   /**
-    * Constructor
-    * @param SimCity pModel the current sim city Model
-    */
+    /**
+     * Constructor
+     * @param SimCity pModel the current sim city Model
+     */
     public TradeOfferPane(SimCity pModel)
     {
-       super(pModel);
+        super(pModel);
     }
 
     public void update()

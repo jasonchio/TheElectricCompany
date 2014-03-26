@@ -15,7 +15,7 @@ class CountryList
 
     public CountryList(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()

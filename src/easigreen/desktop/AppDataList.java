@@ -19,16 +19,16 @@ class AppDataList
 
     public AppDataList(SimCity pModel)
     {
-	mModel = pModel;
-	initialize();
+        mModel = pModel;
+        initialize();
     }
 
     protected void initialize()
     {
-	mDataNames = new ArrayList<String>();
-	setItems(mData);
-	setPrefSize(50, 50);
-	update();
+        mDataNames = new ArrayList<String>();
+        setItems(mData);
+        setPrefSize(50, 50);
+        update();
     }
 
     protected void update()

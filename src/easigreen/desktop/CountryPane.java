@@ -19,7 +19,7 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class CountryPane
-   extends ContentPane
+    extends ContentPane
 {
 
     protected String mCountryName;
@@ -28,11 +28,12 @@ public class CountryPane
 
     protected String[] getCategories()
     {
-	return new String[]{"Nuclear Plants", "Fossil Fuel Plants", "Renewable Plants",
-			    "",
-			    "Energy Supplied", "Available Funds", "Public Approval", "Oil Consumption",
-			    "",
-			    "Total Profit", "Total Security", "Total Emissions"};
+        return new String[] {"Nuclear Plants", "Fossil Fuel Plants", "Renewable Plants",
+                             "",
+                             "Energy Supplied", "Available Funds", "Public Approval", "Oil Consumption",
+                             "",
+                             "Total Profit", "Total Security", "Total Emissions"
+                            };
     }
 
     protected String[] mCategories;
@@ -45,90 +46,86 @@ public class CountryPane
 
     protected int[] getColumns()
     {
-	return new int[] {12, 6, 64, 6, 12};
+        return new int[] {12, 6, 64, 6, 12};
     }
 
     protected int[] getRows()
     {
-	return new int[] {16, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 28, 4};
+        return new int[] {16, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 4, 28, 4};
     }
 
     protected String getTitle()
     {
-	return "mCountryName";
+        return "mCountryName";
     }
 
-   /**
-    * Constructor
-    * @param SimCity pModel the current sim city Model
-    */
+    /**
+     * Constructor
+     * @param SimCity pModel the current sim city Model
+     */
     public CountryPane(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void setup()
     {
-	mCountryName = "Your Country";
-	mTitle = getTitleLabel();
-	initializeLabels();
+        mCountryName = "Your Country";
+        mTitle = getTitleLabel();
+        initializeLabels();
 
-	add(mTitle, 1, 0, 3, 1);
-	int i;
-	for (i = 0; i < mCategories.length; i++)
-	{
-	    if (!mCategories[i].equals(""))
-	    {
-		add(mLabels[i], 2, i + 1);
-		add(mValues.get(mCategories[i]), 3, i + 1);
-	    }
-	}
-	add(new Label("Technologies Implemented:"), 2, ++i + 1);
-	add(mTechs, 2, ++i + 1, 2, 1);
+        add(mTitle, 1, 0, 3, 1);
+        int i;
+        for (i = 0; i < mCategories.length; i++) {
+            if (!mCategories[i].equals("")) {
+                add(mLabels[i], 2, i + 1);
+                add(mValues.get(mCategories[i]), 3, i + 1);
+            }
+        }
+        add(new Label("Technologies Implemented:"), 2, ++i + 1);
+        add(mTechs, 2, ++i + 1, 2, 1);
     }
 
     public void setCountry(String pCountry)
     {
-	mCountryName = pCountry;
-	update();
+        mCountryName = pCountry;
+        update();
     }
-    
+
     protected void initializeLabels()
     {
-	mCategories = getCategories();
-	mLabels = new Label[mCategories.length];
-	mValues = new HashMap<String, Label>();
-	for (int i = 0; i < mCategories.length; i++)
-	{
-	    if (!mCategories[i].equals(""))
-	    {
-		mLabels[i] = new Label(mCategories[i] + ":");
-		mValues.put(mCategories[i], new Label());
-	    }
-	}
+        mCategories = getCategories();
+        mLabels = new Label[mCategories.length];
+        mValues = new HashMap<String, Label>();
+        for (int i = 0; i < mCategories.length; i++) {
+            if (!mCategories[i].equals("")) {
+                mLabels[i] = new Label(mCategories[i] + ":");
+                mValues.put(mCategories[i], new Label());
+            }
+        }
 
-	mTechs = new ImplementedTechList(mModel);
-	update();
+        mTechs = new ImplementedTechList(mModel);
+        update();
     }
 
     protected void update()
-    { 
-	mTitle.setText(mCountryName);
+    {
+        mTitle.setText(mCountryName);
 
-	mValues.get("Nuclear Plants"    ).setText("0"); // Zeros represent Updated model data
-	mValues.get("Fossil Fuel Plants").setText("0");
-	mValues.get("Renewable Plants"  ).setText("0");
-	
-	mValues.get("Energy Supplied"   ).setText("0");
-	mValues.get("Available Funds"   ).setText("0");
-	mValues.get("Public Approval"   ).setText("0");
-	mValues.get("Oil Consumption"   ).setText("0");
-	
-	mValues.get("Total Profit"      ).setText("0");
-	mValues.get("Total Security"    ).setText("0");
-	mValues.get("Total Emissions"   ).setText("0");
+        mValues.get("Nuclear Plants"    ).setText("0"); // Zeros represent Updated model data
+        mValues.get("Fossil Fuel Plants").setText("0");
+        mValues.get("Renewable Plants"  ).setText("0");
 
-	mTechs.update();
+        mValues.get("Energy Supplied"   ).setText("0");
+        mValues.get("Available Funds"   ).setText("0");
+        mValues.get("Public Approval"   ).setText("0");
+        mValues.get("Oil Consumption"   ).setText("0");
+
+        mValues.get("Total Profit"      ).setText("0");
+        mValues.get("Total Security"    ).setText("0");
+        mValues.get("Total Emissions"   ).setText("0");
+
+        mTechs.update();
     }
 
 }

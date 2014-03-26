@@ -19,7 +19,7 @@ import javafx.stage.*;
  * One of the content panes for Sim City
  */
 public class EngineeringPane
-   extends ContentPane
+    extends ContentPane
 {
 
     protected NuclearEngineering   mNucEng;
@@ -32,68 +32,66 @@ public class EngineeringPane
 
     protected void init()
     {
-	mActionButton = new Button("Apply");
-	mActionButton.setOnAction(new EventHandler<ActionEvent>()
-				  {
-				      public void handle(ActionEvent event)
-				      {
-				      }
-				  });
-	setHalignment(mActionButton, HPos.LEFT);
+        mActionButton = new Button("Apply");
+        mActionButton.setOnAction(new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+            }
+        });
+        setHalignment(mActionButton, HPos.LEFT);
     }
 
     protected void setComponents()
     {
-	mNucEng = new NuclearEngineering  (mModel);
-	mFosEng = new FossilEngineering   (mModel);
-	mRenEng = new RenewableEngineering(mModel);
-	mActionLabel = new Label("Action Points:");
-	setHalignment(mActionLabel, HPos.RIGHT);
-	mActionValue = new Label();
-	setHalignment(mActionValue, HPos.CENTER);
-	update();
+        mNucEng = new NuclearEngineering  (mModel);
+        mFosEng = new FossilEngineering   (mModel);
+        mRenEng = new RenewableEngineering(mModel);
+        mActionLabel = new Label("Action Points:");
+        setHalignment(mActionLabel, HPos.RIGHT);
+        mActionValue = new Label();
+        setHalignment(mActionValue, HPos.CENTER);
+        update();
     }
 
     protected void update()
     {
-	mActionValue.setText("0");
+        mActionValue.setText("0");
     }
 
     protected int[] getColumns()
     {
-	return new int[] {12, 25, 26, 25, 12};
+        return new int[] {12, 25, 26, 25, 12};
     }
 
     protected int[] getRows()
     {
-	return new int[] {12, 25, 25, 25, 13};
+        return new int[] {12, 25, 25, 25, 13};
     }
 
     protected String getTitle()
     {
-	return "Engineering Upgrades";
+        return "Engineering Upgrades";
     }
 
-   /**
-    * Constructor
-    * @param SimCity pModel the current sim city Model
-    */
+    /**
+     * Constructor
+     * @param SimCity pModel the current sim city Model
+     */
     public EngineeringPane(SimCity pModel)
-   {
-       super(pModel);
-   }
+    {
+        super(pModel);
+    }
 
     protected void setup()
     {
-	//setGridLinesVisible(true);
-	setComponents();
+        //setGridLinesVisible(true);
+        setComponents();
 
-	add(getTitleLabel(), 0, 0, 5, 1);
-	add(mNucEng        , 1, 1, 3, 1);
-	add(mFosEng        , 1, 2, 3, 1);
-	add(mRenEng        , 1, 3, 3, 1);
-	add(mActionLabel   , 1, 4, 1, 1);
-	add(mActionValue   , 2, 4, 1, 1);
-	add(mActionButton  , 3, 4, 1, 1);
+        add(getTitleLabel(), 0, 0, 5, 1);
+        add(mNucEng        , 1, 1, 3, 1);
+        add(mFosEng        , 1, 2, 3, 1);
+        add(mRenEng        , 1, 3, 3, 1);
+        add(mActionLabel   , 1, 4, 1, 1);
+        add(mActionValue   , 2, 4, 1, 1);
+        add(mActionButton  , 3, 4, 1, 1);
     }
 }

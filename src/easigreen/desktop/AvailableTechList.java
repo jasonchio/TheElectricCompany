@@ -15,7 +15,7 @@ class AvailableTechList
 
     public AvailableTechList(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()
