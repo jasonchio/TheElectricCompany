@@ -16,39 +16,76 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Pane for Trade base
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class TradeBasePane
     extends ContentPane
 {
+    /**
+     * Holds the list of available techs
+     */
     protected AppDataList mTechs;
+    
+    /**
+     * Holds the text area
+     */
     protected TextArea    mInsert;
+    
+    /**
+     * Holds the button for adding a technology
+     */
     protected Button      mAdd;
 
 
+    /**
+     * Holds a list of the various label names
+     */
     protected static String[] mLabelNames = new String[] {"Currency", "Action Points",
             "Emission Credits", "Market Shares"
                                                          };
 
+    /**
+     * Maps the string to the labels
+     */                                                     
     protected Map<String, Label>    mLabels;
 
+    /**
+     * Maps the string to the text field
+     */
     protected Map<String, TextField> mValues;
 
+    /**
+     * Get Columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {4, 38, 14, 4, 36, 4};
     }
 
+    /**
+     * Get Rows
+     * @return integer array of rows
+     */
     protected int[] getRows()
     {
         return new int[] {15, 11, 11, 11, 11, 2, 15, 2, 20, 2};
     }
 
+    /**
+     * Get the title of the pane
+     * @return String the columns
+     */
     protected String getTitle()
     {
         return "Unknown";
     }
 
+    /**
+     * Initialization
+     */
     protected void init()
     {
         mTechs           = new AppDataList(mModel);
@@ -68,6 +105,9 @@ public class TradeBasePane
         super(pModel);
     }
 
+    /**
+     * Set up of the various GUI elements
+     */
     protected void setup()
     {
         Label title = getTitleLabel();
@@ -91,6 +131,9 @@ public class TradeBasePane
         //setGridLinesVisible(true);
     }
 
+    /**
+     * Set up the labels
+     */
     protected void setLabels()
     {
         mLabels = new HashMap<String, Label>();

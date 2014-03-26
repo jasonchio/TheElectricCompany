@@ -16,7 +16,7 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * Content Pane for Renewable Upgrades
+ * Content Pane for Science Pane
  * @version 0.2.0
  * @author Haru McClellan
  */

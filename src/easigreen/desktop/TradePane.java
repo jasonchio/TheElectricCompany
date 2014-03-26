@@ -16,38 +16,81 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Trade Pane
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class TradePane
     extends ContentPane
 {
+    /**
+     * Holds the trade pane
+     */
     protected ContentPane mNewTradePane;
+    
+    /**
+     * Holds the button
+     */
     protected Button      mNewTrade;
+    
+    /**
+     * Holds the accept button
+     */
     protected Button      mAccept;
+    
+    /**
+     * Holds the trade list
+     */
     protected TradeList   mTrades;
 
+    /**
+     * Holds the label names
+     */
     protected static String[] mLabelNames = new String[] {"Currency", "Emission Credits",
             "Action Points", "Market Shares", "Technologies"
                                                          };
 
+                                                         
+    /**
+     * Holds a map from strings to labels
+     */
     protected Map<String, Label> mLabels;
+    
+    /**
+     * Holds a map from strings to labels
+     */
     protected Map<String, Label> mValues;
 
+    /**
+     * Gets the Columns
+     * @return the array list of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {12, 30, 8, 30, 8, 12};
     }
 
+    /**
+     * Gets the rows
+     * @return the array list of rows
+     */
     protected int[] getRows()
     {
         return new int[] {12, 16, 12, 9, 6, 4, 4, 4, 6, 4, 4, 4, 12, 3};
     }
 
+    /**
+     * Gets the title
+     * @return the title a string
+     */
     protected String getTitle()
     {
         return "Trade";
     }
 
+    /**
+     * Initializer 
+     */
     protected void init()
     {
         mNewTradePane = new NewTradePane(mModel);
@@ -71,10 +114,11 @@ public class TradePane
         super(pModel);
     }
 
+    /**
+     * Set up the object
+     */
     protected void setup()
     {
-
-
         mTrades = new TradeList(mModel);
         initializeLabels();
         setHalignment(mNewTrade, HPos.CENTER);
@@ -114,6 +158,9 @@ public class TradePane
         //setGridLinesVisible(true);
     }
 
+    /**
+     * Initializer of the labels
+     */
     protected void initializeLabels()
     {
         mLabels = new HashMap<String, Label>();
@@ -139,6 +186,9 @@ public class TradePane
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
         mValues.get("Selected").setText("Selected Trade");

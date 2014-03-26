@@ -16,16 +16,25 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Trade Offer Pane
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class TradeOfferPane
     extends TradeBasePane
 {
+    /**
+     * Get title
+     * @return the title
+     */
     protected String getTitle()
     {
         return "Offering";
     }
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
         mTechs           = new AppDataList(mModel);
@@ -45,6 +54,9 @@ public class TradeOfferPane
         super(pModel);
     }
 
+    /**
+     * Updater
+     */
     public void update()
     {
     }

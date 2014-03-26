@@ -16,11 +16,16 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Upgrade Item
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class UpgradesPane
     extends ContentPane
 {
+    /**
+     * Holds the label names
+     */
     protected static String[] mLabelNames = new String[] {"Nuclear Science", "Fossil Fuel Science",
             "Renewable Science", "Oil Science",
             "Nuclear Engineering", "Fossil Fuel Engineering",
@@ -28,23 +33,46 @@ public class UpgradesPane
             "Lobby", "Oil Drilling"
                                                          };
 
+    /**
+     * Holds the technology title
+     */
     protected static String mTechTitle = new String("Implemented Technologies");
 
+    /**
+     * Holds the map of strings to labels
+     */
     protected Map<String, Label> mLabels;
+    
+    /**
+     * Holds the map of string to labels 
+     */
     protected Map<String, Label> mValues;
 
+    /**
+     * Holds the implemented technology list
+     */
     protected ImplementedTechList mTechList;
 
+    /**
+     * Gets the Columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {12, 66, 10, 12};
     }
 
+    /**
+     * Holds the rows
+     */
     protected int[] getRows()
     {
         return new int[] {12, 6, 6, 6, 6, 4, 6, 6, 6, 4, 6, 6, 6, 6, 12, 2};
     }
 
+    /**
+     * Holds the map names
+     */
     protected String getTitle()
     {
         return "Upgrades";

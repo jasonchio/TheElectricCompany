@@ -16,26 +16,71 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Technologies Pane for Renewable Upgrades
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class TechnologiesPane
     extends ContentPane
 {
+    /**
+     * Label for the Technology improvement
+     */
     protected Label mImpLabel;
+    
+    /**
+     * Label for the Available Technologies
+     */
     protected Label mAvaLabel;
+    
+    /**
+     * Label for all technologies
+     */
     protected Label mAllLabel;
+    
+    /**
+     * Conditional label
+     */
     protected Label mCodLabel;
 
+    /**
+     * Holds the list of Implemented Technologies
+     */
     protected ImplementedTechList mImpList;
+    
+    /**
+     * Holds the list of available technologies
+     */
     protected AvailableTechList   mAvaList;
+    
+    /**
+     * Holds the list of all technologies
+     */
     protected AllTechList         mAllList;
 
+    /**
+     * Holds the button to implement things
+     */
     protected Button mImplementButton;
+    
+    /**
+     * Holds the button to apply
+     */
     protected Button mApplyButton;
 
+    /**
+     * Holds the text area
+     */
     protected TextArea  mTextArea;
+    
+    /**
+     * Holds the text field
+     */
     protected TextField mTextField;
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
         mImplementButton = new Button("Implement");
@@ -52,6 +97,9 @@ public class TechnologiesPane
         setHalignment(mApplyButton    , HPos.CENTER);
     }
 
+    /**
+     * Set the components
+     */
     protected void setComponents()
     {
 
@@ -84,6 +132,9 @@ public class TechnologiesPane
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
         mImpList.update();
@@ -91,16 +142,28 @@ public class TechnologiesPane
         mAllList.update();
     }
 
+    /**
+     * Gets the columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {12, 25, 26, 25, 12};
     }
 
+    /**
+     * Gets the rows
+     * @return integer array of rows
+     */
     protected int[] getRows()
     {
         return new int[] {12, 6, 12, 4, 6, 12, 8, 6, 12, 10, 8, 4};
     }
 
+    /**
+     * Gets the title
+     * @return the title
+     */
     protected String getTitle()
     {
         return "Technologies";
@@ -115,6 +178,9 @@ public class TechnologiesPane
         super(pModel);
     }
 
+    /*
+     * Sets up the various GUI elements
+     */
     protected void setup()
     {
         //setGridLinesVisible(true);

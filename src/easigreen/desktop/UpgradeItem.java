@@ -14,7 +14,9 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
- *
+ * Upgrade Item
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class UpgradeItem
     extends ContentComponent
@@ -24,33 +26,70 @@ public class UpgradeItem
      */
     protected SimCity mModel;
 
+    /**
+     * Gets the columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {15, 45, 25, 15};
     }
 
+    /**
+     * Gets the rows
+     * @return integer array of rows
+     */
     protected int[] getRows()
     {
         return new int[] {49, 17, 17, 17};
     }
 
+    /**
+     * Gets the title
+     * @return the title a string
+     */
     protected String getTitle()
     {
         return new String("Unknown");
     }
 
+    /**
+     * Gets the tips
+     * @return String array of tips
+     */
     protected String[] getTips()
     {
         return new String[] {"Unknown1", "Unknown2"};
     }
 
+    /**
+     * Holds the value label
+     */
     protected Label mValue;
+    
+    /**
+     * Holds the title label
+     */
     protected Label mTitle;
+    
+    /**
+     * Holds the map from string to labels
+     */
     protected Map<String, Label> mTips;
 
+    /**
+     * Holds the up button
+     */
     protected Button mUp;
+    
+    /**
+     * Holds the down button
+     */
     protected Button mDown;
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
         EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
@@ -78,6 +117,9 @@ public class UpgradeItem
         super(pModel);
     }
 
+    /**
+     * Set up the items
+     */
     protected void setup()
     {
         setLabels();
@@ -93,6 +135,9 @@ public class UpgradeItem
         add(mDown , 3, 1, 1, 3);
     }
 
+    /**
+     * Set up Labels
+     */
     protected void setLabels()
     {
         mValue = new Label("?");
@@ -110,6 +155,9 @@ public class UpgradeItem
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
         mValue.setText("0");
