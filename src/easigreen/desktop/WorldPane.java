@@ -21,25 +21,51 @@ import javafx.stage.*;
 public class WorldPane
     extends ContentPane
 {
+    /**
+     * Holds the Country List
+     */
     protected CountryList mCountries;
+    
+    /**
+     * Holds the Country Pane
+     */
     protected CountryPane mCountryPane;
+    
+    /**
+     * Holds the View Button
+     */
     protected Button mView;
 
+    /**
+     * Gets the columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {20, 60, 20};
     }
 
+    /**
+     * Gets the rows
+     * @return integer array of rows
+     */
     protected int[] getRows()
     {
         return new int[] {12, 4, 70, 2, 6, 6};
     }
 
+    /**
+     * Gets the title
+     * @return String title
+     */
     protected String getTitle()
     {
         return "Country Rankings";
     }
 
+    /**
+     * Initialize the Content
+     */
     protected void init()
     {
         mCountryPane = new CountryPane(mModel);
@@ -71,6 +97,9 @@ public class WorldPane
         add(mView, 1, 4);
     }
 
+    /**
+     * Updates this Pane
+     */
     protected void update()
     {
         mCountries.update();
