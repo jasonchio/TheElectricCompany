@@ -19,7 +19,7 @@ import java.util.ArrayList;
 public class Trade
 {
     //////////////////// Variables
-   
+
     /**
      * The budget that has been placed into the trade
      */
@@ -52,12 +52,12 @@ public class Trade
      * @param pTechnologies the technologies being traded
      */
     public Trade(int pBudget, int pEmissionCredits, int pMarketShares,
-		 ArrayList<Technology> pTechnologies)
+                 ArrayList<Technology> pTechnologies)
     {
-	   mBudget = pBudget;
-	   mEmissionCredits = pEmissionCredits;
-	   mMarketShares = pMarketShares;
-	   mTechnologies = pTechnologies;
+        mBudget = pBudget;
+        mEmissionCredits = pEmissionCredits;
+        mMarketShares = pMarketShares;
+        mTechnologies = pTechnologies;
     }
 
     //////////////////// Methods
@@ -69,7 +69,7 @@ public class Trade
      */
     public int getBudget()
     {
-	   return mBudget;
+        return mBudget;
     }
 
     /**
@@ -79,7 +79,7 @@ public class Trade
      */
     public int getEmissionCredits()
     {
-	   return mEmissionCredits;
+        return mEmissionCredits;
     }
 
     /**
@@ -89,7 +89,7 @@ public class Trade
      */
     public int getMarketShares()
     {
-	   return mMarketShares;
+        return mMarketShares;
     }
 
     /**
@@ -99,6 +99,6 @@ public class Trade
      */
     public ArrayList<Technology> getTechnologies()
     {
-	   return mTechnologies;
+        return mTechnologies;
     }
 }

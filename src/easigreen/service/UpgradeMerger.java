@@ -146,12 +146,30 @@ public class UpgradeMerger
 
     //////////////////// Methods
 
-    public double getBudgetChange() {return mBudgetChange;}
-    public double getApprovalChange() {return mApprovalChange;}
-    public double getEmissionsChange() {return mEmissionsChange;}
-    public double getPriceChange() {return mPriceChange;}
-    public double getDemandChange() {return mDemandChange;}
-    public double getDemandRateChange() {return mDemandRateChange;}
+    public double getBudgetChange()
+    {
+        return mBudgetChange;
+    }
+    public double getApprovalChange()
+    {
+        return mApprovalChange;
+    }
+    public double getEmissionsChange()
+    {
+        return mEmissionsChange;
+    }
+    public double getPriceChange()
+    {
+        return mPriceChange;
+    }
+    public double getDemandChange()
+    {
+        return mDemandChange;
+    }
+    public double getDemandRateChange()
+    {
+        return mDemandRateChange;
+    }
 
     /**
      * Get the change in national power
@@ -161,7 +179,7 @@ public class UpgradeMerger
     {
         return mNpow;
     }
-    
+
     /**
      * Get the change in nuclear cost
      * @return change in nuclear cost
@@ -170,7 +188,7 @@ public class UpgradeMerger
     {
         return mNcost;
     }
-    
+
     /**
      * Get the change in nuclear approval rating
      * @return the change in nuclear approval rating
@@ -179,7 +197,7 @@ public class UpgradeMerger
     {
         return mNatt;
     }
-    
+
     /**
      * Get the change in Nuclear Emissions
      * @return the change in nuclear emissions
@@ -188,7 +206,7 @@ public class UpgradeMerger
     {
         return mNemit;
     }
-    
+
     /**
      * Get the change in Nuclear Security
      * @return the change in nuclear security
@@ -197,7 +215,7 @@ public class UpgradeMerger
     {
         return mNsec;
     }
-    
+
     /**
      * Get the change in nuclear profit
      * @return the change in nuclear profit
@@ -215,7 +233,7 @@ public class UpgradeMerger
     {
         return mFpow;
     }
-    
+
     /**
      * Get the change in fossil cost
      * @return the change in fossil cost
@@ -224,7 +242,7 @@ public class UpgradeMerger
     {
         return mFcost;
     }
-    
+
     /**
      * Get the change in fossil approval rating
      * @return the change in fossil approval rating
@@ -233,7 +251,7 @@ public class UpgradeMerger
     {
         return mFatt;
     }
-    
+
     /**
      * Get the change in fossil emissions
      * @return the change in fossil emissions
@@ -242,7 +260,7 @@ public class UpgradeMerger
     {
         return mFemit;
     }
-    
+
     /**
      * Get the change in fossil security
      * @return the change in fossil security
@@ -251,7 +269,7 @@ public class UpgradeMerger
     {
         return mFsec;
     }
-    
+
     /**
      * Get the change in fossil profit
      * @return the change in fossil profit
@@ -269,7 +287,7 @@ public class UpgradeMerger
     {
         return mRpow;
     }
-    
+
     /**
      * Get the change in renewable cost
      * @return the change in renewable cost
@@ -278,7 +296,7 @@ public class UpgradeMerger
     {
         return mRcost;
     }
-    
+
     /**
      * Get the change in approval rating of renewable
      * @return the change in approval rating of renewable
@@ -287,7 +305,7 @@ public class UpgradeMerger
     {
         return mRatt;
     }
-    
+
     /**
      * Get the change in renewable emissions
      * @return the change in Renewable emissions
@@ -296,7 +314,7 @@ public class UpgradeMerger
     {
         return mRemit;
     }
-    
+
     /**
      * Get the change in renewable security
      * @return the change in renewable security
@@ -305,7 +323,7 @@ public class UpgradeMerger
     {
         return mRsec;
     }
-    
+
     /**
      * Get the change in renewable profit
      * @return the change in renewable profit
@@ -323,7 +341,7 @@ public class UpgradeMerger
     {
         return mOil;
     }
-    
+
     /**
      * Get the change in oil security
      * @return the change in oil security
@@ -332,7 +350,7 @@ public class UpgradeMerger
     {
         return mOilSec;
     }
-    
+
     /**
      * Get the change in oil growth
      * @return the change in oil growth
@@ -343,17 +361,27 @@ public class UpgradeMerger
     }
 
 
-    public void setBudgetChange(double pBudgetChange) 
-       {mBudgetChange = pBudgetChange;}
-    public void setApprovalChange(double pBudgetApproval) 
-       {mApprovalChange = pBudgetApproval;}
-    public void setPriceChange(double pPriceChange) 
-       {mPriceChange = pPriceChange;}
-    public void setDemandChange(double pDemandChange) 
-       {mDemandChange = pDemandChange;}
+    public void setBudgetChange(double pBudgetChange)
+    {
+        mBudgetChange = pBudgetChange;
+    }
+    public void setApprovalChange(double pBudgetApproval)
+    {
+        mApprovalChange = pBudgetApproval;
+    }
+    public void setPriceChange(double pPriceChange)
+    {
+        mPriceChange = pPriceChange;
+    }
+    public void setDemandChange(double pDemandChange)
+    {
+        mDemandChange = pDemandChange;
+    }
 
-    public void setDemandRateChange(double pDemandRateChange) 
-       {mDemandRateChange = pDemandRateChange;}
+    public void setDemandRateChange(double pDemandRateChange)
+    {
+        mDemandRateChange = pDemandRateChange;
+    }
 
     public void setEmissionsChange(double pEmissionsChange)
     {
@@ -368,7 +396,7 @@ public class UpgradeMerger
     {
         mNpow = pNpow;
     }
-    
+
     /**
      * Set the change in nuclear cost
      * @param pNcost a double
@@ -377,7 +405,7 @@ public class UpgradeMerger
     {
         mNcost = pNcost;
     }
-    
+
     /**
      * Set the change in nuclear approval rating
      * @param pNatt a double
@@ -386,7 +414,7 @@ public class UpgradeMerger
     {
         mNatt = pNatt;
     }
-    
+
     /**
      * Set the change in nuclear emissions
      * @param pNemit a double
@@ -395,7 +423,7 @@ public class UpgradeMerger
     {
         mNemit = pNemit;
     }
-    
+
     /**
      * Set the change in nuclear security
      * @param pNsec a double
@@ -404,7 +432,7 @@ public class UpgradeMerger
     {
         mNsec = pNsec;
     }
-    
+
     /**
      * Set the change in nuclear profit
      * @param pNprof
@@ -422,7 +450,7 @@ public class UpgradeMerger
     {
         mFpow = pFpow;
     }
-    
+
     /**
      * Set the change in fossil cost
      * @param pFcost a double
@@ -431,7 +459,7 @@ public class UpgradeMerger
     {
         mFcost = pFcost;
     }
-    
+
     /**
      * Set the change in fossil approval rating
      * @param pFatt a double
@@ -440,7 +468,7 @@ public class UpgradeMerger
     {
         mFatt = pFatt;
     }
-    
+
     /**
      * Set the change in fossil emissions
      * @param pFemit a double
@@ -449,7 +477,7 @@ public class UpgradeMerger
     {
         mFemit = pFemit;
     }
-    
+
     /**
      * Set the change in fossil security
      * @param pFsec a double
@@ -458,7 +486,7 @@ public class UpgradeMerger
     {
         mFsec = pFsec;
     }
-    
+
     /**
      * Set the change in fossil profit
      * @param pFprof a double
@@ -476,7 +504,7 @@ public class UpgradeMerger
     {
         mRpow = pRpow;
     }
-    
+
     /**
      * Set the change in renewable cost
      * @param pRcost a double
@@ -485,7 +513,7 @@ public class UpgradeMerger
     {
         mRcost = pRcost;
     }
-    
+
     /**
      * Set the change in renewable approval rating
      * @param pRatt a double
@@ -494,7 +522,7 @@ public class UpgradeMerger
     {
         mRatt = pRatt;
     }
-    
+
     /**
      * Set the change in renewable emissions
      * @param pRemit a double
@@ -503,7 +531,7 @@ public class UpgradeMerger
     {
         mRemit = pRemit;
     }
-    
+
     /**
      * Set the change in renewable security
      * @param pRsec a double
@@ -512,7 +540,7 @@ public class UpgradeMerger
     {
         mRsec = pRsec;
     }
-    
+
     /**
      * Set the change in renewable profit
      * @param pRprof a double
@@ -530,7 +558,7 @@ public class UpgradeMerger
     {
         mOil = pOil;
     }
-    
+
     /**
      * Set the change in oil security
      * @param pOilSec a double
@@ -539,7 +567,7 @@ public class UpgradeMerger
     {
         mOil = pOilSec;
     }
-    
+
     /**
      * Set the change in oil growth
      * @param pOilGrow a double

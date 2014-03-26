@@ -13,48 +13,48 @@ public class GoalManager
     //////////////////// Variables
 
     /**
-	 * Manager of Energy
-	 */
-	private EnergyManager mEnergyManager;
-	
-	/**
-	 * Manager of Resources
-	 */
-	private ResourceManager mResourceManager;
-	
-	
-	/**
-	 * Manager of Upgrades
-	 */
-	private UpgradeManager mUpgradeManager;
-	
-	/**
-	 * Needed approval rating
-	 */
-	private static final int mTargetApproval = 45;
-	
-	///////////////////// Getter
-	
-	public int getTargetApproval()
-	{
-	   return mTargetApproval;
-	}
-	
-	///////////////////// Constructor
-	
-	/**
-	 * The Constructor for this class
-	 *
-	 * @param pEnergyManager the energy manager
-	 * @param pResourceManager the resource manager
-	 * @param pUpgradeManager the upgrade manager
-	 */
-	public GoalManager(EnergyManager pEnergyManager, ResourceManager pResourceManager, UpgradeManager pUpgradeManager)
-	{
-	    mEnergyManager   = pEnergyManager;
+     * Manager of Energy
+     */
+    private EnergyManager mEnergyManager;
+
+    /**
+     * Manager of Resources
+     */
+    private ResourceManager mResourceManager;
+
+
+    /**
+     * Manager of Upgrades
+     */
+    private UpgradeManager mUpgradeManager;
+
+    /**
+     * Needed approval rating
+     */
+    private static final int mTargetApproval = 45;
+
+    ///////////////////// Getter
+
+    public int getTargetApproval()
+    {
+        return mTargetApproval;
+    }
+
+    ///////////////////// Constructor
+
+    /**
+     * The Constructor for this class
+     *
+     * @param pEnergyManager the energy manager
+     * @param pResourceManager the resource manager
+     * @param pUpgradeManager the upgrade manager
+     */
+    public GoalManager(EnergyManager pEnergyManager, ResourceManager pResourceManager, UpgradeManager pUpgradeManager)
+    {
+        mEnergyManager   = pEnergyManager;
         mResourceManager = pResourceManager;
-        mUpgradeManager  = pUpgradeManager;		
-	}
-	
-	
+        mUpgradeManager  = pUpgradeManager;
+    }
+
+
 }

@@ -36,20 +36,20 @@ public class UpgradeManager
 
     //////////////////// Constructors
 
-    public UpgradeManager(ResourceManager pResourceManager, 
+    public UpgradeManager(ResourceManager pResourceManager,
                           TechnologyManager pTechnologyManager)
     {
         mNuclearSci   = 0;
-	mFossilSci    = 0;
-	mRenewableSci = 0;
-	mOilSci       = 0;
-	mNuclearEng   = 0;
-	mFossilEng    = 0;
-	mRenewableEng = 0;
-	mOilDrilling  = 0;
-	mLobby        = 0;
-	mPriceChange  = 0;
-	mResourceManager = pResourceManager;
+        mFossilSci    = 0;
+        mRenewableSci = 0;
+        mOilSci       = 0;
+        mNuclearEng   = 0;
+        mFossilEng    = 0;
+        mRenewableEng = 0;
+        mOilDrilling  = 0;
+        mLobby        = 0;
+        mPriceChange  = 0;
+        mResourceManager = pResourceManager;
         mTechnologyManager = pTechnologyManager;
     }
 
@@ -58,7 +58,7 @@ public class UpgradeManager
     public UpgradeMerger update()
     {
         UpgradeMerger allChanges = new UpgradeMerger();
-	
+
         allChanges.setBudgetChange(mLobby);
 
         allChanges.setApprovalChange(mLobby * -1 + mPriceChange * -1);
@@ -73,13 +73,13 @@ public class UpgradeManager
 
         allChanges.setNsec(mNuclearSci);
 
-	allChanges.setFatt(mFossilSci + mFossilEng);
+        allChanges.setFatt(mFossilSci + mFossilEng);
 
-	allChanges.setFsec(mFossilSci);
+        allChanges.setFsec(mFossilSci);
 
-	allChanges.setRatt(mRenewableSci + mRenewableEng);
+        allChanges.setRatt(mRenewableSci + mRenewableEng);
 
-	allChanges.setRsec(mRenewableSci);
+        allChanges.setRsec(mRenewableSci);
 
         allChanges.setOilSec(mOilSci + mOilDrilling);
 
@@ -175,8 +175,8 @@ public class UpgradeManager
      */
     public void addPriceChange(int actions)
     {
-	//        mPrice    += (actions * .8);
-	//        mApproval -= (actions * .5);
+        //        mPrice    += (actions * .8);
+        //        mApproval -= (actions * .5);
         mPriceChange += actions;
     }
 
@@ -208,7 +208,7 @@ public class UpgradeManager
 
     public int getNuclearScience()
     {
-	return mNuclearSci;
+        return mNuclearSci;
     }
 
     public int getFossilScience()

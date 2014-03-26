@@ -21,19 +21,19 @@ public class TradeManager
      * The resource manager
      */
     private ResourceManager mResourceManager;
-	
-	/**
-	 * The Constructor for this class
-	 *
-	 * @param pTechnologyManager the technology manager
-	 * @param pResourceManager   the resource manager
-	 */
-	public TradeManager(TechnologyManager pTechnologyManager, 
-	                    ResourceManager pResourceManager)
-	{
-	   mTechnologyManager = pTechnologyManager;
-	   mResourceManager   = pResourceManager;
-	}
+
+    /**
+     * The Constructor for this class
+     *
+     * @param pTechnologyManager the technology manager
+     * @param pResourceManager   the resource manager
+     */
+    public TradeManager(TechnologyManager pTechnologyManager,
+                        ResourceManager pResourceManager)
+    {
+        mTechnologyManager = pTechnologyManager;
+        mResourceManager   = pResourceManager;
+    }
 
     //////////////////// Getters
 

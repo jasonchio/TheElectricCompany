@@ -29,12 +29,12 @@ public class SimCity
      * Manager for the energy
      */
     private EnergyManager mEnergyManager;
-	
+
     /**
      * Manager for the upgrades.
      */
     private UpgradeManager mUpgradeManager;
-    
+
     /**
      * Manager for the goals
      */
@@ -49,8 +49,8 @@ public class SimCity
      * Manager for the resources
      */
     private ResourceManager mResourceManager;
-	
-	/**
+
+    /**
      * Technology Manager
      */
     private TechnologyManager pTechnologyManager;
@@ -68,47 +68,82 @@ public class SimCity
      */
     public void run()
     {
-	   mResourceManager = new ResourceManager();
-	   mUpgradeManager = new UpgradeManager(mResourceManager, 
-                                                pTechnologyManager);
-	   mEnergyManager = new EnergyManager(mUpgradeManager, 
-              mUpgradeManager.getTechnologyManager());
-	   mGoalManager = new GoalManager(mEnergyManager, mResourceManager,
-                                          mUpgradeManager);
-	   mWorldManager = new WorldManager();
-	   mTradeManager = new TradeManager(
-              mUpgradeManager.getTechnologyManager(), mResourceManager);
+        mResourceManager = new ResourceManager();
+        mUpgradeManager = new UpgradeManager(mResourceManager,
+                                             pTechnologyManager);
+        mEnergyManager = new EnergyManager(mUpgradeManager,
+                                           mUpgradeManager.getTechnologyManager());
+        mGoalManager = new GoalManager(mEnergyManager, mResourceManager,
+                                       mUpgradeManager);
+        mWorldManager = new WorldManager();
+        mTradeManager = new TradeManager(
+            mUpgradeManager.getTechnologyManager(), mResourceManager);
     }
 
     /**
      * Main starts the run method
-	 * @param args the command line arguments
+     * @param args the command line arguments
      */
     public static void main(String[] args)
     {
         new SimCity().run();
     }
 
-    public int getRoundNumber() {return mRoundNumber;}
-    public EnergyManager getEnergyManager() {return mEnergyManager;}
-    public UpgradeManager getUpgradeManager() {return mUpgradeManager;}
-    public GoalManager getGoalManager() {return mGoalManager;}
-    public WorldManager getWorldManager() {return mWorldManager;}
-    public ResourceManager getResourceManager() {return mResourceManager;}
-    public TradeManager getTradeManager() {return mTradeManager;}
+    public int getRoundNumber()
+    {
+        return mRoundNumber;
+    }
+    public EnergyManager getEnergyManager()
+    {
+        return mEnergyManager;
+    }
+    public UpgradeManager getUpgradeManager()
+    {
+        return mUpgradeManager;
+    }
+    public GoalManager getGoalManager()
+    {
+        return mGoalManager;
+    }
+    public WorldManager getWorldManager()
+    {
+        return mWorldManager;
+    }
+    public ResourceManager getResourceManager()
+    {
+        return mResourceManager;
+    }
+    public TradeManager getTradeManager()
+    {
+        return mTradeManager;
+    }
 
-    public void setRoundNumber(int pRoundNumber) 
-       {mRoundNumber = pRoundNumber;}
-    public void setEnergyManager(EnergyManager pEnergyManager) 
-       {mEnergyManager = pEnergyManager;}
-    public void setUpgradeManager(UpgradeManager pUpgradeManager) 
-       {mUpgradeManager = pUpgradeManager;}
-    public void setGoalManager(GoalManager pGoalManager) 
-       {mGoalManager = pGoalManager;}
-    public void setWorldManager(WorldManager pWorldManager) 
-       {mWorldManager = pWorldManager;}
-    public void setResourceManager(ResourceManager pResourceManager) 
-       {mResourceManager = pResourceManager;}
-    public void setTradeManager(TradeManager pTradeManager) 
-       {mTradeManager = pTradeManager;}
+    public void setRoundNumber(int pRoundNumber)
+    {
+        mRoundNumber = pRoundNumber;
+    }
+    public void setEnergyManager(EnergyManager pEnergyManager)
+    {
+        mEnergyManager = pEnergyManager;
+    }
+    public void setUpgradeManager(UpgradeManager pUpgradeManager)
+    {
+        mUpgradeManager = pUpgradeManager;
+    }
+    public void setGoalManager(GoalManager pGoalManager)
+    {
+        mGoalManager = pGoalManager;
+    }
+    public void setWorldManager(WorldManager pWorldManager)
+    {
+        mWorldManager = pWorldManager;
+    }
+    public void setResourceManager(ResourceManager pResourceManager)
+    {
+        mResourceManager = pResourceManager;
+    }
+    public void setTradeManager(TradeManager pTradeManager)
+    {
+        mTradeManager = pTradeManager;
+    }
 }
