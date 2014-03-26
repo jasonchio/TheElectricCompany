@@ -10,9 +10,9 @@ import javafx.collections.FXCollections;
 import javafx.scene.control.ListView;
 
 /**
+ * Technology List for Renewable Technologies
  * @version 0.2.0
  * @author Haru McClellan
- *
  */
 class RenewableTechList
     extends AppDataList
