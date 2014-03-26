@@ -92,7 +92,7 @@ public class EnergyManager
 
     public double getApproval()
     {
-	return ((mNuclear.getApproval() + mFossil.getApproval() + mRenewable.getApproval()) / (double)3);
+	return ((mNuclear.getApproval() + mFossil.getApproval() + mRenewable.getApproval()) / (double)getAmount());
     }
 
     public double getEmissions()
