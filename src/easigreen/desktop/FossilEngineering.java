@@ -14,7 +14,12 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
+ * A content pane for sim city
  *
+ * @version 0.2.1
+ * @author Sam Graham
+ * @author Haru McClellan
+ * @author Larson Caldwell
  */
 public class FossilEngineering
     extends UpgradeItem

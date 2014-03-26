@@ -16,20 +16,49 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * A content pane for sim city
+ *
+ * @version 0.2.1
+ * @author Sam Graham
+ * @author Haru McClellan
+ * @author Larson Caldwell
  */
 public class EngineeringPane
     extends ContentPane
 {
-
+    /**
+     * Holds Nuclear Engineering object
+     */
     protected NuclearEngineering   mNucEng;
+    
+    /**
+     * Holds Fossil Engineering object
+     */
     protected FossilEngineering    mFosEng;
+    
+    /**
+     * Holds Renewable Engineering object
+     */
     protected RenewableEngineering mRenEng;
 
-    protected Label            mActionLabel;
-    protected Label            mActionValue;
-    protected Button           mActionButton;
+    /**
+     * Holds Label for the action label
+     */
+    protected Label   mActionLabel;
+    
+    /**
+     * Holds Label for the action value
+     */
+    protected Label   mActionValue;
+    
+    /**
+     * Holds Button for the action
+     */
+    protected Button  mActionButton;
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
         mActionButton = new Button("Apply");
@@ -40,6 +69,9 @@ public class EngineeringPane
         setHalignment(mActionButton, HPos.LEFT);
     }
 
+    /**
+     * Sets the components, initializer of buttons, labels, etc.
+     */
     protected void setComponents()
     {
         mNucEng = new NuclearEngineering  (mModel);
@@ -52,21 +84,36 @@ public class EngineeringPane
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
         mActionValue.setText("0");
     }
 
+    /**
+     * Gets the columns
+     * @return integer array of columns
+     */
     protected int[] getColumns()
     {
         return new int[] {12, 25, 26, 25, 12};
     }
 
+    /**
+     * Gets the rows
+     * @return integer array of the rows
+     */
     protected int[] getRows()
     {
         return new int[] {12, 25, 25, 25, 13};
     }
 
+    /**
+     * Retrieves the title for this Pane
+     * @return String title of the pane
+     */
     protected String getTitle()
     {
         return "Engineering Upgrades";
@@ -81,6 +128,9 @@ public class EngineeringPane
         super(pModel);
     }
 
+    /**
+     * Set up of buttons, labels, etc. 
+     */
     protected void setup()
     {
         //setGridLinesVisible(true);

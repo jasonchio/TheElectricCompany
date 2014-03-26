@@ -19,37 +19,81 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
- */
+ * A content pane for sim city
+ *
+ * @version 0.2.1
+ * @author Sam Graham
+ * @author Haru McClellan
+ * @author Larson Caldwell
+ */ 
 public class EnergyPane
     extends ContentPane
 {
+    /**
+     * Holds the main labels for this pane
+     */
     protected static String[] mMainLabelNames = new String[] {"Energy Demand"   , "Energy Supplied"};
 
+    /**
+     * Holds subsequent labels for this pane 
+     */
     protected static String[] mSubLabelNames = new String[] {"Nuclear Plants"    , "Nuclear Energy",
             "Fossil Fuel Plants", "Fossil Fuel Energy",
             "Renewable Plants"  , "Renewable Energy"
                                                             };
 
+    /**
+     * Holds the name for the oil
+     */
     protected static String mOilName  = new String("Oil");
+    
+    /**
+     * Holds the name for the oil label
+     */
     protected static String mOilLabel = new String("Millions of Barrels per Day");
 
+    /**
+     * Mapping from the Strings to the Labels
+     */
     protected Map<String, Label> mLabels;
+    
+    /**
+     * Mapping from the Strings to the Values
+     */
     protected Map<String, Label> mValues;
 
+    /**
+     * Holds the pie chart list
+     */
     protected ObservableList<PieChart.Data> mPieChartData;
+    
+    /**
+     * Holds the PieChart
+     */
     protected PieChart mPieChart;
 
+    /**
+     * Retrieves the Columns
+     * @return integer array of Columns     
+     */
     protected int[] getColumns()
     {
         return new int[] {12, 42, 18, 14, 14};
     }
 
+    /**
+     * Retrieves the rows
+     * @return integer array of the rows
+     */
     protected int[] getRows()
     {
         return new int[] {12, 10, 10, 4, 4, 3, 4, 4, 3, 4, 4, 4, 8, 8, 18};
     }
 
+    /**
+     * Gets the title of this pane
+     * @return String title of the pane
+     */
     protected String getTitle()
     {
         return "Energy Sources";
@@ -64,6 +108,9 @@ public class EnergyPane
         super(pModel);
     }
 
+    /**
+     * Provides set up of the pane
+     */
     protected void setup()
     {
         //setGridLinesVisible(true);
@@ -97,6 +144,9 @@ public class EnergyPane
 
     }
 
+    /**
+     * Sets the labels
+     */
     protected void setLabels()
     {
         mLabels = new HashMap<String, Label>();
@@ -130,6 +180,9 @@ public class EnergyPane
         update();
     }
 
+    /**
+     * Set up a chart
+     */
     protected void setChart()
     {
         mPieChartData = FXCollections.observableArrayList(
@@ -143,6 +196,9 @@ public class EnergyPane
         setHalignment(mPieChart, HPos.LEFT);
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
         mValues.get("Energy Demand"     ).setText("0");

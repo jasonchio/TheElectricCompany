@@ -19,17 +19,27 @@ import javafx.scene.text.*;
 public class NuclearEngineering
     extends UpgradeItem
 {
-
+    /**
+     * Gets the title for this Content Component
+     * @return String the title
+     */
     protected String getTitle()
     {
         return new String("Nuclear Engineering");
     }
 
+    /**
+     * Gets the Tips
+     * @return an array of Strings
+     */
     protected String[] getTips()
     {
         return new String[] {"+Nuclear Security", "+Nuclear Energy Produced"};
     }
 
+    /**
+     * Initializes the various action handlers
+     */
     protected void init()
     {
         EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
@@ -57,6 +67,9 @@ public class NuclearEngineering
         super(pModel);
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
         mValue.setText("0");
