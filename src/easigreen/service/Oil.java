@@ -19,17 +19,22 @@ public class Oil
     /**
      * Daily consumption of oil
      */
-    private double mConsumption;
+    final private static double mConsumption = 1.7;
 
     /**
      * Security rating of oil
      */
-    private double mSecurity;
+    final private static double mSecurity = -17;
 
     /**
      * Oil growth per round
      */
-    private double mGrowth;
+    final private static double mGrowth = 20;
+
+    /**
+     * Oil Emissions
+     */
+    final private static double mEmissions = 100;
 
     //////////////////// Constructors
 
@@ -38,9 +43,6 @@ public class Oil
      */
     public Oil()
     {
-        mConsumption = 1.7;
-        mSecurity = -17;
-        mGrowth = 20;
     }
 
     //////////////////// Methods
@@ -76,32 +78,13 @@ public class Oil
     }
 
     /**
-     * Sets the daily consumption of oil
+     * Gets the emissions per round caused by oil
      *
-     * @param pConsumption the new daily consumption of oil
+     * @return mEmissions the oil emissions per round
      */
-    public void setConsumption(double pConsumption)
+    public double getEmissions()
     {
-        mConsumption = pConsumption;
+        return mEmissions;
     }
 
-    /**
-     * Sets the security rating of oil
-     *
-     * @param pSecurity the new security rating of oil
-     */
-    public void setSecurity(double pSecurity)
-    {
-        mSecurity = pSecurity;
-    }
-
-    /**
-     * Sets the growth of oil per round
-     *
-     * @param pGrowth the new growth of oil per round
-     */
-    public void setGrowth(double pGrowth)
-    {
-        mGrowth = pGrowth;
-    }
 }

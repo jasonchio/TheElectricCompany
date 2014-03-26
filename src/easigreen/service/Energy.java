@@ -25,37 +25,37 @@ public class Energy
     /**
      * The cost to build each new plant
      */
-    protected double mCostBuild;
+    protected static double mCostBuild;
 
     /**
      * The cost to remove each existing plant
      */
-    protected double mCostRemove;
+    protected static double mCostRemove;
 
     /**
      * The approval rating per unit
      */
-    protected double mApproval;
+    protected static double mApproval;
 
     /**
      * The power production per unit
      */
-    protected double mProduction;
+    protected static double mProduction;
 
     /**
      * The emissions produced per unit
      */
-    protected double mEmissions;
+    protected static double mEmissions;
 
     /**
      * The security of each unit
      */
-    protected double mSecurity;
+    protected static double mSecurity;
 
     /**
      * The profit made with each unit
      */
-    protected double mProfitPercent;
+    protected static double mProfitPercent;
 
     //////////////////// Constructors
 
@@ -144,9 +144,9 @@ public class Energy
     /**
      * Gets the power production of each plant
      *
-     * @return mProduction the power production of each plant
+     * @return mPower the power production of each plant
      */
-    public double getProduction()
+    public double getPower()
     {
         return mProduction;
     }
@@ -176,7 +176,7 @@ public class Energy
      *
      * @return mProfitPercent the profit of each plant
      */
-    public double getProfitPercent()
+    public double getProfit()
     {
         return mProfitPercent;
     }   
@@ -186,35 +186,5 @@ public class Energy
     public void setAmount(int pAmount)
     {
         mAmount = pAmount;
-    }
-
-    public void setCostBuild(double pCostBuild)
-    {
-        mCostBuild = pCostBuild;
-    }
-
-    public void setCostRemove(double pCostRemove)
-    {
-        mCostRemove = pCostRemove;
-    }
-
-    public void setApproval(double pApproval)
-    {
-        mApproval = pApproval;
-    }
-    
-    public void setProduction(double pProduction)
-    {
-        mProduction = pProduction;
-    }
-
-    public void setEmissions(double pEmissions)
-    {
-        mEmissions = pEmissions;
-    }
-
-    public void setSecurity(double pSecurity)
-    {
-        mSecurity = pSecurity;
     }
 }

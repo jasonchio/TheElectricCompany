@@ -21,11 +21,6 @@ public class SimCity
     //////////////////// Variables
 
     /**
-     * The round number
-     */
-    private int mRoundNumber;
-
-    /**
      * Manager for the energy
      */
     private EnergyManager mEnergyManager;
@@ -50,15 +45,15 @@ public class SimCity
      */
     private ResourceManager mResourceManager;
 	
-	/**
-     * Technology Manager
-     */
-    private TechnologyManager pTechnologyManager;
-
     /**
      * Manager for the trades
      */
     private TradeManager mTradeManager;
+
+    /**
+     * Manager for base values
+     */
+    private BaseManager mBaseManager;
 
     //////////////////// Methods
 
@@ -66,18 +61,15 @@ public class SimCity
      * This method will run the program.  It will listen to the user and call
      * algorithms in the simulators.
      */
-    public void run()
+    public void init()
     {
-	   mResourceManager = new ResourceManager();
-	   mUpgradeManager = new UpgradeManager(mResourceManager, 
-                                                pTechnologyManager);
-	   mEnergyManager = new EnergyManager(mUpgradeManager, 
-              mUpgradeManager.getTechnologyManager());
-	   mGoalManager = new GoalManager(mEnergyManager, mResourceManager,
-                                          mUpgradeManager);
-	   mWorldManager = new WorldManager();
-	   mTradeManager = new TradeManager(
-              mUpgradeManager.getTechnologyManager(), mResourceManager);
+	mWorldManager    = new WorldManager   ();
+	mBaseManager     = new BaseManager    ();
+	mUpgradeManager  = new UpgradeManager ();
+	mEnergyManager   = new EnergyManager  (mUpgradeManager);
+	mResourceManager = new ResourceManager(mBaseManager    , mUpgradeManager);
+	mTradeManager    = new TradeManager   (mResourceManager, mUpgradeManager);
+	mGoalManager     = new GoalManager    (mResourceManager, mUpgradeManager, mEnergyManager);
     }
 
     /**
@@ -86,29 +78,22 @@ public class SimCity
      */
     public static void main(String[] args)
     {
-        new SimCity().run();
+        new SimCity().init();
     }
 
-    public int getRoundNumber() {return mRoundNumber;}
-    public EnergyManager getEnergyManager() {return mEnergyManager;}
-    public UpgradeManager getUpgradeManager() {return mUpgradeManager;}
-    public GoalManager getGoalManager() {return mGoalManager;}
-    public WorldManager getWorldManager() {return mWorldManager;}
+    public BaseManager     getBaseManager    () {return mBaseManager    ;}
+    public EnergyManager   getEnergyManager  () {return mEnergyManager  ;}
+    public UpgradeManager  getUpgradeManager () {return mUpgradeManager ;}
+    public GoalManager     getGoalManager    () {return mGoalManager    ;}
+    public WorldManager    getWorldManager   () {return mWorldManager   ;}
     public ResourceManager getResourceManager() {return mResourceManager;}
-    public TradeManager getTradeManager() {return mTradeManager;}
+    public TradeManager    getTradeManager   () {return mTradeManager   ;}
 
-    public void setRoundNumber(int pRoundNumber) 
-       {mRoundNumber = pRoundNumber;}
-    public void setEnergyManager(EnergyManager pEnergyManager) 
-       {mEnergyManager = pEnergyManager;}
-    public void setUpgradeManager(UpgradeManager pUpgradeManager) 
-       {mUpgradeManager = pUpgradeManager;}
-    public void setGoalManager(GoalManager pGoalManager) 
-       {mGoalManager = pGoalManager;}
-    public void setWorldManager(WorldManager pWorldManager) 
-       {mWorldManager = pWorldManager;}
-    public void setResourceManager(ResourceManager pResourceManager) 
-       {mResourceManager = pResourceManager;}
-    public void setTradeManager(TradeManager pTradeManager) 
-       {mTradeManager = pTradeManager;}
+    public void setBaseManager    (BaseManager     pBaseManager    ) {mBaseManager     = pBaseManager    ;}
+    public void setEnergyManager  (EnergyManager   pEnergyManager  ) {mEnergyManager   = pEnergyManager  ;}
+    public void setUpgradeManager (UpgradeManager  pUpgradeManager ) {mUpgradeManager  = pUpgradeManager ;}
+    public void setGoalManager    (GoalManager     pGoalManager    ) {mGoalManager     = pGoalManager    ;}
+    public void setWorldManager   (WorldManager    pWorldManager   ) {mWorldManager    = pWorldManager   ;}
+    public void setResourceManager(ResourceManager pResourceManager) {mResourceManager = pResourceManager;}
+    public void setTradeManager   (TradeManager    pTradeManager   ) {mTradeManager    = pTradeManager   ;}
 }

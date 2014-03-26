@@ -1,5 +1,8 @@
 package easigreen.service;
 
+import easigreen.service.*;
+import easigreen.system.*;
+
 /**
  * The EnergyManager Manages Energy
  *
@@ -12,93 +15,104 @@ public class EnergyManager
 {
     //////////////////// Variables
 
-        /**
-	 * The Manager of upgrades
-	 */
-	private UpgradeManager mUpgradeManager;
+    /**
+     * The Manager of upgrades
+     */
+    private UpgradeManager mUpgradeManager;
 
     /**
-     * The manager of Technologies
+     * The Manager of upgrades
      */
-    private TechnologyManager mTechnologyManager;
+    private UpgradeMerger mUpgrades;
 	
-	/**
-	 * The Nuclear Plant Object
-	 */
-	private Energy mNuclear;
+    /**
+     * The Nuclear Plant Manager
+     */
+    private PlantManager mNuclear;
 	
-	/**
-	 * The Fossil Plant Object
-	 */
-	private Energy mFossil;
+    /**
+     * The Fossil Plant Manager
+     */
+    private PlantManager mFossil;
+    
+    /**
+     * The Renewable Plant Manager
+     */
+    private PlantManager mRenewable;
 	
-	/**
-	 * The Renewable Plant Object
-	 */
-	private Energy mRenewable;
-	
-	/**
-	 * The Oil Object
-	 */
-	private Oil mOil;
-	
-    public EnergyManager(UpgradeManager pUpgradeManager, 
-                         TechnologyManager pTechnologyManager)
-	{
-           mUpgradeManager = pUpgradeManager;
-	   mTechnologyManager = pTechnologyManager;
-	   mNuclear        = new Nuclear();
-	   mFossil         = new Fossil();
-	   mRenewable      = new Renewable();
-	   mOil            = new Oil();
-	}
+    /**
+     * The Oil Manager
+     */
+    private OilManager mOil;
 
-    public UpgradeManager getUpgradeManager() {return mUpgradeManager;}
-    public Energy getNuclear() {return mNuclear;}
-    public Energy getFossil() {return mFossil;}
-    public Energy getRenewable() {return mRenewable;}
-    public Oil getOil() {return mOil;}
+    public EnergyManager(UpgradeManager pUpgradeManager)
+    {
+	mUpgradeManager = pUpgradeManager;
+	mNuclear        = new NuclearManager  (mUpgradeManager);
+	mFossil         = new FossilManager   (mUpgradeManager);
+	mRenewable      = new RenewableManager(mUpgradeManager);
+	mOil            = new OilManager      (mUpgradeManager);
+	update();
+    }
 
     public void update()
     {
-	UpgradeMerger technologyMerger = new UpgradeMerger();
+	mUpgrades = mUpgradeManager.update();
+	mNuclear  .update();
+	mFossil   .update();
+	mRenewable.update();
+	mOil      .update();
+    }
 
-	UpgradeMerger upgradeMerger = new UpgradeMerger();
+    public PlantManager getNuclear()
+    {
+	return mNuclear;
+    }
 
-        technologyMerger = mTechnologyManager.update();
+    public PlantManager getFossil()
+    {
+	return mFossil;
+    }
 
-        upgradeMerger = mUpgradeManager.update();
+    public PlantManager getRenewable()
+    {
+	return mRenewable;
+    }
 
-        mNuclear.setApproval(mNuclear.getApproval() 
-                             + technologyMerger.getNatt() 
-                             + upgradeMerger.getNatt());
+    public OilManager getOil()
+    {
+	return mOil;
+    }
 
-	mNuclear.setSecurity(mNuclear.getSecurity() 
-                             + technologyMerger.getNsec()
-                             + upgradeMerger.getNsec());
+    public double getEmissions()
+    {
+	return mNuclear.getTotalEmissions() + mFossil.getTotalEmissions()
+	    + mRenewable.getTotalEmissions() + mOil.getEmissions();
+    }
 
-        mFossil.setApproval(mFossil.getApproval() 
-                            + technologyMerger.getFatt()
-                            + upgradeMerger.getFatt());
+    public double getSecurity()
+    {
+	return mNuclear.getTotalSecurity() + mFossil.getTotalSecurity()
+	    + mRenewable.getTotalSecurity() + mOil.getSecurity();
+    }
 
-	mFossil.setSecurity(mFossil.getSecurity() 
-                            + technologyMerger.getFsec()
-                            + upgradeMerger.getFsec());
+    public double getAmount()
+    {
+	return mNuclear.getAmount() + mFossil.getAmount() + mRenewable.getAmount();
+    }
 
-	mRenewable.setApproval(mRenewable.getApproval()
-                               + technologyMerger.getRatt()
-                               + upgradeMerger.getRatt());
+    public double getApproval()
+    {
+	return ((mNuclear.getApproval() + mFossil.getApproval() + mRenewable.getApproval()) / 3);
+    }
 
-        mRenewable.setSecurity(mRenewable.getSecurity()
-                               + technologyMerger.getRsec()
-                               + upgradeMerger.getRsec());
+    public double getPower()
+    {
+	return mNuclear.getPower() + mFossil.getPower() + mRenewable.getPower();
+    }
 
-        mOil.setGrowth(mOil.getGrowth() 
-                       + technologyMerger.getOilGrow() 
-                       + upgradeMerger.getOilGrow());
-
-	mOil.setSecurity(mOil.getSecurity()
-			    + technologyMerger.getOilSec()
-			    + upgradeMerger.getOilSec());
+    public double getProfit()
+    {
+	return mNuclear.getProfit() + mFossil.getProfit() + mRenewable.getProfit();
     }
 }

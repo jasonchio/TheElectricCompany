@@ -19,42 +19,42 @@ public class Renewable
     /**
      * The number of plants
      */
-    final private int mAmount;
+    private int mAmount;
 
     /**
      * The cost to build each new plant
      */
-    final private double mCostBuild;
+    final private static double mCostBuild = .2;
 
     /**
      * The cost to remove each existing plant
      */
-    final private double mCostRemove;
+    final private static double mCostRemove = -.1;
 
     /**
      * The approval rating per unit
      */
-    final private double mApproval;
+    final private static double mApproval = 35;
 
     /**
      * The power production per unit
      */
-    final private double mProduction;
+    final private static double mProduction = .1;
 
     /**
      * The emissions produced per unit
      */
-    final private double mEmissions;
+    final private static double mEmissions = .05;
 
     /**
      * The security of each unit
      */
-    final private double mSecurity;
+    final private static double mSecurity = .03;
 
     /**
      * The profit made with each unit
      */
-    final private double mProfitPercent;
+    final private static double mProfitPercent = 20;
 
     //////////////////// Constructors
 
@@ -64,12 +64,5 @@ public class Renewable
     public Renewable()
     {
         mAmount = 140;
-        mCostBuild = .2;
-        mCostRemove = -.1;
-        mApproval = 35;
-        mProduction = .1;
-        mEmissions = .05;
-        mSecurity = .03;
-        mProfitPercent = 20;
     }
 }

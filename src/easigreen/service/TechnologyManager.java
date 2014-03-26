@@ -37,7 +37,8 @@ public class TechnologyManager
     {
         UpgradeMerger allChanges = new UpgradeMerger();
         for (int i = 0; i < implemented.size(); i++)
-        {
+	{
+	    // General
             allChanges.setBudgetChange(allChanges.getBudgetChange() 
                + implemented.get(i).getBudgetChange());
 
@@ -47,70 +48,71 @@ public class TechnologyManager
 	    allChanges.setEmissionsChange(allChanges.getEmissionsChange()
 	       + implemented.get(i).getEmissionsChange());
 
-
-	    allChanges.setNpow(allChanges.getNpow()
+	    // Nuclear
+	    allChanges.setNuclearPower(allChanges.getNuclearPower()
                + implemented.get(i).getNpow());
 
-	    allChanges.setNcost(allChanges.getNcost()
+	    allChanges.setNuclearCost(allChanges.getNuclearCost()
 	       + implemented.get(i).getNcost());
 
-	    allChanges.setNatt(allChanges.getNatt()
+	    allChanges.setNuclearApproval(allChanges.getNuclearApproval()
       	       + implemented.get(i).getNatt());
 
-	    allChanges.setNemit(allChanges.getNemit()
+	    allChanges.setNuclearEmissions(allChanges.getNuclearEmissions()
 	       + implemented.get(i).getNemit());
 
-	    allChanges.setNsec(allChanges.getNsec()
+	    allChanges.setNuclearSecurity(allChanges.getNuclearSecurity()
      	       + implemented.get(i).getNsec());
 
-	    allChanges.setNprof(allChanges.getNprof()
+	    allChanges.setNuclearProfit(allChanges.getNuclearProfit()
                + implemented.get(i).getNprof());
 
-
-	    allChanges.setFpow(allChanges.getFpow()
+	    // Fossil
+	    allChanges.setFossilPower(allChanges.getFossilPower()
 	       + implemented.get(i).getFpow());
 
-            allChanges.setFcost(allChanges.getFcost()
+            allChanges.setFossilCost(allChanges.getFossilCost()
    	       + implemented.get(i).getFcost());
 
-            allChanges.setFatt(allChanges.getFatt()
+            allChanges.setFossilApproval(allChanges.getFossilApproval()
       	       + implemented.get(i).getFatt());
 
-            allChanges.setFemit(allChanges.getFemit()
+            allChanges.setFossilEmissions(allChanges.getFossilEmissions()
 	       + implemented.get(i).getFemit());
 
-            allChanges.setFsec(allChanges.getFsec()
+            allChanges.setFossilSecurity(allChanges.getFossilSecurity()
 	       + implemented.get(i).getFsec());
 
-            allChanges.setFprof(allChanges.getFprof()
+            allChanges.setFossilProfit(allChanges.getFossilProfit()
        	       + implemented.get(i).getFprof());
 
-
-	    allChanges.setRpow(allChanges.getRpow()
+	    // Renewable
+	    allChanges.setRenewablePower(allChanges.getRenewablePower()
 	       + implemented.get(i).getRpow());
 
-            allChanges.setRcost(allChanges.getRcost()
+            allChanges.setRenewableCost(allChanges.getRenewableCost()
 	       + implemented.get(i).getRcost());
 
-            allChanges.setRatt(allChanges.getRatt()
+            allChanges.setRenewableApproval(allChanges.getRenewableApproval()
 	       + implemented.get(i).getRatt());
 
-            allChanges.setRemit(allChanges.getRemit()
+            allChanges.setRenewableEmissions(allChanges.getRenewableEmissions()
 	       + implemented.get(i).getRemit());
 
-            allChanges.setRsec(allChanges.getRsec()
+            allChanges.setRenewableSecurity(allChanges.getRenewableSecurity()
 	       + implemented.get(i).getRsec());
 
-            allChanges.setRprof(allChanges.getRprof()
+            allChanges.setRenewableProfit(allChanges.getRenewableProfit()
 	       + implemented.get(i).getRprof());
 
-	    allChanges.setOil(allChanges.getOil()
+	    // Oil
+	    allChanges.setOilConsumption(allChanges.getOilConsumption()
 	       + implemented.get(i).getOil());
 
-            allChanges.setOilSec(allChanges.getOilSec()
+            allChanges.setOilSecurity(allChanges.getOilSecurity()
 	       + implemented.get(i).getOilSec());
 
-	    allChanges.setOilGrow(allChanges.getOilGrow()
+	    allChanges.setOilGrowth(allChanges.getOilGrowth()
 	       + implemented.get(i).getOilGrow());
 	}
 	/**

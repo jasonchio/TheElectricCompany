@@ -15,67 +15,22 @@ public class TradeManager
     /**
      * The technology manager
      */
-    private TechnologyManager mTechnologyManager;
+    private UpgradeManager mUpgradeManager;
 
     /**
      * The resource manager
      */
     private ResourceManager mResourceManager;
 	
-	/**
-	 * The Constructor for this class
-	 *
-	 * @param pTechnologyManager the technology manager
-	 * @param pResourceManager   the resource manager
-	 */
-	public TradeManager(TechnologyManager pTechnologyManager, 
-	                    ResourceManager pResourceManager)
-	{
-	   mTechnologyManager = pTechnologyManager;
-	   mResourceManager   = pResourceManager;
-	}
-
-    //////////////////// Getters
-
     /**
-     * Gets the technology manager
+     * The Constructor for this class
      *
-     * @return pTechnologyManager the technology manager
+     * @param pTechnologyManager the technology manager
+     * @param pResourceManager   the resource manager
      */
-    public TechnologyManager getTechnologyManager()
+    public TradeManager(ResourceManager pResourceManager, UpgradeManager pUpgradeManager)
     {
-        return mTechnologyManager;
-    }
-
-    /**
-     * Gets the resource manager
-     *
-     * @return pResourceManager the new resource manager
-     */
-    public ResourceManager getResourceManager()
-    {
-        return mResourceManager;
-    }
-
-    //////////////////// Setters
-
-    /**
-     * Sets the technology manager to a new value
-     *
-     * @param pTechnologyManager the new technology manager
-     */
-    public void setTechnologyManager(TechnologyManager pTechnologyManager)
-    {
-        mTechnologyManager = pTechnologyManager;
-    }
-
-    /**
-     * Sets the resource manager to a new value
-     *
-     * @param pResourceManager the new resource manager
-     */
-    public void setResourceManager(ResourceManager pResourceManager)
-    {
-        mResourceManager = pResourceManager;
+	mUpgradeManager  = pUpgradeManager;
+	mResourceManager = pResourceManager;
     }
 }

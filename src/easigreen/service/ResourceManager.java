@@ -11,6 +11,16 @@ package easigreen.service;
 public class ResourceManager
 {
     //////////////////// Variables
+    
+    /**
+     * A Manager to hold base values depending on round
+     */
+    private BaseManager mBaseManager;
+
+    /**
+     * A Manager to hold all the upgrades
+     */
+    private UpgradeManager mUpgradeManager;
 
     /**
      * The number of action points
@@ -30,40 +40,111 @@ public class ResourceManager
     /**
      * The total amount of funds (in billions)
      */
-    private double mBudget;
-
-    /**
-     * The total emissions from all the plants
-     */
-    private double mEmissions;
-
-    /**
-     * The growth of the demand for the next round
-     */
-    private double mDemandGrowth;
+    private double mFunds;
 
     //////////////////// Constructors
 
     /**
-     * Emission credits are spent here
-     *
-     * @param credits the number of credits being spent
+     * Constructor
+     * @param pBaseManager the programs base manager
+     * @param pUpgradeManager the programas upgrade manager
      */
-    public void useEmissionCredits(int credits)
+    public ResourceManager(BaseManager pBaseManager, UpgradeManager pUpgradeManager)
     {
-        mEmissions -= (credits * 40);
-        mEmitCredits -= credits;
+	mBaseManager    = pBaseManager;
+	mUpgradeManager = pUpgradeManager;
+	mActionPoints   = 0;
+	mEmitCredits    = 0;
+	mMarketShares   = 0;
+	mFunds          = 0;
     }
 
     /**
+     * Initializes Resource Manager
+     */
+    public void initialize()
+    {
+	
+    }
+
+    /**
+     * Emission credits are gained here
+     *
+     * @param credits the number of credits being bought
+     */
+    public void buyEmissionCredits(int credits)
+    {
+        mEmitCredits +=  credits;
+    }
+
+    /**
+     * Emission credits are spent here
+     *
+     * @param credits the number of credits being sold
+     */
+    public void sellEmissionCredits(int credits)
+    {
+        mEmitCredits -=  credits;
+    }
+
+    /**
+     * Market shares are gained here
+     *
+     * @param shares the amount of shares being bought
+     */
+    public void buyMarketShares(int shares)
+    {
+        mMarketShares += shares;
+    }
+
+    /**2
      * Market shares are spent here
      *
-     * @param shares the amount of shares being used
+     * @param shares the amount of shares being sold
      */
-    public void useMarketShares(int shares)
+    public void sellMarketShares(int shares)
     {
-        mDemandGrowth += (shares * .1);
-        mMarketShares -= shares;
+        mMarketShares += shares;
+    }
+
+    /**
+     * Money is spent here
+     *
+     * @param amount the amount of money being spent
+     */
+    public void spendMoney(double amount)
+    {
+        mFunds -= amount;
+    }
+
+    /**
+     * Money is earned here
+     *
+     * @param amount the amount of money being earned
+     */
+    public void earnMoney(double amount)
+    {
+        mFunds += amount;
+    }
+
+    /**
+     * Action Points are spent here
+     *
+     * @param amount of action points being used
+     */
+    public void spendActionPoints(int amount)
+    {
+        mActionPoints -= amount;
+    }
+
+    /**
+     * Action Points are gained here
+     *
+     * @param amount of action points being gained
+     */
+    public void earnActionPoints(int amount)
+    {
+        mActionPoints += amount;
     }
 
     /**
@@ -74,7 +155,7 @@ public class ResourceManager
     public void cashInActionPoints(int amount)
     {
         mActionPoints -= amount;
-        mBudget += (amount * .5);
+        mFunds += (amount * .5);
     }
 
     /**
@@ -84,7 +165,7 @@ public class ResourceManager
      */
     public void cashInTechnologies(int techs)
     {
-        mBudget += (techs * .5);
+        mFunds += (techs * .5);
     }
 
     //////////////////// Getters
@@ -124,29 +205,9 @@ public class ResourceManager
      *
      * @return mBudget the budget
      */
-    public double getBudget()
+    public double getFunds()
     {
-        return mBudget;
-    }
-
-    /**
-     * Gets the total emissions
-     *
-     * @return mEmissions the total national emissions
-     */
-    public double getEmissions()
-    {
-        return mEmissions;
-    }
-
-    /**
-     * Gets the growth of the energy demand
-     *
-     * @return mDemandGrowth the energy demands growth
-     */
-    public double getDemandGrowth()
-    {
-        return mDemandGrowth;
+        return mFunds;
     }
 
     //////////////////// Setters
@@ -186,28 +247,8 @@ public class ResourceManager
      *
      * @param pBudget the new budget value
      */
-    public void setBudget(double pBudget)
+    public void setFunds(double pFunds)
     {
-        mBudget = pBudget;
-    }
-
-    /**
-     * Sets the emissions to a new value
-     *
-     * @param pEmissions the new amount of emissions
-     */
-    public void setEmissions(double pEmissions)
-    {
-        mEmissions = pEmissions;
-    }
-
-    /**
-     * Sets the growth of demand to a new value
-     *
-     * @param pGrowth the new growth of demand
-     */
-    public void setDemandGrowth(double pGrowth)
-    {
-        mDemandGrowth = pGrowth;
+        mFunds = pFunds;
     }
 }

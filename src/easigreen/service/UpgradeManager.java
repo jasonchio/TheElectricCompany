@@ -32,12 +32,10 @@ public class UpgradeManager
     private int mLobby;
     private int mPriceChange;
     private TechnologyManager mTechnologyManager;
-    private ResourceManager mResourceManager;
 
     //////////////////// Constructors
 
-    public UpgradeManager(ResourceManager pResourceManager, 
-                          TechnologyManager pTechnologyManager)
+    public UpgradeManager()
     {
         mNuclearSci   = 0;
 	mFossilSci    = 0;
@@ -49,8 +47,7 @@ public class UpgradeManager
 	mOilDrilling  = 0;
 	mLobby        = 0;
 	mPriceChange  = 0;
-	mResourceManager = pResourceManager;
-        mTechnologyManager = pTechnologyManager;
+        mTechnologyManager = new TechnologyManager();
     }
 
     //////////////////// Methods
@@ -63,27 +60,27 @@ public class UpgradeManager
 
         allChanges.setApprovalChange(mLobby * -1 + mPriceChange * -1);
 
-        allChanges.setEmissionsChange(mResourceManager.getEmitCredits());
+	//        allChanges.setEmissionsChange();
 
         allChanges.setPriceChange(mPriceChange);
 
-        allChanges.setDemandChange(mResourceManager.getMarketShares());
+	//        allChanges.setDemandChange();
 
-        allChanges.setNatt(mNuclearSci + mNuclearEng);
+        allChanges.setNuclearApproval(mNuclearSci + mNuclearEng);
 
-        allChanges.setNsec(mNuclearSci);
+        allChanges.setNuclearSecurity(mNuclearSci);
 
-	allChanges.setFatt(mFossilSci + mFossilEng);
+	allChanges.setFossilApproval(mFossilSci + mFossilEng);
 
-	allChanges.setFsec(mFossilSci);
+	allChanges.setFossilSecurity(mFossilSci);
 
-	allChanges.setRatt(mRenewableSci + mRenewableEng);
+	allChanges.setRenewableApproval(mRenewableSci + mRenewableEng);
 
-	allChanges.setRsec(mRenewableSci);
+	allChanges.setRenewableSecurity(mRenewableSci);
 
-        allChanges.setOilSec(mOilSci + mOilDrilling);
+        allChanges.setOilSecurity(mOilSci + mOilDrilling);
 
-        allChanges.setOilGrow(mOilDrilling);
+        allChanges.setOilGrowth(mOilDrilling);
 
         return allChanges;
     }
@@ -254,11 +251,6 @@ public class UpgradeManager
     public int getPriceChange()
     {
         return mPriceChange;
-    }
-
-    public ResourceManager getResourceManager()
-    {
-        return mResourceManager;
     }
 
     public TechnologyManager getTechnologyManager()
