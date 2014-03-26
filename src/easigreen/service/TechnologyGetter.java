@@ -7,22 +7,18 @@ import java.util.ArrayList;
 /**
  * Gets  a list of all the Technologies
  *
- * Sample usage:
- *
- * Image image = ImageGetter.getImage("status.png");
- *
  * @author Sam Graham
  */
 public class TechnologyGetter
 {
     
     /**
-     * The path prefix for images resources.
+     * The path prefix for the technology resource.
      */
     public static final String cTechFilename = "/resources/data/Technologies.csv";
 
     /**
-     * Encapsulates getting an image from a resource file.
+     * Encapsulates getting the technologies from a resource file.
      */
     public static ArrayList<Technology> getTechnologies()
     {
