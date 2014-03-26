@@ -24,48 +24,47 @@ import javafx.stage.*;
  * Navigation Pane for navigating the GUI
  */
 public class NavPane
-   extends VBox
+    extends VBox
 {
     /**
      * The list of buttons to add to the nav pane
      */
-   private List<Button> buttons;
+    private List<Button> buttons;
 
-   /**
-    * Creates a new Navigation Pane object.
-    */
-   public NavPane()
-   {
-      super();
-      buttons = new ArrayList<Button>();
-   }
+    /**
+     * Creates a new Navigation Pane object.
+     */
+    public NavPane()
+    {
+        super();
+        buttons = new ArrayList<Button>();
+    }
 
-   /**
-    * Adds a button to the Navigation Pane
-    */
+    /**
+     * Adds a button to the Navigation Pane
+     */
     public void addButton(String url, EventHandler<ActionEvent> event)
-   {
-       Button button = new ImageButton(url + ".png", event);
-       buttons.add(button);
-   }
+    {
+        Button button = new ImageButton(url + ".png", event);
+        buttons.add(button);
+    }
 
-   /**
-    * Adds the buttons to the Navigation Pane
-    */
-   public void initialize()
-   {
-       for (Button button : buttons)
-       {
-	   getChildren().add(button);
-       }
-   }
+    /**
+     * Adds the buttons to the Navigation Pane
+     */
+    public void initialize()
+    {
+        for (Button button : buttons) {
+            getChildren().add(button);
+        }
+    }
 
-   /**
-    * Enables the Navigation making it visible
-    */
-   public void enable()
-   {
-       
-   }
+    /**
+     * Enables the Navigation making it visible
+     */
+    public void enable()
+    {
+
+    }
 
 }

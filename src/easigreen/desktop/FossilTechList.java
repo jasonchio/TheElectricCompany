@@ -15,7 +15,7 @@ class FossilTechList
 
     public FossilTechList(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()

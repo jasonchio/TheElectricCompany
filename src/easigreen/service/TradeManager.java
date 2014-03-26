@@ -21,16 +21,16 @@ public class TradeManager
      * The resource manager
      */
     private ResourceManager mResourceManager;
-	
+
     /**
      * The Constructor for this class
      *
-     * @param pTechnologyManager the technology manager
+     * @param pUpgradeManager the upgrade manager
      * @param pResourceManager   the resource manager
      */
     public TradeManager(ResourceManager pResourceManager, UpgradeManager pUpgradeManager)
     {
-	mUpgradeManager  = pUpgradeManager;
-	mResourceManager = pResourceManager;
+        mUpgradeManager = pUpgradeManager;
+        mResourceManager   = pResourceManager;
     }
 }

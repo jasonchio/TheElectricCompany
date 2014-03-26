@@ -15,7 +15,7 @@ class ImplementedTechList
 
     public ImplementedTechList(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()

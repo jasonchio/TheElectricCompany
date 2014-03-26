@@ -2,7 +2,7 @@ package easigreen.system;
 
 import java.io.*;
 
-import org.testng.annotations.*;
+//import org.testng.annotations.*;
 
 /**
  * Tests ResourceGetter functionality.
@@ -33,7 +33,7 @@ public class TestResourceGetter
    /**
     * Sets up each test by creating a new Shell object.
     */
-   @BeforeMethod
+   //@BeforeMethod
    public void setUp()
    {
       mShell = new Shell(true);
@@ -52,7 +52,7 @@ public class TestResourceGetter
    /**
     * Tests getting the first dependencies resources.
     */
-   @Test(timeOut = 30000)
+   //@Test(timeOut = 30000)
    public void gettingFirstDependencies()
    {
       System.out.print("Getting first dependencies...");
@@ -120,7 +120,7 @@ public class TestResourceGetter
    /**
     * Tests getting the second dependency resource.
     */
-   @Test(timeOut = 7000)
+  // @Test(timeOut = 7000)
    public void gettingSecondDependency()
    {
       System.out.print("Getting second dependency...");

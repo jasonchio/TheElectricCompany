@@ -2,7 +2,7 @@ package easigreen.system;
 
 import java.io.*;
 
-import org.testng.annotations.*;
+//import org.testng.annotations.*;
 
 /**
  * Tests Shell functionality.
@@ -27,7 +27,7 @@ public class TestShell
    /**
     * Sets up each test by creating a new Shell object.
     */
-   @BeforeMethod
+   //@BeforeMethod
    public void setUp()
    {
       mShell = new Shell(false);
@@ -36,7 +36,7 @@ public class TestShell
    /**
     * Tests that invoking the simplest shell command works.
     */
-   @Test(timeOut = 1000)
+   //@Test(timeOut = 1000)
    public void echoCommand()
    {
       ByteArrayOutputStream bStream = new ByteArrayOutputStream();
@@ -51,7 +51,7 @@ public class TestShell
    /**
     * Tests that invoking a more complicated shell command works.
     */
-   @Test(timeOut = 1000)
+   //@Test(timeOut = 1000)
    public void invokingShellCommand()
    {
       ByteArrayOutputStream bStream = new ByteArrayOutputStream();

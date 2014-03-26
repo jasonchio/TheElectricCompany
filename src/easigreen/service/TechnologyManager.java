@@ -3,7 +3,7 @@ package easigreen.service;
 import java.util.ArrayList;
 
 /**
- * The Trade Manager class.
+ * The Technology Manager class.
  *
  * @see java.util.ArrayList
  *
@@ -27,7 +27,7 @@ public class TechnologyManager
     private ArrayList<Technology> available;
 
     /**
-     * All of the technologies  
+     * All of the technologies
      */
     private ArrayList<Technology> all;
 
@@ -38,163 +38,116 @@ public class TechnologyManager
         UpgradeMerger allChanges = new UpgradeMerger();
         for (int i = 0; i < implemented.size(); i++)
 	{
-	    // General
-            allChanges.setBudgetChange(allChanges.getBudgetChange() 
-               + implemented.get(i).getBudgetChange());
-
-	    allChanges.setDemandRateChange(allChanges.getDemandRateChange()
-               + implemented.get(i).getNRGChange());
-
-	    allChanges.setEmissionsChange(allChanges.getEmissionsChange()
-	       + implemented.get(i).getEmissionsChange());
-
-	    // Nuclear
-	    allChanges.setNuclearPower(allChanges.getNuclearPower()
-               + implemented.get(i).getNpow());
-
-	    allChanges.setNuclearCost(allChanges.getNuclearCost()
-	       + implemented.get(i).getNcost());
-
-	    allChanges.setNuclearApproval(allChanges.getNuclearApproval()
-      	       + implemented.get(i).getNatt());
-
-	    allChanges.setNuclearEmissions(allChanges.getNuclearEmissions()
-	       + implemented.get(i).getNemit());
-
-	    allChanges.setNuclearSecurity(allChanges.getNuclearSecurity()
-     	       + implemented.get(i).getNsec());
-
-	    allChanges.setNuclearProfit(allChanges.getNuclearProfit()
-               + implemented.get(i).getNprof());
-
-	    // Fossil
-	    allChanges.setFossilPower(allChanges.getFossilPower()
-	       + implemented.get(i).getFpow());
-
-            allChanges.setFossilCost(allChanges.getFossilCost()
-   	       + implemented.get(i).getFcost());
-
-            allChanges.setFossilApproval(allChanges.getFossilApproval()
-      	       + implemented.get(i).getFatt());
-
-            allChanges.setFossilEmissions(allChanges.getFossilEmissions()
-	       + implemented.get(i).getFemit());
-
-            allChanges.setFossilSecurity(allChanges.getFossilSecurity()
-	       + implemented.get(i).getFsec());
-
-            allChanges.setFossilProfit(allChanges.getFossilProfit()
-       	       + implemented.get(i).getFprof());
-
-	    // Renewable
-	    allChanges.setRenewablePower(allChanges.getRenewablePower()
-	       + implemented.get(i).getRpow());
-
-            allChanges.setRenewableCost(allChanges.getRenewableCost()
-	       + implemented.get(i).getRcost());
-
-            allChanges.setRenewableApproval(allChanges.getRenewableApproval()
-	       + implemented.get(i).getRatt());
-
-            allChanges.setRenewableEmissions(allChanges.getRenewableEmissions()
-	       + implemented.get(i).getRemit());
-
-            allChanges.setRenewableSecurity(allChanges.getRenewableSecurity()
-	       + implemented.get(i).getRsec());
-
-            allChanges.setRenewableProfit(allChanges.getRenewableProfit()
-	       + implemented.get(i).getRprof());
-
+            // General
+	    allChanges.addBudgetChange      (implemented.get(i).getBudgetChange   ());
+            allChanges.addDemandRateChange  (implemented.get(i).getNRGChange      ());
+            allChanges.addEmissionsChange   (implemented.get(i).getEmissionsChange());
+            // Nuclear
+	    allChanges.addNuclearPower      (implemented.get(i).getNpow           ());
+            allChanges.addNuclearCost       (implemented.get(i).getNcost          ());
+            allChanges.addNuclearApproval   (implemented.get(i).getNatt           ());
+            allChanges.addNuclearEmissions  (implemented.get(i).getNemit          ());
+            allChanges.addNuclearSecurity   (implemented.get(i).getNsec           ());
+            allChanges.addNuclearProfit     (implemented.get(i).getNprof          ());
+            // Fossil
+	    allChanges.addFossilPower       (implemented.get(i).getFpow           ());
+            allChanges.addFossilCost        (implemented.get(i).getFcost          ());
+            allChanges.addFossilApproval    (implemented.get(i).getFatt           ());
+            allChanges.addFossilEmissions   (implemented.get(i).getFemit          ());
+            allChanges.addFossilSecurity    (implemented.get(i).getFsec           ());
+            allChanges.addFossilProfit      (implemented.get(i).getFprof          ());
+            // Renewable
+	    allChanges.addRenewablePower    (implemented.get(i).getRpow           ());
+            allChanges.addRenewableCost     (implemented.get(i).getRcost          ());
+            allChanges.addRenewableApproval (implemented.get(i).getRatt           ());
+            allChanges.addRenewableEmissions(implemented.get(i).getRemit          ());
+            allChanges.addRenewableSecurity (implemented.get(i).getRsec           ());
+            allChanges.addRenewableProfit   (implemented.get(i).getRprof          ());
 	    // Oil
-	    allChanges.setOilConsumption(allChanges.getOilConsumption()
-	       + implemented.get(i).getOil());
-
-            allChanges.setOilSecurity(allChanges.getOilSecurity()
-	       + implemented.get(i).getOilSec());
-
-	    allChanges.setOilGrowth(allChanges.getOilGrowth()
-	       + implemented.get(i).getOilGrow());
-	}
-	/**
-	UpgradeMerger oneSet = new UpgradeMerger();
-        for (int i = 0; i < implemented.size(); i++)
-        {
-            oneSet.setBudgetChange(oneSet.getBudgetChange() 
-                                   + implemented.get(i).update()
-                                     .getBudgetChange());
-
-	    oneSet.setDemandRateChange(oneSet.getDemandRateChange()
+            allChanges.addOilConsumption    (implemented.get(i).getOil            ());
+            allChanges.addOilSecurity       (implemented.get(i).getOilSec         ());
+            allChanges.addOilGrowth         (implemented.get(i).getOilGrow        ());
+        }
+        /**
+        UpgradeMerger oneSet = new UpgradeMerger();
+            for (int i = 0; i < implemented.size(); i++)
+            {
+                oneSet.setBudgetChange(oneSet.getBudgetChange()
                                        + implemented.get(i).update()
-				         .getDemandRateChange());
+                                         .getBudgetChange());
 
-	    oneSet.setEmissionsChange(oneSet.getEmissionsChange()
-                                       + implemented.get(i).update()
-				       .getEmissionsChange());
+            oneSet.setDemandRateChange(oneSet.getDemandRateChange()
+                                           + implemented.get(i).update()
+        			         .getDemandRateChange());
 
-	    oneSet.setNpow(oneSet.getNpow()
-                           + implemented.get(i).update().getNpow());
+            oneSet.setEmissionsChange(oneSet.getEmissionsChange()
+                                           + implemented.get(i).update()
+        			       .getEmissionsChange());
 
-	    oneSet.setNcost(oneSet.getNcost()
-                            + implemented.get(i).update().getNcost());
+            oneSet.setNpow(oneSet.getNpow()
+                               + implemented.get(i).update().getNpow());
 
-	    oneSet.setNatt(oneSet.getNatt()
-                           + implemented.get(i).update().getNatt());
+            oneSet.setNcost(oneSet.getNcost()
+                                + implemented.get(i).update().getNcost());
 
-	    oneSet.setNemit(oneSet.getNemit()
-                            + implemented.get(i).update().getNemit());
+            oneSet.setNatt(oneSet.getNatt()
+                               + implemented.get(i).update().getNatt());
 
-	    oneSet.setNsec(oneSet.getNsec()
-                           + implemented.get(i).update().getNsec());
+            oneSet.setNemit(oneSet.getNemit()
+                                + implemented.get(i).update().getNemit());
 
-	    oneSet.setNprof(oneSet.getNprof()
-                           + implemented.get(i).update().getNprof());
+            oneSet.setNsec(oneSet.getNsec()
+                               + implemented.get(i).update().getNsec());
 
-	    oneSet.setFpow(oneSet.getFpow()
-                           + implemented.get(i).update().getFpow());
+            oneSet.setNprof(oneSet.getNprof()
+                               + implemented.get(i).update().getNprof());
 
-            oneSet.setFcost(oneSet.getFcost()
-                            + implemented.get(i).update().getFcost());
+            oneSet.setFpow(oneSet.getFpow()
+                               + implemented.get(i).update().getFpow());
 
-            oneSet.setFatt(oneSet.getFatt()
-                           + implemented.get(i).update().getFatt());
+                oneSet.setFcost(oneSet.getFcost()
+                                + implemented.get(i).update().getFcost());
 
-            oneSet.setFemit(oneSet.getFemit()
-                            + implemented.get(i).update().getFemit());
+                oneSet.setFatt(oneSet.getFatt()
+                               + implemented.get(i).update().getFatt());
 
-            oneSet.setFsec(oneSet.getFsec()
-                           + implemented.get(i).update().getFsec());
+                oneSet.setFemit(oneSet.getFemit()
+                                + implemented.get(i).update().getFemit());
 
-            oneSet.setFprof(oneSet.getFprof()
-			    + implemented.get(i).update().getFprof());
+                oneSet.setFsec(oneSet.getFsec()
+                               + implemented.get(i).update().getFsec());
 
-	    oneSet.setRpow(oneSet.getRpow()
-                           + implemented.get(i).update().getRpow());
+                oneSet.setFprof(oneSet.getFprof()
+        		    + implemented.get(i).update().getFprof());
 
-            oneSet.setRcost(oneSet.getRcost()
-                            + implemented.get(i).update().getRcost());
+            oneSet.setRpow(oneSet.getRpow()
+                               + implemented.get(i).update().getRpow());
 
-            oneSet.setRatt(oneSet.getRatt()
-                           + implemented.get(i).update().getRatt());
+                oneSet.setRcost(oneSet.getRcost()
+                                + implemented.get(i).update().getRcost());
 
-            oneSet.setRemit(oneSet.getRemit()
-                            + implemented.get(i).update().getRemit());
+                oneSet.setRatt(oneSet.getRatt()
+                               + implemented.get(i).update().getRatt());
 
-            oneSet.setRsec(oneSet.getRsec()
-                           + implemented.get(i).update().getRsec());
+                oneSet.setRemit(oneSet.getRemit()
+                                + implemented.get(i).update().getRemit());
 
-            oneSet.setRprof(oneSet.getRprof()
-			    + implemented.get(i).update().getRprof());
+                oneSet.setRsec(oneSet.getRsec()
+                               + implemented.get(i).update().getRsec());
 
-	    oneSet.setOil(oneSet.getOil()
-                            + implemented.get(i).update().getOil());
+                oneSet.setRprof(oneSet.getRprof()
+        		    + implemented.get(i).update().getRprof());
 
-	    oneSet.setOilSec(oneSet.getOilSec()
-			  + implemented.get(i).update().getOilSec());
+            oneSet.setOil(oneSet.getOil()
+                                + implemented.get(i).update().getOil());
 
-	    oneSet.setOilGrow(oneSet.getOilGrow()
-			  + implemented.get(i).update().getOilGrow());
-	}
-	*/
+            oneSet.setOilSec(oneSet.getOilSec()
+        		  + implemented.get(i).update().getOilSec());
+
+            oneSet.setOilGrow(oneSet.getOilGrow()
+        		  + implemented.get(i).update().getOilGrow());
+        }
+        */
         return allChanges;
     }
 
@@ -208,7 +161,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getImplemented()
     {
-	return implemented;
+        return implemented;
     }
 
     /**
@@ -245,7 +198,7 @@ public class TechnologyManager
 
     public void implementTechnology(Technology pTech)
     {
-	implemented.add(pTech);
+        implemented.add(pTech);
     }
 
     /**
@@ -260,7 +213,7 @@ public class TechnologyManager
 
     public void addTechnology(Technology pTech)
     {
-	available.add(pTech);
+        available.add(pTech);
     }
 
     /**

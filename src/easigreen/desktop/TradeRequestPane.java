@@ -16,35 +16,47 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Trade Request Pane
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class TradeRequestPane
-   extends TradeBasePane
+    extends TradeBasePane
 {
+    /**
+     * Gets the title
+     * @return the title a string
+     */
     protected String getTitle()
     {
-	return "Requesting";
+        return "Requesting";
     }
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
-	mTechs           = new AppDataList(mModel);
-	mInsert          = new TextArea();
-	mInsert.setMinSize(0, 0);
-	mInsert.setWrapText(true);
-	mInsert.setEditable(false);
-	mAdd             = new Button("Add");
+        mTechs           = new AppDataList(mModel);
+        mInsert          = new TextArea();
+        mInsert.setMinSize(0, 0);
+        mInsert.setWrapText(true);
+        mInsert.setEditable(false);
+        mAdd             = new Button("Add");
     }
 
-   /**
-    * Constructor
-    * @param SimCity pModel the current sim city Model
-    */
+    /**
+     * Constructor
+     * @param SimCity pModel the current sim city Model
+     */
     public TradeRequestPane(SimCity pModel)
     {
-       super(pModel);
+        super(pModel);
     }
 
+    /**
+     * Updater empty
+     */
     public void update()
     {
     }

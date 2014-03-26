@@ -47,3 +47,16 @@ Next Week's Goals
 
     Finish data model
 
+
+Mar 19-26
+Accomplishments
+
+    10 hours
+        Researched into Equella
+        Wrote csv data parser for the Technologies class
+        Reviewed most of the desktop code
+
+Next Week's Goals
+
+    Finish
+

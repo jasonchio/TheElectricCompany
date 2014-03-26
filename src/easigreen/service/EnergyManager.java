@@ -1,8 +1,5 @@
 package easigreen.service;
 
-import easigreen.service.*;
-import easigreen.system.*;
-
 /**
  * The EnergyManager Manages Energy
  *
@@ -20,99 +17,92 @@ public class EnergyManager
      */
     private UpgradeManager mUpgradeManager;
 
-    /**
-     * The Manager of upgrades
-     */
     private UpgradeMerger mUpgrades;
-	
+
     /**
-     * The Nuclear Plant Manager
+     * The Nuclear Plant Object
      */
-    private PlantManager mNuclear;
-	
+    private NuclearManager mNuclear;
+
     /**
-     * The Fossil Plant Manager
+     * The Fossil Plant Object
      */
-    private PlantManager mFossil;
-    
+    private FossilManager mFossil;
+
     /**
-     * The Renewable Plant Manager
+     * The Renewable Plant Object
      */
-    private PlantManager mRenewable;
-	
+    private RenewableManager mRenewable;
+
     /**
-     * The Oil Manager
+     * The Oil Object
      */
     private OilManager mOil;
 
     public EnergyManager(UpgradeManager pUpgradeManager)
     {
-	mUpgradeManager = pUpgradeManager;
-	mNuclear        = new NuclearManager  (mUpgradeManager);
-	mFossil         = new FossilManager   (mUpgradeManager);
-	mRenewable      = new RenewableManager(mUpgradeManager);
-	mOil            = new OilManager      (mUpgradeManager);
+        mUpgradeManager = pUpgradeManager;
+        mNuclear        = new NuclearManager  (mUpgradeManager);
+        mFossil         = new FossilManager   (mUpgradeManager);
+        mRenewable      = new RenewableManager(mUpgradeManager);
+        mOil            = new OilManager      (mUpgradeManager);
 	update();
+    }
+
+    public NuclearManager getNuclear()
+    {
+        return mNuclear;
+    }
+
+    public FossilManager getFossil()
+    {
+        return mFossil;
+    }
+
+    public RenewableManager getRenewable()
+    {
+        return mRenewable;
+    }
+
+    public OilManager getOil()
+    {
+        return mOil;
     }
 
     public void update()
     {
 	mUpgrades = mUpgradeManager.update();
-	mNuclear  .update();
-	mFossil   .update();
-	mRenewable.update();
-	mOil      .update();
     }
 
-    public PlantManager getNuclear()
+    public double getPower()
     {
-	return mNuclear;
-    }
-
-    public PlantManager getFossil()
-    {
-	return mFossil;
-    }
-
-    public PlantManager getRenewable()
-    {
-	return mRenewable;
-    }
-
-    public OilManager getOil()
-    {
-	return mOil;
-    }
-
-    public double getEmissions()
-    {
-	return mNuclear.getTotalEmissions() + mFossil.getTotalEmissions()
-	    + mRenewable.getTotalEmissions() + mOil.getEmissions();
+	return mNuclear.getTotalPower() + mFossil.getTotalPower() + mRenewable.getTotalPower();
     }
 
     public double getSecurity()
     {
-	return mNuclear.getTotalSecurity() + mFossil.getTotalSecurity()
-	    + mRenewable.getTotalSecurity() + mOil.getSecurity();
+	return mNuclear.getTotalSecurity() + mFossil.getTotalSecurity() +
+	    mRenewable.getTotalSecurity() + mOil.getSecurity();
     }
 
-    public double getAmount()
+    public int getAmount()
     {
 	return mNuclear.getAmount() + mFossil.getAmount() + mRenewable.getAmount();
     }
 
     public double getApproval()
     {
-	return ((mNuclear.getApproval() + mFossil.getApproval() + mRenewable.getApproval()) / 3);
+	return ((mNuclear.getApproval() + mFossil.getApproval() + mRenewable.getApproval()) / (double)3);
     }
 
-    public double getPower()
+    public double getEmissions()
     {
-	return mNuclear.getPower() + mFossil.getPower() + mRenewable.getPower();
+	return mNuclear.getTotalEmissions() + mFossil.getTotalEmissions() + 
+	    mRenewable.getTotalEmissions() + mOil.getEmissions();
     }
 
     public double getProfit()
     {
-	return mNuclear.getProfit() + mFossil.getProfit() + mRenewable.getProfit();
+	return mNuclear.getTotalProfit() + mFossil.getTotalProfit() + mRenewable.getTotalProfit();
     }
 }

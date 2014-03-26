@@ -38,15 +38,15 @@ public class UpgradeManager
     public UpgradeManager()
     {
         mNuclearSci   = 0;
-	mFossilSci    = 0;
-	mRenewableSci = 0;
-	mOilSci       = 0;
-	mNuclearEng   = 0;
-	mFossilEng    = 0;
-	mRenewableEng = 0;
-	mOilDrilling  = 0;
-	mLobby        = 0;
-	mPriceChange  = 0;
+        mFossilSci    = 0;
+        mRenewableSci = 0;
+        mOilSci       = 0;
+        mNuclearEng   = 0;
+        mFossilEng    = 0;
+        mRenewableEng = 0;
+        mOilDrilling  = 0;
+        mLobby        = 0;
+        mPriceChange  = 0;
         mTechnologyManager = new TechnologyManager();
     }
 
@@ -54,33 +54,25 @@ public class UpgradeManager
 
     public UpgradeMerger update()
     {
-        UpgradeMerger allChanges = new UpgradeMerger();
-	
-        allChanges.setBudgetChange(mLobby);
+        UpgradeMerger allChanges = mTechnologyManager.update();
 
-        allChanges.setApprovalChange(mLobby * -1 + mPriceChange * -1);
+        allChanges.addBudgetChange(mLobby);
+        allChanges.addApprovalChange(mLobby * -1 + mPriceChange * -1);
+        //allChanges.addEmissionsChange(mResourceManager.getEmitCredits());
+        allChanges.addPriceChange(mPriceChange);
+        //allChanges.addDemandChange(mResourceManager.getMarketShares());
 
-	//        allChanges.setEmissionsChange();
+        allChanges.addNuclearApproval(mNuclearSci + mNuclearEng);
+        allChanges.addNuclearSecurity(mNuclearSci);
 
-        allChanges.setPriceChange(mPriceChange);
+        allChanges.addFossilApproval(mFossilSci + mFossilEng);
+        allChanges.addFossilSecurity(mFossilSci);
 
-	//        allChanges.setDemandChange();
+        allChanges.addRenewableApproval(mRenewableSci + mRenewableEng);
+        allChanges.addRenewableSecurity(mRenewableSci);
 
-        allChanges.setNuclearApproval(mNuclearSci + mNuclearEng);
-
-        allChanges.setNuclearSecurity(mNuclearSci);
-
-	allChanges.setFossilApproval(mFossilSci + mFossilEng);
-
-	allChanges.setFossilSecurity(mFossilSci);
-
-	allChanges.setRenewableApproval(mRenewableSci + mRenewableEng);
-
-	allChanges.setRenewableSecurity(mRenewableSci);
-
-        allChanges.setOilSecurity(mOilSci + mOilDrilling);
-
-        allChanges.setOilGrowth(mOilDrilling);
+        allChanges.addOilSecurity(mOilSci + mOilDrilling);
+        allChanges.addOilGrowth(mOilDrilling);
 
         return allChanges;
     }
@@ -172,8 +164,8 @@ public class UpgradeManager
      */
     public void addPriceChange(int actions)
     {
-	//        mPrice    += (actions * .8);
-	//        mApproval -= (actions * .5);
+        //        mPrice    += (actions * .8);
+        //        mApproval -= (actions * .5);
         mPriceChange += actions;
     }
 
@@ -205,7 +197,7 @@ public class UpgradeManager
 
     public int getNuclearScience()
     {
-	return mNuclearSci;
+        return mNuclearSci;
     }
 
     public int getFossilScience()

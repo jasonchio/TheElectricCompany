@@ -11,11 +11,11 @@ public class PanelChangeEvent
 
     public PanelChangeEvent(ContentPane pPane)
     {
-	mPane = pPane;
+        mPane = pPane;
     }
 
     public void handle(ActionEvent event)
     {
-	GUI.getInstance().getWindow().setCenter(mPane);
+        GUI.getInstance().getWindow().setCenter(mPane);
     }
 }

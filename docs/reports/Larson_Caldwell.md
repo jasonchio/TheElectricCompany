@@ -43,7 +43,7 @@ Questions For the Class
 
 
 
-Mar 4 - Mar 19
+Mar 12 - Mar 19
 Accomplishments
 
     18.1 hours
@@ -59,3 +59,16 @@ Questions For the Class
 
     When does practicality outweigh functionality?
     Should we listen to new requests from the sponsor even though the design has already been made?
+
+
+Mar 19 - Mar 26
+Accomplishments
+
+    17.5 hours
+        Fixing bugs.
+        Creating last classes.
+
+Next Week's Goals
+
+    Finish all coding ad fix all bugs.
+    Finalize code for presenting.

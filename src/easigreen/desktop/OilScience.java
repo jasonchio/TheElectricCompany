@@ -14,42 +14,38 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
- * 
+ *
  */
 public class OilScience
-   extends UpgradeItem
+    extends UpgradeItem
 {
 
     protected String getTitle()
     {
-	return new String("Oil Science");
+        return new String("Oil Science");
     }
 
     protected String[] getTips()
     {
-	return new String[]{"+Oil Security", "-Oil Consumption"};
+        return new String[] {"+Oil Security", "-Oil Consumption"};
     }
 
     protected void init()
     {
-	EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
-	    {
-		public void handle(ActionEvent event)
-		{
-		}
-	    };
-	EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
-	    {
-		public void handle(ActionEvent event)
-		{
-		}
-	    };
-	mUp   = new ImageButton("up.png"  , upEvent);
-	mDown = new ImageButton("down.png", downEvent);
-	mUp  .setPrefSize(0, 0);
-	mDown.setPrefSize(0, 0);
-	setHalignment(mUp  , HPos.CENTER);
-	setHalignment(mDown, HPos.CENTER);
+        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+            }
+        };
+        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+            }
+        };
+        mUp   = new ImageButton("up.png"  , upEvent);
+        mDown = new ImageButton("down.png", downEvent);
+        mUp  .setPrefSize(0, 0);
+        mDown.setPrefSize(0, 0);
+        setHalignment(mUp  , HPos.CENTER);
+        setHalignment(mDown, HPos.CENTER);
     }
 
     /**
@@ -58,11 +54,11 @@ public class OilScience
      */
     public OilScience(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()
     {
-	mValue.setText("0");
+        mValue.setText("0");
     }
 }

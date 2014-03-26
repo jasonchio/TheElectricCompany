@@ -91,7 +91,7 @@ public class Upgrade
     {
         return mBudgetChange;
     }
-    
+
     /**
      * Get the change in energy price
      * @return the change in the energy price
@@ -100,7 +100,7 @@ public class Upgrade
     {
         return mPriceChange;
     }
-    
+
     /**
      * Get the change in approval
      * @return the change in approval
@@ -109,7 +109,7 @@ public class Upgrade
     {
         return mApprovalChange;
     }
-    
+
     /**
      * Get the change in nuclear approval rating
      * @return the change in nuclear approval rating
@@ -118,7 +118,7 @@ public class Upgrade
     {
         return mNatt;
     }
-    
+
     /**
      * Get the change in Nuclear Security
      * @return the change in nuclear security
@@ -127,7 +127,7 @@ public class Upgrade
     {
         return mNsec;
     }
-    
+
     /**
      * Get the change in fossil approval rating
      * @return the change in fossil approval rating
@@ -137,7 +137,7 @@ public class Upgrade
         return mFatt;
     }
 
-    /** 
+    /**
      * Get the change in fossil security
      * @return the change in fossil security
      */
@@ -145,7 +145,7 @@ public class Upgrade
     {
         return mFsec;
     }
-    
+
     /**
      * Get the change in approval rating of renewable
      * @return the change in approval rating of renewable
@@ -172,7 +172,7 @@ public class Upgrade
     {
         return mOil;
     }
-    
+
     /**
      * Get the change in oil security
      * @return the change in oil security
@@ -181,7 +181,7 @@ public class Upgrade
     {
         return mOilSec;
     }
-    
+
     /**
      * Get the change in oil growth
      * @return the change in oil growth
@@ -192,7 +192,7 @@ public class Upgrade
     }
 
     //////////////////////// Setters
-    
+
     /**
      * Set the change in budget
      * @param pBudgetChange change in budget
@@ -201,7 +201,7 @@ public class Upgrade
     {
         mBudgetChange = pBudgetChange;
     }
-    
+
     /**
      * Set the change in the energy price
      * @param pNRGChange change in the energy price
@@ -210,7 +210,7 @@ public class Upgrade
     {
         mPriceChange = pPriceChange;
     }
-    
+
     /**
      * Set the change in approval
      * @param pEmissionsChange change in approval
@@ -219,7 +219,7 @@ public class Upgrade
     {
         mApprovalChange = pApprovalChange;
     }
-    
+
     /**
      * Set the change in nuclear approval rating
      * @param pNatt a double
@@ -228,7 +228,7 @@ public class Upgrade
     {
         mNatt = pNatt;
     }
-    
+
     /**
      * Set the change in nuclear security
      * @param pNsec a double
@@ -237,7 +237,7 @@ public class Upgrade
     {
         mNsec = pNsec;
     }
-    
+
     /**
      * Set the change in fossil approval rating
      * @param pFatt a double
@@ -246,7 +246,7 @@ public class Upgrade
     {
         mFatt = pFatt;
     }
-    
+
     /**
      * Set the change in fossil security
      * @param pFsec a double
@@ -255,7 +255,7 @@ public class Upgrade
     {
         mFsec = pFsec;
     }
-    
+
     /**
      * Set the change in renewable approval rating
      * @param pRatt a double
@@ -264,7 +264,7 @@ public class Upgrade
     {
         mRatt = pRatt;
     }
-    
+
     /**
      * Set the change in renewable security
      * @param pRsec a double
@@ -282,7 +282,7 @@ public class Upgrade
     {
         mOil = pOil;
     }
-    
+
     /**
      * Set the change in oil security
      * @param pOilSec a double
@@ -291,7 +291,7 @@ public class Upgrade
     {
         mOil = pOilSec;
     }
-    
+
     /**
      * Set the change in oil growth
      * @param pOilGrow a double

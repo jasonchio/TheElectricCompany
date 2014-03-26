@@ -52,3 +52,15 @@ Next Weeks Goals
 Questions
 
     I can't figure out how to dynamically load a class from inside a jar
+    
+Mar 18 - 25
+Accomplishments
+
+    41.2 Hours
+      Finished user interface implementation
+      Started working on model
+      
+Next Weeks Goals
+
+    Finish Model
+    Integrate model and user interface

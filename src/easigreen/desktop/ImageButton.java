@@ -34,28 +34,28 @@ public class ImageButton extends Button
      * @param imageurl the url for an image the button will look like
      * @param actionName name of action to perform when button is pressed
      */
-    public ImageButton(String imageurl, EventHandler<ActionEvent> action) 
+    public ImageButton(String imageurl, EventHandler<ActionEvent> action)
     {
-	Image     image = ImageGetter.getImage(imageurl);
-	ImageView graphic = new ImageView(image);
-	setOnAction(action);
+        Image     image = ImageGetter.getImage(imageurl);
+        ImageView graphic = new ImageView(image);
+        setOnAction(action);
 
-	setGraphic(graphic);
+        setGraphic(graphic);
         setStyle(STYLE_NORMAL);
-        
+
         setOnMousePressed(new EventHandler<MouseEvent>() {
             @Override
-		public void handle(MouseEvent event) {
+            public void handle(MouseEvent event) {
                 setStyle(STYLE_PRESSED);
-            }            
-	    });
-        
+            }
+        });
+
         setOnMouseReleased(new EventHandler<MouseEvent>() {
             @Override
-		public void handle(MouseEvent event) {
-		setStyle(STYLE_NORMAL);
-            }            
-	    });
+            public void handle(MouseEvent event) {
+                setStyle(STYLE_NORMAL);
+            }
+        });
     }
-    
+
 }

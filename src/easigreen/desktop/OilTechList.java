@@ -15,7 +15,7 @@ class OilTechList
 
     public OilTechList(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()

@@ -16,32 +16,32 @@ public class GoalManager
      * Manager of Energy
      */
     private EnergyManager mEnergyManager;
-    
+
     /**
      * Manager of Resources
      */
     private ResourceManager mResourceManager;
-    
-	
+
+
     /**
      * Manager of Upgrades
      */
     private UpgradeManager mUpgradeManager;
-	
+
     /**
      * Needed approval rating
      */
     private static final int mTargetApproval = 45;
-    
+
     ///////////////////// Getter
-    
+
     public int getTargetApproval()
     {
-	return mTargetApproval;
+        return mTargetApproval;
     }
-	
+
     ///////////////////// Constructor
-	
+
     /**
      * The Constructor for this class
      *
@@ -51,9 +51,10 @@ public class GoalManager
      */
     public GoalManager(ResourceManager pResourceManager, UpgradeManager pUpgradeManager, EnergyManager pEnergyManager)
     {
-	mEnergyManager   = pEnergyManager;
+        mEnergyManager   = pEnergyManager;
         mResourceManager = pResourceManager;
-        mUpgradeManager  = pUpgradeManager;		
+        mUpgradeManager  = pUpgradeManager;
     }
-	
+
+
 }

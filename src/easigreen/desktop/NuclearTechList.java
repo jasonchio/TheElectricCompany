@@ -15,7 +15,7 @@ class NuclearTechList
 
     public NuclearTechList(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()

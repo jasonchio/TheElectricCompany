@@ -11,7 +11,7 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 /**
- * 
+ *
  */
 public class ImageLabel extends Label
 {
@@ -21,20 +21,20 @@ public class ImageLabel extends Label
      *
      * @param imageurl the url for an image the Label will look like
      */
-    public ImageLabel(String imageurl) 
+    public ImageLabel(String imageurl)
     {
-	setImage(imageurl);
+        setImage(imageurl);
     }
 
     public ImageLabel()
     {
     }
-    
+
     public void setImage(String imageurl)
     {
-	Image     image = ImageGetter.getImage(imageurl);
-	ImageView graphic = new ImageView(image);
+        Image     image = ImageGetter.getImage(imageurl);
+        ImageView graphic = new ImageView(image);
 
-	setGraphic(graphic);
+        setGraphic(graphic);
     }
 }

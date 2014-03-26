@@ -14,42 +14,48 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
- * 
+ *
  */
 public class NuclearEngineering
-   extends UpgradeItem
+    extends UpgradeItem
 {
-
+    /**
+     * Gets the title for this Content Component
+     * @return String the title
+     */
     protected String getTitle()
     {
-	return new String("Nuclear Engineering");
+        return new String("Nuclear Engineering");
     }
 
+    /**
+     * Gets the Tips
+     * @return an array of Strings
+     */
     protected String[] getTips()
     {
-	return new String[]{"+Nuclear Security", "+Nuclear Energy Produced"};
+        return new String[] {"+Nuclear Security", "+Nuclear Energy Produced"};
     }
 
+    /**
+     * Initializes the various action handlers
+     */
     protected void init()
     {
-	EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
-	    {
-		public void handle(ActionEvent event)
-		{
-		}
-	    };
-	EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
-	    {
-		public void handle(ActionEvent event)
-		{
-		}
-	    };
-	mUp   = new ImageButton("up.png"  , upEvent);
-	mDown = new ImageButton("down.png", downEvent);
-	mUp  .setPrefSize(0, 0);
-	mDown.setPrefSize(0, 0);
-	setHalignment(mUp  , HPos.CENTER);
-	setHalignment(mDown, HPos.CENTER);
+        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+            }
+        };
+        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+            }
+        };
+        mUp   = new ImageButton("up.png"  , upEvent);
+        mDown = new ImageButton("down.png", downEvent);
+        mUp  .setPrefSize(0, 0);
+        mDown.setPrefSize(0, 0);
+        setHalignment(mUp  , HPos.CENTER);
+        setHalignment(mDown, HPos.CENTER);
     }
 
     /**
@@ -58,11 +64,14 @@ public class NuclearEngineering
      */
     public NuclearEngineering(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
-	mValue.setText("0");
+        mValue.setText("0");
     }
 }

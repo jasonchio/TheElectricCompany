@@ -14,42 +14,38 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
- * 
+ *
  */
 public class PriceChange
-   extends UpgradeItem
+    extends UpgradeItem
 {
 
     protected String getTitle()
     {
-	return new String("Price Change");
+        return new String("Price Change");
     }
 
     protected String[] getTips()
     {
-	return new String[]{"+Profit", "-Approval", "-Demand"};
+        return new String[] {"+Profit", "-Approval", "-Demand"};
     }
 
     protected void init()
     {
-	EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
-	    {
-		public void handle(ActionEvent event)
-		{
-		}
-	    };
-	EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
-	    {
-		public void handle(ActionEvent event)
-		{
-		}
-	    };
-	mUp   = new ImageButton("up.png"  , upEvent);
-	mDown = new ImageButton("down.png", downEvent);
-	mUp  .setPrefSize(0, 0);
-	mDown.setPrefSize(0, 0);
-	setHalignment(mUp  , HPos.CENTER);
-	setHalignment(mDown, HPos.CENTER);
+        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+            }
+        };
+        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>() {
+            public void handle(ActionEvent event) {
+            }
+        };
+        mUp   = new ImageButton("up.png"  , upEvent);
+        mDown = new ImageButton("down.png", downEvent);
+        mUp  .setPrefSize(0, 0);
+        mDown.setPrefSize(0, 0);
+        setHalignment(mUp  , HPos.CENTER);
+        setHalignment(mDown, HPos.CENTER);
     }
 
     /**
@@ -58,11 +54,11 @@ public class PriceChange
      */
     public PriceChange(SimCity pModel)
     {
-	super(pModel);
+        super(pModel);
     }
 
     protected void update()
     {
-	mValue.setText("0");
+        mValue.setText("0");
     }
 }
