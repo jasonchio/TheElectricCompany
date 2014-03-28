@@ -31,6 +31,16 @@ public class TechnologyManager
      */
     private ArrayList<Technology> all;
 
+    /**
+     * Basic constructor of the array lists
+     */
+    public TechnologyManager()
+    {
+        implemented = new ArrayList<Technology>();
+        available = new ArrayList<Technology>();
+	all = new ArrayList<Technology>();
+    }
+
     //////////////////// Methods
 
     public UpgradeMerger update()
