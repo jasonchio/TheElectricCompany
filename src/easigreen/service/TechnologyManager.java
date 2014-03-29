@@ -43,37 +43,40 @@ public class TechnologyManager
 
     //////////////////// Methods
 
+    /**
+     * Updates the Merger
+     * @returns UpgradeMerger the UpgradeMerger
+     */
     public UpgradeMerger update()
     {
         UpgradeMerger allChanges = new UpgradeMerger();
-        for (int i = 0; i < implemented.size(); i++)
-	{
+        for (int i = 0; i < implemented.size(); i++) {
             // General
-	    allChanges.addBudgetChange      (implemented.get(i).getBudgetChange   ());
+            allChanges.addBudgetChange      (implemented.get(i).getBudgetChange   ());
             allChanges.addDemandRateChange  (implemented.get(i).getNRGChange      ());
             allChanges.addEmissionsChange   (implemented.get(i).getEmissionsChange());
             // Nuclear
-	    allChanges.addNuclearPower      (implemented.get(i).getNpow           ());
+            allChanges.addNuclearPower      (implemented.get(i).getNpow           ());
             allChanges.addNuclearCost       (implemented.get(i).getNcost          ());
             allChanges.addNuclearApproval   (implemented.get(i).getNatt           ());
             allChanges.addNuclearEmissions  (implemented.get(i).getNemit          ());
             allChanges.addNuclearSecurity   (implemented.get(i).getNsec           ());
             allChanges.addNuclearProfit     (implemented.get(i).getNprof          ());
             // Fossil
-	    allChanges.addFossilPower       (implemented.get(i).getFpow           ());
+            allChanges.addFossilPower       (implemented.get(i).getFpow           ());
             allChanges.addFossilCost        (implemented.get(i).getFcost          ());
             allChanges.addFossilApproval    (implemented.get(i).getFatt           ());
             allChanges.addFossilEmissions   (implemented.get(i).getFemit          ());
             allChanges.addFossilSecurity    (implemented.get(i).getFsec           ());
             allChanges.addFossilProfit      (implemented.get(i).getFprof          ());
             // Renewable
-	    allChanges.addRenewablePower    (implemented.get(i).getRpow           ());
+            allChanges.addRenewablePower    (implemented.get(i).getRpow           ());
             allChanges.addRenewableCost     (implemented.get(i).getRcost          ());
             allChanges.addRenewableApproval (implemented.get(i).getRatt           ());
             allChanges.addRenewableEmissions(implemented.get(i).getRemit          ());
             allChanges.addRenewableSecurity (implemented.get(i).getRsec           ());
             allChanges.addRenewableProfit   (implemented.get(i).getRprof          ());
-	    // Oil
+            // Oil
             allChanges.addOilConsumption    (implemented.get(i).getOil            ());
             allChanges.addOilSecurity       (implemented.get(i).getOilSec         ());
             allChanges.addOilGrowth         (implemented.get(i).getOilGrow        ());
@@ -221,6 +224,10 @@ public class TechnologyManager
         available = pAvailable;
     }
 
+    /**
+     * Adds a Technology
+     * @param pTech a Technology
+     */
     public void addTechnology(Technology pTech)
     {
         available.add(pTech);
