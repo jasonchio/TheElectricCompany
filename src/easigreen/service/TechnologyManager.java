@@ -216,7 +216,7 @@ public class TechnologyManager
      *
      * @param pAvailable the new available technologies
      */
-    public void setAvalible(ArrayList<Technology> pAvailable)
+    public void setAvailable(ArrayList<Technology> pAvailable)
     {
         available = pAvailable;
     }
