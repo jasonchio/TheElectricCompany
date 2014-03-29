@@ -38,7 +38,7 @@ public class TechnologyManager
     {
         implemented = new ArrayList<Technology>();
         available = new ArrayList<Technology>();
-	all = new ArrayList<Technology>();
+        all = new TechnologyGetter().getTechnologies();
     }
 
     //////////////////// Methods
