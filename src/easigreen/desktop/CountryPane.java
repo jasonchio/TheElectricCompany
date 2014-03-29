@@ -16,7 +16,7 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * A content pane for sim city
+ * A content pane for Sim city
  *
  * @version 0.2.1
  * @author Sam Graham
