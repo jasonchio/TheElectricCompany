@@ -33,6 +33,7 @@ public class OilManager
     public OilManager(UpgradeManager pUpgradeManager)
     {
 	mUpgradeManager = pUpgradeManager;
+	mOil = new Oil();
 	update();
     }
 
