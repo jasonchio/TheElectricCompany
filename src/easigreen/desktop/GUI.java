@@ -77,7 +77,7 @@ public class GUI
     /**
      * Holds the model
      */
-    private SimCity model;
+    private SimCity mModel;
 
     /**
      * Contains Graphical buttons for the main navigation of the system.
@@ -179,7 +179,7 @@ public class GUI
      */
     private void initializeModel()
     {
-        model = new SimCity();
+        mModel = new SimCity();
     }
 
     /**
@@ -244,11 +244,11 @@ public class GUI
                 packagePrefix = packagePrefix.substring(0, lastDotIndex + 1);
                 currentClass = packagePrefix + mainClassNames[navNumber];
                 Constructor mainConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
-                mContent.put(mainNavNames[navNumber], (ContentPane) mainConstruct.newInstance(model));
+                mContent.put(mainNavNames[navNumber], (ContentPane) mainConstruct.newInstance(mModel));
                 for (int subNavNum = 0; subNavNum < subNavNames[navNumber].length; subNavNum++) {
                     currentClass = packagePrefix + subClassNames[navNumber][subNavNum];
                     Constructor subConstruct = Class.forName(currentClass).getConstructor(SimCity.class);
-                    mContent.put(subNavNames[navNumber][subNavNum], (ContentPane) subConstruct.newInstance(model));
+                    mContent.put(subNavNames[navNumber][subNavNum], (ContentPane) subConstruct.newInstance(mModel));
                 }
             }
         } catch (ClassNotFoundException e) {
