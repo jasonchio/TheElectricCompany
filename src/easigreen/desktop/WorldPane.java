@@ -16,7 +16,9 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Upgrade Item
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class WorldPane
     extends ContentPane
