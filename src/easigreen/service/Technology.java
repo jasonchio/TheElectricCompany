@@ -941,4 +941,31 @@ public class Technology
     {
         hasBeenUsed = isUsed;
     }
+    
+    /**
+     * Override object's toString Method
+     * @return a string representing the object
+     */
+    public String toString()
+    {
+       return mName + " " + mBudgetChange + " " + mNRGChange 
+                    + " "  + mEmissionsChange + " " 
+                    + mNpow + " "+ mNcost + " " + mNatt + " " 
+                    + mNemit + " "+ mNsec + " "
+                    + mNprof + " " + mFpow 
+                    + " "+ mFcost + " " +mFatt+" " 
+                    + mFemit + " "
+                    + mFsec + " "+ mFprof + " "
+                    + mRpow + " "+ mRcost + " "
+                    + mRatt+" " + mRemit + " "
+                    + mRsec + " "+ mRprof + " "
+                    + mOil + " " + mOilSec + " " 
+                    + mOilGrow + " " + mQuality + " " 
+                    + " " + mTec1 
+                    + " " + mTec2+ " " + mTec3+ " " 
+                    + mTec4 + " " + mTec5 + " " 
+                    + mTec6 + " " + mTec7 + " " 
+                    + mTec8 + " " + mTec9  + " " 
+                    + mTec10 + " " + mTec1;
+    } 
 }
