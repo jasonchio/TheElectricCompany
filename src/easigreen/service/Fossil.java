@@ -16,10 +16,6 @@ public class Fossil
 {
     //////////////////// Variables
 
-    /**
-     * The number of plants
-     */
-    private int mAmount;
 
     /**
      * The cost to build each new plant

@@ -90,6 +90,9 @@ public class WorldPane
         super(pModel);
     }
 
+    /**
+     * Sets up initial values
+     */
     protected void setup()
     {
         mCountries = new CountryList(mModel);

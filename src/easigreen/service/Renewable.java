@@ -17,11 +17,6 @@ public class Renewable
     //////////////////// Variables
 
     /**
-     * The number of plants
-     */
-    private int mAmount;
-
-    /**
      * The cost to build each new plant
      */
     final private static double mCostBuild = .2;
