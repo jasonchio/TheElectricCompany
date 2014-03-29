@@ -76,7 +76,7 @@ public class CountryPane
      */
     protected int[] getColumns()
     {
-        return new int[] {12, 6, 64, 6, 12};
+        return new int[] {12, 6, 60, 10, 12};
     }
 
     /**
@@ -162,20 +162,17 @@ public class CountryPane
     protected void update()
     {
         mTitle.setText(mCountryName);
-
-        // Zeros represent Updated model data
-        mValues.get("Nuclear Plants"    ).setText("0"); 
-        mValues.get("Fossil Fuel Plants").setText("0");
-        mValues.get("Renewable Plants"  ).setText("0");
-
-        mValues.get("Energy Supplied"   ).setText("0");
-        mValues.get("Available Funds"   ).setText("0");
-        mValues.get("Public Approval"   ).setText("0");
-        mValues.get("Oil Consumption"   ).setText("0");
-
-        mValues.get("Total Profit"      ).setText("0");
-        mValues.get("Total Security"    ).setText("0");
-        mValues.get("Total Emissions"   ).setText("0");
+	
+	mValues.get("Nuclear Plants"    ).setText("" + mModel.getEnergyManager  ().getNuclear  ().getAmount());
+	mValues.get("Fossil Fuel Plants").setText("" + mModel.getEnergyManager  ().getFossil   ().getAmount());
+        mValues.get("Renewable Plants"  ).setText("" + mModel.getEnergyManager  ().getRenewable().getAmount());
+        mValues.get("Energy Supplied"   ).setText("" + mModel.getEnergyManager  ().getPower    ());
+        mValues.get("Available Funds"   ).setText("" + mModel.getResourceManager().getFunds    ());
+        mValues.get("Public Approval"   ).setText("" + mModel.getEnergyManager  ().getApproval ());
+        mValues.get("Oil Consumption"   ).setText("" + mModel.getEnergyManager  ().getOil      ().getConsumption());
+        mValues.get("Total Profit"      ).setText("" + mModel.getEnergyManager  ().getProfit   ());
+        mValues.get("Total Security"    ).setText("" + mModel.getEnergyManager  ().getSecurity ());
+        mValues.get("Total Emissions"   ).setText("" + mModel.getEnergyManager  ().getEmissions());
 
         mTechs.update();
     }
