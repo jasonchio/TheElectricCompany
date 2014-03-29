@@ -180,6 +180,7 @@ public class GUI
     private void initializeModel()
     {
         mModel = new SimCity();
+	mModel.run();
     }
 
     /**
