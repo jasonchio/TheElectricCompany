@@ -3,8 +3,15 @@ package easigreen.service;
 import easigreen.service.*;
 import easigreen.system.*;
 
-import java.util.ArrayList;
 
+/**
+ * The UpgradeMerger class.
+ *
+ * @version 0.1.2
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
+ */
 public class UpgradeMerger
 {
     //////////////////// Variables
@@ -30,7 +37,7 @@ public class UpgradeMerger
     private double mPriceChange;
 
     /**
-     * The dotal change in demand
+     * The total change in demand
      */
     private double mDemandChange;
 
@@ -146,71 +153,306 @@ public class UpgradeMerger
 
     //////////////////// Methods
 
+    /**
+     * Gets the budget change
+     * @return the budget a double
+     */
     public double getBudgetChange()
     {
         return mBudgetChange;
     }
 
+    /**
+     * Gets the approval change
+     * @return the approval a double
+     */
     public double getApprovalChange()
     {
         return mApprovalChange;
     }
 
+    /**
+     * Gets the emissions change
+     * @return the emissions a double
+     */
     public double getEmissionsChange()
     {
         return mEmissionsChange;
     }
 
+    /**
+     * Gets the price change
+     * @return the price a double
+     */
     public double getPriceChange()
     {
         return mPriceChange;
     }
 
+    /**
+     * Gets the demand change
+     * @return the demand a double
+     */
     public double getDemandChange()
     {
         return mDemandChange;
     }
 
+    /**
+     * Gets the demand rate change
+     * @return the demand rate a double
+     */
     public double getDemandRateChange()
     {
         return mDemandRateChange;
     }
 
-    public void addBudgetChange      (double amount) {mBudgetChange     += amount;}
-    public void addApprovalChange    (double amount) {mApprovalChange   += amount;}
-    public void addEmissionsChange   (double amount) {mEmissionsChange  += amount;}
-    public void addPriceChange       (double amount) {mPriceChange      += amount;}
-    public void addDemandChange      (double amount) {mDemandChange     += amount;}
-    public void addDemandRateChange  (double amount) {mDemandRateChange += amount;}
-
-    public void addNuclearPower      (double amount) {mNpow             += amount;}
-    public void addNuclearCost       (double amount) {mNcost            += amount;}
-    public void addNuclearApproval   (double amount) {mNatt             += amount;}
-    public void addNuclearEmissions  (double amount) {mNemit            += amount;}
-    public void addNuclearSecurity   (double amount) {mNsec             += amount;}
-    public void addNuclearProfit     (double amount) {mNprof            += amount;}
-
-    public void addFossilPower       (double amount) {mFpow             += amount;}
-    public void addFossilCost        (double amount) {mFcost            += amount;}
-    public void addFossilApproval    (double amount) {mFatt             += amount;}
-    public void addFossilEmissions   (double amount) {mFemit            += amount;}
-    public void addFossilSecurity    (double amount) {mFsec             += amount;}
-    public void addFossilProfit      (double amount) {mFprof            += amount;}
-
-    public void addRenewablePower    (double amount) {mRpow             += amount;}
-    public void addRenewableCost     (double amount) {mRcost            += amount;}
-    public void addRenewableApproval (double amount) {mRatt             += amount;}
-    public void addRenewableEmissions(double amount) {mRemit            += amount;}
-    public void addRenewableSecurity (double amount) {mRsec             += amount;}
-    public void addRenewableProfit   (double amount) {mRprof            += amount;}
-
-    public void addOilConsumption    (double amount) {mOil              += amount;}
-    public void addOilSecurity       (double amount) {mOilSec           += amount;}
-    public void addOilGrowth         (double amount) {mOilGrow          += amount;}
+    /**
+     * Adds to the budget
+     * @param amount the change
+     */
+    public void addBudgetChange(double amount)
+    {
+        mBudgetChange     += amount;
+    }
+    
+    /**
+     * Adds to the approval
+     * @param amount the change
+     */
+    public void addApprovalChange    (double amount)
+    {
+        mApprovalChange   += amount;
+    }
+    
+    /**
+     * Adds to the emissions
+     * @param amount the change
+     */
+    public void addEmissionsChange   (double amount)
+    {
+        mEmissionsChange  += amount;
+    }
+    
+    /**
+     * Adds to the price
+     * @param amount the change
+     */
+    public void addPriceChange       (double amount)
+    {
+        mPriceChange      += amount;
+    }
+    
+    /**
+     * Adds to the demand
+     * @param amount the change
+     */
+    public void addDemandChange      (double amount)
+    {
+        mDemandChange     += amount;
+    }
+    
+    /**
+     * Adds to the demand rate
+     * @param amount the change
+     */
+    public void addDemandRateChange  (double amount)
+    {
+        mDemandRateChange += amount;
+    }
 
     /**
-     * Get the change in national power
-     * @return the change in national power
+     * Adds to the nuclear power
+     * @param amount the change
+     */
+    public void addNuclearPower      (double amount)
+    {
+        mNpow             += amount;
+    }
+    
+    /**
+     * Adds to the nuclear cost
+     * @param amount the change
+     */
+    public void addNuclearCost       (double amount)
+    {
+        mNcost            += amount;
+    }
+    
+    /**
+     * Adds to the nuclear approval
+     * @param amount the change
+     */
+    public void addNuclearApproval   (double amount)
+    {
+        mNatt             += amount;
+    }
+    
+    /**
+     * Adds to the nuclear emissions
+     * @param amount the change
+     */
+    public void addNuclearEmissions  (double amount)
+    {
+        mNemit            += amount;
+    }
+    
+    /**
+     * Adds to the nuclear security
+     * @param amount the change
+     */
+    public void addNuclearSecurity   (double amount)
+    {
+        mNsec             += amount;
+    }
+    
+    /**
+     * Adds to the nuclear profit
+     * @param amount the change
+     */
+    public void addNuclearProfit     (double amount)
+    {
+        mNprof            += amount;
+    }
+
+    /**
+     * Adds to the fossil
+     * @param amount the change
+     */
+    public void addFossilPower       (double amount)
+    {
+        mFpow             += amount;
+    }
+    
+    /**
+     * Adds to the fossil cost
+     * @param amount the change
+     */
+    public void addFossilCost        (double amount)
+    {
+        mFcost            += amount;
+    }
+    
+    /**
+     * Adds to the fossil approval
+     * @param amount the change
+     */
+    public void addFossilApproval    (double amount)
+    {
+        mFatt             += amount;
+    }
+    
+    /**
+     * Adds to the fossil emissions
+     * @param amount the change
+     */
+    public void addFossilEmissions   (double amount)
+    {
+        mFemit            += amount;
+    }
+    
+    /**
+     * Adds to the fossil security
+     * @param amount the change
+     */
+    public void addFossilSecurity    (double amount)
+    {
+        mFsec             += amount;
+    }
+    
+    /**
+     * Adds to the fossil profit
+     * @param amount the change
+     */
+    public void addFossilProfit      (double amount)
+    {
+        mFprof            += amount;
+    }
+
+    /**
+     * Adds to the renewable power
+     * @param amount the change
+     */
+    public void addRenewablePower    (double amount)
+    {
+        mRpow             += amount;
+    }
+    
+    /**
+     * Adds to the renewable cost
+     * @param amount the change
+     */
+    public void addRenewableCost     (double amount)
+    {
+        mRcost            += amount;
+    }
+    
+    /**
+     * Adds to the renewable approval
+     * @param amount the change
+     */
+    public void addRenewableApproval (double amount)
+    {
+        mRatt             += amount;
+    }
+    
+    /**
+     * Adds to the renewable emissions
+     * @param amount the change
+     */
+    public void addRenewableEmissions(double amount)
+    {
+        mRemit            += amount;
+    }
+    
+    /**
+     * Adds to the renewable security
+     * @param amount the change
+     */
+    public void addRenewableSecurity (double amount)
+    {
+        mRsec             += amount;
+    }
+    
+    /**
+     * Adds to the renewable profit
+     * @param amount the change
+     */
+    public void addRenewableProfit   (double amount)
+    {
+        mRprof            += amount;
+    }
+
+    /**
+     * Adds to the oil consumption
+     * @param amount the change
+     */
+    public void addOilConsumption    (double amount)
+    {
+        mOil              += amount;
+    }
+    
+    /**
+     * Adds to the oil security
+     * @param amount the change
+     */
+    public void addOilSecurity       (double amount)
+    {
+        mOilSec           += amount;
+    }
+    
+    /**
+     * Adds to the oil growth
+     * @param amount the change
+     */
+    public void addOilGrowth         (double amount)
+    {
+        mOilGrow          += amount;
+    }
+
+    /**
+     * Get the change in nuclear power
+     * @return the change in nuclear power
      */
     public double getNuclearPower()
     {
