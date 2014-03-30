@@ -25,37 +25,37 @@ public class Energy
     /**
      * The cost to build each new plant
      */
-    protected static double mCostBuild;
+    protected double mCostBuild;
 
     /**
      * The cost to remove each existing plant
      */
-    protected static double mCostRemove;
+    protected double mCostRemove;
 
     /**
      * The approval rating per unit
      */
-    protected static double mApproval;
+    protected double mApproval;
 
     /**
      * The power production per unit
      */
-    protected static double mProduction;
+    protected double mProduction;
 
     /**
      * The emissions produced per unit
      */
-    protected static double mEmissions;
+    protected double mEmissions;
 
     /**
      * The security of each unit
      */
-    protected static double mSecurity;
+    protected double mSecurity;
 
     /**
      * The profit made with each unit
      */
-    protected static double mProfitPercent;
+    protected double mProfitPercent;
 
     //////////////////// Constructors
 
@@ -64,16 +64,6 @@ public class Energy
      */
     public Energy()
     {
-	/*
-        mAmount        = 0;
-        mCostBuild     = 0;
-        mCostRemove    = 0;
-        mApproval      = 0;
-        mProduction    = 0;
-        mEmissions     = 0;
-        mSecurity      = 0;
-        mProfitPercent = 0;
-	*/
     }
 
     //////////////////// Getters

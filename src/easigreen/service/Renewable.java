@@ -21,11 +21,11 @@ public class Renewable
     {
         mAmount        = 140;
 	mCostBuild     = .2;
-	mCostRemove    = -.1;
-	mApproval      = 35;
-	mProduction    = .1;
-	mEmissions     = .05;
-	mSecurity      = .03;
-	mProfitPercent = 20;
+        mCostRemove    = -.1;
+        mApproval      = 35;
+        mProduction    = 0.1;
+        mEmissions     = .05;
+        mSecurity      = .03;
+        mProfitPercent = 20;
     }
 }

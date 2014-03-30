@@ -21,11 +21,11 @@ public class Fossil
     {
         mAmount        = 100;
 	mCostBuild     = 1;
-	mCostRemove    = .1;
-	mApproval      = 50;
-	mProduction    = .65;
-	mEmissions     = 2;
-	mSecurity      = .09;
-	mProfitPercent = 45;
+        mCostRemove    = .1;
+        mApproval      = 50;
+        mProduction    = .65;
+        mEmissions     = 2;
+        mSecurity      = .09;
+        mProfitPercent = 45;
     }
 }
