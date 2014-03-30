@@ -64,6 +64,7 @@ public class Energy
      */
     public Energy()
     {
+	/*
         mAmount        = 0;
         mCostBuild     = 0;
         mCostRemove    = 0;
@@ -72,6 +73,7 @@ public class Energy
         mEmissions     = 0;
         mSecurity      = 0;
         mProfitPercent = 0;
+	*/
     }
 
     //////////////////// Getters

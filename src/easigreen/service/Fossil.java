@@ -14,51 +14,18 @@ import easigreen.system.*;
 public class Fossil
     extends Energy
 {
-    //////////////////// Variables
-
-
-    /**
-     * The cost to build each new plant
-     */
-    final private static double mCostBuild = 1;
-
-    /**
-     * The cost to remove each existing plant
-     */
-    final private static double mCostRemove = .1;
-
-    /**
-     * The approval rating per unit
-     */
-    final private static double mApproval = 50;
-
-    /**
-     * The power production per unit
-     */
-    final private static double mProduction = .65;
-
-    /**
-     * The emissions produced per unit
-     */
-    final private static double mEmissions = 2;
-
-    /**
-     * The security of each unit
-     */
-    final private static double mSecurity = .09;
-
-    /**
-     * The profit made with each unit
-     */
-    final private static double mProfitPercent = 45;
-
-    //////////////////// Constructors
-
     /**
      * Sets default values to a fossil plant.
      */
     public Fossil()
     {
-        mAmount = 100;
+        mAmount        = 100;
+	mCostBuild     = 1;
+	mCostRemove    = .1;
+	mApproval      = 50;
+	mProduction    = .65;
+	mEmissions     = 2;
+	mSecurity      = .09;
+	mProfitPercent = 45;
     }
 }
