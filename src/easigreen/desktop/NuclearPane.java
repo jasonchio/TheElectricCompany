@@ -112,7 +112,20 @@ public class NuclearPane
 	{
 	    public void handle(ActionEvent event)
 	    {
-		mModel.getEnergyManager().getNuclear().setAmount(Integer.parseInt(mValues.get("Plants in Operation").getText()));
+                int current = mModel.getEnergyManager().getNuclear().getAmount();
+                int newAmount = Integer.parseInt(mValues.get("Plants in Operation").getText());
+
+                if (current < newAmount)
+	        {
+                    mModel.getWorldManager().setBudget(mModel.getWorldManager().getBudget() - mModel.getEnergyManager().getNuclear().getCostBuild() * newAmount);
+		}
+
+		else if (current > newAmount)
+		{
+			mModel.getWorldManager().setBudget(mModel.getWorldManager().getBudget() - mModel.getEnergyManager().getNuclear().getCostRemove() * newAmount);
+		}
+
+	        mModel.getEnergyManager().getNuclear().setAmount(Integer.parseInt(mValues.get("Plants in Operation").getText()));
 	    }
 	};
 
