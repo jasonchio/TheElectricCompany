@@ -30,24 +30,6 @@ public class OilScience
         return new String[] {"+Oil Security", "-Oil Consumption"};
     }
 
-    protected void init()
-    {
-        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        };
-        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        };
-        mUp   = new ImageButton("up.png"  , upEvent);
-        mDown = new ImageButton("down.png", downEvent);
-        mUp  .setPrefSize(0, 0);
-        mDown.setPrefSize(0, 0);
-        setHalignment(mUp  , HPos.CENTER);
-        setHalignment(mDown, HPos.CENTER);
-    }
-
     /**
      * Constructor
      * @param SimCity pModel the current sim city Model
@@ -59,6 +41,7 @@ public class OilScience
 
     protected void update()
     {
+	mChange = 0;
         mValue.setText("0");
     }
 }

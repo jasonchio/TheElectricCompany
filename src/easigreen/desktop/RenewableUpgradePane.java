@@ -63,17 +63,17 @@ public class RenewableUpgradePane
     /**
      * Holds the action label
      */
-    protected Label                mActionPointLabel;
+    protected Label                mActionLabel;
     
     /**
      * Holds the action value
      */
-    protected Label                mActionPointValue;
+    protected Label                mActionValue;
     
     /**
      * Holds the button for the action
      */
-    protected Button               mActionPointButton;
+    protected Button               mActionButton;
     
     /**
      * Holds the label for the tech area
@@ -123,18 +123,18 @@ public class RenewableUpgradePane
 
         initializeComponents();
 
-        add(getTitleLabel()   , 0, 0, 9, 1);
-        add(mRenewSci         , 1, 1, 7, 1);
-        add(mRenewEng         , 1, 2, 7, 1);
-        add(mActionPointLabel , 1, 3, 3, 1);
-        add(mActionPointValue , 4, 3, 1, 1);
-        add(mActionPointButton, 5, 3, 2, 1);
-        add(mTechLabel        , 1, 4, 4, 1);
-        add(mTechList         , 1, 5, 7, 1);
-        add(mTechTextArea     , 2, 6, 5, 1);
-        add(mCodeLabel        , 0, 7, 3, 1);
-        add(mCodeValue        , 3, 7, 2, 1);
-        add(mCodeButton       , 5, 7, 2, 1);
+        add(getTitleLabel(), 0, 0, 9, 1);
+        add(mRenewSci      , 1, 1, 7, 1);
+        add(mRenewEng      , 1, 2, 7, 1);
+        add(mActionLabel   , 1, 3, 3, 1);
+        add(mActionValue   , 4, 3, 1, 1);
+        add(mActionButton  , 5, 3, 2, 1);
+        add(mTechLabel     , 1, 4, 4, 1);
+        add(mTechList      , 1, 5, 7, 1);
+        add(mTechTextArea  , 2, 6, 5, 1);
+        add(mCodeLabel     , 0, 7, 3, 1);
+        add(mCodeValue     , 3, 7, 2, 1);
+        add(mCodeButton    , 5, 7, 2, 1);
     }
 
     /**
@@ -142,16 +142,24 @@ public class RenewableUpgradePane
      */
     protected void init()
     {
-        mActionPointButton = new Button("Apply");
-        mCodeButton        = new Button("Apply");
-        mActionPointButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+        mActionButton = new Button("Apply");
+        mCodeButton   = new Button("Apply");
+
+	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+                                  {
+                                      public void handle(ActionEvent event)
+                                      {
+                                          mModel.getUpgradeManager().addRenewableScience    (mRenewSci.getChange());
+                                          mModel.getUpgradeManager().addRenewableEngineering(mRenewEng.getChange());
+                                          update();
+                                      }
+                                  });
+
         mCodeButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
             }
         });
+
         setHalignment(mCodeButton, HPos.CENTER);
     }
 
@@ -160,23 +168,23 @@ public class RenewableUpgradePane
      */
     protected void initializeComponents()
     {
-        mRenewSci         = new RenewableScience    (mModel);
-        mRenewEng         = new RenewableEngineering(mModel);
-        mActionPointLabel = new Label               ("Action Points:");
-        mActionPointValue = new Label               ();
-        mTechLabel        = new Label               ("Renewable Technologies");
-        mTechList         = new RenewableTechList   (mModel);
-        mTechTextArea     = new TextArea            ();
-        mCodeLabel        = new Label               ("Tech Code:");
-        mCodeValue        = new TextField           ();
+        mRenewSci     = new RenewableScience    (mModel);
+        mRenewEng     = new RenewableEngineering(mModel);
+        mActionLabel  = new Label               ("Action Points:");
+        mActionValue  = new Label               ();
+        mTechLabel    = new Label               ("Renewable Technologies");
+        mTechList     = new RenewableTechList   (mModel);
+        mTechTextArea = new TextArea            ();
+        mCodeLabel    = new Label               ("Tech Code:");
+        mCodeValue    = new TextField           ();
 
-        setHalignment(mActionPointLabel, HPos.RIGHT);
-        setHalignment(mActionPointValue, HPos.CENTER);
-        setHalignment(mCodeLabel       , HPos.RIGHT);
-        setHalignment(mTechTextArea    , HPos.CENTER);
-        setHalignment(mTechList        , HPos.CENTER);
-        setValignment(mTechTextArea    , VPos.CENTER);
-        setValignment(mTechList        , VPos.CENTER);
+        setHalignment(mActionLabel , HPos.RIGHT);
+        setHalignment(mActionValue , HPos.CENTER);
+        setHalignment(mCodeLabel   , HPos.RIGHT);
+        setHalignment(mTechTextArea, HPos.CENTER);
+        setHalignment(mTechList    , HPos.CENTER);
+        setValignment(mTechTextArea, VPos.CENTER);
+        setValignment(mTechList    , VPos.CENTER);
 
         mTechTextArea.setEditable(false);
         mTechTextArea.setWrapText(true);
@@ -186,9 +194,9 @@ public class RenewableUpgradePane
         mTechList.setMaxSize(350, 100);
         mTechTextArea.setMaxSize(250, 75);
 
-        mTechLabel.setFont(new Font("Arial", 20));
-        mActionPointLabel.setFont(new Font("Arial", 16));
-        mActionPointValue.setFont(new Font("Arial", 16));
+        mTechLabel  .setFont(new Font("Arial", 20));
+        mActionLabel.setFont(new Font("Arial", 16));
+        mActionValue.setFont(new Font("Arial", 16));
 
         mCodeValue.setMinSize(0, 0);
 
@@ -200,6 +208,8 @@ public class RenewableUpgradePane
      */
     protected void update()
     {
-        mActionPointValue.setText("0");
+	mRenewSci.update();
+	mRenewEng.update();
+        mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 }

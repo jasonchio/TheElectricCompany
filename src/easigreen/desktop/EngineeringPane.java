@@ -62,10 +62,18 @@ public class EngineeringPane
     protected void init()
     {
         mActionButton = new Button("Apply");
-        mActionButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+
+	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+                                  {
+                                      public void handle(ActionEvent event)
+                                      {
+                                          mModel.getUpgradeManager().addNuclearEngineering  (mNucEng.getChange());
+                                          mModel.getUpgradeManager().addFossilEngineering   (mFosEng.getChange());
+                                          mModel.getUpgradeManager().addRenewableEngineering(mRenEng.getChange());
+                                          update();
+                                      }
+                                  });
+
         setHalignment(mActionButton, HPos.LEFT);
     }
 
@@ -89,7 +97,10 @@ public class EngineeringPane
      */
     protected void update()
     {
-        mActionValue.setText("0");
+	mNucEng.update();
+	mFosEng.update();
+	mRenEng.update();
+        mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 
     /**
