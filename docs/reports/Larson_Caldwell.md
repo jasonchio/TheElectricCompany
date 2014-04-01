@@ -61,6 +61,7 @@ Questions For the Class
     Should we listen to new requests from the sponsor even though the design has already been made?
 
 
+
 Mar 19 - Mar 26
 Accomplishments
 
@@ -72,3 +73,19 @@ Next Week's Goals
 
     Finish all coding ad fix all bugs.
     Finalize code for presenting.
+
+
+
+Mar 26 - Apr 2
+Accomplishments
+
+    9.8 hours
+        Connecting the three levels of organization.
+        Fixing a few bugs.
+        Adding the last buttons and action listeners to the GUI.
+
+Next Week's Goals
+
+    Finish the program.
+    Fill the code with comments and style corrections.
+    Create the final report.
