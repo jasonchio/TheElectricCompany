@@ -10,7 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.scene.control.ListView;
 
 /**
- * A content pane for Sim city
+ * List holder of technologies
  *
  * @version 0.2.1
  * @author Sam Graham
@@ -23,7 +23,7 @@ class ImplementedTechList
 
     /**
      * Basic Constructor
-     * @param pModel the model     
+     * @param pModel the model, a SimCity
      */
     public ImplementedTechList(SimCity pModel)
     {
@@ -31,22 +31,14 @@ class ImplementedTechList
     }
 
     /**
-     * Initializes the object
+     * Update the Technology List
      */
-    protected void initialize()
-    {
-        super.initialize();
-        ArrayList<String> temp = new ArrayList<String>();
-        
-        for (Technology tech : mModel.getUpgradeManager().getTechnologyManager().getImplemented())
-        {
-            temp.add(tech.getName());
-        }
-        mDataNames = temp;
-    }
-    
-    
     protected void update()
     {
+	mDataNames.clear();
+	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getImplemented())
+	{
+	    mDataNames.add(t.getName());
+	}
     }
 }

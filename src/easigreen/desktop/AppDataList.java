@@ -25,16 +25,16 @@ class AppDataList
      * Holds the model reference
      */
     protected SimCity mModel;
-    
-    /**
-     * Holds the list of observable strings
-     */
-    protected ObservableList<String> mData = FXCollections.observableArrayList();
-    
+
     /**
      * Holds a list of strings
      */
     protected List<String> mDataNames;
+
+    /**
+     * Holds the list of observable strings
+     */
+    protected ObservableList<String> mData;// = FXCollections.observableArrayList(mDataNames);    
 
     /**
      * Basic Constructor
@@ -52,6 +52,7 @@ class AppDataList
     protected void initialize()
     {
         mDataNames = new ArrayList<String>();
+	mData = FXCollections.observableArrayList(mDataNames);
         setItems(mData);
         setPrefSize(50, 50);
         update();

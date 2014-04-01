@@ -10,7 +10,7 @@ import javafx.collections.FXCollections;
 import javafx.scene.control.ListView;
 
 /**
- * List holder
+ * List holder of technologies
  *
  * @version 0.2.1
  * @author Sam Graham
@@ -23,7 +23,7 @@ class AvailableTechList
 
     /**
      * Basic Constructor
-     * @param pModel a SimCity reference
+     * @param pModel the model, a SimCity
      */
     public AvailableTechList(SimCity pModel)
     {
@@ -31,9 +31,14 @@ class AvailableTechList
     }
 
     /**
-     * Updates the class
+     * Update the Technology List
      */
     protected void update()
     {
+	mDataNames.clear();
+	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getAvailable())
+	{
+	    mDataNames.add(t.getName());
+	}
     }
 }

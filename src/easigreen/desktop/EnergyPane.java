@@ -186,9 +186,9 @@ public class EnergyPane
     protected void setChart()
     {
         mPieChartData = FXCollections.observableArrayList(
-                            new PieChart.Data("Nuclear", 34),
+                            new PieChart.Data("Nuclear"     , 34),
                             new PieChart.Data("Fossil Fuels", 33),
-                            new PieChart.Data("Renewable", 33));
+                            new PieChart.Data("Renewable"   , 33));
         mPieChart        = new PieChart(mPieChartData);
         //mPieChart.setTitle("Energy Distribution");
         mPieChart.setLabelsVisible(false);
@@ -201,18 +201,28 @@ public class EnergyPane
      */
     protected void update()
     {
-        mValues.get("Energy Demand"     ).setText("0");
-        mValues.get("Energy Supplied"   ).setText("0");
-        mValues.get("Nuclear Plants"    ).setText("0");
-        mValues.get("Nuclear Energy"    ).setText("0");
-        mValues.get("Fossil Fuel Plants").setText("0");
-        mValues.get("Fossil Fuel Energy").setText("0");
-        mValues.get("Renewable Plants"  ).setText("0");
-        mValues.get("Renewable Energy"  ).setText("0");
-        mValues.get(mOilLabel           ).setText("0");
+	double energySupplied  = mModel.getEnergyManager().getPower    ();
+	double nuclearEnergy   = mModel.getEnergyManager().getNuclear  ().getTotalPower();
+	double fossilEnergy    = mModel.getEnergyManager().getFossil   ().getTotalPower();
+	double renewableEnergy = mModel.getEnergyManager().getRenewable().getTotalPower();
+	double energyDemand    = mModel.getBaseManager  ().getDemand   ();
+	int    nuclearPlants   = mModel.getEnergyManager().getNuclear  ().getAmount();
+	int    fossilPlants    = mModel.getEnergyManager().getFossil   ().getAmount();
+	int    renewablePlants = mModel.getEnergyManager().getRenewable().getAmount();
+	double oil             = mModel.getEnergyManager().getOil      ().getConsumption();
 
-        mPieChartData.setAll(new PieChart.Data("Nuclear"     , 30),
-                             new PieChart.Data("Fossil Fuels", 65),
-                             new PieChart.Data("Renewable"   ,  5));
+        mValues.get("Energy Demand"     ).setText("" + energyDemand   );
+        mValues.get("Energy Supplied"   ).setText("" + energySupplied );
+        mValues.get("Nuclear Plants"    ).setText("" + nuclearPlants  );
+        mValues.get("Nuclear Energy"    ).setText("" + nuclearEnergy  );
+        mValues.get("Fossil Fuel Plants").setText("" + fossilPlants   );
+        mValues.get("Fossil Fuel Energy").setText("" + fossilEnergy   );
+        mValues.get("Renewable Plants"  ).setText("" + renewablePlants);
+        mValues.get("Renewable Energy"  ).setText("" + renewableEnergy);
+        mValues.get(mOilLabel           ).setText("" + oil);
+
+        mPieChartData.setAll(new PieChart.Data("Nuclear"     , (nuclearEnergy   / energySupplied)),
+                             new PieChart.Data("Fossil Fuels", (fossilEnergy    / energySupplied)),
+                             new PieChart.Data("Renewable"   , (renewableEnergy / energySupplied)));
     }
 }
