@@ -35,10 +35,10 @@ class AllTechList
      */
     protected void update()
     {
-	mDataNames.clear();
+	mData.clear();
 	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getAll())
 	{
-	    mDataNames.add(t.getName());
-	}
+	    mData.add(t.getName());
+	}	
     }
 }

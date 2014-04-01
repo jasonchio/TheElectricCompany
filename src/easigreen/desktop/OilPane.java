@@ -149,9 +149,9 @@ public class OilPane
         mSeries.getData().add(new XYChart.Data<Number, Number>(5, 11));
         mLineChart.getData().setAll(mSeries);
 
-        mValues.get("Oil Consumption"                 ).setText("0");
-        mValues.get("Total Oil Emissions"             ).setText("0");
-        mValues.get("Oil Security per Million Barrels").setText("0");
-        mValues.get("Total Oil Security"              ).setText("0");
+        mValues.get("Oil Consumption"                 ).setText("" + mModel.getEnergyManager().getOil().getConsumption());
+        mValues.get("Total Oil Emissions"             ).setText("" + mModel.getEnergyManager().getOil().getEmissions());
+        mValues.get("Oil Security per Million Barrels").setText("" + mModel.getEnergyManager().getOil().getSecurity());
+        mValues.get("Total Oil Security"              ).setText("" + mModel.getEnergyManager().getOil().getTotalSecurity());
     }
 }
