@@ -56,6 +56,11 @@ public abstract class PlantManager
 	return mPlant.getAmount();
     }
 
+    public void setAmount(int num)
+    {
+	mPlant.setAmount(num);
+    }
+
     public abstract double getCostBuild     ();
     public abstract double getCostRemove    ();
     public abstract double getApproval      ();
