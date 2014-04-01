@@ -16,4 +16,14 @@ public class WorldManager
      * The total amount of funds (in billions)
      */
     private double mBudget;
+
+    public double getBudget()
+    {
+	return mBudget;
+    }
+
+    public void setBudget(double pBudget)
+    {
+	mBudget = pBudget;
+    }
 }
