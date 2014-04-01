@@ -215,17 +215,17 @@ public class UpgradeManager
         return mOilSci;
     }
 
-    public int getNuclearEngenering()
+    public int getNuclearEngineering()
     {
         return mNuclearEng;
     }
 
-    public int getFossilEngenering()
+    public int getFossilEngineering()
     {
         return mFossilEng;
     }
 
-    public int getRenewableEngenering()
+    public int getRenewableEngineering()
     {
         return mRenewableEng;
     }
