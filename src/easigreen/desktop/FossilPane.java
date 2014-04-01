@@ -57,18 +57,34 @@ public class FossilPane
         EventHandler<ActionEvent> upgradeEvent = new PanelChangeEvent(mFossilUpgradesPane);
         mFossilUpgrades = new ImageButton("fossilfuelupgrade.png", upgradeEvent);
         mApply = new Button("Apply");
-        mApply.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
-        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        };
-        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
+
+	EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mModel.getEnergyManager().getFossil().setAmount(Integer.parseInt(mValues.get("Plants in Operation").getText()));
             }
         };
+
+        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mValues.get("Plants in Operation").setText("" +
+                                                           (Integer.parseInt(mValues.get("Plants in Operation").getText()) + 1));
+            }
+        };
+
+        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mValues.get("Plants in Operation").setText("" +
+                                                           (Integer.parseInt(mValues.get("Plants in Operation").getText()) - 1));
+            }
+        };
+
+        mApply.setOnAction(applyEvent);
         mUp   = new ImageButton("up.png"  , upEvent);
         mDown = new ImageButton("down.png", downEvent);
         mUp  .setPrefSize(0, 0);
@@ -108,12 +124,12 @@ public class FossilPane
         add(mLabels.get(mUpgradeName         ), 3, 12, 3, 1);
 
         add(mValues.get("Plants in Operation"), 4,  1, 1, 2);
-        add(mValues.get("Supply Provided"    ), 4,  4, 1, 1);
-        add(mValues.get("Cost"               ), 4,  5, 1, 1);
-        add(mValues.get("Public Approval"    ), 4,  6, 1, 1);
-        add(mValues.get("Emissions"          ), 4,  8, 1, 1);
-        add(mValues.get("Security"           ), 4,  9, 1, 1);
-        add(mValues.get("Profit"             ), 4, 10, 1, 1);
+        add(mValues.get("Supply Provided"    ), 5,  4, 1, 1);
+        add(mValues.get("Cost"               ), 5,  5, 1, 1);
+        add(mValues.get("Public Approval"    ), 5,  6, 1, 1);
+        add(mValues.get("Emissions"          ), 5,  8, 1, 1);
+        add(mValues.get("Security"           ), 5,  9, 1, 1);
+        add(mValues.get("Profit"             ), 5, 10, 1, 1);
     }
 
     protected void setLabels()
@@ -126,7 +142,7 @@ public class FossilPane
             Label newLabel2 = new Label();
             newLabel1.setFont(new Font("Arial", 20));
             newLabel2.setFont(new Font("Arial", 20));
-            setHalignment(newLabel2, HPos.RIGHT);
+            //setHalignment(newLabel2, HPos.RIGHT);
             mLabels.put(name, newLabel1);
             mValues.put(name, newLabel2);
         }
@@ -141,12 +157,12 @@ public class FossilPane
 
     protected void update()
     {
-        mValues.get("Plants in Operation").setText("0");
-        mValues.get("Supply Provided"    ).setText("0");
-        mValues.get("Cost"               ).setText("0");
-        mValues.get("Public Approval"    ).setText("0");
-        mValues.get("Emissions"          ).setText("0");
-        mValues.get("Security"           ).setText("0");
-        mValues.get("Profit"             ).setText("0");
+	mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getFossil().getAmount   ());
+        mValues.get("Supply Provided"    ).setText("" + mModel.getEnergyManager().getFossil().getPower    ());
+        mValues.get("Cost"               ).setText("" + mModel.getEnergyManager().getFossil().getCostBuild());
+        mValues.get("Public Approval"    ).setText("" + mModel.getEnergyManager().getFossil().getApproval ());
+        mValues.get("Emissions"          ).setText("" + mModel.getEnergyManager().getFossil().getEmissions());
+        mValues.get("Security"           ).setText("" + mModel.getEnergyManager().getFossil().getSecurity ());
+        mValues.get("Profit"             ).setText("" + mModel.getEnergyManager().getFossil().getProfit   ());
     }
 }
