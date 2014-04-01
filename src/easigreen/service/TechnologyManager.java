@@ -182,7 +182,7 @@ public class TechnologyManager
      *
      * @return available the available technologies
      */
-    public ArrayList<Technology> getAvalible()
+    public ArrayList<Technology> getAvailable()
     {
         return available;
     }
