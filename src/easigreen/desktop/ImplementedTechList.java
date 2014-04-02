@@ -20,6 +20,7 @@ import javafx.scene.control.ListView;
 class ImplementedTechList
     extends AppDataList
 {
+    ///////////////////////////// Constructor
 
     /**
      * Basic Constructor
@@ -30,15 +31,17 @@ class ImplementedTechList
         super(pModel);
     }
 
+    ///////////////////////////// Method
+    
     /**
      * Update the Technology List
      */
     protected void update()
     {
-	mData.clear();
-	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getImplemented())
-	{
-	    mData.add(t.getName() + t.getQuality());
-	}
+	   mData.clear();
+	   for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getImplemented())
+	   {
+	       mData.add(t.getName() + t.getQuality());
+	   }
     }
 }
