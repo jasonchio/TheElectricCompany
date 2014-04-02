@@ -64,3 +64,14 @@ Next Weeks Goals
 
     Finish Model
     Integrate model and user interface
+
+Mar 26 - April 1
+Accomplishments
+
+    19.5 Hours
+       Worked on Model and Integrating model with user interface
+       
+Next Weeks Goals
+
+    (Tomorrow) Finish Integration and polish Project
+    Prepare presentation
