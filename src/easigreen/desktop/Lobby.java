@@ -14,34 +14,55 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
+ * Lobby
  *
+ * @version 0.1.3
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 public class Lobby
     extends UpgradeItem
 {
-
-    protected String getTitle()
-    {
-        return new String("Lobby");
-    }
-
-    protected String[] getTips()
-    {
-        return new String[] {"+Funds", "-Approval"};
-    }
+    ///////////////////////////// Constructor
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public Lobby(SimCity pModel)
     {
         super(pModel);
     }
 
+    ///////////////////////////// Methods
+    
+    /**
+     * Updater
+     */
     protected void update()
     {
-	mChange = 0;
+	    mChange = 0;
         mValue.setText("" + mModel.getUpgradeManager().getLobby());
+    }
+    
+    ///////////////////////////// Getters
+
+    /**
+     * Gets the title
+     * @returnt String the title
+     */
+    protected String getTitle()
+    {
+        return new String("Lobby");
+    }
+
+    /**
+     * Gets the Tips
+     * @returnt String array of tips
+     */
+    protected String[] getTips()
+    {
+        return new String[] {"+Funds", "-Approval"};
     }
 }

@@ -20,7 +20,12 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * One of the content panes for SimCity
+ *
+ * @version 0.1.3
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 public class LongTermPane
     extends ContentPane
