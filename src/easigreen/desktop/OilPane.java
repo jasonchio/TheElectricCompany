@@ -20,44 +20,87 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * One of the content panes for SimCity
+ *
+ * @version 0.1.3
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 public class OilPane
     extends ContentPane
 {
+    ///////////////////////////// Variables
+
+    /**
+     * Content Pane for upgrades
+     */
     private ContentPane mOilUpgradesPane;
+    
+    /**
+     * Button for upgrades
+     */
     private Button      mOilUpgrades;
 
+    /**
+     * Label Names
+     */
     protected static String[] mLabelNames = new String[] {"Oil Consumption", "Total Oil Emissions",
             "Oil Security per Million Barrels",
             "Total Oil Security"
                                                          };
 
+    /**
+     * Map for the labels
+     */
     protected Map<String, Label> mLabels;
+    
+    /**
+     * Map for the labels for the upgrades
+     */
     protected Map<String, Label> mValues;
 
+    /**
+     * X Axis
+     */
     protected NumberAxis mXAxis;
+    
+    /**
+     * Y Axis
+     */
     protected NumberAxis mYAxis;
+    
+    /**
+     * Line Chart
+     */
     protected LineChart<Number, Number> mLineChart;
+    
+    /**
+     * Series for the XY Chart
+     */
     protected XYChart.Series<Number, Number> mSeries;
 
+    /**
+     * String for the Label
+     */
     protected static String mUpgradeLabelName = new String("Oil Upgrades");
 
-    protected int[] getColumns()
+    ///////////////////////////// Constructor
+    
+    /**
+     * Constructor
+     * @param pModel the current SimCity Model
+     */
+    public OilPane(SimCity pModel)
     {
-        return new int[] {10, 34, 4, 26, 16, 10};
+        super(pModel);
     }
+    
+    /////////////////////////////  Methods
 
-    protected int[] getRows()
-    {
-        return new int[] {12, 5, 29, 2, 5, 2, 5, 2, 5, 2, 28, 3};
-    }
-
-    protected String getTitle()
-    {
-        return "Oil";
-    }
-
+    /**
+     * Initializer
+     */
     protected void init()
     {
         mOilUpgradesPane = new OilUpgradePane(mModel);
@@ -65,19 +108,12 @@ public class OilPane
         mOilUpgrades = new ImageButton("oilupgrade.png", upgradeEvent);
         setHalignment(mOilUpgrades, HPos.RIGHT);
     }
-
+    
     /**
-     * Constructor
-     * @param SimCity pModel the current sim city Model
+     * Setup
      */
-    public OilPane(SimCity pModel)
-    {
-        super(pModel);
-    }
-
     protected void setup()
     {
-        //setGridLinesVisible(true);
         setChart();
         setLabels();
         add(getTitleLabel(), 0,  0, 6, 1);
@@ -97,6 +133,9 @@ public class OilPane
     }
 
 
+    /**
+     * Setup Chart
+     */
     protected void setChart()
     {
         mXAxis = new NumberAxis();
@@ -105,8 +144,6 @@ public class OilPane
         mYAxis = new NumberAxis();
         mYAxis.setMinorTickVisible(false);
         mYAxis.setTickLabelsVisible(false);
-        //mXAxis.setLabel("Round");
-        //mYAxis.setLabel("Oil Consumption");
         mLineChart = new LineChart<Number, Number>(mXAxis, mYAxis);
         mLineChart.setPrefSize(50, 50);
         mLineChart.setCreateSymbols(false);
@@ -118,6 +155,9 @@ public class OilPane
     }
 
 
+    /**
+     * Set the Labels
+     */
     protected void setLabels()
     {
         mLabels = new HashMap<String, Label>();
@@ -137,6 +177,9 @@ public class OilPane
         update();
     }
 
+    /**
+     * Updater
+     */
     @SuppressWarnings("unchecked")
     protected void update()
     {
@@ -153,5 +196,34 @@ public class OilPane
         mValues.get("Total Oil Emissions"             ).setText("" + mModel.getEnergyManager().getOil().getEmissions());
         mValues.get("Oil Security per Million Barrels").setText("" + mModel.getEnergyManager().getOil().getSecurity());
         mValues.get("Total Oil Security"              ).setText("" + mModel.getEnergyManager().getOil().getTotalSecurity());
+    }
+    
+    ///////////////////////////// Getters
+    
+    /**
+     * Gets the Columns
+     * @return integer array of elements
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {10, 34, 4, 26, 16, 10};
+    }
+
+    /**
+     * Gets the Rows
+     * @return integer array of elements
+     */
+    protected int[] getRows()
+    {
+        return new int[] {12, 5, 29, 2, 5, 2, 5, 2, 5, 2, 28, 3};
+    }
+
+    /**
+     * Gets the title
+     * @return the title
+     */
+    protected String getTitle()
+    {
+        return "Oil";
     }
 }
