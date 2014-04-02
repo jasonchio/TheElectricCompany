@@ -22,12 +22,24 @@ import javafx.stage.*;
 
 /**
  * The main Graphical User Interface for the "Sim City" Application
+ *
+ * @version 0.2.3
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 public class GUIBackup
     extends Application
 {
+    ///////////////////////////// Constants
+   
+    /**
+     * The Name of the Game
+     */
     private static final String GAME_NAME = "Sargeant City";
 
+    ///////////////////////////// Methods
+    
     /**
      * Holds the singleton instance.
      */
@@ -78,7 +90,10 @@ public class GUIBackup
     */
     private NavPane goalNavigation;
 
+    ///////////////////////////// Constructor
+    
     /**
+     * Constructor
      * Creates a new GUI object.
      */
     public GUIBackup()
@@ -95,6 +110,8 @@ public class GUIBackup
         }
     }
 
+    ///////////////////////////// Methods
+    
     /**
      * Initializes the GUI.
      *
