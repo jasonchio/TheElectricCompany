@@ -92,10 +92,16 @@ public class OilUpgradePane
                                       }
                                   });
 
-        mCodeButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+        mCodeButton.setOnAction(new EventHandler<ActionEvent>()
+				{
+				    public void handle(ActionEvent event)
+				    {
+					mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
+                                        mCodeValue.setText("");
+                                        update();
+				    }
+				});
+
         setHalignment(mCodeButton, HPos.CENTER);
     }
 
@@ -138,6 +144,7 @@ public class OilUpgradePane
 
     protected void update()
     {
+	mTechList.update();
 	mOilSci  .update();
 	mOilDrill.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());

@@ -38,5 +38,10 @@ class FossilTechList
      */
     protected void update()
     {
+	mData.clear();
+	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getFossil())
+	    {
+		mData.add(t.getName());
+	    }
     }
 }

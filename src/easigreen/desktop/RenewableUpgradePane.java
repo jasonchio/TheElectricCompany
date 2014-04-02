@@ -155,10 +155,15 @@ public class RenewableUpgradePane
                                       }
                                   });
 
-        mCodeButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+        mCodeButton.setOnAction(new EventHandler<ActionEvent>()
+				{
+				    public void handle(ActionEvent event)
+				    {
+					mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
+                                        mCodeValue.setText("");
+                                        update();
+				    }
+				});
 
         setHalignment(mCodeButton, HPos.CENTER);
     }
@@ -208,6 +213,7 @@ public class RenewableUpgradePane
      */
     protected void update()
     {
+	mTechList.update();
 	mRenewSci.update();
 	mRenewEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());

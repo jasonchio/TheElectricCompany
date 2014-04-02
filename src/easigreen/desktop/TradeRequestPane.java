@@ -30,6 +30,7 @@ public class TradeRequestPane
      */
     public void update()
     {
+	mTechs.update();
     }
     
     /**
@@ -37,7 +38,7 @@ public class TradeRequestPane
      */
     protected void init()
     {
-        mTechs           = new AppDataList(mModel);
+        mTechs           = new AllTechList(mModel);
         mInsert          = new TextArea();
         mInsert.setMinSize(0, 0);
         mInsert.setWrapText(true);

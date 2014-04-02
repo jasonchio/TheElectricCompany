@@ -20,5 +20,10 @@ class OilTechList
 
     protected void update()
     {
+	mData.clear();
+	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getOil())
+	    {
+		mData.add(t.getName());
+	    }
     }
 }

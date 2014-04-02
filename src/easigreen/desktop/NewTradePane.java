@@ -88,6 +88,15 @@ public class NewTradePane
             }
         });
     }
+
+    /**
+     * Updates the pane
+     */
+    protected void update()
+    {
+	mOffer.update();
+	mRequest.update();
+    }
     
     /**
      * Setup

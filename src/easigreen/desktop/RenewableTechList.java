@@ -31,5 +31,10 @@ class RenewableTechList
      */
     protected void update()
     {
+	mData.clear();
+	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getRenewable())
+	    {
+		mData.add(t.getName());
+	    }
     }
 }

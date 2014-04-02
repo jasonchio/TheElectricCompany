@@ -135,10 +135,15 @@ public class FossilUpgradePane
                                       }
                                   });
 
-            mCodeButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+            mCodeButton.setOnAction(new EventHandler<ActionEvent>()
+				    {
+					public void handle(ActionEvent event)
+					{
+					    mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
+					    mCodeValue.setText("");
+					    update();
+					}
+				    });
 
         setHalignment(mCodeButton, HPos.CENTER);
     }
@@ -188,8 +193,9 @@ public class FossilUpgradePane
      */
     protected void update()
     {
-	    mFossilSci.update();
-	    mFossilEng.update();
+	mTechList.update();
+	mFossilSci.update();
+	mFossilEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
     
