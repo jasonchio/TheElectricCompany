@@ -70,6 +70,14 @@ public class NuclearPane
      */
     protected Map<String, Label> mValues;
 
+
+
+    private int newPlants;
+
+    private int current = mModel.getEnergyManager().getNuclear().getAmount();
+
+
+
     /**
      * Returns an array of columns
      * @return int array of columns     
@@ -112,22 +120,25 @@ public class NuclearPane
 	{
 	    public void handle(ActionEvent event)
 	    {
-                int current = mModel.getEnergyManager().getNuclear().getAmount();
-                int newAmount = Integer.parseInt(mValues.get("Plants in Operation").getText());
+                //current = mModel.getEnergyManager().getNuclear().getAmount();
+                int totalAmount = Integer.parseInt(mValues.get("Plants in Operation").getText());
 
-                if (current < newAmount)
+                if (newPlants > 0)
 	        {
-                    mModel.getWorldManager().setBudget(mModel.getWorldManager().getBudget() 
-						       - mModel.getEnergyManager().getNuclear().getCostBuild() * newAmount);
+                    mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
+						         - mModel.getEnergyManager().getNuclear().getCostBuild() * newPlants);
 		}
 
-		else if (current > newAmount)
+		else if (newPlants < 0)
 		{
-			mModel.getWorldManager().setBudget(mModel.getWorldManager().getBudget() 
-							   - mModel.getEnergyManager().getNuclear().getCostRemove() * newAmount);
+		    mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
+			       			         + mModel.getEnergyManager().getNuclear().getCostRemove() * newPlants);
 		}
 
 	        mModel.getEnergyManager().getNuclear().setAmount(Integer.parseInt(mValues.get("Plants in Operation").getText()));
+
+		totalAmount += newPlants;
+		newPlants = 0;
 	    }
 	};
 
@@ -135,6 +146,7 @@ public class NuclearPane
 	{
 	    public void handle(ActionEvent event)
 	    {
+		newPlants++;
 		mValues.get("Plants in Operation").setText("" +
 							   (Integer.parseInt(mValues.get("Plants in Operation").getText()) + 1));
 	    }
@@ -146,6 +158,7 @@ public class NuclearPane
 	    {
                 if (Integer.parseInt(mValues.get("Plants in Operation").getText()) != 0)
 		{
+		   newPlants--;
 		   mValues.get("Plants in Operation").setText("" +
 							      (Integer.parseInt(mValues.get("Plants in Operation").getText()) - 1));
 		}
