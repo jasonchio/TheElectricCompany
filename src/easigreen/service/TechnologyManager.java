@@ -162,6 +162,25 @@ public class TechnologyManager
     }
 
     /**
+     * Returns true if the technology is implemented
+     * @param pTech the technology to check
+     * @return isTrue whether or not the technology is implemented
+     */
+    public boolean isImplemented(Technology pTech)
+    {
+	boolean isTrue = false;
+	for (Technology t : mImplemented)
+	{
+	    if (t == pTech)
+	    {
+		isTrue = true;
+		break;
+	    }
+	}
+	return isTrue;
+    }
+
+    /**
      * Sets the available technologies
      *
      * @param pAvailable the new available technologies
@@ -186,8 +205,8 @@ public class TechnologyManager
     }
 
     /**
-     *
-     *
+     * Adds a technology from a code
+     * @param pCode String holding the code for the technology
      */
     public void addTechnology(String pCode)
     {
