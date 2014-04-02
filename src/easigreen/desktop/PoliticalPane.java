@@ -85,9 +85,9 @@ public class PoliticalPane
 
     protected void update()
     {
-        mValues.get("Funds"           ).setText("0");
-        mValues.get("Market Shares"   ).setText("0");
-        mValues.get("Emission Credits").setText("0");
-        mValues.get("Action Points"   ).setText("0");
+        mValues.get("Funds"           ).setText("" + mModel.getResourceManager().getFunds());
+        mValues.get("Market Shares"   ).setText("" + mModel.getResourceManager().getMarketShares());
+        mValues.get("Emission Credits").setText("" + mModel.getResourceManager().getEmitCredits());
+        mValues.get("Action Points"   ).setText("" + mModel.getResourceManager().getActionPoints());
     }
 }
