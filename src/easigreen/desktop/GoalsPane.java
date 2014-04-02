@@ -152,26 +152,48 @@ public class GoalsPane
      */
     protected void update()
     {
-        mValues.get("Power Demand"    ).setText("0");
-        mValues.get("Power Supply"    ).setText("0");
-        mValues.get("Budget"          ).setText("0");
-        mValues.get("Total Spent"     ).setText("0");
-        mValues.get("Minimum Approval").setText("0");
-        mValues.get("Public Approval" ).setText("0");
+	double powerDemand = mModel.getResourceManager().getDemand();
+	double powerSupply = mModel.getEnergyManager  ().getPower ();
+	double budget      = mModel.getResourceManager().getBudget();
+	double totalSpent  = budget - mModel.getResourceManager().getFunds();
+	double minApproval = mModel.getGoalManager    ().getTargetApproval();
+	double actApproval = (int)(mModel.getEnergyManager().getApproval() * 100);
+	double targetEmit  = mModel.getGoalManager    ().getTargetEmissions();
+	double actualEmit  = mModel.getEnergyManager  ().getEmissions();
+	double targetSec   = mModel.getGoalManager    ().getTargetSecurity();
+	double actualSec   = (int)mModel.getEnergyManager  ().getSecurity();
+	double targetProf  = mModel.getGoalManager    ().getTargetProfit();
+	double actualProf  = mModel.getEnergyManager  ().getProfit();
 
-        mValues.get("Target Emissions").setText("0");
-        mValues.get("Total Emissions" ).setText("0");
-        mValues.get("Target Security" ).setText("0");
-        mValues.get("Total Security"  ).setText("0");
-        mValues.get("Target Profit"   ).setText("0");
-        mValues.get("Total Profit"    ).setText("0");
+        mValues.get("Power Demand"    ).setText("" + powerDemand);
+        mValues.get("Power Supply"    ).setText("" + powerSupply);
+        mValues.get("Budget"          ).setText("" + budget     );
+        mValues.get("Total Spent"     ).setText("" + totalSpent );
+        mValues.get("Minimum Approval").setText("" + minApproval);
+        mValues.get("Public Approval" ).setText("" + actApproval);
 
-        mImages.get("Power Demand"    ).setImage("bad.png" );
-        mImages.get("Budget"          ).setImage("good.png");
-        mImages.get("Minimum Approval").setImage("good.png");
-        mImages.get("Target Emissions").setImage("good.png");
-        mImages.get("Target Security" ).setImage("bad.png" );
-        mImages.get("Target Profit"   ).setImage("bad.png" );
+        mValues.get("Target Emissions").setText("" + targetEmit );
+        mValues.get("Total Emissions" ).setText("" + actualEmit );
+        mValues.get("Target Security" ).setText("" + targetSec  );
+        mValues.get("Total Security"  ).setText("" + actualSec  );
+        mValues.get("Target Profit"   ).setText("" + targetProf );
+        mValues.get("Total Profit"    ).setText("" + actualProf );
+
+	String good = "good.png";
+	String bad  = "bad.png";
+	String imageName = "";
+	imageName = (powerSupply >= powerDemand) ? good : bad;
+        mImages.get("Power Demand"    ).setImage(imageName);
+	imageName = (budget >= totalSpent) ? good : bad;
+        mImages.get("Budget"          ).setImage(imageName);
+	imageName = (actApproval >= minApproval) ? good : bad;
+        mImages.get("Minimum Approval").setImage(imageName);
+        imageName = (targetEmit >= actualEmit) ? good : bad;
+	mImages.get("Target Emissions").setImage(imageName);
+        imageName = (actualSec >= targetSec) ? good : bad;
+	mImages.get("Target Security" ).setImage(imageName);
+        imageName = (actualProf >= targetProf) ? good : bad;
+	mImages.get("Target Profit"   ).setImage(imageName);
     }
     
     ///////////////////////////// Getters
