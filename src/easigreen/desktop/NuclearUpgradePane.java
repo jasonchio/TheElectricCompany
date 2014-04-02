@@ -16,38 +16,73 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Nuclear Upgrade Pane
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class NuclearUpgradePane
     extends ContentPane
 {
-    protected int[] getColumns()
-    {
-        return new int[] {10, 10, 10, 10, 20, 10, 10, 10, 10};
-    }
-
-    protected int[] getRows()
-    {
-        return new int[] {10, 16, 16, 8, 8, 20, 15, 10, 2};
-    }
-
-    protected String getTitle()
-    {
-        return "Nuclear Upgrades";
-    }
-
+    /////////////////////////// Variables
+    
+    /**
+     * Nuclear Science Reference
+     */
     protected NuclearScience     mNucSci;
+    
+    /**
+     * Nuclear Engineering Reference
+     */
     protected NuclearEngineering mNucEng;
+    
+    /**
+     * Label for the Button
+     */
     protected Label              mActionLabel;
+    
+    /**
+     * Value for the button
+     */
     protected Label              mActionValue;
+    
+    /**
+     * Button for the Pane
+     */
     protected Button             mActionButton;
+    
+    /**
+     * Label for the Technology Class
+     */
     protected Label              mTechLabel;
+    
+    /**
+     * Nuclear Technology List
+     */
     protected NuclearTechList    mTechList;
+    
+    /**
+     * Text Area
+     */
     protected TextArea           mTechTextArea;
+    
+    /**
+     * Label for the Code
+     */
     protected Label              mCodeLabel;
+    
+    /**
+     * TextField Code Value
+     */
     protected TextField          mCodeValue;
-    protected Button             mCodeButton;
-
+    
+    /**
+     * Button for the Class
+     */
+    protected Button             mCodeButton;    
+    
+    
+    ////////////////////////////////// Constructor
+    
     /**
      * Constructor
      * @param pModel the current SimCity Model
@@ -56,11 +91,42 @@ public class NuclearUpgradePane
     {
         super(pModel);
     }
+    
+    
+    ///////////////////////////// Methods
+    
+    /**
+     * Gets the Columns
+     * @return int array of Columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {10, 10, 10, 10, 20, 10, 10, 10, 10};
+    }
 
+    /**
+     * Gets the Rows
+     * @return int array of Rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {10, 16, 16, 8, 8, 20, 15, 10, 2};
+    }
+
+    /**
+     * Gets the title
+     * @return String the title
+     */
+    protected String getTitle()
+    {
+        return "Nuclear Upgrades";
+    }    
+
+    /**
+     * Set-up the Current Components
+     */
     protected void setup()
     {
-        //setGridLinesVisible(true);
-
         initializeComponents();
 
         add(getTitleLabel(), 0, 0, 9, 1);
@@ -77,6 +143,9 @@ public class NuclearUpgradePane
         add(mCodeButton    , 5, 7, 2, 1);
     }
 
+    /**
+     * Initializer 
+     */
     protected void init()
     {
         mActionButton = new Button("Apply");
@@ -99,6 +168,9 @@ public class NuclearUpgradePane
         setHalignment(mCodeButton, HPos.CENTER);
     }
 
+    /**
+     * Initializer of Components
+     */
     protected void initializeComponents()
     {
         mNucSci       = new NuclearScience    (mModel);
@@ -136,6 +208,9 @@ public class NuclearUpgradePane
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
 	mNucSci.update();

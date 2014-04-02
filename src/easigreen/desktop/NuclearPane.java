@@ -23,6 +23,8 @@ import javafx.stage.*;
 public class NuclearPane
     extends ContentPane
 {
+    //////////////////////// Variables
+
     /**
      * Holds the pane for the upgrades
      */ 
@@ -73,9 +75,14 @@ public class NuclearPane
     protected Map<String, Label> mValues;
 
 
-
+    /**
+     * New Plants
+     */
     private int newPlants;
 
+    /**
+     * Current Amount
+     */
     private int current = mModel.getEnergyManager().getNuclear().getAmount();
 
 
@@ -118,53 +125,53 @@ public class NuclearPane
         mApply = new Button("Apply");
 
 
-	EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
-	{
-	    public void handle(ActionEvent event)
-	    {
-                //current = mModel.getEnergyManager().getNuclear().getAmount();
-                int totalAmount = Integer.parseInt(mValues.get("Plants in Operation").getText());
+	   EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
+	   {
+	       public void handle(ActionEvent event)
+	       {
+               //current = mModel.getEnergyManager().getNuclear().getAmount();
+               int totalAmount = Integer.parseInt(mValues.get("Plants in Operation").getText());
+       
+               if (newPlants > 0)
+	           {
+                  mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
+	   					         - mModel.getEnergyManager().getNuclear().getCostBuild() * newPlants);
+	   	       }
+       
+	   	       else if (newPlants < 0)
+	   	       {
+	   	          mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
+	   		       			         + mModel.getEnergyManager().getNuclear().getCostRemove() * newPlants);
+	   	       }
+       
+	           mModel.getEnergyManager().getNuclear().setAmount(Integer.parseInt(mValues.get("Plants in Operation").getText()));
+       
+	   	       totalAmount += newPlants;
+	   	       newPlants = 0;
+	       }
+	   };
 
-                if (newPlants > 0)
-	        {
-                    mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
-						         - mModel.getEnergyManager().getNuclear().getCostBuild() * newPlants);
-		}
-
-		else if (newPlants < 0)
-		{
-		    mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
-			       			         + mModel.getEnergyManager().getNuclear().getCostRemove() * newPlants);
-		}
-
-	        mModel.getEnergyManager().getNuclear().setAmount(Integer.parseInt(mValues.get("Plants in Operation").getText()));
-
-		totalAmount += newPlants;
-		newPlants = 0;
-	    }
-	};
-
-        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
-	{
-	    public void handle(ActionEvent event)
-	    {
-		newPlants++;
-		mValues.get("Plants in Operation").setText("" +
-							   (Integer.parseInt(mValues.get("Plants in Operation").getText()) + 1));
-	    }
-        };
+       EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
+	   {
+	       public void handle(ActionEvent event)
+	       {
+		      newPlants++;
+		      mValues.get("Plants in Operation").setText("" +
+		   					   (Integer.parseInt(mValues.get("Plants in Operation").getText()) + 1));
+	       }
+           };
 
         EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
-	{
-	    public void handle(ActionEvent event)
 	    {
+	        public void handle(ActionEvent event)
+	        {
                 if (Integer.parseInt(mValues.get("Plants in Operation").getText()) != 0)
-		{
-		   newPlants--;
-		   mValues.get("Plants in Operation").setText("" +
-							      (Integer.parseInt(mValues.get("Plants in Operation").getText()) - 1));
-		}
-	    }
+		        {
+		           newPlants--;
+		           mValues.get("Plants in Operation").setText("" +
+		        					      (Integer.parseInt(mValues.get("Plants in Operation").getText()) - 1));
+		        }
+	        }
         };
 
         mApply.setOnAction(applyEvent);
@@ -180,7 +187,7 @@ public class NuclearPane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public NuclearPane(SimCity pModel)
     {
@@ -192,7 +199,6 @@ public class NuclearPane
      */
     protected void setup()
     {
-        //setGridLinesVisible(true);
         setLabels();
         add(getTitleLabel() , 0, 0 , 7, 1);
         add(mApply          , 0, 3 , 7, 1);
@@ -231,7 +237,6 @@ public class NuclearPane
             Label newLabel2 = new Label();
             newLabel1.setFont(new Font("Arial", 20));
             newLabel2.setFont(new Font("Arial", 20));
-            //setHalignment(newLabel2, HPos.RIGHT);
             mLabels.put(name, newLabel1);
             mValues.put(name, newLabel2);
         }

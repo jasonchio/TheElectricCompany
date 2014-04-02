@@ -13,6 +13,7 @@ import javafx.scene.*;
 import javafx.scene.image.*;
 import javafx.scene.text.*;
 
+
 /**
  * Nuclear Engineering provides specific behaviour for 
  * @version 0.2.0
@@ -53,7 +54,7 @@ public class NuclearEngineering
      */
     protected void update()
     {
-	mChange = 0;
+	    mChange = 0;
         mValue.setText("" + mModel.getUpgradeManager().getNuclearEngineering());
     }
 }

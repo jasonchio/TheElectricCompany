@@ -14,17 +14,26 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
- *
+ * Nuclear Science
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class NuclearScience
     extends UpgradeItem
 {
-
+    /**
+     * Get Title
+     * @return String the Title
+     */
     protected String getTitle()
     {
         return new String("Nuclear Science");
     }
 
+    /**
+     * Get Tips
+     * @return String array
+     */
     protected String[] getTips()
     {
         return new String[] {"+Nuclear Security", "+Nuclear Approval"};
@@ -32,16 +41,19 @@ public class NuclearScience
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public NuclearScience(SimCity pModel)
     {
         super(pModel);
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
-	mChange = 0;
+	    mChange = 0;
         mValue.setText("" + mModel.getUpgradeManager().getNuclearScience());
     }
 }
