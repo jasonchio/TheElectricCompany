@@ -16,6 +16,7 @@ public class PanelChangeEvent
 
     public void handle(ActionEvent event)
     {
+	mPane.update();
         GUI.getInstance().getWindow().setCenter(mPane);
     }
 }

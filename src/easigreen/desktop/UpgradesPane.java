@@ -129,16 +129,16 @@ public class UpgradesPane
 
     protected void update()
     {
-        mValues.get("Nuclear Science"        ).setText("0");
-        mValues.get("Fossil Fuel Science"    ).setText("0");
-        mValues.get("Renewable Science"      ).setText("0");
-        mValues.get("Oil Science"            ).setText("0");
-        mValues.get("Nuclear Engineering"    ).setText("0");
-        mValues.get("Fossil Fuel Engineering").setText("0");
-        mValues.get("Renewable Engineering"  ).setText("0");
-        mValues.get("Price Change"           ).setText("0");
-        mValues.get("Lobby"                  ).setText("0");
-        mValues.get("Oil Drilling"           ).setText("0");
+        mValues.get("Nuclear Science"        ).setText("" + mModel.getUpgradeManager().getNuclearScience());
+        mValues.get("Fossil Fuel Science"    ).setText("" + mModel.getUpgradeManager().getFossilScience());
+        mValues.get("Renewable Science"      ).setText("" + mModel.getUpgradeManager().getRenewableScience());
+        mValues.get("Oil Science"            ).setText("" + mModel.getUpgradeManager().getOilScience());
+        mValues.get("Nuclear Engineering"    ).setText("" + mModel.getUpgradeManager().getNuclearEngineering());
+        mValues.get("Fossil Fuel Engineering").setText("" + mModel.getUpgradeManager().getFossilEngineering());
+        mValues.get("Renewable Engineering"  ).setText("" + mModel.getUpgradeManager().getRenewableEngineering());
+        mValues.get("Price Change"           ).setText("" + mModel.getUpgradeManager().getPriceChange());
+        mValues.get("Lobby"                  ).setText("" + mModel.getUpgradeManager().getLobby());
+        mValues.get("Oil Drilling"           ).setText("" + mModel.getUpgradeManager().getOilDrilling());
         mTechList.update();
     }
 }

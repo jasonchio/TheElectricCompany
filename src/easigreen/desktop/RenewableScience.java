@@ -40,27 +40,6 @@ public class RenewableScience
     }
 
     /**
-     * Initial set up of graphical objects
-     */
-    protected void init()
-    {
-        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        };
-        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        };
-        mUp   = new ImageButton("up.png"  , upEvent);
-        mDown = new ImageButton("down.png", downEvent);
-        mUp  .setPrefSize(0, 0);
-        mDown.setPrefSize(0, 0);
-        setHalignment(mUp  , HPos.CENTER);
-        setHalignment(mDown, HPos.CENTER);
-    }
-
-    /**
      * Constructor
      * @param SimCity pModel the current sim city Model
      */
@@ -74,6 +53,7 @@ public class RenewableScience
      */
     protected void update()
     {
-        mValue.setText("0");
+	mChange = 0;
+        mValue.setText("" + mModel.getUpgradeManager().getRenewableScience());
     }
 }

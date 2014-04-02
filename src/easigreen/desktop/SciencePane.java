@@ -64,10 +64,19 @@ public class SciencePane
     protected void init()
     {
         mActionButton = new Button("Apply");
-        mActionButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+
+        mActionButton.setOnAction(new EventHandler<ActionEvent>()
+				  {
+				      public void handle(ActionEvent event)
+				      {
+					  mModel.getUpgradeManager().addNuclearScience  (mNucSci.getChange());
+					  mModel.getUpgradeManager().addFossilScience   (mFosSci.getChange());
+					  mModel.getUpgradeManager().addRenewableScience(mRenSci.getChange());
+					  mModel.getUpgradeManager().addOilScience      (mOilSci.getChange());
+					  update();
+				      }
+				  });
+
         setHalignment(mActionButton, HPos.LEFT);
     }
 
@@ -92,7 +101,11 @@ public class SciencePane
      */
     protected void update()
     {
-        mActionValue.setText("0");
+	mNucSci.update();
+	mFosSci.update();
+	mRenSci.update();
+	mOilSci.update();
+        mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 
     /**

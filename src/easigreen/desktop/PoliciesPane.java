@@ -33,10 +33,18 @@ public class PoliciesPane
     protected void init()
     {
         mActionButton = new Button("Apply");
-        mActionButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+	
+	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+                                  {
+                                      public void handle(ActionEvent event)
+                                      {
+                                          mModel.getUpgradeManager().addLobby      (mLobby.getChange());
+                                          mModel.getUpgradeManager().addOilDrilling(mOil  .getChange());
+                                          mModel.getUpgradeManager().addPriceChange(mPrice.getChange());
+                                          update();
+                                      }
+                                  });
+
         setHalignment(mActionButton, HPos.LEFT);
     }
 
@@ -54,7 +62,10 @@ public class PoliciesPane
 
     protected void update()
     {
-        mActionValue.setText("0");
+	mPrice.update();
+	mLobby.update();
+	mOil  .update();
+        mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 
     protected int[] getColumns()

@@ -21,10 +21,6 @@ import javafx.scene.text.*;
 public class UpgradeItem
     extends ContentComponent
 {
-    /**
-     * Holds a reference to the model
-     */
-    protected SimCity mModel;
 
     /**
      * Gets the columns
@@ -88,18 +84,33 @@ public class UpgradeItem
     protected Button mDown;
 
     /**
-     * Initializer
+     * Holds the suggested change
+     */
+    protected int mChange;
+
+    /**
+     * Initializes the various action handlers
      */
     protected void init()
     {
-        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
+        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mValue.setText("" + (Integer.parseInt(mValue.getText()) + 1));
+                mChange += 1;
             }
         };
-        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
+
+        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mValue.setText("" + (Integer.parseInt(mValue.getText()) - 1));
+                mChange -= 1;
             }
         };
+
         mUp   = new ImageButton("up.png"  , upEvent);
         mDown = new ImageButton("down.png", downEvent);
         mUp  .setPrefSize(0, 0);
@@ -107,6 +118,7 @@ public class UpgradeItem
         setHalignment(mUp  , HPos.CENTER);
         setHalignment(mDown, HPos.CENTER);
     }
+
 
     /**
      * Constructor
@@ -118,10 +130,27 @@ public class UpgradeItem
     }
 
     /**
+     * @return int change to the upgrades
+     */
+    public int getChange()
+    {
+	return mChange;
+    }
+
+    /**
+     * @param int set Change
+     */
+    public void setChange(int pChange)
+    {
+	mChange = pChange;
+    }
+
+    /**
      * Set up the items
      */
     protected void setup()
     {
+	mChange = 0;
         setLabels();
         add(mTitle, 0, 0, 3, 1);
 
