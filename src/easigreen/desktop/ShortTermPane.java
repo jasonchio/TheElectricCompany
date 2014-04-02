@@ -20,43 +20,79 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * Content Pane for Renewable Upgrades
+ * Short Term Pane
  * @version 0.2.0
  * @author Haru McClellan
  */
 public class ShortTermPane
     extends ContentPane
 {
+    ///////////////////////////////////// Variables
+   
+    /**
+     * X Axis Variable for Supply
+     */
     protected CategoryAxis mSupplyXAxis;
+    
+    /**
+     * Y Axis Variable for Supply
+     */
     protected NumberAxis   mSupplyYAxis;
+    
+    /**
+     * X Axis Variable for Budget
+     */
     protected CategoryAxis mBudgetXAxis;
+    
+    /**
+     * Y Axis Variable for Budget
+     */
     protected NumberAxis   mBudgetYAxis;
+    
+    /**
+     * X Axis Variable for X axis
+     */
     protected CategoryAxis mApprovalXAxis;
+    
+    /**
+     * Y Axis Variable for Approval
+     */
     protected NumberAxis   mApprovalYAxis;
 
+    /**
+     * BarChart Object for the Supply Mapping Strings to Numbers
+     */
     protected BarChart<String, Number> mSupplyChart;
+    
+    /**
+     * BarChart Object for the Budget Mapping Strings to Numbers
+     */
     protected BarChart<String, Number> mBudgetChart;
+    
+    /**
+     * BarChart Object for the Approval Mapping Strings to Numbers
+     */
     protected BarChart<String, Number> mApprovalChart;
 
+    /**
+     * Label for the Supply
+     */
     protected Label mSupplyLabel;
+    
+    /**
+     * Label for the Budget
+     */
     protected Label mBudgetLabel;
+    
+    /**
+     * Label for the Approval
+     */
     protected Label mApprovalLabel;
 
-    protected int[] getColumns()
-    {
-        return new int[] {12, 76, 12};
-    }
+    
 
-    protected int[] getRows()
-    {
-        return new int[] {10, 5, 25, 5, 25, 5, 25};
-    }
-
-    protected String getTitle()
-    {
-        return "Short Term Goals";
-    }
-
+    //////////////////////////// Constructors
+    
     /**
      * Constructor
      * @param pModel the current SimCity Model
@@ -66,6 +102,11 @@ public class ShortTermPane
         super(pModel);
     }
 
+    //////////////////////////////// Methods
+    
+    /**
+     * Setup for the Object
+     */
     protected void setup()
     {
         setComponents();
@@ -78,6 +119,9 @@ public class ShortTermPane
         add(mApprovalChart , 0, 6, 3, 1);
     }
 
+    /**
+     * Setup of the Components
+     */
     protected void setComponents()
     {
         mSupplyXAxis   = new CategoryAxis();
@@ -114,6 +158,9 @@ public class ShortTermPane
         update();
     }
 
+    /**
+     * Updater
+     */
     @SuppressWarnings("unchecked")
     protected void update()
     {
@@ -173,5 +220,34 @@ public class ShortTermPane
         actualApproval.getData().add(new XYChart.Data("R4", 46 ));
         actualApproval.getData().add(new XYChart.Data("R5", 48 ));
         mApprovalChart.getData().setAll(targetApproval, actualApproval);
+    }
+    
+    //////////////////////////////// Getters
+    
+    /**
+     * Gets the Columns
+     * @return integer array of columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {12, 76, 12};
+    }
+
+    /**
+     * Gets the Rows
+     * @return integer array of rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {10, 5, 25, 5, 25, 5, 25};
+    }
+
+    /**
+     * Gets the Title
+     * @return String the title
+     */
+    protected String getTitle()
+    {
+        return "Short Term Goals";
     }
 }

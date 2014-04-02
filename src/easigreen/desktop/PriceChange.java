@@ -21,17 +21,6 @@ import javafx.scene.text.*;
 public class PriceChange
     extends UpgradeItem
 {
-    /////////////////////////// Methods
-
-    /**
-     * Updater
-     */
-    protected void update()
-    {
-	    mChange = 0;
-        mValue.setText("" + mModel.getUpgradeManager().getPriceChange());
-    }
-
     /////////////////////////// Constructor
     
     /**
@@ -42,6 +31,18 @@ public class PriceChange
     {
         super(pModel);
     }
+    
+    /////////////////////////// Methods
+
+    /**
+     * Updater
+     */
+    protected void update()
+    {
+	    mChange = 0;
+        mValue.setText("" + mModel.getUpgradeManager().getPriceChange());
+    }
+    
     
     /////////////////////////// Getters
     
