@@ -1,6 +1,8 @@
 package easigreen.service;
 
 import java.util.ArrayList;
+import java.util.Map;
+import java.util.HashMap;
 
 /**
  * The Technology Manager class.
@@ -31,6 +33,12 @@ public class TechnologyManager
      */
     private ArrayList<Technology> mAll;
 
+    /**
+     * An alternate data structure for holding available techs
+     * so they can be referenced by their name
+     */
+    private Map<String, Technology> mNames;
+
     private TechCodeManager mCodes;
 
     /**
@@ -42,7 +50,9 @@ public class TechnologyManager
         mAvailable   = new ArrayList<Technology>();
         mAll         = new TechnologyGetter().getTechnologies();
 	mCodes       = new TechCodeManager(mAll);
+	mNames       = new HashMap<String, Technology>();
     }
+
 
     //////////////////// Methods
 
@@ -132,6 +142,20 @@ public class TechnologyManager
         mImplemented = pImplemented;
     }
 
+    /**
+     * Gets a technology from a name
+     * @param techName the name of the tech to get
+     * @return tech the technology associated with the name
+     */
+    public Technology getTechnology(String techName)
+    {
+	return mNames.get(techName);
+    }
+
+    /**
+     * Implements a given technology
+     * @param pTech the technology to implement
+     */
     public void implementTechnology(Technology pTech)
     {
         mImplemented.add(pTech);
@@ -145,6 +169,10 @@ public class TechnologyManager
     public void setAvailable(ArrayList<Technology> pAvailable)
     {
         mAvailable = pAvailable;
+	for (Technology tech : mAvailable)
+	{
+	    mNames.put(tech.getName() + tech.getQuality(), tech);
+	}
     }
 
     /**
@@ -154,6 +182,7 @@ public class TechnologyManager
     public void addTechnology(Technology pTech)
     {
         mAvailable.add(pTech);
+	mNames.put(pTech.getName() + pTech.getQuality(), pTech);
     }
 
     /**
@@ -166,6 +195,7 @@ public class TechnologyManager
 	if (newTech != null)
 	{
 	    mAvailable.add(newTech);
+	    mNames.put(newTech.getName() + newTech.getQuality(), newTech);
 	}
     }
 
