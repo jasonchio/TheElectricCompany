@@ -226,7 +226,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getRenewable()
     {
-	return mRenewable;
+	   return mRenewable;
     }
 
     /**
@@ -235,7 +235,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getOil()
     {
-	return mOil;
+	   return mOil;
     }
 
     //////////////////// Setters
@@ -257,7 +257,7 @@ public class TechnologyManager
      */
     public Technology getTechnology(String techName)
     {
-	return mNames.get(techName);
+	   return mNames.get(techName);
     }
 
     /**
@@ -266,10 +266,10 @@ public class TechnologyManager
      */
     public void implementTechnology(Technology pTech)
     {
-	if (!isImplemented(pTech))
-	{
-	    mImplemented.add(pTech);
-	}
+	   if (!isImplemented(pTech))
+	   {
+	       mImplemented.add(pTech);
+	   }
     }
 
     /**
@@ -284,8 +284,8 @@ public class TechnologyManager
 	{
 	    if (t == pTech)
 	    {
-		isTrue = true;
-		break;
+		   isTrue = true;
+		   break;
 	    }
 	}
 	return isTrue;
@@ -299,10 +299,10 @@ public class TechnologyManager
     public void setAvailable(ArrayList<Technology> pAvailable)
     {
         mAvailable = pAvailable;
-	for (Technology tech : mAvailable)
-	{
-	    mNames.put(tech.getName() + tech.getQuality(), tech);
-	}
+	    for (Technology tech : mAvailable)
+	    {
+	        mNames.put(tech.getName() + tech.getQuality(), tech);
+	    }
     }
 
     /**

@@ -20,6 +20,7 @@ import javafx.scene.control.ListView;
 class AppDataList
     extends ListView<String>
 {
+    ///////////////////////////// Variables
 
     /**
      * Holds the model reference
@@ -36,6 +37,8 @@ class AppDataList
      */
     protected ObservableList<String> mData;// = FXCollections.observableArrayList(mDataNames);    
 
+    ///////////////////////////// Constructor
+    
     /**
      * Basic Constructor
      * @param pModel a SimCity
@@ -46,13 +49,15 @@ class AppDataList
         initialize();
     }
 
+    ///////////////////////////// Method
+    
     /**
      * Initializes the object
      */
     protected void initialize()
     {
         mDataNames = new ArrayList<String>();
-	mData = FXCollections.observableArrayList(mDataNames);
+	    mData = FXCollections.observableArrayList(mDataNames);
         setItems(mData);
         setPrefSize(50, 50);
         update();
