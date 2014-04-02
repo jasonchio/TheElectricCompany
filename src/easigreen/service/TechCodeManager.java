@@ -50,9 +50,19 @@ class TechCodeManager
 		Technology newTech = TechCloner.getClone(tech);
 		tech.setCode(code);
 		tech.setQuality(i);
+		printCode(tech);
 		mCodes.put(code, tech);
 	    }
 	}
+    }
+
+    /**
+     * Prints a technology's code
+     * @param tech the technology to print code
+     */
+    public void printCode(Technology tech)
+    {
+	System.out.println(tech.getName() + " " + tech.getQuality() + " - " + tech.getCode());
     }
 
     /**
@@ -65,6 +75,7 @@ class TechCodeManager
 	mCodes.remove(pCode);
 	String newCode = getNewCode();
 	tech.setCode(newCode);
+	printCode(tech);
 	mCodes.put(newCode, tech);
     }
 
@@ -74,7 +85,7 @@ class TechCodeManager
      */
     private String getNewCode()
     {
-	return ("" + (Math.random() * MAX));
+	return ("" + (int)(Math.random() * MAX));
     }
 
     /**
