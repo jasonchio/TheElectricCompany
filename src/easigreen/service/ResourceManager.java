@@ -47,6 +47,11 @@ public class ResourceManager
      */
     private double mDemand;
 
+    /**
+     * The Total Budget with regards to upgrades
+     */
+    private double mBudget;
+
     //////////////////// Constructors
 
     /**
@@ -61,8 +66,18 @@ public class ResourceManager
 	mActionPoints   = mBaseManager.getActionPoints();
 	mEmitCredits    = 0;
 	mMarketShares   = 0;
+	mBudget         = mBaseManager.getBudget();
 	mFunds          = mBaseManager.getBudget();
 	mDemand         = mBaseManager.getDemand();
+    }
+
+    /**
+     * Returns the budget for this round
+     * @return mBudget the total budget
+     */
+    public double getBudget()
+    {
+	return mBudget + mUpgradeManager.update().getBudgetChange();
     }
 
     /**
@@ -71,7 +86,7 @@ public class ResourceManager
      */
     public double getDemand()
     {
-	return mDemand + mMarketShares;
+	return mDemand + mMarketShares + mUpgradeManager.update().getDemandChange();
     }
 
     /**
