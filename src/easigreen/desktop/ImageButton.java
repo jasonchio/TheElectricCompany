@@ -13,10 +13,14 @@ import javafx.scene.input.MouseEvent;
 /**
  * This class lets you use an image as a button, but still lets you see
  * when it's being pressed. This code is being borrowed from blogmeister at tech.chitgoks.com
- * I've changed it a bit
+ * It has been modified
+ *
+ * @version 0.1.3
+ * @author Haru McClellan
  */
 public class ImageButton extends Button
 {
+    ///////////////////////////// Variables
 
     /**
      * Style for when a button is normal
@@ -24,15 +28,17 @@ public class ImageButton extends Button
     private final String STYLE_NORMAL = "-fx-background-color: transparent; -fx-padding: 5, 5, 5, 5;";
 
     /**
-     * Style for whena button is pressed
+     * Style for when a button is pressed
      */
     private final String STYLE_PRESSED = "-fx-background-color: transparent; -fx-padding: 6 4 4 6;";
 
+    ///////////////////////////// Constructor
+    
     /**
      * Constructor for Image Button
      *
      * @param imageurl the url for an image the button will look like
-     * @param actionName name of action to perform when button is pressed
+     * @param action name of action to perform when button is pressed
      */
     public ImageButton(String imageurl, EventHandler<ActionEvent> action)
     {

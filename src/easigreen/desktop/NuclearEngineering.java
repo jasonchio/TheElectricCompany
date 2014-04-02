@@ -22,6 +22,19 @@ import javafx.scene.text.*;
 public class NuclearEngineering
     extends UpgradeItem
 {
+    //////////////////////////// Constructor
+    
+    /**
+     * Constructor
+     * @param pModel the current SimCity Model
+     */
+    public NuclearEngineering(SimCity pModel)
+    {
+        super(pModel);
+    }
+    
+    /////////////////////////////// Getters
+    
     /**
      * Gets the title for this Content Component
      * @return String the title
@@ -39,16 +52,9 @@ public class NuclearEngineering
     {
         return new String[] {"+Nuclear Security", "+Nuclear Energy Produced"};
     }
-
-    /**
-     * Constructor
-     * @param pModel the current SimCity Model
-     */
-    public NuclearEngineering(SimCity pModel)
-    {
-        super(pModel);
-    }
-
+    
+    //////////////////////////// Methods
+    
     /**
      * Updater
      */
@@ -57,4 +63,5 @@ public class NuclearEngineering
 	    mChange = 0;
         mValue.setText("" + mModel.getUpgradeManager().getNuclearEngineering());
     }
+    
 }

@@ -93,35 +93,10 @@ public class NuclearUpgradePane
     }
     
     
-    ///////////////////////////// Methods
+   
+
+    //////////////////////////// Methods   
     
-    /**
-     * Gets the Columns
-     * @return int array of Columns
-     */
-    protected int[] getColumns()
-    {
-        return new int[] {10, 10, 10, 10, 20, 10, 10, 10, 10};
-    }
-
-    /**
-     * Gets the Rows
-     * @return int array of Rows
-     */
-    protected int[] getRows()
-    {
-        return new int[] {10, 16, 16, 8, 8, 20, 15, 10, 2};
-    }
-
-    /**
-     * Gets the title
-     * @return String the title
-     */
-    protected String getTitle()
-    {
-        return "Nuclear Upgrades";
-    }    
-
     /**
      * Set-up the Current Components
      */
@@ -151,7 +126,7 @@ public class NuclearUpgradePane
         mActionButton = new Button("Apply");
         mCodeButton   = new Button("Apply");
 
-	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+	    mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -213,8 +188,37 @@ public class NuclearUpgradePane
      */
     protected void update()
     {
-	mNucSci.update();
-	mNucEng.update();
+	    mNucSci.update();
+	    mNucEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
+    
+     ///////////////////////////// Getters
+    
+    /**
+     * Gets the Columns
+     * @return int array of Columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {10, 10, 10, 10, 20, 10, 10, 10, 10};
+    }
+
+    /**
+     * Gets the Rows
+     * @return int array of Rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {10, 16, 16, 8, 8, 20, 15, 10, 2};
+    }
+
+    /**
+     * Gets the title
+     * @return String the title
+     */
+    protected String getTitle()
+    {
+        return "Nuclear Upgrades";
+    }    
 }

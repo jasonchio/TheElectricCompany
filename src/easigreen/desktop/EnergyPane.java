@@ -19,9 +19,9 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * A content pane for sim city
+ * A content pane for SimCity
  *
- * @version 0.2.1
+ * @version 0.2.2
  * @author Sam Graham
  * @author Haru McClellan
  * @author Larson Caldwell
@@ -29,6 +29,8 @@ import javafx.stage.*;
 public class EnergyPane
     extends ContentPane
 {
+    ////////////////////////// Variables
+
     /**
      * Holds the main labels for this pane
      */
@@ -72,41 +74,18 @@ public class EnergyPane
      */
     protected PieChart mPieChart;
 
-    /**
-     * Retrieves the Columns
-     * @return integer array of Columns     
-     */
-    protected int[] getColumns()
-    {
-        return new int[] {12, 42, 18, 14, 14};
-    }
-
-    /**
-     * Retrieves the rows
-     * @return integer array of the rows
-     */
-    protected int[] getRows()
-    {
-        return new int[] {12, 10, 10, 4, 4, 3, 4, 4, 3, 4, 4, 4, 8, 8, 18};
-    }
-
-    /**
-     * Gets the title of this pane
-     * @return String title of the pane
-     */
-    protected String getTitle()
-    {
-        return "Energy Sources";
-    }
-
+    ///////////////////////// Constructor
+    
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public EnergyPane(SimCity pModel)
     {
         super(pModel);
     }
+    
+    ///////////////////////// Methods
 
     /**
      * Provides set up of the pane
@@ -201,15 +180,15 @@ public class EnergyPane
      */
     protected void update()
     {
-	double energySupplied  = mModel.getEnergyManager().getPower    ();
-	double nuclearEnergy   = mModel.getEnergyManager().getNuclear  ().getTotalPower();
-	double fossilEnergy    = mModel.getEnergyManager().getFossil   ().getTotalPower();
-	double renewableEnergy = mModel.getEnergyManager().getRenewable().getTotalPower();
-	double energyDemand    = mModel.getBaseManager  ().getDemand   ();
-	int    nuclearPlants   = mModel.getEnergyManager().getNuclear  ().getAmount();
-	int    fossilPlants    = mModel.getEnergyManager().getFossil   ().getAmount();
-	int    renewablePlants = mModel.getEnergyManager().getRenewable().getAmount();
-	double oil             = mModel.getEnergyManager().getOil      ().getConsumption();
+	    double energySupplied  = mModel.getEnergyManager().getPower    ();
+	    double nuclearEnergy   = mModel.getEnergyManager().getNuclear  ().getTotalPower();
+	    double fossilEnergy    = mModel.getEnergyManager().getFossil   ().getTotalPower();
+	    double renewableEnergy = mModel.getEnergyManager().getRenewable().getTotalPower();
+	    double energyDemand    = mModel.getBaseManager  ().getDemand   ();
+	    int    nuclearPlants   = mModel.getEnergyManager().getNuclear  ().getAmount();
+	    int    fossilPlants    = mModel.getEnergyManager().getFossil   ().getAmount();
+	    int    renewablePlants = mModel.getEnergyManager().getRenewable().getAmount();
+	    double oil             = mModel.getEnergyManager().getOil      ().getConsumption();
 
         mValues.get("Energy Demand"     ).setText("" + energyDemand   );
         mValues.get("Energy Supplied"   ).setText("" + energySupplied );
@@ -224,5 +203,34 @@ public class EnergyPane
         mPieChartData.setAll(new PieChart.Data("Nuclear"     , (nuclearEnergy   / energySupplied)),
                              new PieChart.Data("Fossil Fuels", (fossilEnergy    / energySupplied)),
                              new PieChart.Data("Renewable"   , (renewableEnergy / energySupplied)));
+    }
+    
+    //////////////////////////// Getters
+    
+    /**
+     * Retrieves the Columns
+     * @return integer array of Columns     
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {12, 42, 18, 14, 14};
+    }
+
+    /**
+     * Retrieves the rows
+     * @return integer array of the rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {12, 10, 10, 4, 4, 3, 4, 4, 3, 4, 4, 4, 8, 8, 18};
+    }
+
+    /**
+     * Gets the title of this pane
+     * @return String title of the pane
+     */
+    protected String getTitle()
+    {
+        return "Energy Sources";
     }
 }

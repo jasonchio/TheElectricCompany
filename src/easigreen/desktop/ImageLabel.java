@@ -11,10 +11,16 @@ import javafx.scene.image.ImageView;
 import javafx.scene.input.MouseEvent;
 
 /**
+ * Image Label
  *
+ * @version 0.1.3
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 public class ImageLabel extends Label
 {
+    ///////////////////////////// Constructor
 
     /**
      * Constructor for Image Button
@@ -26,10 +32,17 @@ public class ImageLabel extends Label
         setImage(imageurl);
     }
 
+    /**
+     * Default Constructor 
+     */
     public ImageLabel()
     {
     }
 
+    /**
+     * Set the URL for the Image
+     * @param imageurl the String identifying the string 
+     */
     public void setImage(String imageurl)
     {
         Image     image = ImageGetter.getImage(imageurl);

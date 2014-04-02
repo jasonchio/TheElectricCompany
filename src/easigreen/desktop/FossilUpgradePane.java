@@ -16,51 +16,91 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Fossil Upgrade Pane
+ *
+ * @version 0.1.3
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 public class FossilUpgradePane
     extends ContentPane
 {
-    protected int[] getColumns()
-    {
-        return new int[] {10, 10, 10, 10, 20, 10, 10, 10, 10};
-    }
-
-    protected int[] getRows()
-    {
-        return new int[] {10, 16, 16, 8, 8, 20, 15, 10, 2};
-    }
-
-    protected String getTitle()
-    {
-        return "Fossil Fuel Upgrades";
-    }
-
-    protected FossilScience     mFossilSci;
-    protected FossilEngineering mFossilEng;
-    protected Label             mActionLabel;
-    protected Label             mActionValue;
-    protected Button            mActionButton;
-    protected Label             mTechLabel;
-    protected FossilTechList    mTechList;
-    protected TextArea          mTechTextArea;
-    protected Label             mCodeLabel;
-    protected TextField         mCodeValue;
-    protected Button            mCodeButton;
+    ////////////////////////////// Variables
 
     /**
+     * Fossil Science
+     */
+    protected FossilScience     mFossilSci;
+    
+    /**
+     * Fossil Engineering
+     */
+    protected FossilEngineering mFossilEng;
+    
+    /**
+     * Label for the Action
+     */
+    protected Label             mActionLabel;
+    
+    /**
+     * Label for the action
+     */
+    protected Label             mActionValue;
+    
+    /**
+     * Button for the Action
+     */
+    protected Button            mActionButton;
+    
+    /**
+     * Label for the Technologies
+     */
+    protected Label             mTechLabel;
+    
+    /**
+     * Fossil Technology List
+     */
+    protected FossilTechList    mTechList;
+    
+    /**
+     * Text Area for the Pane
+     */
+    protected TextArea          mTechTextArea;
+    
+    /**
+     * Label for the Code area
+     */
+    protected Label             mCodeLabel;
+    
+    /**
+     * Text Field
+     */
+    protected TextField         mCodeValue;
+    
+    /**
+     * Button for the Code
+     */
+    protected Button            mCodeButton;
+
+    ///////////////////////////////// Constructor
+        
+    /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public FossilUpgradePane(SimCity pModel)
     {
         super(pModel);
     }
 
+    /////////////////////////////// Methods
+    
+    /**
+     * Set up the components
+     */
     protected void setup()
     {
-        //setGridLinesVisible(true);
-
         initializeComponents();
 
         add(getTitleLabel(), 0, 0, 9, 1);
@@ -77,12 +117,15 @@ public class FossilUpgradePane
         add(mCodeButton    , 5, 7, 2, 1);
     }
 
+    /**
+     * Initializer
+     */
     protected void init()
     {
         mActionButton = new Button("Apply");
         mCodeButton   = new Button("Apply");
 
-	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+	    mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -92,7 +135,7 @@ public class FossilUpgradePane
                                       }
                                   });
 
-        mCodeButton.setOnAction(new EventHandler<ActionEvent>() {
+            mCodeButton.setOnAction(new EventHandler<ActionEvent>() {
             public void handle(ActionEvent event) {
             }
         });
@@ -100,6 +143,9 @@ public class FossilUpgradePane
         setHalignment(mCodeButton, HPos.CENTER);
     }
 
+    /**
+     * Initializer of components
+     */
     protected void initializeComponents()
     {
         mFossilSci    = new FossilScience    (mModel);
@@ -137,10 +183,42 @@ public class FossilUpgradePane
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
-	mFossilSci.update();
-	mFossilEng.update();
+	    mFossilSci.update();
+	    mFossilEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
+    }
+    
+    ////////////////////////////// Getters
+    
+    /**
+     * Get the Columns
+     * @return integer array of columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {10, 10, 10, 10, 20, 10, 10, 10, 10};
+    }
+
+    /**
+     * Get the Rows
+     * @return integer array of rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {10, 16, 16, 8, 8, 20, 15, 10, 2};
+    }
+
+    /**
+     * Get the title
+     * @return String the title
+     */
+    protected String getTitle()
+    {
+        return "Fossil Fuel Upgrades";
     }
 }

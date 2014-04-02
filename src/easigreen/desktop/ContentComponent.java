@@ -24,11 +24,38 @@ import javafx.scene.text.*;
 public class ContentComponent
     extends GridPane
 {
+    /////////////////////////////// Variables
+
     /**
      * Holds a reference to the model
      */
     protected SimCity mModel;
 
+    /////////////////////////////// Method
+    
+    /**
+     * Initializer
+     */
+    protected void init()
+    {
+    }
+    
+    /**
+     * Setup of the variables
+     */
+    protected void setup()
+    {
+    }
+
+    /**
+     * Updates the various components
+     */
+    protected void update()
+    {
+    }
+
+    ////////////////////////////// Getters
+    
     /**
      * Returns a list of columns
      * @return integer array of columns
@@ -46,17 +73,12 @@ public class ContentComponent
     {
         return new int[] {};
     }
-
-    /**
-     * Initializer
-     */
-    protected void init()
-    {
-    }
-
+    
+    ///////////////////////////////// Constructor
+    
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public ContentComponent(SimCity pModel)
     {
@@ -66,14 +88,11 @@ public class ContentComponent
         setup();
     }
 
-    protected void setup()
-    {
-    }
-
-    protected void update()
-    {
-    }
-
+    /////////////////////////////// Setters
+    
+    /**
+     * Sets up the grid
+     */
     protected void setGrid()
     {
         int[] columns = getColumns();

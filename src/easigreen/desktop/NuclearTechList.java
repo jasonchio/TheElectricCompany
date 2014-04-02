@@ -17,7 +17,8 @@ import javafx.scene.control.ListView;
 class NuclearTechList
     extends AppDataList
 {
-
+    /////////////////////////// Constructor
+   
     /**
      * This is the basic constructor
      * Binds the parent to the children
@@ -28,6 +29,8 @@ class NuclearTechList
         super(pModel);
     }
 
+    ////////////////////////// Methods
+    
     /**
      * Provides update functionality
      *

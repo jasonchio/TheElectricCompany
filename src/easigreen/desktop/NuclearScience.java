@@ -21,6 +21,19 @@ import javafx.scene.text.*;
 public class NuclearScience
     extends UpgradeItem
 {
+    //////////////////////////////// Methods
+
+    /**
+     * Updater
+     */
+    protected void update()
+    {
+	    mChange = 0;
+        mValue.setText("" + mModel.getUpgradeManager().getNuclearScience());
+    }
+
+    //////////////////////////////// Getters
+    
     /**
      * Get Title
      * @return String the Title
@@ -39,6 +52,8 @@ public class NuclearScience
         return new String[] {"+Nuclear Security", "+Nuclear Approval"};
     }
 
+    //////////////////////////// Constructor
+    
     /**
      * Constructor
      * @param pModel the current SimCity Model
@@ -48,12 +63,4 @@ public class NuclearScience
         super(pModel);
     }
 
-    /**
-     * Updater
-     */
-    protected void update()
-    {
-	    mChange = 0;
-        mValue.setText("" + mModel.getUpgradeManager().getNuclearScience());
-    }
 }

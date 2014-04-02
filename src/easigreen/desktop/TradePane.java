@@ -23,6 +23,8 @@ import javafx.stage.*;
 public class TradePane
     extends ContentPane
 {
+    ////////////////////////// Variables
+
     /**
      * Holds the trade pane
      */
@@ -61,33 +63,10 @@ public class TradePane
      */
     protected Map<String, Label> mValues;
 
-    /**
-     * Gets the Columns
-     * @return the array list of columns
-     */
-    protected int[] getColumns()
-    {
-        return new int[] {12, 30, 8, 30, 8, 12};
-    }
+    
 
-    /**
-     * Gets the rows
-     * @return the array list of rows
-     */
-    protected int[] getRows()
-    {
-        return new int[] {12, 16, 12, 9, 6, 4, 4, 4, 6, 4, 4, 4, 12, 3};
-    }
-
-    /**
-     * Gets the title
-     * @return the title a string
-     */
-    protected String getTitle()
-    {
-        return "Trade";
-    }
-
+    ////////////////////////////// Methods
+    
     /**
      * Initializer 
      */
@@ -103,15 +82,6 @@ public class TradePane
 
             }
         });
-    }
-
-    /**
-     * Constructor
-     * @param pModel the current SimCity Model
-     */
-    public TradePane(SimCity pModel)
-    {
-        super(pModel);
     }
 
     /**
@@ -204,4 +174,44 @@ public class TradePane
         mValues.get("Market Shares2"   ).setText("0");
         mValues.get("Technologies2"    ).setText("None");
     }
+    
+    ///////////////////////////////// Getters
+    
+    /**
+     * Gets the Columns
+     * @return the array list of columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {12, 30, 8, 30, 8, 12};
+    }
+
+    /**
+     * Gets the rows
+     * @return the array list of rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {12, 16, 12, 9, 6, 4, 4, 4, 6, 4, 4, 4, 12, 3};
+    }
+
+    /**
+     * Gets the title
+     * @return the title a string
+     */
+    protected String getTitle()
+    {
+        return "Trade";
+    }
+    
+    ////////////////////////// Constructor
+    
+    /**
+     * Constructor
+     * @param pModel the current SimCity Model
+     */
+    public TradePane(SimCity pModel)
+    {
+        super(pModel);
+    }   
 }

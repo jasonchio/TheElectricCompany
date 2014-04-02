@@ -16,11 +16,21 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * One of the content panes for SimCity
+ *
+ * @version 0.1.3
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 public class GoalsPane
     extends ContentPane
 {
+    /////////////////////////// Variables
+
+    /**
+     * Holds the Label Names for the Goals Pane
+     */
     protected static String[] mLabelNames = new String[] {"Power Demand"    , "Power Supply"   ,
             "Budget"          , "Total Spent"    ,
             "Minimum Approval", "Public Approval",
@@ -29,37 +39,39 @@ public class GoalsPane
             "Target Profit"   , "Total Profit"
                                                          };
 
+    /**
+     * Map from the array of strings to the labels
+     */
     protected Map<String, Label> mLabels;
+    
+    /**
+     * Map from the array of strings to the labels
+     */
     protected Map<String, Label> mValues;
+    
+    /**
+     * Map from the array of strings the the images
+     */
     protected Map<String, ImageLabel> mImages;
 
-    protected int[] getColumns()
-    {
-        return new int[] {12, 8, 33, 25, 10, 12};
-    }
-
-    protected int[] getRows()
-    {
-        return new int[] {10, 6, 5, 5, 1, 5, 5, 1, 5, 5, 4, 6, 5, 5, 1, 5, 5, 1, 5, 5, 10};
-    }
-
-    protected String getTitle()
-    {
-        return "Goals";
-    }
-
+    ///////////////////////////// Constructor
+    
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public GoalsPane(SimCity pModel)
     {
         super(pModel);
     }
 
+    ///////////////////////////// Methods
+    
+    /**
+     * Setup
+     */
     protected void setup()
     {
-        //setGridLinesVisible(true);
         setLabels();
         add(getTitleLabel(), 0, 0, 6, 1);
 
@@ -99,6 +111,9 @@ public class GoalsPane
         add(mImages.get("Target Profit"   ), 4, 18, 1, 2);
     }
 
+    /**
+     * Set the Labels
+     */
     protected void setLabels()
     {
         mLabels = new HashMap<String, Label>();
@@ -132,6 +147,9 @@ public class GoalsPane
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
         mValues.get("Power Demand"    ).setText("0");
@@ -154,5 +172,34 @@ public class GoalsPane
         mImages.get("Target Emissions").setImage("good.png");
         mImages.get("Target Security" ).setImage("bad.png" );
         mImages.get("Target Profit"   ).setImage("bad.png" );
+    }
+    
+    ///////////////////////////// Getters
+    
+    /**
+     * Get the Columns
+     * @return the integer array of columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {12, 8, 33, 25, 10, 12};
+    }
+
+    /**
+     * Get the Rows
+     * @return the integer array of Rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {10, 6, 5, 5, 1, 5, 5, 1, 5, 5, 4, 6, 5, 5, 1, 5, 5, 1, 5, 5, 10};
+    }
+
+    /**
+     * Get the Title
+     * @return the String
+     */
+    protected String getTitle()
+    {
+        return "Goals";
     }
 }

@@ -14,7 +14,7 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
- * A content pane for sim city
+ * A content pane for Sim City
  *
  * @version 0.2.1
  * @author Sam Graham
@@ -24,31 +24,45 @@ import javafx.scene.text.*;
 public class FossilEngineering
     extends UpgradeItem
 {
-    /**
-     * Gets the title of this 
-     */
-    protected String getTitle()
-    {
-        return new String("Fossil Fuel Engineering");
-    }
-
-    protected String[] getTips()
-    {
-        return new String[] {"+Fossil Fuel Security", "+Fossil Fuel Energy Produced"};
-    }
+    ///////////////////////// Constructor
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public FossilEngineering(SimCity pModel)
     {
         super(pModel);
     }
 
+    //////////////////////// Methods
+    
+    /**
+     * Updates the change
+     */
     protected void update()
     {
-	mChange = 0;
+	    mChange = 0;
         mValue.setText("" + mModel.getUpgradeManager().getFossilEngineering());
+    }
+    
+    ////////////////////// Getters
+
+    /**
+     * Gets the title
+     * @return String the title
+     */
+    protected String getTitle()
+    {
+        return new String("Fossil Fuel Engineering");
+    }
+
+    /**
+     * Gets the tips 
+     * @return String array of tips
+     */
+    protected String[] getTips()
+    {
+        return new String[] {"+Fossil Fuel Security", "+Fossil Fuel Energy Produced"};
     }
 }

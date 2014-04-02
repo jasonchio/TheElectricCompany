@@ -21,43 +21,8 @@ import javafx.scene.text.*;
 public class UpgradeItem
     extends ContentComponent
 {
-
-    /**
-     * Gets the columns
-     * @return integer array of columns
-     */
-    protected int[] getColumns()
-    {
-        return new int[] {15, 45, 25, 15};
-    }
-
-    /**
-     * Gets the rows
-     * @return integer array of rows
-     */
-    protected int[] getRows()
-    {
-        return new int[] {49, 17, 17, 17};
-    }
-
-    /**
-     * Gets the title
-     * @return the title a string
-     */
-    protected String getTitle()
-    {
-        return new String("Unknown");
-    }
-
-    /**
-     * Gets the tips
-     * @return String array of tips
-     */
-    protected String[] getTips()
-    {
-        return new String[] {"Unknown1", "Unknown2"};
-    }
-
+    ///////////////////////// Variables
+    
     /**
      * Holds the value label
      */
@@ -88,71 +53,14 @@ public class UpgradeItem
      */
     protected int mChange;
 
-    /**
-     * Initializes the various action handlers
-     */
-    protected void init()
-    {
-        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
-        {
-            public void handle(ActionEvent event)
-            {
-                mValue.setText("" + (Integer.parseInt(mValue.getText()) + 1));
-                mChange += 1;
-            }
-        };
-
-        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
-        {
-            public void handle(ActionEvent event)
-            {
-                mValue.setText("" + (Integer.parseInt(mValue.getText()) - 1));
-                mChange -= 1;
-            }
-        };
-
-        mUp   = new ImageButton("up.png"  , upEvent);
-        mDown = new ImageButton("down.png", downEvent);
-        mUp  .setPrefSize(0, 0);
-        mDown.setPrefSize(0, 0);
-        setHalignment(mUp  , HPos.CENTER);
-        setHalignment(mDown, HPos.CENTER);
-    }
-
-
-    /**
-     * Constructor
-     * @param SimCity pModel the current sim city Model
-     */
-    public UpgradeItem(SimCity pModel)
-    {
-        super(pModel);
-    }
-
-    /**
-     * Gets the Change in the Item
-     * @return int change to the upgrades
-     */
-    public int getChange()
-    {
-	return mChange;
-    }
-
-    /**
-     * Change to the Item
-     * @param pChange set Change
-     */
-    public void setChange(int pChange)
-    {
-	mChange = pChange;
-    }
-
+    //////////////////////////////// Methods
+    
     /**
      * Set up the items
      */
     protected void setup()
     {
-	mChange = 0;
+    	mChange = 0;
         setLabels();
         add(mTitle, 0, 0, 3, 1);
 
@@ -192,5 +100,105 @@ public class UpgradeItem
     protected void update()
     {
         mValue.setText("0");
+    }
+    
+    /**
+     * Initializes the various action handlers
+     */
+    protected void init()
+    {
+        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mValue.setText("" + (Integer.parseInt(mValue.getText()) + 1));
+                mChange += 1;
+            }
+        };
+
+        EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mValue.setText("" + (Integer.parseInt(mValue.getText()) - 1));
+                mChange -= 1;
+            }
+        };
+
+        mUp   = new ImageButton("up.png"  , upEvent);
+        mDown = new ImageButton("down.png", downEvent);
+        mUp  .setPrefSize(0, 0);
+        mDown.setPrefSize(0, 0);
+        setHalignment(mUp  , HPos.CENTER);
+        setHalignment(mDown, HPos.CENTER);
+    }
+
+    ///////////////////////////// Setter
+    
+    /**
+     * Change to the Item
+     * @param pChange set Change
+     */
+    public void setChange(int pChange)
+    {
+	    mChange = pChange;
+    }
+    
+    //////////////////////// Getters
+
+    /**
+     * Gets the Change in the Item
+     * @return int change to the upgrades
+     */
+    public int getChange()
+    {
+	return mChange;
+    }
+    
+    /**
+     * Gets the columns
+     * @return integer array of columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {15, 45, 25, 15};
+    }
+
+    /**
+     * Gets the rows
+     * @return integer array of rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {49, 17, 17, 17};
+    }
+
+    /**
+     * Gets the title
+     * @return the title a string
+     */
+    protected String getTitle()
+    {
+        return new String("Unknown");
+    }
+
+    /**
+     * Gets the tips
+     * @return String array of tips
+     */
+    protected String[] getTips()
+    {
+        return new String[] {"Unknown1", "Unknown2"};
+    }
+    
+    ////////////////////////////// Constructor
+
+    /**
+     * Constructor
+     * @param SimCity pModel the current sim city Model
+     */
+    public UpgradeItem(SimCity pModel)
+    {
+        super(pModel);
     }
 }

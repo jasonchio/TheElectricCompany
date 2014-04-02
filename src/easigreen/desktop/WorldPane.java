@@ -23,6 +23,8 @@ import javafx.stage.*;
 public class WorldPane
     extends ContentPane
 {
+    ///////////////////////////// Variables
+
     /**
      * Holds the Country List
      */
@@ -38,6 +40,8 @@ public class WorldPane
      */
     protected Button mView;
 
+    /////////////////////// Getters
+    
     /**
      * Gets the columns
      * @return integer array of columns
@@ -65,6 +69,8 @@ public class WorldPane
         return "Country Rankings";
     }
 
+    ///////////////////////// Methods
+    
     /**
      * Initialize the Content
      */
@@ -79,15 +85,6 @@ public class WorldPane
         };
         mView = new Button("View");
         mView.setOnAction(newTradeEvent);
-    }
-
-    /**
-     * Constructor
-     * @param pModel the current sim city Model
-     */
-    public WorldPane(SimCity pModel)
-    {
-        super(pModel);
     }
 
     /**
@@ -108,5 +105,16 @@ public class WorldPane
     protected void update()
     {
         mCountries.update();
+    }
+    
+    /////////////////////// Constructor
+    
+    /**
+     * Constructor
+     * @param pModel the current SimCity Model
+     */
+    public WorldPane(SimCity pModel)
+    {
+        super(pModel);
     }
 }

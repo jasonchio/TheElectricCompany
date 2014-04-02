@@ -10,15 +10,25 @@ import javafx.scene.control.*;
 
 /**
  * A class for C.L.A.W.-style wiring of actions to components.
+ *
+ * @version 0.2.1
+ * @author Sam Graham
+ * @author Haru McClellan
+ * @author Larson Caldwell
  */
 public class Action
     implements EventHandler<ActionEvent>
 {
+    /////////////////////////// Variables
+
     /**
      * Holds the keyed singleton instances.
      */
     private static Map<String, Action> cInstances;
 
+    /**
+     * Static Constructor
+     */    
     static
     {
         cInstances = new HashMap<String, Action>();
@@ -44,6 +54,8 @@ public class Action
      */
     private Object mMethodInvokee;
 
+    ////////////////////////////// Constructor
+    
     /**
      * Constructs a new Action instance.
      *
@@ -71,6 +83,8 @@ public class Action
         }
     }
 
+    ////////////////////////////// Method
+    
     /**
      * The keyed singleton lookup method.
      *

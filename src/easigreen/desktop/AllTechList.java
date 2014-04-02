@@ -20,7 +20,8 @@ import javafx.scene.control.ListView;
 class AllTechList
     extends AppDataList
 {
-
+    ////////////////////////////// Constructor
+    
     /**
      * Basic Constructor
      * @param pModel the model, a SimCity
@@ -30,15 +31,17 @@ class AllTechList
         super(pModel);
     }
 
+    ///////////////////////////// Updater
+    
     /**
      * Update the Technology List
      */
     protected void update()
     {
-	mData.clear();
-	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getAll())
-	{
-	    mData.add(t.getName());
-	}	
+	   mData.clear();
+	   for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getAll())
+	   {
+	       mData.add(t.getName());
+	   }	
     }
 }
