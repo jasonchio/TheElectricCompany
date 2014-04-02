@@ -23,15 +23,15 @@ import javafx.stage.*;
 public class TradeOfferPane
     extends TradeBasePane
 {
+    ////////////////////////////// Methods
+    
     /**
-     * Get title
-     * @return the title
+     * Updater
      */
-    protected String getTitle()
+    public void update()
     {
-        return "Offering";
     }
-
+    
     /**
      * Initializer
      */
@@ -44,6 +44,19 @@ public class TradeOfferPane
         mInsert.setEditable(false);
         mAdd             = new Button("Add");
     }
+    
+    ////////////////////////////// Getters
+    
+    /**
+     * Get title
+     * @return the title
+     */
+    protected String getTitle()
+    {
+        return "Offering";
+    }
+    
+    ////////////////////////////// Constructor
 
     /**
      * Constructor
@@ -52,12 +65,5 @@ public class TradeOfferPane
     public TradeOfferPane(SimCity pModel)
     {
         super(pModel);
-    }
-
-    /**
-     * Updater
-     */
-    public void update()
-    {
     }
 }

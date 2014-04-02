@@ -23,6 +23,8 @@ import javafx.stage.*;
 public class TradeBasePane
     extends ContentPane
 {
+    ////////////////////////// Variables
+    
     /**
      * Holds the list of available techs
      */
@@ -37,7 +39,6 @@ public class TradeBasePane
      * Holds the button for adding a technology
      */
     protected Button      mAdd;
-
 
     /**
      * Holds a list of the various label names
@@ -56,33 +57,8 @@ public class TradeBasePane
      */
     protected Map<String, TextField> mValues;
 
-    /**
-     * Get Columns
-     * @return integer array of columns
-     */
-    protected int[] getColumns()
-    {
-        return new int[] {4, 38, 14, 4, 36, 4};
-    }
-
-    /**
-     * Get Rows
-     * @return integer array of rows
-     */
-    protected int[] getRows()
-    {
-        return new int[] {15, 11, 11, 11, 11, 2, 15, 2, 20, 2};
-    }
-
-    /**
-     * Get the title of the pane
-     * @return String the columns
-     */
-    protected String getTitle()
-    {
-        return "Unknown";
-    }
-
+    /////////////////////////////// Methods
+    
     /**
      * Initialization
      */
@@ -95,16 +71,7 @@ public class TradeBasePane
         mInsert.setEditable(false);
         mAdd             = new Button("Add");
     }
-
-    /**
-     * Constructor
-     * @param pModel the current SimCity Model
-     */
-    public TradeBasePane(SimCity pModel)
-    {
-        super(pModel);
-    }
-
+    
     /**
      * Set up of the various GUI elements
      */
@@ -148,5 +115,45 @@ public class TradeBasePane
         setHalignment(techs, HPos.CENTER);
         mLabels.put("Technologies", techs);
         update();
+    }
+    
+    //////////////////////// Getters
+    
+    /**
+     * Get Columns
+     * @return integer array of columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {4, 38, 14, 4, 36, 4};
+    }
+
+    /**
+     * Get Rows
+     * @return integer array of rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {15, 11, 11, 11, 11, 2, 15, 2, 20, 2};
+    }
+
+    /**
+     * Get the title of the pane
+     * @return String the columns
+     */
+    protected String getTitle()
+    {
+        return "Unknown";
+    }
+    
+    ///////////////////////// Constructor
+
+    /**
+     * Constructor
+     * @param pModel the current SimCity Model
+     */
+    public TradeBasePane(SimCity pModel)
+    {
+        super(pModel);
     }
 }
