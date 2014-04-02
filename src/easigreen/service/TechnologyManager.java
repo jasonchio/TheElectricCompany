@@ -34,6 +34,26 @@ public class TechnologyManager
     private ArrayList<Technology> mAll;
 
     /**
+     * Nuclear Technologies
+     */
+    private ArrayList<Technology> mNuclear;
+
+    /**
+     * Fossil Fuel Technologies
+     */
+    private ArrayList<Technology> mFossil;
+
+    /**
+     * Renewable Technologies
+     */
+    private ArrayList<Technology> mRenewable;
+
+    /**
+     * Oil Technologies
+     */
+    private ArrayList<Technology> mOil;
+
+    /**
      * An alternate data structure for holding available techs
      * so they can be referenced by their name
      */
@@ -48,9 +68,61 @@ public class TechnologyManager
     {
         mImplemented = new ArrayList<Technology>();
         mAvailable   = new ArrayList<Technology>();
+        mNuclear     = new ArrayList<Technology>();
+	mFossil      = new ArrayList<Technology>();
+	mRenewable   = new ArrayList<Technology>();
+	mOil         = new ArrayList<Technology>();
         mAll         = new TechnologyGetter().getTechnologies();
 	mCodes       = new TechCodeManager(mAll);
 	mNames       = new HashMap<String, Technology>();
+	setPlantLists();
+    }
+
+    /**
+     * Adds specific types of technologies to plant lists
+     */
+    private void setPlantLists()
+    {
+	for (Technology t : mAll)
+	{
+	    // Add to nuclear if it affects nuclear plants
+	    if ((t.getNuclear().getPower    () != 0) ||
+		(t.getNuclear().getCost     () != 0) ||
+		(t.getNuclear().getApproval () != 0) ||
+		(t.getNuclear().getSecurity () != 0) ||
+		(t.getNuclear().getEmissions() != 0) ||
+		(t.getNuclear().getProfit   () != 0)) 
+	    {
+		mNuclear.add(t);
+	    }
+	    // Add to fossil if it affects fossil plants
+	    if ((t.getFossil().getPower    () != 0) ||
+		(t.getFossil().getCost     () != 0) ||
+		(t.getFossil().getApproval () != 0) ||
+		(t.getFossil().getSecurity () != 0) ||
+		(t.getFossil().getEmissions() != 0) ||
+		(t.getFossil().getProfit   () != 0)) 
+	    {
+		mFossil.add(t);
+	    } 
+	    // Add to renewable if it affects renewable plants
+	    if ((t.getRenewable().getPower    () != 0) ||
+		(t.getRenewable().getCost     () != 0) ||
+		(t.getRenewable().getApproval () != 0) ||
+		(t.getRenewable().getSecurity () != 0) ||
+		(t.getRenewable().getEmissions() != 0) ||
+		(t.getRenewable().getProfit   () != 0)) 
+	    {
+		mRenewable.add(t);
+	    } 
+	    // Add to oil if it affects oil plants
+	    if ((t.getOil().getConsumption() != 0) ||
+		(t.getOil().getSecurity   () != 0) ||
+		(t.getOil().getGrowth     () != 0)) 
+	    {
+		mOil.add(t);
+	    } 
+	}
     }
 
 
@@ -128,6 +200,42 @@ public class TechnologyManager
     public ArrayList<Technology> getAll()
     {
         return mAll;
+    }
+
+    /**
+     * Gets a list of nuclear upgrades
+     * @return mNuclear nuclear upgrades
+     */
+    public ArrayList<Technology> getNuclear()
+    {
+	return mNuclear;
+    }
+
+    /**
+     * Gets a list of fossil upgrades
+     * @return mFossil fossil upgrades
+     */
+    public ArrayList<Technology> getFossil()
+    {
+	return mFossil;
+    }
+
+    /**
+     * Gets a list of renewable upgrades
+     * @return mRenewable renewable upgrades
+     */
+    public ArrayList<Technology> getRenewable()
+    {
+	return mRenewable;
+    }
+
+    /**
+     * Gets a list of oil upgrades
+     * @return mOil oil upgrades
+     */
+    public ArrayList<Technology> getOil()
+    {
+	return mOil;
     }
 
     //////////////////// Setters
