@@ -33,6 +33,21 @@ public class GoalManager
      */
     private static final int mTargetApproval = 45;
 
+    /**
+     * The Emissions Target
+     */
+    private double mEmissions;
+
+    /**
+     * The Security Target
+     */
+    private double mSecurity;
+
+    /**
+     * The Profit Target
+     */
+    private double mProfit;
+
     ///////////////////// Getter
 
     public int getTargetApproval()
@@ -56,5 +71,41 @@ public class GoalManager
         mUpgradeManager  = pUpgradeManager;
     }
 
+    /**
+     * Updates Target Goals to last rounds
+     */
+    public void update()
+    {
+	mEmissions = mEnergyManager.getEmissions() - mResourceManager.getEmitCredits();
+	mSecurity  = mEnergyManager.getSecurity();
+	mProfit    = mEnergyManager.getProfit();
+	update();
+    }
 
+    /**
+     * Returns the last rounds Emissions
+     * @return mEmissions
+     */
+    public double getTargetEmissions()
+    {
+	return mEmissions;
+    }
+
+    /**
+     * Returns the last rounds security
+     * @return mSecurity the last rounds security
+     */
+    public double getTargetSecurity()
+    {
+	return mSecurity;
+    }
+
+    /**
+     * Returns the last rounds profit
+     * @return mProfit the last rounds profit
+     */
+    public double getTargetProfit()
+    {
+	return mProfit;
+    }
 }
