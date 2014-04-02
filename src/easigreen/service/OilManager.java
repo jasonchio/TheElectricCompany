@@ -61,4 +61,9 @@ public class OilManager
     {
 	return mOil.getSecurity() + mUpgrades.getOilSecurity();
     }
+
+    public double getTotalSecurity()
+    {
+	return getSecurity() * getConsumption();
+    }
 }
