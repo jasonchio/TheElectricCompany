@@ -23,15 +23,15 @@ import javafx.stage.*;
 public class TradeRequestPane
     extends TradeBasePane
 {
-    /**
-     * Gets the title
-     * @return the title a string
-     */
-    protected String getTitle()
-    {
-        return "Requesting";
-    }
+    //////////////////////////////// Methods
 
+    /**
+     * Updater
+     */
+    public void update()
+    {
+    }
+    
     /**
      * Initializer
      */
@@ -44,20 +44,26 @@ public class TradeRequestPane
         mInsert.setEditable(false);
         mAdd             = new Button("Add");
     }
+    
+    ////////////////////////// Getters
 
     /**
+     * Gets the title
+     * @return the title a string
+     */
+    protected String getTitle()
+    {
+        return "Requesting";
+    }
+
+    ///////////////////////// Constructor
+    
+    /**
      * Constructor
-     * @param pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public TradeRequestPane(SimCity pModel)
     {
         super(pModel);
-    }
-
-    /**
-     * Updater empty
-     */
-    public void update()
-    {
     }
 }

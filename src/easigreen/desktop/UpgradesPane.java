@@ -16,13 +16,15 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * Upgrade Item
+ * Upgrades Pane
  * @version 0.2.0
  * @author Haru McClellan
  */
 public class UpgradesPane
     extends ContentPane
 {
+    ///////////////////////////// Variables
+
     /**
      * Holds the label names
      */
@@ -53,43 +55,13 @@ public class UpgradesPane
      */
     protected ImplementedTechList mTechList;
 
+    ///////////////////////////// Methods
+    
     /**
-     * Gets the Columns
-     * @return integer array of columns
+     * Setup of basic elements
      */
-    protected int[] getColumns()
-    {
-        return new int[] {12, 66, 10, 12};
-    }
-
-    /**
-     * Holds the rows
-     */
-    protected int[] getRows()
-    {
-        return new int[] {12, 6, 6, 6, 6, 4, 6, 6, 6, 4, 6, 6, 6, 6, 12, 2};
-    }
-
-    /**
-     * Holds the map names
-     */
-    protected String getTitle()
-    {
-        return "Upgrades";
-    }
-
-    /**
-     * Constructor
-     * @param pModel the current sim city Model
-     */
-    public UpgradesPane(SimCity pModel)
-    {
-        super(pModel);
-    }
-
     protected void setup()
     {
-        //setGridLinesVisible(true);
         mTechList = new ImplementedTechList(mModel);
         setLabels();
         add(getTitleLabel(), 0, 0, 4, 1);
@@ -146,5 +118,43 @@ public class UpgradesPane
         mValues.get("Lobby"                  ).setText("" + mModel.getUpgradeManager().getLobby());
         mValues.get("Oil Drilling"           ).setText("" + mModel.getUpgradeManager().getOilDrilling());
         mTechList.update();
+    }
+    
+    ////////////////////////// Getters
+    
+    /**
+     * Gets the Columns
+     * @return integer array of columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {12, 66, 10, 12};
+    }
+
+    /**
+     * Holds the rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {12, 6, 6, 6, 6, 4, 6, 6, 6, 4, 6, 6, 6, 6, 12, 2};
+    }
+
+    /**
+     * Holds the map names
+     */
+    protected String getTitle()
+    {
+        return "Upgrades";
+    }
+    
+    ////////////////////////// Constructor
+    
+    /**
+     * Constructor
+     * @param pModel the current SimCity Model
+     */
+    public UpgradesPane(SimCity pModel)
+    {
+        super(pModel);
     }
 }
