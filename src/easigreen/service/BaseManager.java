@@ -18,6 +18,11 @@ public class BaseManager
     private int mRoundNumber;
 
     /**
+     * The Default action points
+     */
+    private static int mActionPoints;
+
+    /**
      * The Default budget
      */
     private static final double mBudget = 9;
@@ -35,7 +40,8 @@ public class BaseManager
      */
     public BaseManager()
     {
-	mRoundNumber = 0;
+	mRoundNumber  = 0;
+	mActionPoints = 8;
     }
 
     /**
@@ -44,6 +50,7 @@ public class BaseManager
     public void nextRound()
     {
 	mRoundNumber++;
+	mActionPoints = 20;
     }
 
     /**
@@ -53,6 +60,7 @@ public class BaseManager
     public void setRound(int pRound)
     {
 	mRoundNumber = pRound;
+	
     }
 
     /**
@@ -62,6 +70,15 @@ public class BaseManager
     public int getRound()
     {
 	return mRoundNumber;
+    }
+
+    /**
+     * Gets the Action Points
+     * @return mActionPoints the action points for the round
+     */
+    public int getActionPoints()
+    {
+	return mActionPoints;
     }
 
     /**

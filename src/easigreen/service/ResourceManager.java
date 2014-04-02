@@ -42,6 +42,11 @@ public class ResourceManager
      */
     private double mFunds;
 
+    /**
+     * The Total Demand with Market shares and upgrades taken into account
+     */
+    private double mDemand;
+
     //////////////////// Constructors
 
     /**
@@ -53,18 +58,20 @@ public class ResourceManager
     {
 	mBaseManager    = pBaseManager;
 	mUpgradeManager = pUpgradeManager;
-	mActionPoints   = 0;
+	mActionPoints   = mBaseManager.getActionPoints();
 	mEmitCredits    = 0;
 	mMarketShares   = 0;
-	mFunds          = 0;
+	mFunds          = mBaseManager.getBudget();
+	mDemand         = mBaseManager.getDemand();
     }
 
     /**
-     * Initializes Resource Manager
+     * Returns the modified energy demand
+     * @return mDemand a Double holding the demand
      */
-    public void initialize()
+    public double getDemand()
     {
-	
+	return mDemand + mMarketShares;
     }
 
     /**
