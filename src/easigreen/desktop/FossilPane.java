@@ -16,41 +16,69 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * One of the content panes for SimCity
+ *
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class FossilPane
     extends ContentPane
 {
+    //////////////////////////// Variables
+
+    /**
+     * The Fossil Upgrade Pane
+     */
     private ContentPane mFossilUpgradesPane;
+    
+    /**
+     * The Fossil Upgrades
+     */
     private Button      mFossilUpgrades;
+    
+    /**
+     * Button for applying
+     */
     private Button      mApply;
+    
+    /**
+     * Button for incrementing the Fossil Plants
+     */
     private Button      mUp;
+    
+    /**
+     * Button for decrementing the Fossil Plants
+     */
     private Button      mDown;
 
+    /**
+     * Holds the String array for the Labels
+     */
     protected static String[] mLabelNames = new String[] {"Plants in Operation", "Supply Provided",
             "Cost", "Public Approval", "Emissions",
             "Security", "Profit"
                                                          };
+                                                         
+    /**
+     * Holds the String array for the upgrades
+     */
     protected static String mUpgradeName = new String("Fossil Fuel Upgrades");
 
+    /**
+     * Maps the labels
+     */
     protected Map<String, Label> mLabels;
+    
+    /**
+     * Maps the values
+     */
     protected Map<String, Label> mValues;
 
-    protected int[] getColumns()
-    {
-        return new int[] {10, 34, 4, 10, 16, 16, 10};
-    }
-
-    protected int[] getRows()
-    {
-        return new int[] {12, 7, 7, 6, 5, 5, 5, 4, 5, 5, 5, 4, 27, 3};
-    }
-
-    protected String getTitle()
-    {
-        return "Fossil Fuel";
-    }
-
+    ////////////////////////////// Methods
+    
+    /**
+     * Initializer
+     */
     protected void init()
     {
         mFossilUpgradesPane = new FossilUpgradePane(mModel);
@@ -58,7 +86,7 @@ public class FossilPane
         mFossilUpgrades = new ImageButton("fossilfuelupgrade.png", upgradeEvent);
         mApply = new Button("Apply");
 
-	EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
+	    EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -94,19 +122,12 @@ public class FossilPane
         setHalignment(mApply         , HPos.CENTER);
         setHalignment(mFossilUpgrades, HPos.RIGHT);
     }
-
+    
     /**
-     * Constructor
-     * @param SimCity pModel the current sim city Model
+     * Setup of the Pane
      */
-    public FossilPane(SimCity pModel)
-    {
-        super(pModel);
-    }
-
     protected void setup()
     {
-        //setGridLinesVisible(true);
         setLabels();
         add(getTitleLabel(), 0, 0 , 7, 1);
         add(mApply         , 0, 3 , 7, 1);
@@ -132,6 +153,9 @@ public class FossilPane
         add(mValues.get("Profit"             ), 5, 10, 1, 1);
     }
 
+    /**
+     * Set the Labels
+     */
     protected void setLabels()
     {
         mLabels = new HashMap<String, Label>();
@@ -142,7 +166,6 @@ public class FossilPane
             Label newLabel2 = new Label();
             newLabel1.setFont(new Font("Arial", 20));
             newLabel2.setFont(new Font("Arial", 20));
-            //setHalignment(newLabel2, HPos.RIGHT);
             mLabels.put(name, newLabel1);
             mValues.put(name, newLabel2);
         }
@@ -155,14 +178,57 @@ public class FossilPane
         update();
     }
 
+    /**
+     * Updater
+     */
     protected void update()
     {
-	mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getFossil().getAmount   ());
+	    mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getFossil().getAmount   ());
         mValues.get("Supply Provided"    ).setText("" + mModel.getEnergyManager().getFossil().getPower    ());
         mValues.get("Cost"               ).setText("" + mModel.getEnergyManager().getFossil().getCostBuild());
         mValues.get("Public Approval"    ).setText("" + mModel.getEnergyManager().getFossil().getApproval ());
         mValues.get("Emissions"          ).setText("" + mModel.getEnergyManager().getFossil().getEmissions());
         mValues.get("Security"           ).setText("" + mModel.getEnergyManager().getFossil().getSecurity ());
         mValues.get("Profit"             ).setText("" + mModel.getEnergyManager().getFossil().getProfit   ());
+    }
+    
+    /////////////////////////////// Getters
+    
+    /**
+     * Gets the Columns
+     * @return integer array the columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {10, 34, 4, 10, 16, 16, 10};
+    }
+
+    /**
+     * Gets the Rows
+     * @return integer array the columns
+     */
+    protected int[] getRows()
+    {
+        return new int[] {12, 7, 7, 6, 5, 5, 5, 4, 5, 5, 5, 4, 27, 3};
+    }
+
+    /**
+     * Gets the Title
+     * @return integer array the rows
+     */
+    protected String getTitle()
+    {
+        return "Fossil Fuel";
+    }
+    
+    ///////////////////////// Constructor
+    
+    /**
+     * Constructor
+     * @param pModel the current SimCity Model
+     */
+    public FossilPane(SimCity pModel)
+    {
+        super(pModel);
     }
 }
