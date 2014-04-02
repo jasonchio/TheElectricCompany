@@ -84,15 +84,29 @@ public class TechnologiesPane
     protected void init()
     {
         mImplementButton = new Button("Implement");
-        mImplementButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+        mImplementButton.setOnAction(new EventHandler<ActionEvent>()
+				     {
+					 public void handle(ActionEvent event)
+					 {
+					     String techName = mAvaList.getSelectionModel().getSelectedItem();
+					     Technology tech = mModel.getUpgradeManager().getTechnologyManager().getTechnology(techName);
+					     mModel.getUpgradeManager().getTechnologyManager().implementTechnology(tech);
+					     update();
+					 }
+				     });
+
         mApplyButton = new Button("Apply");
-        mApplyButton.setOnAction(new EventHandler<ActionEvent>() {
-            public void handle(ActionEvent event) {
-            }
-        });
+
+        mApplyButton.setOnAction(new EventHandler<ActionEvent>()
+				 {
+				     public void handle(ActionEvent event)
+				     {
+					 mModel.getUpgradeManager().getTechnologyManager().addTechnology(mTextField.getText());
+					 mTextField.setText("");
+					 update();
+				     }
+				 });
+
         setHalignment(mImplementButton, HPos.CENTER);
         setHalignment(mApplyButton    , HPos.CENTER);
     }

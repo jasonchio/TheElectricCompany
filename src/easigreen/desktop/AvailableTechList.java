@@ -41,7 +41,7 @@ class AvailableTechList
 	   mData.clear();
 	   for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getAvailable())
 	   {
-	       mData.add(t.getName());
+	       mData.add(t.getName() + t.getQuality());
 	   }
     }
 }
