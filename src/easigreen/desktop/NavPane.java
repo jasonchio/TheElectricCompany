@@ -21,16 +21,25 @@ import javafx.scene.layout.*;
 import javafx.stage.*;
 
 /**
- * Navigation Pane for navigating the GUI
+ * Navigation Pane
+ *
+ * @version 0.1.3
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 public class NavPane
     extends VBox
 {
+    ///////////////////////////// Variables
+
     /**
-     * The list of buttons to add to the nav pane
+     * The list of buttons to add to the navigation pane
      */
     private List<Button> buttons;
 
+    //////////////////////////// Constructor
+    
     /**
      * Creates a new Navigation Pane object.
      */
@@ -40,8 +49,12 @@ public class NavPane
         buttons = new ArrayList<Button>();
     }
 
+    ///////////////////////////// Methods
+    
     /**
      * Adds a button to the Navigation Pane
+     * @param url the URL for the Button, a String
+     * @param event the EventHandler
      */
     public void addButton(String url, EventHandler<ActionEvent> event)
     {
