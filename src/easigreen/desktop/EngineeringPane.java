@@ -16,7 +16,7 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * A content pane for sim city
+ * A content pane for SimCity
  *
  * @version 0.2.1
  * @author Sam Graham
@@ -26,6 +26,8 @@ import javafx.stage.*;
 public class EngineeringPane
     extends ContentPane
 {
+    //////////////////////////// Variables
+
     /**
      * Holds Nuclear Engineering object
      */
@@ -56,6 +58,8 @@ public class EngineeringPane
      */
     protected Button  mActionButton;
 
+    /////////////////////////// Methods
+    
     /**
      * Initializer
      */
@@ -63,7 +67,7 @@ public class EngineeringPane
     {
         mActionButton = new Button("Apply");
 
-	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+	    mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -78,7 +82,7 @@ public class EngineeringPane
     }
 
     /**
-     * Sets the components, initializer of buttons, labels, etc.
+     * Sets the components, initializer of buttons, labels, etcetera 
      */
     protected void setComponents()
     {
@@ -93,16 +97,34 @@ public class EngineeringPane
     }
 
     /**
+     * Set up of buttons, labels, etc. 
+     */
+    protected void setup()
+    {
+        setComponents();
+
+        add(getTitleLabel(), 0, 0, 5, 1);
+        add(mNucEng        , 1, 1, 3, 1);
+        add(mFosEng        , 1, 2, 3, 1);
+        add(mRenEng        , 1, 3, 3, 1);
+        add(mActionLabel   , 1, 4, 1, 1);
+        add(mActionValue   , 2, 4, 1, 1);
+        add(mActionButton  , 3, 4, 1, 1);
+    }
+    
+    /**
      * Updater
      */
     protected void update()
     {
-	mNucEng.update();
-	mFosEng.update();
-	mRenEng.update();
+	    mNucEng.update();
+	    mFosEng.update();
+	    mRenEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 
+    ////////////////////// Getters
+    
     /**
      * Gets the columns
      * @return integer array of columns
@@ -130,29 +152,14 @@ public class EngineeringPane
         return "Engineering Upgrades";
     }
 
+    /////////////////////////// Constructor
+    
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public EngineeringPane(SimCity pModel)
     {
         super(pModel);
-    }
-
-    /**
-     * Set up of buttons, labels, etc. 
-     */
-    protected void setup()
-    {
-        //setGridLinesVisible(true);
-        setComponents();
-
-        add(getTitleLabel(), 0, 0, 5, 1);
-        add(mNucEng        , 1, 1, 3, 1);
-        add(mFosEng        , 1, 2, 3, 1);
-        add(mRenEng        , 1, 3, 3, 1);
-        add(mActionLabel   , 1, 4, 1, 1);
-        add(mActionValue   , 2, 4, 1, 1);
-        add(mActionButton  , 3, 4, 1, 1);
     }
 }
