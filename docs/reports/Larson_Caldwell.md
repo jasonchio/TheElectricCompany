@@ -79,7 +79,7 @@ Next Week's Goals
 Mar 26 - Apr 2
 Accomplishments
 
-    9.9 hours
+    11.1 hours
         Connecting the three levels of organization.
         Fixing a few bugs.
         Adding the last buttons and action listeners to the GUI.
