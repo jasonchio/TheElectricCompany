@@ -158,7 +158,10 @@ public class TechnologyManager
      */
     public void implementTechnology(Technology pTech)
     {
-        mImplemented.add(pTech);
+	if (!isImplemented(pTech))
+	{
+	    mImplemented.add(pTech);
+	}
     }
 
     /**
