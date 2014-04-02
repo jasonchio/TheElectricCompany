@@ -50,7 +50,7 @@ public class NuclearUpgradePane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public NuclearUpgradePane(SimCity pModel)
     {

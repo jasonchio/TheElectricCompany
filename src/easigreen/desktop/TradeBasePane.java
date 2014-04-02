@@ -98,7 +98,7 @@ public class TradeBasePane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public TradeBasePane(SimCity pModel)
     {
@@ -128,7 +128,6 @@ public class TradeBasePane
         add(mValues.get("Action Points"   ), 2, 2, 1, 1);
         add(mValues.get("Emission Credits"), 2, 3, 1, 1);
         add(mValues.get("Market Shares"   ), 2, 4, 1, 1);
-        //setGridLinesVisible(true);
     }
 
     /**

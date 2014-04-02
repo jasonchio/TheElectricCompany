@@ -130,6 +130,9 @@ public class UpgradesPane
         update();
     }
 
+    /**
+     * Update the object
+     */
     protected void update()
     {
         mValues.get("Nuclear Science"        ).setText("" + mModel.getUpgradeManager().getNuclearScience());

@@ -59,7 +59,7 @@ public class ShortTermPane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public ShortTermPane(SimCity pModel)
     {
@@ -68,7 +68,6 @@ public class ShortTermPane
 
     protected void setup()
     {
-        //setGridLinesVisible(true);
         setComponents();
         add(getTitleLabel(), 0, 0, 3, 1);
         add(mSupplyLabel   , 1, 1, 1, 1);

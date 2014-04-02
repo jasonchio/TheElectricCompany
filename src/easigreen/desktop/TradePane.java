@@ -107,7 +107,7 @@ public class TradePane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public TradePane(SimCity pModel)
     {
@@ -155,7 +155,6 @@ public class TradePane
         add(mValues.get("Technologies2"    ), 2, 11, 3, 1);
 
         add(mAccept, 1, 12, 4, 1);
-        //setGridLinesVisible(true);
     }
 
     /**

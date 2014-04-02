@@ -14,7 +14,9 @@ import javafx.scene.image.*;
 import javafx.scene.text.*;
 
 /**
- *
+ * Nuclear Engineering provides specific behaviour for 
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class NuclearEngineering
     extends UpgradeItem
@@ -39,7 +41,7 @@ public class NuclearEngineering
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public NuclearEngineering(SimCity pModel)
     {

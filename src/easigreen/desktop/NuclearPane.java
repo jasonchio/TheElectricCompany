@@ -16,7 +16,9 @@ import javafx.scene.text.*;
 import javafx.stage.*;
 
 /**
- * One of the content panes for Sim City
+ * Technologies Pane for Renewable Upgrades
+ * @version 0.2.0
+ * @author Haru McClellan
  */
 public class NuclearPane
     extends ContentPane

@@ -171,7 +171,7 @@ public class TechnologiesPane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public TechnologiesPane(SimCity pModel)
     {
@@ -183,7 +183,6 @@ public class TechnologiesPane
      */
     protected void setup()
     {
-        //setGridLinesVisible(true);
         setComponents();
         add(getTitleLabel(), 0, 0, 5, 1);
 

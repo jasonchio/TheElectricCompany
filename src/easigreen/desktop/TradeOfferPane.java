@@ -47,7 +47,7 @@ public class TradeOfferPane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public TradeOfferPane(SimCity pModel)
     {
