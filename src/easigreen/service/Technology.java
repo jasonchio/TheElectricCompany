@@ -352,109 +352,34 @@ public class Technology
 		
     }
 
+    ////////////////////////////// Methods
+    
     /**
-    public UpgradeMerger update()
+     * Override object's toString Method
+     * @return a string representing the object
+     */
+    public String toString()
     {
-        UpgradeMerger upgradeEffects = new UpgradeMerger();
-
-        upgradeEffects.setBudgetChange(
-           upgradeEffects.getBudgetChange() + mBudgetChange);
-        upgradeEffects.setDemandRateChange(
-       upgradeEffects.getDemandRateChange() + mNRGChange);
-        upgradeEffects.setEmissionsChange(
-       upgradeEffects.getEmissionsChange() + mEmissionsChange);
-
-        upgradeEffects.setNpow(upgradeEffects.getNpow() + mNpow);
-    upgradeEffects.setNcost(upgradeEffects.getNcost() + mNcost);
-    upgradeEffects.setNatt(upgradeEffects.getNatt() + mNatt);
-    upgradeEffects.setNemit(upgradeEffects.getNemit() + mNemit);
-    upgradeEffects.setNsec(upgradeEffects.getNsec() + mNsec);
-    upgradeEffects.setNprof(upgradeEffects.getNprof() + mNprof);
-
-    upgradeEffects.setFpow(upgradeEffects.getFpow() + mFpow);
-    upgradeEffects.setFcost(upgradeEffects.getFcost() + mFcost);
-    upgradeEffects.setFatt(upgradeEffects.getFatt() + mFatt);
-    upgradeEffects.setFemit(upgradeEffects.getFemit() + mFemit);
-    upgradeEffects.setFsec(upgradeEffects.getFsec() + mFsec);
-    upgradeEffects.setFprof(upgradeEffects.getFprof() + mFprof);
-
-    upgradeEffects.setRpow(upgradeEffects.getRpow() + mRpow);
-    upgradeEffects.setRcost(upgradeEffects.getRcost() + mRcost);
-    upgradeEffects.setRatt(upgradeEffects.getRatt() + mRatt);
-    upgradeEffects.setRemit(upgradeEffects.getRemit() + mRemit);
-    upgradeEffects.setRsec(upgradeEffects.getRsec() + mRsec);
-    upgradeEffects.setRprof(upgradeEffects.getRprof() + mRprof);
-
-        upgradeEffects.setOil(upgradeEffects.getOil() + mOil);
-    upgradeEffects.setOilSec(upgradeEffects.getOilSec() + mOilSec);
-    upgradeEffects.setOilGrow(upgradeEffects.getOilGrow() + mOilGrow);
-
-        // Bellow is code for if you want to go through an entire array list
-    // of technologies
-
-
-    for (int i = 0; i < implemented.size(); i++)
-    {
-         int quality = implemented.get(i).getQuality();
-         int strange = implemented.get(i).iWantQuality();
-
-    	mBudgetChange += implemented.get(i).getBudgetChange()
-    	    * implemented.get(i).getQuality();
-    	mDemandRateChange += implemented.get(i).getNRGChange()
-    	    * implemented.get(i).getQuality();
-    	mEmissionsChange += implemented.get(i).getEmissionsChange()
-    	    * implemented.get(i).getQuality();
-
-    	mNpowChange += implemented.get(i).getNpow()
-    	    * implemented.get(i).getQuality();
-    	mNcostChange += implemented.get(i).getNcost()
-    	    * implemented.get(i).getQuality();
-    	mNattChange += implemented.get(i).getNatt()
-    	    * implemented.get(i).getQuality();
-    	mNemitChange += implemented.get(i).getNemit()
-    	    * implemented.get(i).getQuality();
-    	mNsecChange += implemented.get(i).getNsec()
-    	    * implemented.get(i).getQuality();
-    	mNprofChange += implemented.get(i).getNprof()
-    	    * implemented.get(i).getQuality();
-
-    	mFpowChange += implemented.get(i).getFpow()
-    	    * implemented.get(i).getQuality();
-    	mFcostChange += implemented.get(i).getFcost()
-    	    * implemented.get(i).getQuality();
-    	mFattChange += implemented.get(i).getFatt()
-    	    * implemented.get(i).getQuality();
-    	mFemitChange += implemented.get(i).getFemit()
-    	    * implemented.get(i).getQuality();
-    	mFsecChange += implemented.get(i).getFsec()
-    	    * implemented.get(i).getQuality();
-    	mFprofChange += implemented.get(i).getFprof()
-    	    * implemented.get(i).getQuality();
-
-    	mRpowChange += implemented.get(i).getRpow()
-    	    * implemented.get(i).getQuality();
-    	mRcostChange += implemented.get(i).getRcost()
-    	    * implemented.get(i).getQuality();
-    	mRattChange += implemented.get(i).getRatt()
-    	    * implemented.get(i).getQuality();
-    	mRemitChange += implemented.get(i).getRemit()
-    	    * implemented.get(i).getQuality();
-    	mRsecChange += implemented.get(i).getRsec()
-    	    * implemented.get(i).getQuality();
-    	mRprofChange += implemented.get(i).getRprof()
-    	    * implemented.get(i).getQuality();
-
-    	mOilChange += implemented.get(i).getOil()
-    	    * implemented.get(i).getQuality();
-    	mOilSecChange += implemented.get(i).getOilSec()
-    	    * implemented.get(i).getQuality();
-    	mOilGrowChange += implemented.get(i).getOilGrow()
-    	    * implemented.get(i).getQuality();
-    	}
-
-    return upgradeEffects;
+       return mName + " " + mBudgetChange + " " + mNRGChange 
+                    + " "  + mEmissionsChange + " " 
+                    + mNpow + " "+ mNcost + " " + mNatt + " " 
+                    + mNemit + " "+ mNsec + " "
+                    + mNprof + " " + mFpow 
+                    + " "+ mFcost + " " +mFatt+" " 
+                    + mFemit + " "
+                    + mFsec + " "+ mFprof + " "
+                    + mRpow + " "+ mRcost + " "
+                    + mRatt+" " + mRemit + " "
+                    + mRsec + " "+ mRprof + " "
+                    + mOil + " " + mOilSec + " " 
+                    + mOilGrow + " " + mQuality + " " 
+                    + " " + mTec1 
+                    + " " + mTec2+ " " + mTec3+ " " 
+                    + mTec4 + " " + mTec5 + " " 
+                    + mTec6 + " " + mTec7 + " " 
+                    + mTec8 + " " + mTec9  + " " 
+                    + mTec10 + " " + mTec1;
     }
-    */
 
     ////////////////////////////// Getters
 
@@ -942,30 +867,5 @@ public class Technology
         hasBeenUsed = isUsed;
     }
     
-    /**
-     * Override object's toString Method
-     * @return a string representing the object
-     */
-    public String toString()
-    {
-       return mName + " " + mBudgetChange + " " + mNRGChange 
-                    + " "  + mEmissionsChange + " " 
-                    + mNpow + " "+ mNcost + " " + mNatt + " " 
-                    + mNemit + " "+ mNsec + " "
-                    + mNprof + " " + mFpow 
-                    + " "+ mFcost + " " +mFatt+" " 
-                    + mFemit + " "
-                    + mFsec + " "+ mFprof + " "
-                    + mRpow + " "+ mRcost + " "
-                    + mRatt+" " + mRemit + " "
-                    + mRsec + " "+ mRprof + " "
-                    + mOil + " " + mOilSec + " " 
-                    + mOilGrow + " " + mQuality + " " 
-                    + " " + mTec1 
-                    + " " + mTec2+ " " + mTec3+ " " 
-                    + mTec4 + " " + mTec5 + " " 
-                    + mTec6 + " " + mTec7 + " " 
-                    + mTec8 + " " + mTec9  + " " 
-                    + mTec10 + " " + mTec1;
-    } 
+     
 }
