@@ -60,3 +60,15 @@ Next Week's Goals
 
     Finish
 
+Mar 27-Apr 1
+Accomplishments
+
+    10.1 hours
+        Rewrote Major Components
+        Brought code more into javadoc compliance
+        Contacted Sponsor
+        Touched base with group members
+
+Next Week's Goals
+
+    Finish Presentation
