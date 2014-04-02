@@ -20,6 +20,8 @@ import javafx.scene.control.ListView;
 class CountryList
     extends AppDataList
 {
+    ////////////////////////////// Constructor
+
     /**
      * Basic Constructor
      * @param pModel the model, a SimCity
@@ -28,6 +30,8 @@ class CountryList
     {
         super(pModel);
     }
+    
+    ///////////////////////////// Methods
 
     /**
      * Update Method
