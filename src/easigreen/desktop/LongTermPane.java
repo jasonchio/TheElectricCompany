@@ -30,48 +30,86 @@ import javafx.stage.*;
 public class LongTermPane
     extends ContentPane
 {
+    ///////////////////////////// Variables
+ 
+    /**
+     * X Axis for the Emissions
+     */
     protected CategoryAxis mEmissionsXAxis;
+    
+    /**
+     * Y Axis for the Emissions
+     */
     protected NumberAxis   mEmissionsYAxis;
+    
+    /**
+     * X Axis for the Security
+     */
     protected CategoryAxis mSecurityXAxis;
+    
+    /**
+     * Y Axis for the Security
+     */
     protected NumberAxis   mSecurityYAxis;
+    
+    /**
+     * X Axis for the Profit
+     */
     protected CategoryAxis mProfitXAxis;
+    
+    /**
+     * Y Axis for the Profit
+     */
     protected NumberAxis   mProfitYAxis;
 
+    /**
+     * Bar Chart for the Emissions
+     */
     protected BarChart<String, Number> mEmissionsChart;
+    
+    /**
+     * Security Chart
+     */
     protected BarChart<String, Number> mSecurityChart;
+    
+    /**
+     * Profit Chart
+     */
     protected BarChart<String, Number> mProfitChart;
 
+    /**
+     * Label for Emissions
+     */
     protected Label mEmissionsLabel;
+    
+    /**
+     * Label for Security
+     */
     protected Label mSecurityLabel;
+    
+    /**
+     * Label for the Profit
+     */
     protected Label mProfitLabel;
 
-    protected int[] getColumns()
-    {
-        return new int[] {12, 76, 12};
-    }
-
-    protected int[] getRows()
-    {
-        return new int[] {10, 5, 25, 5, 25, 5, 25};
-    }
-
-    protected String getTitle()
-    {
-        return "Long Term Goals";
-    }
-
+    ///////////////////////////// Constructor
+    
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current SimCity Model
      */
     public LongTermPane(SimCity pModel)
     {
         super(pModel);
     }
 
+    ///////////////////////////// Methods
+    
+    /**
+     * Set up for graphical elements
+     */
     protected void setup()
     {
-        //setGridLinesVisible(true);
         setComponents();
         add(getTitleLabel(), 0, 0, 3, 1);
         add(mEmissionsLabel, 1, 1, 1, 1);
@@ -82,6 +120,9 @@ public class LongTermPane
         add(mProfitChart   , 0, 6, 3, 1);
     }
 
+    /**
+     * Set Components
+     */
     protected void setComponents()
     {
         mEmissionsXAxis = new CategoryAxis();
@@ -118,6 +159,9 @@ public class LongTermPane
         update();
     }
 
+    /**
+     * Updater
+     */
     @SuppressWarnings("unchecked")
     protected void update()
     {
@@ -177,5 +221,34 @@ public class LongTermPane
         actualPro.getData().add(new XYChart.Data("R4", 46 ));
         actualPro.getData().add(new XYChart.Data("R5", 48 ));
         mProfitChart.getData().setAll(targetPro, actualPro);
+    }
+    
+    ///////////////////////////// Getters
+    
+    /**
+     * Get the Columns
+     * @return integer array of columns
+     */
+    protected int[] getColumns()
+    {
+        return new int[] {12, 76, 12};
+    }
+
+    /**
+     * Gets the Rows
+     * @return integer array of rows
+     */
+    protected int[] getRows()
+    {
+        return new int[] {10, 5, 25, 5, 25, 5, 25};
+    }
+
+    /**
+     * Gets the title
+     * @return title a string
+     */
+    protected String getTitle()
+    {
+        return "Long Term Goals";
     }
 }
