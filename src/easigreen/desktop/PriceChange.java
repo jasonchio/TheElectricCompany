@@ -21,17 +21,19 @@ import javafx.scene.text.*;
 public class PriceChange
     extends UpgradeItem
 {
+    /////////////////////////// Methods
 
-    protected String getTitle()
+    /**
+     * Updater
+     */
+    protected void update()
     {
-        return new String("Price Change");
+	    mChange = 0;
+        mValue.setText("" + mModel.getUpgradeManager().getPriceChange());
     }
 
-    protected String[] getTips()
-    {
-        return new String[] {"+Profit", "-Approval", "-Demand"};
-    }
-
+    /////////////////////////// Constructor
+    
     /**
      * Constructor
      * @param pModel the current SimCity Model
@@ -40,10 +42,25 @@ public class PriceChange
     {
         super(pModel);
     }
-
-    protected void update()
+    
+    /////////////////////////// Getters
+    
+    /**
+     * Gets the title
+     * @return String the Title
+     */
+    protected String getTitle()
     {
-	mChange = 0;
-        mValue.setText("" + mModel.getUpgradeManager().getPriceChange());
+        return new String("Price Change");
     }
+
+    /**
+     * Get the tips
+     * @return String array
+     */
+    protected String[] getTips()
+    {
+        return new String[] {"+Profit", "-Approval", "-Demand"};
+    }
+
 }

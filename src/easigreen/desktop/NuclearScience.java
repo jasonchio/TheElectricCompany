@@ -32,6 +32,8 @@ public class NuclearScience
         mValue.setText("" + mModel.getUpgradeManager().getNuclearScience());
     }
 
+    //////////////////////////////// Getters
+    
     /**
      * Get Title
      * @return String the Title
