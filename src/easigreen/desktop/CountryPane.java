@@ -99,7 +99,7 @@ public class CountryPane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current Simcity Model
      */
     public CountryPane(SimCity pModel)
     {

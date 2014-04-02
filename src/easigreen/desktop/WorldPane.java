@@ -83,7 +83,7 @@ public class WorldPane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current sim city Model
      */
     public WorldPane(SimCity pModel)
     {

@@ -80,7 +80,7 @@ public class UpgradesPane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current sim city Model
      */
     public UpgradesPane(SimCity pModel)
     {
@@ -106,6 +106,9 @@ public class UpgradesPane
         add(mTechList              , 1, i  , 2, 1);
     }
 
+    /**
+     * Sets the Labels
+     */
     protected void setLabels()
     {
         mLabels = new HashMap<String, Label>();

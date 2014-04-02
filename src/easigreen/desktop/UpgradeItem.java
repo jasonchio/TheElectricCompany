@@ -130,6 +130,7 @@ public class UpgradeItem
     }
 
     /**
+     * Gets the Change in the Item
      * @return int change to the upgrades
      */
     public int getChange()
@@ -138,7 +139,8 @@ public class UpgradeItem
     }
 
     /**
-     * @param int set Change
+     * Change to the Item
+     * @param pChange set Change
      */
     public void setChange(int pChange)
     {

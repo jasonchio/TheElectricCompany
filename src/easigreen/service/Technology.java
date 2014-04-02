@@ -381,7 +381,7 @@ public class Technology
                     + mTec10 + " " + mTec1;
     }
 
-    ////////////////////////////// Getters
+    ////////////////////////////// Getter
 
     /**
      * The name of the technology
