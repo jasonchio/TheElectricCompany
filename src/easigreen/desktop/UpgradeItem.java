@@ -53,6 +53,11 @@ public class UpgradeItem
      */
     protected int mChange;
 
+    /**
+     * Holds the total change
+     */
+    protected int mTotalChange;
+
     //////////////////////////////// Methods
     
     /**
@@ -111,10 +116,11 @@ public class UpgradeItem
         {
             public void handle(ActionEvent event)
             {
-		if (Integer.parseInt(mValue.getText()) != 5)
+		if (mTotalChange < 5)
                 {
                     mValue.setText("" + (Integer.parseInt(mValue.getText()) + 1));
                     mChange += 1;
+		    mTotalChange += 1;
 		}
             }
         };
@@ -123,10 +129,11 @@ public class UpgradeItem
         {
             public void handle(ActionEvent event)
             {
-		if (Integer.parseInt(mValue.getText()) != -5)
+		if (mTotalChange > -5)
 		{
                     mValue.setText("" + (Integer.parseInt(mValue.getText()) - 1));
                     mChange -= 1;
+		    mTotalChange -= 1;
 		}
             }
         };
