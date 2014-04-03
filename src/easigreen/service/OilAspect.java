@@ -31,8 +31,10 @@ public class OilAspect
      */
     private double mGrowth;
 
+    //////////////////// Constructor
+
     /**
-     * Constructor
+     * All variables are set to a default value that can be changed as needed
      */
     public OilAspect()
     {
@@ -41,9 +43,11 @@ public class OilAspect
         mGrowth      = 0;
     }
 
+    //////////////////// Methods
 
     /**
      * Returns the oil consumption upgrade
+     *
      * @return double mConsumption
      */
     public double getConsumption()
@@ -53,6 +57,7 @@ public class OilAspect
 
     /**
      * Returns the oil security upgrade
+     *
      * @return double mSecurity
      */
     public double getSecurity()
@@ -62,6 +67,7 @@ public class OilAspect
 
     /**
      * Returns the oil growth upgrade
+     *
      * @return double mGrowth
      */
     public double getGrowth()
@@ -71,6 +77,7 @@ public class OilAspect
 
     /**
      * Sets the oil consumption upgrade
+     *
      * @param double pConsumption
      */
     public void setConsumption(double pConsumption)
@@ -80,6 +87,7 @@ public class OilAspect
 
     /**
      * Sets the oil security upgrade
+     *
      * @param double pSecurity
      */
     public void setSecurity(double pSecurity)
@@ -89,6 +97,7 @@ public class OilAspect
 
     /**
      * Sets the oil growth upgrade
+     *
      * @param double pGrowth
      */
     public void setGrowth(double pGrowth)

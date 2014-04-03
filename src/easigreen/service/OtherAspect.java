@@ -31,9 +31,10 @@ public class OtherAspect
      */
     private double mEmissions;
 
+    //////////////////// Constructor
 
     /**
-     * Constructor
+     * All variables are set to a default value that can be changed as needed
      */
     public OtherAspect()
     {
@@ -42,8 +43,11 @@ public class OtherAspect
         mEmissions = 0;
     }
     
+    //////////////////// Methods
+
     /**
      * Sets the budget upgrade
+     *
      * @param double pBudget
      */
     public void setBudget(double pBudget)
@@ -53,6 +57,7 @@ public class OtherAspect
 
     /**
      * Sets the demand upgrade
+     *
      * @param double pDemand
      */
     public void setDemand(double pDemand)
@@ -62,6 +67,7 @@ public class OtherAspect
 
     /**
      * Sets the net emissions upgrade
+     *
      * @param double pEmissions
      */
     public void setEmissions(double pEmissions)
@@ -71,6 +77,7 @@ public class OtherAspect
 
     /**
      * Returns the budget upgrade
+     *
      * @return double mBudget
      */
     public double getBudget()
@@ -80,6 +87,7 @@ public class OtherAspect
 
     /**
      * Returns the energy demand upgrade
+     *
      * @return double mDemand
      */
     public double getDemand()
@@ -89,6 +97,7 @@ public class OtherAspect
 
     /**
      * Returns the net emissions upgrade
+     *
      * @return double mEmissions
      */
     public double getEmissions()

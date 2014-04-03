@@ -5,7 +5,7 @@ import easigreen.system.*;
 /**
  * The oil class contains information about the current oil status.  This
  * includes oil security, consumption and emissions.  These values can be
- * adjusted through
+ * adjusted through getters.
  *
  * @version 0.1.1
  * @author Larson Caldwell
@@ -35,15 +35,6 @@ public class Oil
      * Oil Emissions
      */
     final private static double mEmissions = 100;
-
-    //////////////////// Constructors
-
-    /**
-     * Default values for oil
-     */
-    public Oil()
-    {
-    }
 
     //////////////////// Methods
 
