@@ -186,13 +186,13 @@ public class FossilPane
      */
     protected void update()
     {
-	    mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getFossil().getAmount   ());
-        mValues.get("Supply Provided"    ).setText("" + mModel.getEnergyManager().getFossil().getPower    ());
-        mValues.get("Cost"               ).setText("" + mModel.getEnergyManager().getFossil().getCostBuild());
-        mValues.get("Public Approval"    ).setText("" + mModel.getEnergyManager().getFossil().getApproval ());
-        mValues.get("Emissions"          ).setText("" + mModel.getEnergyManager().getFossil().getEmissions());
-        mValues.get("Security"           ).setText("" + mModel.getEnergyManager().getFossil().getSecurity ());
-        mValues.get("Profit"             ).setText("" + mModel.getEnergyManager().getFossil().getProfit   ());
+	mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getFossil().getAmount   ());
+        mValues.get("Supply Provided"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getPower    ()));
+        mValues.get("Cost"               ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getCostBuild()));
+        mValues.get("Public Approval"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getApproval ()));
+        mValues.get("Emissions"          ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getEmissions()));
+        mValues.get("Security"           ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getSecurity ()));
+        mValues.get("Profit"             ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getProfit   ()));
     }
     
     /////////////////////////////// Getters

@@ -145,7 +145,6 @@ public class RenewablePane
             Label newLabel2 = new Label();
             newLabel1.setFont(new Font("Arial", 20));
             newLabel2.setFont(new Font("Arial", 20));
-            //setHalignment(newLabel2, HPos.RIGHT);
             mLabels.put(name, newLabel1);
             mValues.put(name, newLabel2);
         }
@@ -161,11 +160,11 @@ public class RenewablePane
     protected void update()
     {
 	mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getRenewable().getAmount   ());
-        mValues.get("Supply Provided"    ).setText("" + mModel.getEnergyManager().getRenewable().getPower    ());
-        mValues.get("Cost"               ).setText("" + mModel.getEnergyManager().getRenewable().getCostBuild());
-        mValues.get("Public Approval"    ).setText("" + mModel.getEnergyManager().getRenewable().getApproval ());
-        mValues.get("Emissions"          ).setText("" + mModel.getEnergyManager().getRenewable().getEmissions());
-        mValues.get("Security"           ).setText("" + mModel.getEnergyManager().getRenewable().getSecurity ());
-        mValues.get("Profit"             ).setText("" + mModel.getEnergyManager().getRenewable().getProfit   ());
+        mValues.get("Supply Provided"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getPower    ()));
+        mValues.get("Cost"               ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getCostBuild()));
+        mValues.get("Public Approval"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getApproval ()));
+        mValues.get("Emissions"          ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getEmissions()));
+        mValues.get("Security"           ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getSecurity ()));
+        mValues.get("Profit"             ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getProfit   ()));
     }
 }

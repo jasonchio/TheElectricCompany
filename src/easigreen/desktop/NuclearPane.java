@@ -137,12 +137,12 @@ public class NuclearPane
     protected void update()
     {
         mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getNuclear().getAmount   ());
-        mValues.get("Supply Provided"    ).setText("" + mModel.getEnergyManager().getNuclear().getPower    ());
-        mValues.get("Cost"               ).setText("" + mModel.getEnergyManager().getNuclear().getCostBuild());
-        mValues.get("Public Approval"    ).setText("" + mModel.getEnergyManager().getNuclear().getApproval ());
-        mValues.get("Emissions"          ).setText("" + mModel.getEnergyManager().getNuclear().getEmissions());
-        mValues.get("Security"           ).setText("" + mModel.getEnergyManager().getNuclear().getSecurity ());
-        mValues.get("Profit"             ).setText("" + mModel.getEnergyManager().getNuclear().getProfit   ());
+        mValues.get("Supply Provided"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getNuclear().getPower    ()));
+        mValues.get("Cost"               ).setText(String.format(FORMAT, mModel.getEnergyManager().getNuclear().getCostBuild()));
+        mValues.get("Public Approval"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getNuclear().getApproval ()));
+        mValues.get("Emissions"          ).setText(String.format(FORMAT, mModel.getEnergyManager().getNuclear().getEmissions()));
+        mValues.get("Security"           ).setText(String.format(FORMAT, mModel.getEnergyManager().getNuclear().getSecurity ()));
+        mValues.get("Profit"             ).setText(String.format(FORMAT, mModel.getEnergyManager().getNuclear().getProfit   ()));
     }
     
     /**

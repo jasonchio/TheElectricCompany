@@ -180,25 +180,25 @@ public class EnergyPane
      */
     protected void update()
     {
-	    double energySupplied  = mModel.getEnergyManager().getPower    ();
-	    double nuclearEnergy   = mModel.getEnergyManager().getNuclear  ().getTotalPower();
-	    double fossilEnergy    = mModel.getEnergyManager().getFossil   ().getTotalPower();
-	    double renewableEnergy = mModel.getEnergyManager().getRenewable().getTotalPower();
-	    double energyDemand    = mModel.getBaseManager  ().getDemand   ();
-	    int    nuclearPlants   = mModel.getEnergyManager().getNuclear  ().getAmount();
-	    int    fossilPlants    = mModel.getEnergyManager().getFossil   ().getAmount();
-	    int    renewablePlants = mModel.getEnergyManager().getRenewable().getAmount();
-	    double oil             = mModel.getEnergyManager().getOil      ().getConsumption();
+	double energySupplied  = mModel.getEnergyManager().getPower    ();
+	double nuclearEnergy   = mModel.getEnergyManager().getNuclear  ().getTotalPower();
+	double fossilEnergy    = mModel.getEnergyManager().getFossil   ().getTotalPower();
+	double renewableEnergy = mModel.getEnergyManager().getRenewable().getTotalPower();
+	double energyDemand    = mModel.getBaseManager  ().getDemand   ();
+	int    nuclearPlants   = mModel.getEnergyManager().getNuclear  ().getAmount();
+	int    fossilPlants    = mModel.getEnergyManager().getFossil   ().getAmount();
+	int    renewablePlants = mModel.getEnergyManager().getRenewable().getAmount();
+	double oil             = mModel.getEnergyManager().getOil      ().getConsumption();
 
-        mValues.get("Energy Demand"     ).setText("" + energyDemand   );
-        mValues.get("Energy Supplied"   ).setText("" + energySupplied );
+	mValues.get("Energy Demand"     ).setText(String.format(FORMAT, energyDemand   ));
+        mValues.get("Energy Supplied"   ).setText(String.format(FORMAT, energySupplied ));
         mValues.get("Nuclear Plants"    ).setText("" + nuclearPlants  );
-        mValues.get("Nuclear Energy"    ).setText("" + nuclearEnergy  );
+        mValues.get("Nuclear Energy"    ).setText(String.format(FORMAT, nuclearEnergy  ));
         mValues.get("Fossil Fuel Plants").setText("" + fossilPlants   );
-        mValues.get("Fossil Fuel Energy").setText("" + fossilEnergy   );
+        mValues.get("Fossil Fuel Energy").setText(String.format(FORMAT, fossilEnergy   ));
         mValues.get("Renewable Plants"  ).setText("" + renewablePlants);
-        mValues.get("Renewable Energy"  ).setText("" + renewableEnergy);
-        mValues.get(mOilLabel           ).setText("" + oil);
+        mValues.get("Renewable Energy"  ).setText(String.format(FORMAT, renewableEnergy));
+        mValues.get(mOilLabel           ).setText(String.format(FORMAT, oil));
 
         mPieChartData.setAll(new PieChart.Data("Nuclear"     , (nuclearEnergy   / energySupplied)),
                              new PieChart.Data("Fossil Fuels", (fossilEnergy    / energySupplied)),

@@ -76,7 +76,7 @@ public class CountryPane
      */
     protected int[] getColumns()
     {
-        return new int[] {12, 6, 60, 10, 12};
+        return new int[] {12, 6, 50, 20, 12};
     }
 
     /**
@@ -148,7 +148,9 @@ public class CountryPane
         for (int i = 0; i < mCategories.length; i++) {
             if (!mCategories[i].equals("")) {
                 mLabels[i] = new Label(mCategories[i] + ":");
-                mValues.put(mCategories[i], new Label());
+		Label newValue = new Label();
+		setHalignment(newValue, HPos.RIGHT);
+                mValues.put(mCategories[i], newValue);
             }
         }
 
@@ -163,16 +165,16 @@ public class CountryPane
     {
         mTitle.setText(mCountryName);
 	
-	mValues.get("Nuclear Plants"    ).setText("" + mModel.getEnergyManager  ().getNuclear  ().getAmount());
-	mValues.get("Fossil Fuel Plants").setText("" + mModel.getEnergyManager  ().getFossil   ().getAmount());
-        mValues.get("Renewable Plants"  ).setText("" + mModel.getEnergyManager  ().getRenewable().getAmount());
-        mValues.get("Energy Supplied"   ).setText("" + mModel.getEnergyManager  ().getPower    ());
-        mValues.get("Available Funds"   ).setText("" + mModel.getResourceManager().getFunds    ());
-        mValues.get("Public Approval"   ).setText("" + mModel.getEnergyManager  ().getApproval ());
-        mValues.get("Oil Consumption"   ).setText("" + mModel.getEnergyManager  ().getOil      ().getConsumption());
-        mValues.get("Total Profit"      ).setText("" + mModel.getEnergyManager  ().getProfit   ());
-        mValues.get("Total Security"    ).setText("" + mModel.getEnergyManager  ().getSecurity ());
-        mValues.get("Total Emissions"   ).setText("" + mModel.getEnergyManager  ().getEmissions());
+	mValues.get("Nuclear Plants"    ).setText("" + mModel.getEnergyManager().getNuclear  ().getAmount());
+	mValues.get("Fossil Fuel Plants").setText("" + mModel.getEnergyManager().getFossil   ().getAmount());
+	mValues.get("Renewable Plants"  ).setText("" + mModel.getEnergyManager().getRenewable().getAmount());
+        mValues.get("Energy Supplied"   ).setText(String.format(FORMAT, mModel.getEnergyManager  ().getPower    ()                 ));
+	mValues.get("Available Funds"   ).setText(String.format(FORMAT, mModel.getResourceManager().getFunds    ()                 ));
+        mValues.get("Public Approval"   ).setText(String.format(FORMAT, mModel.getEnergyManager  ().getApproval ()                 ));
+        mValues.get("Oil Consumption"   ).setText(String.format(FORMAT, mModel.getEnergyManager  ().getOil      ().getConsumption()));
+        mValues.get("Total Profit"      ).setText(String.format(FORMAT, mModel.getEnergyManager  ().getProfit   ()                 ));
+        mValues.get("Total Security"    ).setText(String.format(FORMAT, mModel.getEnergyManager  ().getSecurity ()                 ));
+        mValues.get("Total Emissions"   ).setText(String.format(FORMAT, mModel.getEnergyManager  ().getEmissions()                 ));
 
         mTechs.update();
     }

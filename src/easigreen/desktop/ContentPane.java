@@ -21,6 +21,12 @@ import javafx.scene.text.*;
 public class ContentPane
     extends GridPane
 {
+
+    /**
+     * Format for displaying numbers
+     */
+    protected static final String FORMAT = "%.2f";
+
     /**
      * Holds a reference to the model
      */

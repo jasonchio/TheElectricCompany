@@ -159,27 +159,27 @@ public class GoalsPane
 	double budget      = mModel.getResourceManager().getBudget();
 	double totalSpent  = budget - mModel.getResourceManager().getFunds();
 	double minApproval = mModel.getGoalManager    ().getTargetApproval();
-	double actApproval = (int)(mModel.getEnergyManager().getApproval() * 100);
+	double actApproval = (mModel.getEnergyManager().getApproval() * 100);
 	double targetEmit  = mModel.getGoalManager    ().getTargetEmissions();
 	double actualEmit  = mModel.getEnergyManager  ().getEmissions();
 	double targetSec   = mModel.getGoalManager    ().getTargetSecurity();
-	double actualSec   = (int)mModel.getEnergyManager  ().getSecurity();
+	double actualSec   = mModel.getEnergyManager  ().getSecurity();
 	double targetProf  = mModel.getGoalManager    ().getTargetProfit();
 	double actualProf  = mModel.getEnergyManager  ().getProfit();
 
-        mValues.get("Power Demand"    ).setText("" + powerDemand);
-        mValues.get("Power Supply"    ).setText("" + powerSupply);
-        mValues.get("Budget"          ).setText("" + budget     );
-        mValues.get("Total Spent"     ).setText("" + totalSpent );
-        mValues.get("Minimum Approval").setText("" + minApproval);
-        mValues.get("Public Approval" ).setText("" + actApproval);
+        mValues.get("Power Demand"    ).setText(String.format(FORMAT, powerDemand));
+        mValues.get("Power Supply"    ).setText(String.format(FORMAT, powerSupply));
+        mValues.get("Budget"          ).setText(String.format(FORMAT, budget     ));
+        mValues.get("Total Spent"     ).setText(String.format(FORMAT, totalSpent ));
+        mValues.get("Minimum Approval").setText(String.format(FORMAT, minApproval));
+        mValues.get("Public Approval" ).setText(String.format(FORMAT, actApproval));
 
-        mValues.get("Target Emissions").setText("" + targetEmit );
-        mValues.get("Total Emissions" ).setText("" + actualEmit );
-        mValues.get("Target Security" ).setText("" + targetSec  );
-        mValues.get("Total Security"  ).setText("" + actualSec  );
-        mValues.get("Target Profit"   ).setText("" + targetProf );
-        mValues.get("Total Profit"    ).setText("" + actualProf );
+        mValues.get("Target Emissions").setText(String.format(FORMAT, targetEmit ));
+        mValues.get("Total Emissions" ).setText(String.format(FORMAT, actualEmit ));
+        mValues.get("Target Security" ).setText(String.format(FORMAT, targetSec  ));
+        mValues.get("Total Security"  ).setText(String.format(FORMAT, actualSec  ));
+        mValues.get("Target Profit"   ).setText(String.format(FORMAT, targetProf ));
+        mValues.get("Total Profit"    ).setText(String.format(FORMAT, actualProf ));
 
 	String good = "good.png";
 	String bad  = "bad.png";
