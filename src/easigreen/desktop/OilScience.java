@@ -42,6 +42,6 @@ public class OilScience
     protected void update()
     {
 	mChange = 0;
-        mValue.setText("0");
+        mValue.setText("" + mModel.getUpgradeManager().getOilScience());
     }
 }
