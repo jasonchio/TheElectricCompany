@@ -6,6 +6,7 @@ import easigreen.system.*;
 import java.util.*;
 
 import javafx.application.*;
+import javafx.beans.value.*;
 import javafx.event.*;
 import javafx.geometry.*;
 import javafx.scene.*;
@@ -88,7 +89,7 @@ public class RenewableUpgradePane
     /**
      * Holds the text area for the technologies
      */
-    protected TextArea             mTechTextArea;
+    protected TechEntry            mTechEntry;
     
     /**
      * Holds the label for the code area
@@ -131,7 +132,7 @@ public class RenewableUpgradePane
         add(mActionButton  , 5, 3, 2, 1);
         add(mTechLabel     , 1, 4, 4, 1);
         add(mTechList      , 1, 5, 7, 1);
-        add(mTechTextArea  , 2, 6, 5, 1);
+        add(mTechEntry     , 2, 6, 5, 1);
         add(mCodeLabel     , 0, 7, 3, 1);
         add(mCodeValue     , 3, 7, 2, 1);
         add(mCodeButton    , 5, 7, 2, 1);
@@ -165,6 +166,19 @@ public class RenewableUpgradePane
 				    }
 				});
 
+        mTechList = new RenewableTechList(mModel);
+        mTechList.getSelectionModel().selectedItemProperty()
+            .addListener(new ChangeListener<String>()
+                         {
+                             public void changed(ObservableValue<?
+                                                 extends String> observable,
+                                                 String oldValue, String newValue)
+                             {
+                                 mTechEntry.update(newValue);
+                             }
+                         });
+
+
         setHalignment(mCodeButton, HPos.CENTER);
     }
 
@@ -173,31 +187,30 @@ public class RenewableUpgradePane
      */
     protected void initializeComponents()
     {
-        mRenewSci     = new RenewableScience    (mModel);
-        mRenewEng     = new RenewableEngineering(mModel);
-        mActionLabel  = new Label               ("Action Points:");
-        mActionValue  = new Label               ();
-        mTechLabel    = new Label               ("Renewable Technologies");
-        mTechList     = new RenewableTechList   (mModel);
-        mTechTextArea = new TextArea            ();
-        mCodeLabel    = new Label               ("Tech Code:");
-        mCodeValue    = new TextField           ();
+        mRenewSci    = new RenewableScience    (mModel);
+        mRenewEng    = new RenewableEngineering(mModel);
+        mActionLabel = new Label               ("Action Points:");
+        mActionValue = new Label               ();
+        mTechLabel   = new Label               ("Renewable Technologies");
+        mTechEntry   = new TechEntry           (mModel);
+        mCodeLabel   = new Label               ("Tech Code:");
+        mCodeValue   = new TextField           ();
 
-        setHalignment(mActionLabel , HPos.RIGHT);
-        setHalignment(mActionValue , HPos.CENTER);
-        setHalignment(mCodeLabel   , HPos.RIGHT);
-        setHalignment(mTechTextArea, HPos.CENTER);
-        setHalignment(mTechList    , HPos.CENTER);
-        setValignment(mTechTextArea, VPos.CENTER);
-        setValignment(mTechList    , VPos.CENTER);
+        setHalignment(mActionLabel, HPos.RIGHT);
+        setHalignment(mActionValue, HPos.CENTER);
+        setHalignment(mCodeLabel  , HPos.RIGHT);
+        setHalignment(mTechEntry  , HPos.CENTER);
+        setHalignment(mTechList   , HPos.CENTER);
+        setValignment(mTechEntry  , VPos.CENTER);
+        setValignment(mTechList   , VPos.CENTER);
 
-        mTechTextArea.setEditable(false);
-        mTechTextArea.setWrapText(true);
-        mTechTextArea.setMinSize(0, 0);
+        mTechEntry.setEditable(false);
+        mTechEntry.setWrapText(true);
+        mTechEntry.setMinSize(0, 0);
 
         mTechList.setMinSize(0, 0);
         mTechList.setMaxSize(350, 100);
-        mTechTextArea.setMaxSize(250, 75);
+        mTechEntry.setMaxSize(250, 75);
 
         mTechLabel  .setFont(new Font("Arial", 20));
         mActionLabel.setFont(new Font("Arial", 16));

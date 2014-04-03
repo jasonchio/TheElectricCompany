@@ -6,6 +6,7 @@ import easigreen.system.*;
 import java.util.*;
 
 import javafx.application.*;
+import javafx.beans.value.*;
 import javafx.event.*;
 import javafx.geometry.*;
 import javafx.scene.*;
@@ -71,7 +72,7 @@ public class TechnologiesPane
     /**
      * Holds the text area
      */
-    protected TextArea  mTextArea;
+    protected TechEntry  mTechEntry;
     
     /**
      * Holds the text field
@@ -106,6 +107,18 @@ public class TechnologiesPane
 					 update();
 				     }
 				 });
+	
+	mAllList = new AllTechList(mModel);
+	mAllList.getSelectionModel().selectedItemProperty()
+	    .addListener(new ChangeListener<String>()
+			 {
+			     public void changed(ObservableValue<? 
+						 extends String> observable, 
+						 String oldValue, String newValue)
+			     {
+				 mTechEntry.update(newValue);
+			     }
+			 });
 
         setHalignment(mImplementButton, HPos.CENTER);
         setHalignment(mApplyButton    , HPos.CENTER);
@@ -124,9 +137,8 @@ public class TechnologiesPane
 
         mImpList   = new ImplementedTechList(mModel);
         mAvaList   = new AvailableTechList  (mModel);
-        mAllList   = new AllTechList        (mModel);
 
-        mTextArea  = new TextArea ();
+        mTechEntry = new TechEntry(mModel);
         mTextField = new TextField();
 
         mImpLabel.setFont(new Font("Arial", 20));
@@ -134,14 +146,14 @@ public class TechnologiesPane
         mAllLabel.setFont(new Font("Arial", 20));
         mCodLabel.setFont(new Font("Arial", 20));
 
-        mTextArea.setEditable(false);
+        mTechEntry.setEditable(false);
         mTextField.setMinSize(0, 0);
-        mTextArea.setMaxSize(250, 50);
+        mTechEntry.setMaxSize(250, 50);
 
         setHalignment(mCodLabel , HPos.RIGHT);
         setHalignment(mTextField, HPos.CENTER);
-        setHalignment(mTextArea , HPos.CENTER);
-        setValignment(mTextArea , VPos.CENTER);
+        setHalignment(mTechEntry, HPos.CENTER);
+        setValignment(mTechEntry, VPos.CENTER);
 
         update();
     }
@@ -207,7 +219,7 @@ public class TechnologiesPane
         add(mImplementButton, 1,  6, 3, 1);
         add(mAllLabel       , 1,  7, 3, 1);
         add(mAllList        , 1,  8, 3, 1);
-        add(mTextArea       , 1,  9, 3, 1);
+        add(mTechEntry      , 1,  9, 3, 1);
         add(mCodLabel       , 1, 10, 1, 1);
         add(mTextField      , 2, 10, 1, 1);
         add(mApplyButton    , 3, 10, 1, 1);
