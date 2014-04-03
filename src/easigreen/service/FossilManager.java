@@ -4,7 +4,7 @@ import easigreen.service.*;
 import easigreen.system.*;
 
 /**
- * The FossilManager Manages Fossil Energy
+ * The FossilManager contains imortaint information about the fossil plants
  *
  * @version 0.1.0
  * @author Larson Caldwell
