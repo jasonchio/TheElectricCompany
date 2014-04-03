@@ -58,6 +58,16 @@ public class UpgradeItem
      */
     protected int mTotalChange;
 
+    /**
+     * Holds the saved Change
+     */
+    protected int mSaveChange;
+
+    /**
+     * Holds a reference to the action points label
+     */
+    protected Label mActionPoints;
+
     //////////////////////////////// Methods
     
     /**
@@ -65,7 +75,9 @@ public class UpgradeItem
      */
     protected void setup()
     {
-    	mChange = 0;
+    	mChange      = 0;
+	mTotalChange = 0;
+	mSaveChange = 0;
         setLabels();
         add(mTitle, 0, 0, 3, 1);
 
@@ -116,9 +128,12 @@ public class UpgradeItem
         {
             public void handle(ActionEvent event)
             {
-		if (mTotalChange < 5)
+		int currentActionPoints = Integer.parseInt(mActionPoints.getText());
+		if ((mTotalChange < 5) && ((currentActionPoints > 0) || (mChange < 0)))
                 {
                     mValue.setText("" + (Integer.parseInt(mValue.getText()) + 1));
+		    int change = (mChange < 0) ? 1 : -1;
+		    mActionPoints.setText("" + (currentActionPoints + change));
                     mChange += 1;
 		    mTotalChange += 1;
 		}
@@ -129,9 +144,12 @@ public class UpgradeItem
         {
             public void handle(ActionEvent event)
             {
-		if (mTotalChange > -5)
+		int currentActionPoints = Integer.parseInt(mActionPoints.getText());
+		if ((mTotalChange > -5) && ((currentActionPoints > 0) || (mChange > 0)))
 		{
                     mValue.setText("" + (Integer.parseInt(mValue.getText()) - 1));
+		    int change = (mChange > 0) ? 1 : -1;
+		    mActionPoints.setText("" + (currentActionPoints + change));
                     mChange -= 1;
 		    mTotalChange -= 1;
 		}
@@ -203,6 +221,14 @@ public class UpgradeItem
     {
         return new String[] {"Unknown1", "Unknown2"};
     }
+
+    /**
+     * Sets a backup for points spent
+     */
+    protected void saveChanges()
+    {
+	mSaveChange = mTotalChange;
+    }
     
     ////////////////////////////// Constructor
 
@@ -210,8 +236,9 @@ public class UpgradeItem
      * Constructor
      * @param SimCity pModel the current sim city Model
      */
-    public UpgradeItem(SimCity pModel)
+    public UpgradeItem(SimCity pModel, Label pActionPoints)
     {
         super(pModel);
+	mActionPoints = pActionPoints;
     }
 }

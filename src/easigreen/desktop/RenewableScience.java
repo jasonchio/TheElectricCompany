@@ -43,9 +43,9 @@ public class RenewableScience
      * Constructor
      * @param SimCity pModel the current sim city Model
      */
-    public RenewableScience(SimCity pModel)
+    public RenewableScience(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
 
     /**
@@ -54,6 +54,7 @@ public class RenewableScience
     protected void update()
     {
 	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getRenewableScience());
     }
 }

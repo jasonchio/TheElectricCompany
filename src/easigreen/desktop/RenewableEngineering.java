@@ -34,14 +34,15 @@ public class RenewableEngineering
      * Constructor
      * @param SimCity pModel the current sim city Model
      */
-    public RenewableEngineering(SimCity pModel)
+    public RenewableEngineering(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
 
     protected void update()
     {
 	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getRenewableEngineering());
     }
 }

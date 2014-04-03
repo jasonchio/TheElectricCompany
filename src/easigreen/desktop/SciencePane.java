@@ -70,9 +70,17 @@ public class SciencePane
 				      public void handle(ActionEvent event)
 				      {
 					  mModel.getUpgradeManager().addNuclearScience  (mNucSci.getChange());
+					  mModel.getResourceManager().spendActionPoints (Math.abs(mNucSci.getChange()));
 					  mModel.getUpgradeManager().addFossilScience   (mFosSci.getChange());
+					  mModel.getResourceManager().spendActionPoints (Math.abs(mFosSci.getChange()));
 					  mModel.getUpgradeManager().addRenewableScience(mRenSci.getChange());
+					  mModel.getResourceManager().spendActionPoints (Math.abs(mRenSci.getChange()));
 					  mModel.getUpgradeManager().addOilScience      (mOilSci.getChange());
+					  mModel.getResourceManager().spendActionPoints (Math.abs(mOilSci.getChange()));
+					  mNucSci.saveChanges();
+					  mFosSci.saveChanges();
+					  mRenSci.saveChanges();
+					  mOilSci.saveChanges();
 					  update();
 				      }
 				  });
@@ -85,13 +93,13 @@ public class SciencePane
      */
     protected void setComponents()
     {
-        mNucSci = new NuclearScience  (mModel);
-        mFosSci = new FossilScience   (mModel);
-        mRenSci = new RenewableScience(mModel);
-        mOilSci = new OilScience      (mModel);
+        mActionValue = new Label();
+        mNucSci = new NuclearScience  (mModel, mActionValue);
+        mFosSci = new FossilScience   (mModel, mActionValue);
+        mRenSci = new RenewableScience(mModel, mActionValue);
+        mOilSci = new OilScience      (mModel, mActionValue);
         mActionLabel = new Label("Action Points:");
         setHalignment(mActionLabel, HPos.RIGHT);
-        mActionValue = new Label();
         setHalignment(mActionValue, HPos.CENTER);
         update();
     }

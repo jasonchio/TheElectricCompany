@@ -130,8 +130,12 @@ public class FossilUpgradePane
                                   {
                                       public void handle(ActionEvent event)
                                       {
-                                          mModel.getUpgradeManager().addFossilScience    (mFossilSci.getChange());
-                                          mModel.getUpgradeManager().addFossilEngineering(mFossilEng.getChange());
+                                          mModel.getUpgradeManager ().addFossilScience    (mFossilSci.getChange());
+                                          mModel.getResourceManager().spendActionPoints   (Math.abs(mFossilSci.getChange()));
+                                          mModel.getUpgradeManager ().addFossilEngineering(mFossilEng.getChange());
+                                          mModel.getResourceManager().spendActionPoints   (Math.abs(mFossilEng.getChange()));
+					  mFossilSci.saveChanges();
+					  mFossilEng.saveChanges();
                                           update();
                                       }
                                   });
@@ -167,10 +171,10 @@ public class FossilUpgradePane
      */
     protected void initializeComponents()
     {
-        mFossilSci   = new FossilScience    (mModel);
-        mFossilEng   = new FossilEngineering(mModel);
-        mActionLabel = new Label            ("Action Points:");
         mActionValue = new Label            ();
+        mFossilSci   = new FossilScience    (mModel, mActionValue);
+        mFossilEng   = new FossilEngineering(mModel, mActionValue);
+        mActionLabel = new Label            ("Action Points:");
         mTechLabel   = new Label            ("Fossil Fuel Technologies");
         mTechEntry   = new TechEntry        (mModel);
         mCodeLabel   = new Label            ("Tech Code:");

@@ -30,9 +30,9 @@ public class Lobby
      * Constructor
      * @param pModel the current SimCity Model
      */
-    public Lobby(SimCity pModel)
+    public Lobby(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
 
     ///////////////////////////// Methods
@@ -42,7 +42,8 @@ public class Lobby
      */
     protected void update()
     {
-	    mChange = 0;
+	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getLobby());
     }
     

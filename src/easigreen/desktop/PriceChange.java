@@ -27,9 +27,9 @@ public class PriceChange
      * Constructor
      * @param pModel the current SimCity Model
      */
-    public PriceChange(SimCity pModel)
+    public PriceChange(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
     
     /////////////////////////// Methods
@@ -39,7 +39,8 @@ public class PriceChange
      */
     protected void update()
     {
-	    mChange = 0;
+	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getPriceChange());
     }
     

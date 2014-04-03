@@ -31,7 +31,8 @@ public class FossilScience
      */
     protected void update()
     {
-	    mChange = 0;
+	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getFossilScience());
     }
 
@@ -61,8 +62,8 @@ public class FossilScience
      * Constructor
      * @param pModel the current SimCity Model
      */
-    public FossilScience(SimCity pModel)
+    public FossilScience(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
 }

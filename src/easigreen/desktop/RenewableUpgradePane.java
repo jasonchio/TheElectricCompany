@@ -151,7 +151,11 @@ public class RenewableUpgradePane
                                       public void handle(ActionEvent event)
                                       {
                                           mModel.getUpgradeManager().addRenewableScience    (mRenewSci.getChange());
+                                          mModel.getResourceManager().spendActionPoints     (Math.abs(mRenewSci.getChange()));
                                           mModel.getUpgradeManager().addRenewableEngineering(mRenewEng.getChange());
+                                          mModel.getResourceManager().spendActionPoints     (Math.abs(mRenewEng.getChange()));
+					  mRenewSci.saveChanges();
+					  mRenewEng.saveChanges();
                                           update();
                                       }
                                   });
@@ -187,10 +191,10 @@ public class RenewableUpgradePane
      */
     protected void initializeComponents()
     {
-        mRenewSci    = new RenewableScience    (mModel);
-        mRenewEng    = new RenewableEngineering(mModel);
-        mActionLabel = new Label               ("Action Points:");
         mActionValue = new Label               ();
+        mRenewSci    = new RenewableScience    (mModel, mActionValue);
+        mRenewEng    = new RenewableEngineering(mModel, mActionValue);
+        mActionLabel = new Label               ("Action Points:");
         mTechLabel   = new Label               ("Renewable Technologies");
         mTechEntry   = new TechEntry           (mModel);
         mCodeLabel   = new Label               ("Tech Code:");

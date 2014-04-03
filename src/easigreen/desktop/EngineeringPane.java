@@ -71,9 +71,15 @@ public class EngineeringPane
                                   {
                                       public void handle(ActionEvent event)
                                       {
-                                          mModel.getUpgradeManager().addNuclearEngineering  (mNucEng.getChange());
-                                          mModel.getUpgradeManager().addFossilEngineering   (mFosEng.getChange());
-                                          mModel.getUpgradeManager().addRenewableEngineering(mRenEng.getChange());
+                                          mModel.getUpgradeManager ().addNuclearEngineering  (mNucEng.getChange());
+                                          mModel.getResourceManager().spendActionPoints      (Math.abs(mNucEng.getChange()));
+                                          mModel.getUpgradeManager ().addFossilEngineering   (mFosEng.getChange());
+                                          mModel.getResourceManager().spendActionPoints      (Math.abs(mFosEng.getChange()));
+                                          mModel.getUpgradeManager ().addRenewableEngineering(mRenEng.getChange());
+                                          mModel.getResourceManager().spendActionPoints      (Math.abs(mRenEng.getChange()));
+					  mNucEng.saveChanges();
+					  mFosEng.saveChanges();
+					  mRenEng.saveChanges();
                                           update();
                                       }
                                   });
@@ -86,12 +92,12 @@ public class EngineeringPane
      */
     protected void setComponents()
     {
-        mNucEng = new NuclearEngineering  (mModel);
-        mFosEng = new FossilEngineering   (mModel);
-        mRenEng = new RenewableEngineering(mModel);
+        mActionValue = new Label();
+        mNucEng = new NuclearEngineering  (mModel, mActionValue);
+        mFosEng = new FossilEngineering   (mModel, mActionValue);
+        mRenEng = new RenewableEngineering(mModel, mActionValue);
         mActionLabel = new Label("Action Points:");
         setHalignment(mActionLabel, HPos.RIGHT);
-        mActionValue = new Label();
         setHalignment(mActionValue, HPos.CENTER);
         update();
     }

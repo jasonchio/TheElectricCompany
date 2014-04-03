@@ -87,8 +87,12 @@ public class OilUpgradePane
                                   {
                                       public void handle(ActionEvent event)
                                       {
-                                          mModel.getUpgradeManager().addOilScience (mOilSci  .getChange());
-                                          mModel.getUpgradeManager().addOilDrilling(mOilDrill.getChange());
+                                          mModel.getUpgradeManager ().addOilScience     (mOilSci.getChange());
+                                          mModel.getResourceManager().spendActionPoints (Math.abs(mOilSci.getChange()));
+                                          mModel.getUpgradeManager ().addOilDrilling    (mOilDrill.getChange());
+                                          mModel.getResourceManager().spendActionPoints (Math.abs(mOilDrill.getChange()));
+					  mOilSci.saveChanges();
+					  mOilDrill.saveChanges();
                                           update();
                                       }
                                   });
@@ -121,10 +125,10 @@ public class OilUpgradePane
 
     protected void initializeComponents()
     {
-        mOilSci      = new OilScience (mModel);
-        mOilDrill    = new OilDrilling(mModel);
-        mActionLabel = new Label      ("Action Points:");
         mActionValue = new Label      ();
+        mOilSci      = new OilScience (mModel, mActionValue);
+        mOilDrill    = new OilDrilling(mModel, mActionValue);
+        mActionLabel = new Label      ("Action Points:");
         mTechLabel   = new Label      ("Oil Technologies");
         mTechEntry   = new TechEntry  (mModel);
         mCodeLabel   = new Label      ("Tech Code:");

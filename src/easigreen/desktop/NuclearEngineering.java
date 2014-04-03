@@ -28,9 +28,9 @@ public class NuclearEngineering
      * Constructor
      * @param pModel the current SimCity Model
      */
-    public NuclearEngineering(SimCity pModel)
+    public NuclearEngineering(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
     
     /////////////////////////////// Getters
@@ -60,7 +60,8 @@ public class NuclearEngineering
      */
     protected void update()
     {
-	    mChange = 0;
+	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getNuclearEngineering());
     }
     

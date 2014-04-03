@@ -31,7 +31,8 @@ public class OilDrilling
      */
     protected void update()
     {
-	    mChange = 0;
+	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getOilDrilling());
     }
 
@@ -61,8 +62,8 @@ public class OilDrilling
      * Constructor
      * @param pModel the current SimCity Model
      */
-    public OilDrilling(SimCity pModel)
+    public OilDrilling(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
 }

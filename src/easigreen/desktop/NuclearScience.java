@@ -28,7 +28,8 @@ public class NuclearScience
      */
     protected void update()
     {
-	    mChange = 0;
+	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getNuclearScience());
     }
 
@@ -58,9 +59,9 @@ public class NuclearScience
      * Constructor
      * @param pModel the current SimCity Model
      */
-    public NuclearScience(SimCity pModel)
+    public NuclearScience(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
 
 }

@@ -38,9 +38,15 @@ public class PoliciesPane
                                   {
                                       public void handle(ActionEvent event)
                                       {
-                                          mModel.getUpgradeManager().addLobby      (mLobby.getChange());
-                                          mModel.getUpgradeManager().addOilDrilling(mOil  .getChange());
-                                          mModel.getUpgradeManager().addPriceChange(mPrice.getChange());
+                                          mModel.getUpgradeManager ().addLobby          (mLobby.getChange());
+                                          mModel.getResourceManager().spendActionPoints (Math.abs(mLobby.getChange()));
+                                          mModel.getUpgradeManager ().addOilDrilling    (mOil.getChange());
+                                          mModel.getResourceManager().spendActionPoints (Math.abs(mOil.getChange()));
+                                          mModel.getUpgradeManager ().addPriceChange    (mPrice.getChange());
+                                          mModel.getResourceManager().spendActionPoints (Math.abs(mPrice.getChange()));
+					  mLobby.saveChanges();
+					  mOil  .saveChanges();
+					  mPrice.saveChanges();
                                           update();
                                       }
                                   });
@@ -50,12 +56,12 @@ public class PoliciesPane
 
     protected void setComponents()
     {
-        mPrice = new PriceChange(mModel);
-        mLobby = new Lobby      (mModel);
-        mOil   = new OilDrilling(mModel);
+        mActionValue = new Label();
+        mPrice = new PriceChange(mModel, mActionValue);
+        mLobby = new Lobby      (mModel, mActionValue);
+        mOil   = new OilDrilling(mModel, mActionValue);
         mActionLabel = new Label("Action Points:");
         setHalignment(mActionLabel, HPos.RIGHT);
-        mActionValue = new Label();
         setHalignment(mActionValue, HPos.CENTER);
         update();
     }

@@ -34,14 +34,15 @@ public class OilScience
      * Constructor
      * @param SimCity pModel the current sim city Model
      */
-    public OilScience(SimCity pModel)
+    public OilScience(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
 
     protected void update()
     {
 	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getOilScience());
     }
 }

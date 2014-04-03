@@ -30,9 +30,9 @@ public class FossilEngineering
      * Constructor
      * @param pModel the current SimCity Model
      */
-    public FossilEngineering(SimCity pModel)
+    public FossilEngineering(SimCity pModel, Label pLabel)
     {
-        super(pModel);
+        super(pModel, pLabel);
     }
 
     //////////////////////// Methods
@@ -42,7 +42,8 @@ public class FossilEngineering
      */
     protected void update()
     {
-	    mChange = 0;
+	mChange = 0;
+	mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getFossilEngineering());
     }
     

@@ -131,8 +131,12 @@ public class NuclearUpgradePane
                                   {
                                       public void handle(ActionEvent event)
                                       {
-                                          mModel.getUpgradeManager().addNuclearScience    (mNucSci.getChange());
-                                          mModel.getUpgradeManager().addNuclearEngineering(mNucEng.getChange());
+                                          mModel.getUpgradeManager ().addNuclearScience    (mNucSci.getChange());
+                                          mModel.getResourceManager().spendActionPoints    (Math.abs(mNucSci.getChange()));
+                                          mModel.getUpgradeManager ().addNuclearEngineering(mNucEng.getChange());
+                                          mModel.getResourceManager().spendActionPoints    (Math.abs(mNucEng.getChange()));
+					  mNucSci.saveChanges();
+					  mNucEng.saveChanges();
                                           update();
                                       }
                                   });
@@ -168,10 +172,10 @@ public class NuclearUpgradePane
      */
     protected void initializeComponents()
     {
-        mNucSci      = new NuclearScience    (mModel);
-        mNucEng      = new NuclearEngineering(mModel);
-        mActionLabel = new Label             ("Action Points:");
         mActionValue = new Label             ();
+        mNucSci      = new NuclearScience    (mModel, mActionValue);
+        mNucEng      = new NuclearEngineering(mModel, mActionValue);
+        mActionLabel = new Label             ("Action Points:");
         mTechLabel   = new Label             ("Nuclear Technologies");
         mTechEntry   = new TechEntry         (mModel);
         mCodeLabel   = new Label             ("Tech Code:");
