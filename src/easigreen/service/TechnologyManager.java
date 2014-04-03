@@ -59,6 +59,14 @@ public class TechnologyManager
      */
     private Map<String, Technology> mNames;
 
+    /**
+     * Holds all technologies referenced by their name
+     */
+    private Map<String, Technology> mLookup;
+
+    /**
+     * Holds the tech codes and creates technologies
+     */
     private TechCodeManager mCodes;
 
     /**
@@ -75,7 +83,30 @@ public class TechnologyManager
         mAll         = new TechnologyGetter().getTechnologies();
 	mCodes       = new TechCodeManager(mAll);
 	mNames       = new HashMap<String, Technology>();
+	mLookup      = new HashMap<String, Technology>();
 	setPlantLists();
+	setLookup();
+    }
+
+    /**
+     * Populates the lookup map using every technology
+     */
+    private void setLookup()
+    {
+	for (Technology t : mAll)
+	{
+	    mLookup.put(t.getName(), t);
+	}
+    }
+
+    /**
+     * Returns a technology by name
+     * @param techName the name to lookup
+     * @return tech the tech associated with name
+     */
+    public Technology lookup(String techName)
+    {
+	return mLookup.get(techName);
     }
 
     /**
