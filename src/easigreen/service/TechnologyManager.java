@@ -117,39 +117,39 @@ public class TechnologyManager
 	for (Technology t : mAll)
 	{
 	    // Add to nuclear if it affects nuclear plants
-	    if ((t.getNuclear().getPower    () != 0) ||
-		(t.getNuclear().getCost     () != 0) ||
-		(t.getNuclear().getApproval () != 0) ||
-		(t.getNuclear().getSecurity () != 0) ||
-		(t.getNuclear().getEmissions() != 0) ||
-		(t.getNuclear().getProfit   () != 0)) 
+	    if ((t.getNuclear().getPower    () > 0) ||
+		(t.getNuclear().getCost     () < 0) ||
+		(t.getNuclear().getApproval () > 0) ||
+		(t.getNuclear().getSecurity () > 0) ||
+		(t.getNuclear().getEmissions() < 0) ||
+		(t.getNuclear().getProfit   () > 0)) 
 	    {
 		mNuclear.add(t);
 	    }
 	    // Add to fossil if it affects fossil plants
-	    if ((t.getFossil().getPower    () != 0) ||
-		(t.getFossil().getCost     () != 0) ||
-		(t.getFossil().getApproval () != 0) ||
-		(t.getFossil().getSecurity () != 0) ||
-		(t.getFossil().getEmissions() != 0) ||
-		(t.getFossil().getProfit   () != 0)) 
+	    if ((t.getFossil().getPower    () > 0) ||
+		(t.getFossil().getCost     () < 0) ||
+		(t.getFossil().getApproval () > 0) ||
+		(t.getFossil().getSecurity () > 0) ||
+		(t.getFossil().getEmissions() < 0) ||
+		(t.getFossil().getProfit   () > 0)) 
 	    {
 		mFossil.add(t);
 	    } 
 	    // Add to renewable if it affects renewable plants
-	    if ((t.getRenewable().getPower    () != 0) ||
-		(t.getRenewable().getCost     () != 0) ||
-		(t.getRenewable().getApproval () != 0) ||
-		(t.getRenewable().getSecurity () != 0) ||
-		(t.getRenewable().getEmissions() != 0) ||
-		(t.getRenewable().getProfit   () != 0)) 
+	    if ((t.getRenewable().getPower    () > 0) ||
+		(t.getRenewable().getCost     () < 0) ||
+		(t.getRenewable().getApproval () > 0) ||
+		(t.getRenewable().getSecurity () > 0) ||
+		(t.getRenewable().getEmissions() < 0) ||
+		(t.getRenewable().getProfit   () > 0)) 
 	    {
 		mRenewable.add(t);
 	    } 
 	    // Add to oil if it affects oil plants
-	    if ((t.getOil().getConsumption() != 0) ||
-		(t.getOil().getSecurity   () != 0) ||
-		(t.getOil().getGrowth     () != 0)) 
+	    if ((t.getOil().getConsumption() < 0) ||
+		(t.getOil().getSecurity   () > 0) ||
+		(t.getOil().getGrowth     () < 0)) 
 	    {
 		mOil.add(t);
 	    } 
