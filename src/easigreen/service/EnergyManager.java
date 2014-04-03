@@ -66,6 +66,7 @@ public class EnergyManager
      */
     public NuclearManager getNuclear()
     {
+	mNuclear.update();
         return mNuclear;
     }
 
@@ -76,6 +77,7 @@ public class EnergyManager
      */
     public FossilManager getFossil()
     {
+	mFossil.update();
         return mFossil;
     }
 
@@ -86,6 +88,7 @@ public class EnergyManager
      */
     public RenewableManager getRenewable()
     {
+	mRenewable.update();
         return mRenewable;
     }
 
@@ -96,6 +99,7 @@ public class EnergyManager
      */
     public OilManager getOil()
     {
+	mOil.update();
         return mOil;
     }
 
