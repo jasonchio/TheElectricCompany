@@ -25,12 +25,12 @@ public class BaseManager
     /**
      * The Default budget
      */
-    private static final double mBudget = 9;
+    private static final double M_BUDGET = 9;
 
     /**
      * The Default demand
      */
-    private static final double mDemand = 100;
+    private static final double M_DEMAND = 100;
 
 
     //////////////////// Constructors
@@ -87,7 +87,7 @@ public class BaseManager
      */
     public double getBudget()
     {
-	return mBudget + (double)(mRoundNumber * 15);
+	return M_BUDGET + (double)(mRoundNumber * 15);
     }
     
     /**
@@ -96,6 +96,6 @@ public class BaseManager
      */
     public double getDemand()
     {
-	return mDemand + (double)(mRoundNumber * 5);
+	return M_DEMAND + (double)(mRoundNumber * 5);
     }
 }
