@@ -152,6 +152,8 @@ public class GoalsPane
      */
     protected void update()
     {
+        mModel.getGoalManager().update();
+
 	double powerDemand = mModel.getResourceManager().getDemand();
 	double powerSupply = mModel.getEnergyManager  ().getPower ();
 	double budget      = mModel.getResourceManager().getBudget();

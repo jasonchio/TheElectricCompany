@@ -1,5 +1,7 @@
 package easigreen.service;
 
+import java.lang.Math;
+
 /**
  * The GoalManager Manages Goals
  *
@@ -76,10 +78,10 @@ public class GoalManager
      */
     public void update()
     {
-	mEmissions = mEnergyManager.getEmissions() - mResourceManager.getEmitCredits();
-	mSecurity  = mEnergyManager.getSecurity();
-	mProfit    = mEnergyManager.getProfit();
-	update();
+	mEmissions = .8  * mEnergyManager.getEmissions() - mResourceManager.getEmitCredits();
+	mSecurity  = Math.abs(.4 * mEnergyManager.getSecurity()) + mEnergyManager.getSecurity();
+	mProfit    = Math.abs(.1 * mEnergyManager.getProfit()) + mEnergyManager.getProfit();
+	//update();  //this is recusive and sends the program in an endless loop
     }
 
     /**
