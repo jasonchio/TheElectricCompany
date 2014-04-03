@@ -1,7 +1,8 @@
 package easigreen.service;
 
 /**
- * The EnergyManager Manages Energy
+ * The EnergyManager contains the information for each form of energy, 
+ * including fossil plants, nuclear plants, and renewable plants.
  *
  * @version 0.1.0
  * @author Larson Caldwell
@@ -114,14 +115,19 @@ public class EnergyManager
 
     /**
      * Gets the total power produced with all the plants together
+     *
+     * @return power the power produced from all the plants
      */
     public double getPower()
     {
-	return mNuclear.getTotalPower() + mFossil.getTotalPower() + mRenewable.getTotalPower();
+	return mNuclear.getTotalPower() + mFossil.getTotalPower() 
+                  + mRenewable.getTotalPower();
     }
 
     /**
      * Gets the security of all the plants together
+     *
+     * @return security the security of all the plants combined
      */
     public double getSecurity()
     {
@@ -131,6 +137,8 @@ public class EnergyManager
 
     /**
      * Gets the amount of all the plants together
+     *
+     * @return amount the number of all the plants total
      */
     public int getAmount()
     {
@@ -140,6 +148,8 @@ public class EnergyManager
 
     /**
      * Gets the approval of all the plants together
+     *
+     * @return approval the aproval of all the plants together
      */
     public double getApproval()
     {
@@ -149,6 +159,8 @@ public class EnergyManager
 
     /**
      * Gets the emissions of all the plants together
+     *
+     * @return emissions the emissions released from all of the plants together
      */
     public double getEmissions()
     {
@@ -157,7 +169,9 @@ public class EnergyManager
     }
 
     /**
-     * Gets the security of all the plants together
+     * Gets the profit of all the plants together
+     *
+     * @return profit the profit from all of the plants
      */
     public double getProfit()
     {

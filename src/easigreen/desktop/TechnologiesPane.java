@@ -91,6 +91,7 @@ public class TechnologiesPane
 					 {
 					     String techName = mAvaList.getSelectionModel().getSelectedItem();
 					     Technology tech = mModel.getUpgradeManager().getTechnologyManager().getTechnology(techName);
+                                             System.out.println("Qual: " + tech.getQuality());
 					     mModel.getUpgradeManager().getTechnologyManager().implementTechnology(tech);
 					     update();
 					 }

@@ -9,10 +9,16 @@
  */
 public class Run
 {
+   /**
+    * DOCUMENT ME!
+    *
+    * @param args DOCUMENT ME!
+    *
+    * @throws Exception DOCUMENT ME!
+    */
    public static void main(String[] args)
       throws Exception
    {
-      javafx.application.Application.
-         launch(easigreen.desktop.GUI.class, args);
+      javafx.application.Application.launch(easigreen.desktop.GUI.class, args);
    }
 }

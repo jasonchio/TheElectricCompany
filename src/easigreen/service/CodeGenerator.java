@@ -3,6 +3,14 @@ package easigreen.service;
 import java.util.ArrayList;
 import java.lang.Math;
 
+/**
+ * This class generates random access code for each technology.
+ *
+ * @version 0.1.2
+ * @author Larson Caldwell
+ * @author Sam Graham 
+ * @author Haru McClellan
+ */
 public class CodeGenerator
 {
     //////////////////// Variables

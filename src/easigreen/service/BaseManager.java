@@ -1,7 +1,8 @@
 package easigreen.service;
 
 /**
- * The BaseManager Manages Base Values
+ * The BaseManager Manages base values that will be used as a referance when
+ * accessing different round information.
  *
  * @version 0.1.2
  * @author Larson Caldwell

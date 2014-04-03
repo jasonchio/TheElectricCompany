@@ -3,7 +3,8 @@ package easigreen.service;
 import java.lang.Math;
 
 /**
- * The GoalManager Manages Goals
+ * The GoalManager contains information about the country long-term and 
+ * short-term goals.
  *
  * @version 0.1.2
  * @author Larson Caldwell
@@ -23,7 +24,6 @@ public class GoalManager
      * Manager of Resources
      */
     private ResourceManager mResourceManager;
-
 
     /**
      * Manager of Upgrades
@@ -52,6 +52,11 @@ public class GoalManager
 
     ///////////////////// Getter
 
+    /**
+     * Gets the target approval rating
+     *
+     * @return mTargetApproval the target approval rating
+     */
     public int getTargetApproval()
     {
         return mTargetApproval;
@@ -66,7 +71,9 @@ public class GoalManager
      * @param pResourceManager the resource manager
      * @param pUpgradeManager the upgrade manager
      */
-    public GoalManager(ResourceManager pResourceManager, UpgradeManager pUpgradeManager, EnergyManager pEnergyManager)
+    public GoalManager(ResourceManager pResourceManager, 
+                       UpgradeManager pUpgradeManager, 
+                       EnergyManager pEnergyManager)
     {
         mEnergyManager   = pEnergyManager;
         mResourceManager = pResourceManager;
@@ -78,10 +85,12 @@ public class GoalManager
      */
     public void update()
     {
-	mEmissions = .8  * mEnergyManager.getEmissions() - mResourceManager.getEmitCredits();
-	mSecurity  = Math.abs(.4 * mEnergyManager.getSecurity()) + mEnergyManager.getSecurity();
-	mProfit    = Math.abs(.1 * mEnergyManager.getProfit()) + mEnergyManager.getProfit();
-	//update();  //this is recusive and sends the program in an endless loop
+	mEmissions = .8  * mEnergyManager.getEmissions() 
+                     - mResourceManager.getEmitCredits();
+	mSecurity  = Math.abs(.4 * mEnergyManager.getSecurity()) 
+                     + mEnergyManager.getSecurity();
+	mProfit    = Math.abs(.1 * mEnergyManager.getProfit()) 
+                     + mEnergyManager.getProfit();
     }
 
     /**

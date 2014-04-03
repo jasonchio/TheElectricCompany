@@ -85,10 +85,13 @@ public class Energy
      */
     public boolean remove(int pAmount)
     {
-        if (mAmount - pAmount >= 0) {
+        if (mAmount - pAmount >= 0) 
+        {
             mAmount -= pAmount;
             return true;
-        } else {
+        } 
+        else 
+        {
             return false;
         }
     }
@@ -175,6 +178,11 @@ public class Energy
 
     //////////////////// Setters
 
+    /**
+     * Sets the amount of plants currently
+     *
+     * @param pAmount the new amount of plants
+     */
     public void setAmount(int pAmount)
     {
         mAmount = pAmount;

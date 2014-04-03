@@ -29,9 +29,12 @@ public class ImageGetter
 
         String imageFilename = cImagesPathPrefix + pName;
 
-        try {
+        try 
+        {
             im = new Image(ResourceGetter.getResourceAsStream(imageFilename));
-        } catch (Exception e) {
+        } 
+        catch (Exception e) 
+        {
             e.printStackTrace();
         }
 
