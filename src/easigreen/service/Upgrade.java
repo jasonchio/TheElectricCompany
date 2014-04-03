@@ -85,6 +85,7 @@ public class Upgrade
 
     /**
      * Get the change in budget
+     *
      * @return the change in budget
      */
     public double getBudgetChange()
@@ -94,6 +95,7 @@ public class Upgrade
 
     /**
      * Get the change in energy price
+     *
      * @return the change in the energy price
      */
     public double getPriceChange()
@@ -103,6 +105,7 @@ public class Upgrade
 
     /**
      * Get the change in approval
+     *
      * @return the change in approval
      */
     public double getApprovalChange()
@@ -112,6 +115,7 @@ public class Upgrade
 
     /**
      * Get the change in nuclear approval rating
+     *
      * @return the change in nuclear approval rating
      */
     public double getNatt()
@@ -121,6 +125,7 @@ public class Upgrade
 
     /**
      * Get the change in Nuclear Security
+     *
      * @return the change in nuclear security
      */
     public double getNsec()
@@ -130,6 +135,7 @@ public class Upgrade
 
     /**
      * Get the change in fossil approval rating
+     *
      * @return the change in fossil approval rating
      */
     public double getFatt()
@@ -139,6 +145,7 @@ public class Upgrade
 
     /**
      * Get the change in fossil security
+     *
      * @return the change in fossil security
      */
     public double getFsec()
@@ -148,6 +155,7 @@ public class Upgrade
 
     /**
      * Get the change in approval rating of renewable
+     *
      * @return the change in approval rating of renewable
      */
     public double getRatt()
@@ -157,6 +165,7 @@ public class Upgrade
 
     /**
      * Get the change in renewable security
+     *
      * @return the change in renewable security
      */
     public double getRsec()
@@ -166,6 +175,7 @@ public class Upgrade
 
     /**
      * Get the change in daily oil consumption
+     *
      * @return the change in daily oil consumption
      */
     public double getOil()
@@ -175,6 +185,7 @@ public class Upgrade
 
     /**
      * Get the change in oil security
+     *
      * @return the change in oil security
      */
     public double getOilSec()
@@ -184,6 +195,7 @@ public class Upgrade
 
     /**
      * Get the change in oil growth
+     *
      * @return the change in oil growth
      */
     public double getOilGrow()
@@ -195,6 +207,7 @@ public class Upgrade
 
     /**
      * Set the change in budget
+     *
      * @param pBudgetChange change in budget
      */
     public void setBudgetChange(int pBudgetChange)
@@ -204,6 +217,7 @@ public class Upgrade
 
     /**
      * Set the change in the energy price
+     *
      * @param pNRGChange change in the energy price
      */
     public void setPriceChange(int pPriceChange)
@@ -213,6 +227,7 @@ public class Upgrade
 
     /**
      * Set the change in approval
+     *
      * @param pEmissionsChange change in approval
      */
     public void setApprovalChange(double pApprovalChange)
@@ -222,6 +237,7 @@ public class Upgrade
 
     /**
      * Set the change in nuclear approval rating
+     *
      * @param pNatt a double
      */
     public void setNatt(double pNatt)
@@ -231,6 +247,7 @@ public class Upgrade
 
     /**
      * Set the change in nuclear security
+     *
      * @param pNsec a double
      */
     public void setNsec(double pNsec)
@@ -240,6 +257,7 @@ public class Upgrade
 
     /**
      * Set the change in fossil approval rating
+     *
      * @param pFatt a double
      */
     public void setFatt(double pFatt)
@@ -249,6 +267,7 @@ public class Upgrade
 
     /**
      * Set the change in fossil security
+     *
      * @param pFsec a double
      */
     public void setFsec(double pFsec)
@@ -258,6 +277,7 @@ public class Upgrade
 
     /**
      * Set the change in renewable approval rating
+     *
      * @param pRatt a double
      */
     public void setRatt(double pRatt)
@@ -267,6 +287,7 @@ public class Upgrade
 
     /**
      * Set the change in renewable security
+     *
      * @param pRsec a double
      */
     public void setRsec(double pRsec)
@@ -276,6 +297,7 @@ public class Upgrade
 
     /**
      * Set the change in daily oil consumption
+     *
      * @param pOil
      */
     public void setOil(double pOil)
@@ -285,6 +307,7 @@ public class Upgrade
 
     /**
      * Set the change in oil security
+     *
      * @param pOilSec a double
      */
     public void setOilSec(double pOilSec)
@@ -294,6 +317,7 @@ public class Upgrade
 
     /**
      * Set the change in oil growth
+     *
      * @param pOilGrow a double
      */
     public void setOilGrow(double pOilGrow)

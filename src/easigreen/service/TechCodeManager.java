@@ -7,9 +7,16 @@ import java.util.*;
 
 /**
  * This class is used to map codes to technologies
+ *
+ * @version 0.1.1
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 class TechCodeManager
 {
+    //////////////////// Variables
+
     /**
      * The maximum number a code can be
      */
@@ -25,8 +32,11 @@ class TechCodeManager
      */
     private List<Technology> mTechs;
 
+    //////////////////// Constructors
+
     /**
-     * Constructor
+     * Instansiates some member varables using parameters
+     *
      * @param List-Technology pTechs, from Technology Manager
      */
     public TechCodeManager(List<Technology> pTechs)
@@ -35,6 +45,8 @@ class TechCodeManager
 	mCodes = new HashMap<String, Technology>();
 	generateCodes();
     }
+
+    //////////////////// Methods
 
     /**
      * Generates new codes for all technologies
@@ -58,15 +70,18 @@ class TechCodeManager
 
     /**
      * Prints a technology's code
+     *
      * @param tech the technology to print code
      */
     public void printCode(Technology tech)
     {
-	System.out.println(tech.getName() + " " + tech.getQuality() + " - " + tech.getCode());
+	System.out.println(tech.getName() + " " + tech.getQuality() + " - " 
+            + tech.getCode());
     }
 
     /**
      * Creates a new code for a used technology
+     *
      * @param String pCode, the used code
      */
     private void regenerate(String pCode)
@@ -81,6 +96,7 @@ class TechCodeManager
 
     /**
      * Generates a new code
+     *
      * @return the new code
      */
     private String getNewCode()
@@ -90,6 +106,7 @@ class TechCodeManager
 
     /**
      * Uses a string code as a key to look up a technology
+     *
      * @param String pCode the code to check
      * @return Technology tech the associated technology
      */

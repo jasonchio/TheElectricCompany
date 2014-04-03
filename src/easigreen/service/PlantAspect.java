@@ -46,8 +46,10 @@ public class PlantAspect
      */
     private double mProfit;
 
+    //////////////////// Constructor
+
     /**
-     * Constructor
+     * All variables are set to a default value that can be changed as needed
      */
     public PlantAspect()
     {
@@ -59,8 +61,11 @@ public class PlantAspect
         mProfit    = 0;
     }
 
+    //////////////////// Methods
+
     /**
      * Returns the plants power upgrade
+     *
      * @return double mPower
      */
     public double getPower()
@@ -70,6 +75,7 @@ public class PlantAspect
 
     /**
      * Returns the plants cost upgrade
+     *
      * @return double mCost
      */
     public double getCost()
@@ -79,6 +85,7 @@ public class PlantAspect
 
     /**
      * Returns the plants approval upgrade
+     *
      * @return double mApproval
      */
     public double getApproval()
@@ -88,6 +95,7 @@ public class PlantAspect
 
     /**
      * Returns the plants emissions upgrade
+     *
      * @return double mEmissions
      */
     public double getEmissions()
@@ -97,6 +105,7 @@ public class PlantAspect
 
     /**
      * Returns the plants Security upgrade
+     *
      * @return double mSecurity
      */
     public double getSecurity()
@@ -106,6 +115,7 @@ public class PlantAspect
 
     /**
      * Returns the plants profit upgrade
+     *
      * @return double mProfit
      */
     public double getProfit()
@@ -115,6 +125,7 @@ public class PlantAspect
 
     /**
      * Sets the plants Power upgrade
+     *
      * @param double pPower
      */
     public void setPower(double pPower)
@@ -124,6 +135,7 @@ public class PlantAspect
 
     /**
      * Sets the plants cost upgrade
+     *
      * @param double pCost
      */
     public void setCost(double pCost)
@@ -133,6 +145,7 @@ public class PlantAspect
 
     /**
      * Sets the plants approval upgrade
+     *
      * @param double pApproval
      */
     public void setApproval(double pApproval)
@@ -142,6 +155,7 @@ public class PlantAspect
 
     /**
      * Sets the plants emissions upgrade
+     *
      * @param double pEmissions
      */
     public void setEmissions(double pEmissions)
@@ -151,6 +165,7 @@ public class PlantAspect
 
     /**
      * Sets the plants security upgrade
+     *
      * @param double pSecurity
      */
     public void setSecurity(double pSecurity)
@@ -160,6 +175,7 @@ public class PlantAspect
 
     /**
      * Sets the plants profit upgrade
+     *
      * @param double pProfit
      */
     public void setProfit(double pProfit)

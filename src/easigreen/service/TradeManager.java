@@ -28,7 +28,8 @@ public class TradeManager
      * @param pUpgradeManager the upgrade manager
      * @param pResourceManager   the resource manager
      */
-    public TradeManager(ResourceManager pResourceManager, UpgradeManager pUpgradeManager)
+    public TradeManager(ResourceManager pResourceManager, 
+                        UpgradeManager pUpgradeManager)
     {
         mUpgradeManager = pUpgradeManager;
         mResourceManager   = pResourceManager;

@@ -69,6 +69,8 @@ public class TechnologyManager
      */
     private TechCodeManager mCodes;
 
+    //////////////////// Constructor
+
     /**
      * Basic constructor of the array lists
      */
@@ -88,6 +90,8 @@ public class TechnologyManager
 	setLookup();
     }
 
+    //////////////////// Methods
+
     /**
      * Populates the lookup map using every technology
      */
@@ -101,6 +105,7 @@ public class TechnologyManager
 
     /**
      * Returns a technology by name
+     *
      * @param techName the name to lookup
      * @return tech the tech associated with name
      */
@@ -156,11 +161,9 @@ public class TechnologyManager
 	}
     }
 
-
-    //////////////////// Methods
-
     /**
      * Updates the Merger
+     *
      * @returns UpgradeMerger the UpgradeMerger
      */
     public UpgradeMerger update()
@@ -235,6 +238,7 @@ public class TechnologyManager
 
     /**
      * Gets a list of nuclear upgrades
+     *
      * @return mNuclear nuclear upgrades
      */
     public ArrayList<Technology> getNuclear()
@@ -244,6 +248,7 @@ public class TechnologyManager
 
     /**
      * Gets a list of fossil upgrades
+     *
      * @return mFossil fossil upgrades
      */
     public ArrayList<Technology> getFossil()
@@ -253,6 +258,7 @@ public class TechnologyManager
 
     /**
      * Gets a list of renewable upgrades
+     *
      * @return mRenewable renewable upgrades
      */
     public ArrayList<Technology> getRenewable()
@@ -262,6 +268,7 @@ public class TechnologyManager
 
     /**
      * Gets a list of oil upgrades
+     *
      * @return mOil oil upgrades
      */
     public ArrayList<Technology> getOil()
@@ -283,6 +290,7 @@ public class TechnologyManager
 
     /**
      * Gets a technology from a name
+     *
      * @param techName the name of the tech to get
      * @return tech the technology associated with the name
      */
@@ -293,6 +301,7 @@ public class TechnologyManager
 
     /**
      * Implements a given technology
+     *
      * @param pTech the technology to implement
      */
     public void implementTechnology(Technology pTech)
@@ -305,6 +314,7 @@ public class TechnologyManager
 
     /**
      * Returns true if the technology is implemented
+     *
      * @param pTech the technology to check
      * @return isTrue whether or not the technology is implemented
      */
@@ -338,6 +348,7 @@ public class TechnologyManager
 
     /**
      * Adds a Technology
+     *
      * @param pTech a Technology
      */
     public void addTechnology(Technology pTech)
@@ -348,6 +359,7 @@ public class TechnologyManager
 
     /**
      * Adds a technology from a code
+     *
      * @param pCode String holding the code for the technology
      */
     public void addTechnology(String pCode)

@@ -639,29 +639,60 @@ public class UpgradeMerger
         return mOilGrow;
     }
 
-
+    /**
+     * Set budget change to a new value
+     *
+     * @param pBudgetChange the new budget
+     */
     public void setBudgetChange(double pBudgetChange)
     {
         mBudgetChange = pBudgetChange;
     }
-    public void setApprovalChange(double pBudgetApproval)
+    /**
+     * Set approval to a new value
+     *
+     * @param pApprovalChange the new approval
+     */
+    public void setApprovalChange(double pApprovalChange)
     {
-        mApprovalChange = pBudgetApproval;
+        mApprovalChange = pApprovalChange;
     }
+
+    /**
+     * Set price to a new value
+     *
+     * @param pPriceChange the new price
+     */
     public void setPriceChange(double pPriceChange)
     {
         mPriceChange = pPriceChange;
     }
+
+    /**
+     * Set demand to a new value
+     *
+     * @param pDemandChange the new demand
+     */
     public void setDemandChange(double pDemandChange)
     {
         mDemandChange = pDemandChange;
     }
 
+    /**
+     * Set the demand rate to a new value
+     *
+     * @param pDemandRateChange the new demand rate
+     */
     public void setDemandRateChange(double pDemandRateChange)
     {
         mDemandRateChange = pDemandRateChange;
     }
 
+    /**
+     * Set the emissions to a new value
+     *
+     * @param pEmissionsChange set emissions to a new value
+     */
     public void setEmissionsChange(double pEmissionsChange)
     {
         mEmissionsChange = pEmissionsChange;

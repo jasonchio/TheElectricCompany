@@ -5,9 +5,20 @@ import easigreen.system.*;
 
 /**
  * A class for creating a clone of a technology
+ *
+ * @version 0.1.1
+ * @author Larson Caldwell
+ * @author Sam Graham
+ * @author Haru McClellan
  */
 class TechCloner
 {
+    /**
+     * Clones a technology using all of the information stored inside
+     *
+     * @param pTech the technology being cloned
+     * @return clone the copy of the technology inputed
+     */
     public static Technology getClone(Technology pTech)
     {
 	Technology  clone = new Technology();

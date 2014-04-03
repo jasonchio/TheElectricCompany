@@ -43,8 +43,8 @@ public class Trade
     //////////////////// Constructor
 
     /**
-     * Constructs a trade with specific values for the amount of assets that are
-     * being traded.
+     * Constructs a trade with specific values for the amount of assets that 
+     * are being traded.
      *
      * @param pBudget the money that is being traded
      * @param pEmissionCredits the emission credits that are being traded

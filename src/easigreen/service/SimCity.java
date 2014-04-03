@@ -66,14 +66,18 @@ public class SimCity
 	mUpgradeManager  = new UpgradeManager ();
 	mResourceManager = new ResourceManager(mBaseManager, mUpgradeManager);
         mEnergyManager   = new EnergyManager  (mUpgradeManager);
-        mGoalManager     = new GoalManager    (mResourceManager, mUpgradeManager, mEnergyManager);
+        mGoalManager     = new GoalManager    (mResourceManager, 
+                                               mUpgradeManager, 
+                                               mEnergyManager);
         mWorldManager    = new WorldManager   ();
-        mTradeManager    = new TradeManager   (mResourceManager, mUpgradeManager);
+        mTradeManager    = new TradeManager   (mResourceManager, 
+                                               mUpgradeManager);
     }
 
     
     /**
      * Main starts the run method
+     *
      * @param args the command line arguments
      */
     public static void main(String[] args)
@@ -85,6 +89,7 @@ public class SimCity
     
     /**
      * Gets the current round
+     *
      * @return the round number
      */
     public BaseManager getBaseManager()
@@ -94,6 +99,7 @@ public class SimCity
     
     /**
      * Gets the EnergyManager
+     *
      * @return the EnergyManager
      */
     public EnergyManager getEnergyManager()
@@ -103,6 +109,7 @@ public class SimCity
     
     /**
      * Gets the UpgradeManager
+     *
      * @return the UpgradeManager
      */
     public UpgradeManager getUpgradeManager()
@@ -112,6 +119,7 @@ public class SimCity
     
     /**
      * Gets the GoalManager
+     *
      * @return the GoalManager
      */
     public GoalManager getGoalManager()
@@ -121,6 +129,7 @@ public class SimCity
     
     /**
      * Gets the WorldManager
+     *
      * @return the WorldManager
      */
     public WorldManager getWorldManager()
@@ -130,6 +139,7 @@ public class SimCity
     
     /**
      * Gets the ResourceManager
+     *
      * @return the ResourceManager
      */
     public ResourceManager getResourceManager()
@@ -139,6 +149,7 @@ public class SimCity
     
     /**
      * Gets the TradeManager
+     *
      * @return the TradeManager
      */
     public TradeManager getTradeManager()
@@ -150,6 +161,7 @@ public class SimCity
     
     /**
      * Sets the RoundNumber
+     *
      * @param pRoundNumber the round number
      */
     public void setBaseManager(BaseManager pBaseManager)
@@ -159,6 +171,7 @@ public class SimCity
     
     /**
      * Sets the EnergyManager 
+     *
      * @param pEnergyManager
      */
     public void setEnergyManager(EnergyManager pEnergyManager)
@@ -168,6 +181,7 @@ public class SimCity
     
     /**
      * Sets the upgrade manager
+     *
      * @param pUpgradeManager
      */
     public void setUpgradeManager(UpgradeManager pUpgradeManager)
@@ -177,6 +191,7 @@ public class SimCity
     
     /**
      * Sets the goal manager
+     *
      * @param pGoalManager
      */
     public void setGoalManager(GoalManager pGoalManager)
@@ -186,6 +201,7 @@ public class SimCity
     
     /**
      * Sets the world manager
+     *
      * @param pWorldManager
      */
     public void setWorldManager(WorldManager pWorldManager)
@@ -195,6 +211,7 @@ public class SimCity
     
     /**
      * Sets the resource manager
+     *
      * @param pResourceManager
      */
     public void setResourceManager(ResourceManager pResourceManager)
@@ -204,6 +221,7 @@ public class SimCity
     
     /**
      * Sets the trade manager
+     *
      * @param pTradeManager
      */
     public void setTradeManager(TradeManager pTradeManager)

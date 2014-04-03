@@ -21,20 +21,66 @@ public class UpgradeManager
 {
     //////////////////// Variables
 
+    /**
+     * amount of action points for nuclear science
+     */
     private int mNuclearSci;
+
+    /**
+     * amount of action points for fossil science  
+     */
     private int mFossilSci;
+
+    /**
+     * amount of action points for renewable science  
+     */
     private int mRenewableSci;
+
+    /**
+     * amount of action points for oil science  
+     */
     private int mOilSci;
+
+    /**
+     * amount of action points for nuclear engenering  
+     */
     private int mNuclearEng;
+
+    /**
+     * amount of action points for fossil engenering 
+     */
     private int mFossilEng;
+
+    /**
+     * amount of action points for renewable engenering
+     */
     private int mRenewableEng;
+
+    /**
+     * amount of action points for oil drilling
+     */
     private int mOilDrilling;
+
+    /**
+     * amount of action points for lobby
+     */
     private int mLobby;
+
+    /**
+     * amount of action points for price change
+     */
     private int mPriceChange;
+
+    /**
+     * The technology manager
+     */
     private TechnologyManager mTechnologyManager;
 
     //////////////////// Constructors
 
+    /**
+     * All methods are set to a changeable default value.
+     */
     public UpgradeManager()
     {
         mNuclearSci   = 0;
@@ -52,6 +98,11 @@ public class UpgradeManager
 
     //////////////////// Methods
 
+    /**
+     * The data in the system is updated to changing values
+     *
+     * @return allChanges all changes to the system
+     */
     public UpgradeMerger update()
     {
         UpgradeMerger allChanges = mTechnologyManager.update();

@@ -17,11 +17,21 @@ public class WorldManager
      */
     private double mBudget;
 
+    /**
+     * Get the budget
+     *
+     * @return mBudget the world budget
+     */
     public double getBudget()
     {
 	return mBudget;
     }
 
+    /**
+     * Set the budget to a new value
+     *
+     * @param pBudget the new budget
+     */
     public void setBudget(double pBudget)
     {
 	mBudget = pBudget;

@@ -56,8 +56,10 @@ public class Technology
      */
     protected OtherAspect mOther;
 
+    //////////////////// Constructor
+
     /**
-     * Constructor
+     * Member varables are instanciated as default values
      */
     public Technology()
     {
@@ -70,8 +72,11 @@ public class Technology
 	mOther     = new OtherAspect();
     }
 
+    //////////////////// Methods
+
     /**
      * The name of the technology
+     *
      * @return the String of the name
      */
     public String getName()
@@ -81,6 +86,7 @@ public class Technology
     
     /**
      * Sets the name of the technology
+     *
      * @param String pName the name of the tech
      */
     public void setName(String pName)
@@ -90,6 +96,7 @@ public class Technology
 
     /**
      * Returns the quality of the technology
+     *
      * @return int mQuality the quality of the tech
      */
     public int getQuality()
@@ -99,6 +106,7 @@ public class Technology
 
     /**
      * Sets the quality of the technology
+     *
      * @param int pQuality the quality on a scale from 1 to ten
      */
     public void setQuality(int pQuality)
@@ -108,6 +116,7 @@ public class Technology
     
     /**
      * Sets current technology code
+     *
      * @param String pCode 
      */
     public void setCode(String pCode)
@@ -117,6 +126,7 @@ public class Technology
 
     /**
      * returns the tech's current code
+     *
      * @return String mCode the techs current code
      */
     public String getCode()
@@ -126,6 +136,7 @@ public class Technology
 
     /**
      * Gets the Nuclear Aspect of the upgrade
+     *
      * @return PlantAspect mNuclear
      */
     public PlantAspect getNuclear()
@@ -135,6 +146,7 @@ public class Technology
 
     /**
      * Gets the Fossil Aspect of the upgrade
+     *
      * @return PlantAspect mFossil
      */
     public PlantAspect getFossil()
@@ -144,6 +156,7 @@ public class Technology
 
     /**
      * Gets the Renewable Aspect of the upgrade
+     *
      * @return PlantAspect mRenewable
      */
     public PlantAspect getRenewable()
@@ -153,6 +166,7 @@ public class Technology
 
     /**
      * Gets the Oil Aspect of the upgrade
+     *
      * @return OilAspect mOil
      */
     public OilAspect getOil()
@@ -162,6 +176,7 @@ public class Technology
 
     /**
      * Gets the Other Aspect of the upgrade
+     *
      * @return OtherAspect mOther
      */
     public OtherAspect getOther()

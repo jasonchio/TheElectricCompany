@@ -55,11 +55,13 @@ public class ResourceManager
     //////////////////// Constructors
 
     /**
-     * Constructor
+     * Sets the member variables to default values
+     *
      * @param pBaseManager the programs base manager
      * @param pUpgradeManager the programas upgrade manager
      */
-    public ResourceManager(BaseManager pBaseManager, UpgradeManager pUpgradeManager)
+    public ResourceManager(BaseManager pBaseManager, 
+                           UpgradeManager pUpgradeManager)
     {
 	mBaseManager    = pBaseManager;
 	mUpgradeManager = pUpgradeManager;
@@ -71,8 +73,11 @@ public class ResourceManager
 	mDemand         = mBaseManager.getDemand();
     }
 
+    //////////////////// Methods
+
     /**
      * Returns the budget for this round
+     *
      * @return mBudget the total budget
      */
     public double getBudget()
@@ -82,11 +87,13 @@ public class ResourceManager
 
     /**
      * Returns the modified energy demand
+     *
      * @return mDemand a Double holding the demand
      */
     public double getDemand()
     {
-	return mDemand + mMarketShares + mUpgradeManager.update().getDemandChange();
+	return mDemand + mMarketShares 
+           + mUpgradeManager.update().getDemandChange();
     }
 
     /**
