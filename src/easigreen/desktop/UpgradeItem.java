@@ -111,8 +111,11 @@ public class UpgradeItem
         {
             public void handle(ActionEvent event)
             {
-                mValue.setText("" + (Integer.parseInt(mValue.getText()) + 1));
-                mChange += 1;
+		if (Integer.parseInt(mValue.getText()) != 5)
+                {
+                    mValue.setText("" + (Integer.parseInt(mValue.getText()) + 1));
+                    mChange += 1;
+		}
             }
         };
 
@@ -120,8 +123,11 @@ public class UpgradeItem
         {
             public void handle(ActionEvent event)
             {
-                mValue.setText("" + (Integer.parseInt(mValue.getText()) - 1));
-                mChange -= 1;
+		if (Integer.parseInt(mValue.getText()) != -5)
+		{
+                    mValue.setText("" + (Integer.parseInt(mValue.getText()) - 1));
+                    mChange -= 1;
+		}
             }
         };
 

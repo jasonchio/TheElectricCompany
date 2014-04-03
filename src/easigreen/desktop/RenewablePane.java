@@ -79,8 +79,11 @@ public class RenewablePane
         {
             public void handle(ActionEvent event)
             {
-                mValues.get("Plants in Operation").setText("" +
-                                                           (Integer.parseInt(mValues.get("Plants in Operation").getText()) - 1));
+                if (Integer.parseInt(mValues.get("Plants in Operation").getText()) != 0)
+                {
+                    mValues.get("Plants in Operation").setText("" +
+                                                               (Integer.parseInt(mValues.get("Plants in Operation").getText()) - 1));
+                }
             }
         };
 
