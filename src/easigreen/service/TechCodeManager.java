@@ -85,7 +85,7 @@ class TechCodeManager
    /**
     * Creates a new code for a used technology
     *
-    * @param String pCode, the used code
+    * @param pCode, the used code
     */
    private void regenerate(String pCode)
    {
@@ -111,7 +111,7 @@ class TechCodeManager
    /**
     * Uses a string code as a key to look up a technology
     *
-    * @param String pCode the code to check
+    * @param pCode the code to check
     * @return Technology tech the associated technology
     */
    public Technology getTech(String pCode)

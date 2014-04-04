@@ -88,7 +88,7 @@ public class Technology
    /**
     * Sets the name of the technology
     *
-    * @param String pName the name of the tech
+    * @param pName the name of the tech
     */
    public void setName(String pName)
    {
@@ -118,7 +118,7 @@ public class Technology
    /**
     * Sets current technology code
     *
-    * @param String pCode
+    * @param pCode
     */
    public void setCode(String pCode)
    {

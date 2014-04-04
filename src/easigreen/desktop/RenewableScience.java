@@ -41,7 +41,7 @@ public class RenewableScience
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current sim city Model
      */
     public RenewableScience(SimCity pModel, Label pLabel)
     {

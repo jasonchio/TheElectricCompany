@@ -169,7 +169,7 @@ public class RenewablePane
 
    /**
     * Constructor
-    * @param SimCity pModel the current sim city Model
+    * @param pModel the current sim city Model
     */
    public RenewablePane(SimCity pModel)
    {

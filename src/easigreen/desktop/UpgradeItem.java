@@ -234,7 +234,7 @@ public class UpgradeItem
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current sim city Model
      */
     public UpgradeItem(SimCity pModel, Label pActionPoints)
     {

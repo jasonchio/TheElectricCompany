@@ -51,7 +51,7 @@ public class Lobby
 
     /**
      * Gets the title
-     * @returnt String the title
+     * @return String the title
      */
     protected String getTitle()
     {
@@ -60,7 +60,7 @@ public class Lobby
 
     /**
      * Gets the Tips
-     * @returnt String array of tips
+     * @return String array of tips
      */
     protected String[] getTips()
     {

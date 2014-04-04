@@ -32,7 +32,7 @@ public class OilScience
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current sim city Model
      */
     public OilScience(SimCity pModel, Label pLabel)
     {

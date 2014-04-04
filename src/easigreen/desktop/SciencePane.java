@@ -145,7 +145,7 @@ public class SciencePane
 
     /**
      * Constructor
-     * @param SimCity pModel the current sim city Model
+     * @param pModel the current sim city Model
      */
     public SciencePane(SimCity pModel)
     {
