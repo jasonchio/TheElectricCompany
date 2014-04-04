@@ -62,9 +62,9 @@ public class SimCity
      */
     public void run()
     {
-	mBaseManager     = new BaseManager    ();
-	mUpgradeManager  = new UpgradeManager ();
-	mResourceManager = new ResourceManager(mBaseManager, mUpgradeManager);
+   mBaseManager     = new BaseManager    ();
+   mUpgradeManager  = new UpgradeManager ();
+   mResourceManager = new ResourceManager(mBaseManager, mUpgradeManager);
         mEnergyManager   = new EnergyManager  (mUpgradeManager);
         mGoalManager     = new GoalManager    (mResourceManager, 
                                                mUpgradeManager, 

@@ -52,7 +52,7 @@ public class OtherAspect
      */
     public void setBudget(double pBudget)
     {
-	mBudget = pBudget;
+   mBudget = pBudget;
     }
 
     /**
@@ -62,7 +62,7 @@ public class OtherAspect
      */
     public void setDemand(double pDemand)
     {
-	mDemand = pDemand;
+   mDemand = pDemand;
     }
 
     /**
@@ -72,7 +72,7 @@ public class OtherAspect
      */
     public void setEmissions(double pEmissions)
     {
-	mEmissions = pEmissions;
+   mEmissions = pEmissions;
     }
 
     /**
@@ -82,7 +82,7 @@ public class OtherAspect
      */
     public double getBudget()
     {
-	return mBudget;
+   return mBudget;
     }
 
     /**
@@ -92,7 +92,7 @@ public class OtherAspect
      */
     public double getDemand()
     {
-	return mDemand;
+   return mDemand;
     }
 
     /**
@@ -102,6 +102,6 @@ public class OtherAspect
      */
     public double getEmissions()
     {
-	return mEmissions;
+   return mEmissions;
     }
 }

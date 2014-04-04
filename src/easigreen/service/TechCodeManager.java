@@ -41,9 +41,9 @@ class TechCodeManager
      */
     public TechCodeManager(List<Technology> pTechs)
     {
-	mTechs = pTechs;
-	mCodes = new HashMap<String, Technology>();
-	generateCodes();
+   mTechs = pTechs;
+   mCodes = new HashMap<String, Technology>();
+   generateCodes();
     }
 
     //////////////////// Methods
@@ -53,19 +53,19 @@ class TechCodeManager
      */
     private void generateCodes()
     {
-	String code = "0";
-	for (Technology tech : mTechs)
-	{
-	    for (int i = 1; i <= 10; i++)
-	    {
-		code = getNewCode();
-		Technology newTech = TechCloner.getClone(tech);
-		tech.setCode(code);
-		tech.setQuality(i);
-		printCode(tech);
-		mCodes.put(code, tech);
-	    }
-	}
+   String code = "0";
+   for (Technology tech : mTechs)
+   {
+       for (int i = 1; i <= 10; i++)
+       {
+      code = getNewCode();
+      Technology newTech = TechCloner.getClone(tech);
+      tech.setCode(code);
+      tech.setQuality(i);
+      printCode(tech);
+      mCodes.put(code, tech);
+       }
+   }
     }
 
     /**
@@ -75,7 +75,7 @@ class TechCodeManager
      */
     public void printCode(Technology tech)
     {
-	System.out.println(tech.getName() + " " + tech.getQuality() + " - " 
+   System.out.println(tech.getName() + " " + tech.getQuality() + " - " 
             + tech.getCode());
     }
 
@@ -86,12 +86,12 @@ class TechCodeManager
      */
     private void regenerate(String pCode)
     {
-	Technology tech = mCodes.get(pCode);
-	mCodes.remove(pCode);
-	String newCode = getNewCode();
-	tech.setCode(newCode);
-	printCode(tech);
-	mCodes.put(newCode, tech);
+   Technology tech = mCodes.get(pCode);
+   mCodes.remove(pCode);
+   String newCode = getNewCode();
+   tech.setCode(newCode);
+   printCode(tech);
+   mCodes.put(newCode, tech);
     }
 
     /**
@@ -101,7 +101,7 @@ class TechCodeManager
      */
     private String getNewCode()
     {
-	return ("" + (int)(Math.random() * MAX));
+   return ("" + (int)(Math.random() * MAX));
     }
 
     /**
@@ -112,11 +112,11 @@ class TechCodeManager
      */
     public Technology getTech(String pCode)
     {
-	Technology tech = mCodes.get(pCode);
-	if (tech != null)
-	{
-	    regenerate(pCode);
-	}
-	return tech;
+   Technology tech = mCodes.get(pCode);
+   if (tech != null)
+   {
+       regenerate(pCode);
+   }
+   return tech;
     }
 }

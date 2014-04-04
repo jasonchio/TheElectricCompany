@@ -24,14 +24,14 @@ public class OilManager
      * The actual upgrades
      */
     private UpgradeMerger mUpgrades;
-	
+   
     /**
      * The Oil Object
      */
     private Oil mOil;
 
     //////////////////// Constructor
-	
+   
     /**
      * Oil manager is created with a new upgrade manager
      *
@@ -39,9 +39,9 @@ public class OilManager
      */
     public OilManager(UpgradeManager pUpgradeManager)
     {
-	mUpgradeManager = pUpgradeManager;
-	mOil = new Oil();
-	update();
+   mUpgradeManager = pUpgradeManager;
+   mOil = new Oil();
+   update();
     }
 
     //////////////////// Methods
@@ -51,7 +51,7 @@ public class OilManager
      */
     public void update()
     {
-	mUpgrades = mUpgradeManager.update();
+   mUpgrades = mUpgradeManager.update();
     }
 
     /**
@@ -61,7 +61,7 @@ public class OilManager
      */
     public double getConsumption()
     {
-	return mOil.getConsumption() + mUpgrades.getOilConsumption();
+   return mOil.getConsumption() + mUpgrades.getOilConsumption();
     }
 
     /**
@@ -71,7 +71,7 @@ public class OilManager
      */
     public double getGrowth()
     {
-	return mOil.getGrowth() + mUpgrades.getOilGrowth();
+   return mOil.getGrowth() + mUpgrades.getOilGrowth();
     }
 
     /**
@@ -81,7 +81,7 @@ public class OilManager
      */
     public double getEmissions()
     {
-	return mOil.getEmissions() * mOil.getConsumption();
+   return mOil.getEmissions() * mOil.getConsumption();
     }
 
     /**
@@ -91,7 +91,7 @@ public class OilManager
      */
     public double getSecurity()
     {
-	return mOil.getSecurity() + mUpgrades.getOilSecurity();
+   return mOil.getSecurity() + mUpgrades.getOilSecurity();
     }
 
     /**
@@ -101,6 +101,6 @@ public class OilManager
      */
     public double getTotalSecurity()
     {
-	return getSecurity() * getConsumption();
+   return getSecurity() * getConsumption();
     }
 }

@@ -20,7 +20,7 @@ public class Renewable
     public Renewable()
     {
         mAmount        = 140;
-	mCostBuild     = .2;
+   mCostBuild     = .2;
         mCostRemove    = -.1;
         mApproval      = 35;
         mProduction    = 0.1;

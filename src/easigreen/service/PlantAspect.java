@@ -70,7 +70,7 @@ public class PlantAspect
      */
     public double getPower()
     {
-	return mPower;
+   return mPower;
     }
 
     /**
@@ -80,7 +80,7 @@ public class PlantAspect
      */
     public double getCost()
     {
-	return mCost;
+   return mCost;
     }
 
     /**
@@ -90,7 +90,7 @@ public class PlantAspect
      */
     public double getApproval()
     {
-	return mApproval;
+   return mApproval;
     }
 
     /**
@@ -100,7 +100,7 @@ public class PlantAspect
      */
     public double getEmissions()
     {
-	return mEmissions;
+   return mEmissions;
     }
 
     /**
@@ -110,7 +110,7 @@ public class PlantAspect
      */
     public double getSecurity()
     {
-	return mSecurity;
+   return mSecurity;
     }
 
     /**
@@ -120,7 +120,7 @@ public class PlantAspect
      */
     public double getProfit()
     {
-	return mProfit;
+   return mProfit;
     }
 
     /**
@@ -130,7 +130,7 @@ public class PlantAspect
      */
     public void setPower(double pPower)
     {
-	mPower = pPower;
+   mPower = pPower;
     }
 
     /**
@@ -140,7 +140,7 @@ public class PlantAspect
      */
     public void setCost(double pCost)
     {
-	mCost = pCost;
+   mCost = pCost;
     }
 
     /**
@@ -150,7 +150,7 @@ public class PlantAspect
      */
     public void setApproval(double pApproval)
     {
-	mApproval = pApproval;
+   mApproval = pApproval;
     }
 
     /**
@@ -160,7 +160,7 @@ public class PlantAspect
      */
     public void setEmissions(double pEmissions)
     {
-	mEmissions = pEmissions;
+   mEmissions = pEmissions;
     }
 
     /**
@@ -170,7 +170,7 @@ public class PlantAspect
      */
     public void setSecurity(double pSecurity)
     {
-	mSecurity = pSecurity;
+   mSecurity = pSecurity;
     }
 
     /**
@@ -180,6 +180,6 @@ public class PlantAspect
      */
     public void setProfit(double pProfit)
     {
-	mProfit = pProfit;
+   mProfit = pProfit;
     }
 }

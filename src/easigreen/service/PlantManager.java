@@ -24,14 +24,14 @@ public abstract class PlantManager
      * The actual upgrades
      */
     protected UpgradeMerger mUpgrades;
-	
+   
     /**
      * The Plant Object
      */
     protected Energy mPlant;
 
     //////////////////// Constructor
-	
+   
     /**
      * The plant manager manager is created with a new upgrade manager
      *
@@ -39,8 +39,8 @@ public abstract class PlantManager
      */
     public PlantManager(UpgradeManager pUpgradeManager)
     {
-	mUpgradeManager = pUpgradeManager;
-	update();
+   mUpgradeManager = pUpgradeManager;
+   update();
     }
 
     //////////////////// Methods
@@ -50,7 +50,7 @@ public abstract class PlantManager
      */
     public void update()
     {
-	mUpgrades = mUpgradeManager.update();
+   mUpgrades = mUpgradeManager.update();
     }
 
     /**
@@ -60,7 +60,7 @@ public abstract class PlantManager
      */
     public void add(int num)
     {
-	mPlant.add(num);
+   mPlant.add(num);
     }
 
     /**
@@ -70,7 +70,7 @@ public abstract class PlantManager
      */
     public void remove(int num)
     {
-	mPlant.remove(num);
+   mPlant.remove(num);
     }
 
     /**
@@ -80,7 +80,7 @@ public abstract class PlantManager
      */
     public int getAmount()
     {
-	return mPlant.getAmount();
+   return mPlant.getAmount();
     }
 
     /**
@@ -90,7 +90,7 @@ public abstract class PlantManager
      */
     public void setAmount(int num)
     {
-	mPlant.setAmount(num);
+   mPlant.setAmount(num);
     }
 
     //////////////////// Abstract Methods

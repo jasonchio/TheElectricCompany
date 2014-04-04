@@ -20,12 +20,12 @@ public class Nuclear
     public Nuclear()
     {
         mAmount        = 18;
-	mCostBuild     = 2.5;
-	mCostRemove    = .5;
-	mApproval      = 35;
-	mProduction    = 1;
-	mEmissions     = 0;
-	mSecurity      = 0;
-	mProfitPercent = 50;
+   mCostBuild     = 2.5;
+   mCostRemove    = .5;
+   mApproval      = 35;
+   mProduction    = 1;
+   mEmissions     = 0;
+   mSecurity      = 0;
+   mProfitPercent = 50;
     }
 }

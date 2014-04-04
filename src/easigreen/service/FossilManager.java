@@ -15,7 +15,7 @@ public class FossilManager
    extends PlantManager
 {
     //////////////////// Constructors
-	
+   
     /**
      * Creates a new fossil plant object using the upgrade manager
      *
@@ -23,8 +23,8 @@ public class FossilManager
      */
     public FossilManager(UpgradeManager pUpgradeManager)
     {
-	super(pUpgradeManager);
-	mPlant = new Fossil();
+   super(pUpgradeManager);
+   mPlant = new Fossil();
     }
 
     //////////////////// Methods
@@ -36,7 +36,7 @@ public class FossilManager
      */
     public double getCostRemove()
     {
-	return mPlant.getCostRemove();
+   return mPlant.getCostRemove();
     }
 
     /**
@@ -46,7 +46,7 @@ public class FossilManager
      */
     public double getCostBuild()
     {
-	return mPlant.getCostBuild() + mUpgrades.getFossilCost();
+   return mPlant.getCostBuild() + mUpgrades.getFossilCost();
     }
 
     /**
@@ -56,7 +56,7 @@ public class FossilManager
      */
     public double getApproval()
     {
-	return mPlant.getApproval() + mUpgrades.getFossilApproval();
+   return mPlant.getApproval() + mUpgrades.getFossilApproval();
     }
 
     /**
@@ -66,7 +66,7 @@ public class FossilManager
      */
     public double getTotalApproval()
     {
-	return getApproval() * (double)getAmount();
+   return getApproval() * (double)getAmount();
     }
 
     /**
@@ -76,7 +76,7 @@ public class FossilManager
      */
     public double getPower()
     {
-	return mPlant.getPower() + mUpgrades.getFossilPower();
+   return mPlant.getPower() + mUpgrades.getFossilPower();
     }
 
     /**
@@ -86,7 +86,7 @@ public class FossilManager
      */
     public double getTotalPower()
     {
-	return getPower() * (double)getAmount();
+   return getPower() * (double)getAmount();
     }
 
     /**
@@ -96,7 +96,7 @@ public class FossilManager
      */
     public double getEmissions()
     {
-	return mPlant.getEmissions() + mUpgrades.getFossilEmissions();
+   return mPlant.getEmissions() + mUpgrades.getFossilEmissions();
     }
 
     /**
@@ -106,7 +106,7 @@ public class FossilManager
      */
     public double getTotalEmissions()
     {
-	return getEmissions() * (double)getAmount();
+   return getEmissions() * (double)getAmount();
     }
 
     /**
@@ -116,7 +116,7 @@ public class FossilManager
      */
     public double getSecurity()
     {
-	return mPlant.getSecurity() + mUpgrades.getFossilSecurity();
+   return mPlant.getSecurity() + mUpgrades.getFossilSecurity();
     }
 
     /**
@@ -126,7 +126,7 @@ public class FossilManager
      */
     public double getTotalSecurity()
     {
-	return getSecurity() * (double)getAmount();
+   return getSecurity() * (double)getAmount();
     }
 
     /**
@@ -136,7 +136,7 @@ public class FossilManager
      */
     public double getProfit()
     {
-	return mPlant.getProfit() + mUpgrades.getFossilProfit();
+   return mPlant.getProfit() + mUpgrades.getFossilProfit();
     }
 
     /**
@@ -146,6 +146,6 @@ public class FossilManager
      */
     public double getTotalProfit()
     {
-	return getProfit() * (double)getAmount();
+   return getProfit() * (double)getAmount();
     }
 }

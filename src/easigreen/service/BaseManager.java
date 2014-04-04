@@ -41,8 +41,8 @@ public class BaseManager
      */
     public BaseManager()
     {
-	mRoundNumber  = 0;
-	mActionPoints = 8;
+   mRoundNumber  = 0;
+   mActionPoints = 8;
     }
 
     /**
@@ -50,8 +50,8 @@ public class BaseManager
      */
     public void nextRound()
     {
-	mRoundNumber++;
-	mActionPoints = 20;
+   mRoundNumber++;
+   mActionPoints = 20;
     }
 
     /**
@@ -60,8 +60,8 @@ public class BaseManager
      */
     public void setRound(int pRound)
     {
-	mRoundNumber = pRound;
-	
+   mRoundNumber = pRound;
+   
     }
 
     /**
@@ -70,7 +70,7 @@ public class BaseManager
      */
     public int getRound()
     {
-	return mRoundNumber;
+   return mRoundNumber;
     }
 
     /**
@@ -79,7 +79,7 @@ public class BaseManager
      */
     public int getActionPoints()
     {
-	return mActionPoints;
+   return mActionPoints;
     }
 
     /**
@@ -88,7 +88,7 @@ public class BaseManager
      */
     public double getBudget()
     {
-	return M_BUDGET + (double)(mRoundNumber * 15);
+   return M_BUDGET + (double)(mRoundNumber * 15);
     }
     
     /**
@@ -97,6 +97,6 @@ public class BaseManager
      */
     public double getDemand()
     {
-	return M_DEMAND + (double)(mRoundNumber * 5);
+   return M_DEMAND + (double)(mRoundNumber * 5);
     }
 }

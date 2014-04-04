@@ -52,7 +52,7 @@ public class OilAspect
      */
     public double getConsumption()
     {
-	return mConsumption;
+   return mConsumption;
     }
 
     /**
@@ -62,7 +62,7 @@ public class OilAspect
      */
     public double getSecurity()
     {
-	return mSecurity;
+   return mSecurity;
     }
 
     /**
@@ -72,7 +72,7 @@ public class OilAspect
      */
     public double getGrowth()
     {
-	return mGrowth;
+   return mGrowth;
     }
 
     /**
@@ -82,7 +82,7 @@ public class OilAspect
      */
     public void setConsumption(double pConsumption)
     {
-	mConsumption = pConsumption;
+   mConsumption = pConsumption;
     }
 
     /**
@@ -92,7 +92,7 @@ public class OilAspect
      */
     public void setSecurity(double pSecurity)
     {
-	mSecurity = pSecurity;
+   mSecurity = pSecurity;
     }
 
     /**
@@ -102,6 +102,6 @@ public class OilAspect
      */
     public void setGrowth(double pGrowth)
     {
-	mGrowth = pGrowth;
+   mGrowth = pGrowth;
     }
 }

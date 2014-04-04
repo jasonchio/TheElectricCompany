@@ -106,8 +106,8 @@ public class UpgradeManager
     public UpgradeMerger update()
     {
         UpgradeMerger allChanges = mTechnologyManager.update();
-	
-	allChanges.addBudgetChange(mLobby);
+   
+   allChanges.addBudgetChange(mLobby);
         allChanges.addApprovalChange(-mLobby - mPriceChange);
         allChanges.addPriceChange(mPriceChange);
 

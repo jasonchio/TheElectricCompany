@@ -20,7 +20,7 @@ public class Fossil
     public Fossil()
     {
         mAmount        = 100;
-	mCostBuild     = 1;
+   mCostBuild     = 1;
         mCostRemove    = .1;
         mApproval      = 50;
         mProduction    = .65;

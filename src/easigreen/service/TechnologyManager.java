@@ -97,10 +97,10 @@ public class TechnologyManager
      */
     private void setLookup()
     {
-	for (Technology t : mAll)
-	{
-	    mLookup.put(t.getName(), t);
-	}
+       for (Technology t : mAll)
+       {
+           mLookup.put(t.getName(), t);
+       }
     }
 
     /**
@@ -111,7 +111,7 @@ public class TechnologyManager
      */
     public Technology lookup(String techName)
     {
-	return mLookup.get(techName);
+       return mLookup.get(techName);
     }
 
     /**
@@ -119,46 +119,46 @@ public class TechnologyManager
      */
     private void setPlantLists()
     {
-	for (Technology t : mAll)
-	{
-	    // Add to nuclear if it affects nuclear plants
-	    if ((t.getNuclear().getPower    () > 0) ||
-		(t.getNuclear().getCost     () < 0) ||
-		(t.getNuclear().getApproval () > 0) ||
-		(t.getNuclear().getSecurity () > 0) ||
-		(t.getNuclear().getEmissions() < 0) ||
-		(t.getNuclear().getProfit   () > 0)) 
-	    {
-		mNuclear.add(t);
-	    }
-	    // Add to fossil if it affects fossil plants
-	    if ((t.getFossil().getPower    () > 0) ||
-		(t.getFossil().getCost     () < 0) ||
-		(t.getFossil().getApproval () > 0) ||
-		(t.getFossil().getSecurity () > 0) ||
-		(t.getFossil().getEmissions() < 0) ||
-		(t.getFossil().getProfit   () > 0)) 
-	    {
-		mFossil.add(t);
-	    } 
-	    // Add to renewable if it affects renewable plants
-	    if ((t.getRenewable().getPower    () > 0) ||
-		(t.getRenewable().getCost     () < 0) ||
-		(t.getRenewable().getApproval () > 0) ||
-		(t.getRenewable().getSecurity () > 0) ||
-		(t.getRenewable().getEmissions() < 0) ||
-		(t.getRenewable().getProfit   () > 0)) 
-	    {
-		mRenewable.add(t);
-	    } 
-	    // Add to oil if it affects oil plants
-	    if ((t.getOil().getConsumption() < 0) ||
-		(t.getOil().getSecurity   () > 0) ||
-		(t.getOil().getGrowth     () < 0)) 
-	    {
-		mOil.add(t);
-	    } 
-	}
+       for (Technology t : mAll)
+       {
+           // Add to nuclear if it affects nuclear plants
+           if ((t.getNuclear().getPower    () > 0) ||
+              (t.getNuclear().getCost     () < 0) ||
+              (t.getNuclear().getApproval () > 0) ||
+              (t.getNuclear().getSecurity () > 0) ||
+              (t.getNuclear().getEmissions() < 0) ||
+              (t.getNuclear().getProfit   () > 0)) 
+           {
+              mNuclear.add(t);
+           }
+           // Add to fossil if it affects fossil plants
+           if ((t.getFossil().getPower    () > 0) ||
+              (t.getFossil().getCost     () < 0) ||
+              (t.getFossil().getApproval () > 0) ||
+              (t.getFossil().getSecurity () > 0) ||
+              (t.getFossil().getEmissions() < 0) ||
+              (t.getFossil().getProfit   () > 0)) 
+           {
+              mFossil.add(t);
+           } 
+           // Add to renewable if it affects renewable plants
+           if ((t.getRenewable().getPower    () > 0) ||
+              (t.getRenewable().getCost     () < 0) ||
+              (t.getRenewable().getApproval () > 0) ||
+              (t.getRenewable().getSecurity () > 0) ||
+              (t.getRenewable().getEmissions() < 0) ||
+              (t.getRenewable().getProfit   () > 0)) 
+           {
+              mRenewable.add(t);
+           } 
+           // Add to oil if it affects oil plants
+           if ((t.getOil().getConsumption() < 0) ||
+              (t.getOil().getSecurity   () > 0) ||
+              (t.getOil().getGrowth     () < 0)) 
+           {
+              mOil.add(t);
+           } 
+       }
     }
 
     /**
@@ -267,7 +267,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getNuclear()
     {
-	return mNuclear;
+       return mNuclear;
     }
 
     /**
@@ -277,7 +277,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getFossil()
     {
-	return mFossil;
+       return mFossil;
     }
 
     /**
@@ -287,7 +287,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getRenewable()
     {
-	   return mRenewable;
+        return mRenewable;
     }
 
     /**
@@ -297,7 +297,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getOil()
     {
-	   return mOil;
+        return mOil;
     }
 
     //////////////////// Setters
@@ -320,7 +320,7 @@ public class TechnologyManager
      */
     public Technology getTechnology(String techName)
     {
-	   return mNames.get(techName);
+          return mNames.get(techName);
     }
 
     /**
@@ -330,10 +330,10 @@ public class TechnologyManager
      */
     public void implementTechnology(Technology pTech)
     {
-	   if (!isImplemented(pTech))
-	   {
-	       mImplemented.add(pTech);
-	   }
+          if (!isImplemented(pTech))
+          {
+              mImplemented.add(pTech);
+          }
     }
 
     /**
@@ -344,16 +344,16 @@ public class TechnologyManager
      */
     public boolean isImplemented(Technology pTech)
     {
-	boolean isTrue = false;
-	for (Technology t : mImplemented)
-	{
-	    if (t == pTech)
-	    {
-		   isTrue = true;
-		   break;
-	    }
-	}
-	return isTrue;
+       boolean isTrue = false;
+       for (Technology t : mImplemented)
+       {
+           if (t == pTech)
+           {
+                 isTrue = true;
+                 break;
+           }
+       }
+       return isTrue;
     }
 
     /**
@@ -364,10 +364,10 @@ public class TechnologyManager
     public void setAvailable(ArrayList<Technology> pAvailable)
     {
         mAvailable = pAvailable;
-	    for (Technology tech : mAvailable)
-	    {
-	        mNames.put(tech.getName() + tech.getQuality(), tech);
-	    }
+           for (Technology tech : mAvailable)
+           {
+               mNames.put(tech.getName() + tech.getQuality(), tech);
+           }
     }
 
     /**
@@ -378,7 +378,7 @@ public class TechnologyManager
     public void addTechnology(Technology pTech)
     {
         mAvailable.add(pTech);
-	mNames.put(pTech.getName() + pTech.getQuality(), pTech);
+        mNames.put(pTech.getName() + pTech.getQuality(), pTech);
     }
 
     /**
@@ -388,12 +388,12 @@ public class TechnologyManager
      */
     public void addTechnology(String pCode)
     {
-	Technology newTech = mCodes.getTech(pCode);
-	if (newTech != null)
-	{
-	    mAvailable.add(newTech);
-	    mNames.put(newTech.getName() + newTech.getQuality(), newTech);
-	}
+       Technology newTech = mCodes.getTech(pCode);
+       if (newTech != null)
+       {
+           mAvailable.add(newTech);
+           mNames.put(newTech.getName() + newTech.getQuality(), newTech);
+       }
     }
 
     /**

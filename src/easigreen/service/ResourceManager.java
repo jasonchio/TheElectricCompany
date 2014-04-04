@@ -63,14 +63,14 @@ public class ResourceManager
     public ResourceManager(BaseManager pBaseManager, 
                            UpgradeManager pUpgradeManager)
     {
-	mBaseManager    = pBaseManager;
-	mUpgradeManager = pUpgradeManager;
-	mActionPoints   = mBaseManager.getActionPoints();
-	mEmitCredits    = 0;
-	mMarketShares   = 0;
-	mBudget         = mBaseManager.getBudget();
-	mFunds          = mBaseManager.getBudget();
-	mDemand         = mBaseManager.getDemand();
+   mBaseManager    = pBaseManager;
+   mUpgradeManager = pUpgradeManager;
+   mActionPoints   = mBaseManager.getActionPoints();
+   mEmitCredits    = 0;
+   mMarketShares   = 0;
+   mBudget         = mBaseManager.getBudget();
+   mFunds          = mBaseManager.getBudget();
+   mDemand         = mBaseManager.getDemand();
     }
 
     //////////////////// Methods
@@ -82,7 +82,7 @@ public class ResourceManager
      */
     public double getBudget()
     {
-	return mBudget + mUpgradeManager.update().getBudgetChange();
+   return mBudget + mUpgradeManager.update().getBudgetChange();
     }
 
     /**
@@ -92,7 +92,7 @@ public class ResourceManager
      */
     public double getDemand()
     {
-	return mDemand + mMarketShares 
+   return mDemand + mMarketShares 
            + mUpgradeManager.update().getDemandChange();
     }
 

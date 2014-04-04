@@ -85,11 +85,11 @@ public class GoalManager
      */
     public void update()
     {
-	mEmissions = .8  * mEnergyManager.getEmissions() 
+   mEmissions = .8  * mEnergyManager.getEmissions() 
                      - mResourceManager.getEmitCredits();
-	mSecurity  = Math.abs(.4 * mEnergyManager.getSecurity()) 
+   mSecurity  = Math.abs(.4 * mEnergyManager.getSecurity()) 
                      + mEnergyManager.getSecurity();
-	mProfit    = Math.abs(.1 * mEnergyManager.getProfit()) 
+   mProfit    = Math.abs(.1 * mEnergyManager.getProfit()) 
                      + mEnergyManager.getProfit();
     }
 
@@ -99,7 +99,7 @@ public class GoalManager
      */
     public double getTargetEmissions()
     {
-	return mEmissions;
+   return mEmissions;
     }
 
     /**
@@ -108,7 +108,7 @@ public class GoalManager
      */
     public double getTargetSecurity()
     {
-	return mSecurity;
+   return mSecurity;
     }
 
     /**
@@ -117,6 +117,6 @@ public class GoalManager
      */
     public double getTargetProfit()
     {
-	return mProfit;
+   return mProfit;
     }
 }

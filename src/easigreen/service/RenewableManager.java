@@ -16,7 +16,7 @@ public class RenewableManager
     extends PlantManager
 {
     //////////////////// Constructor
-	
+   
     /**
      * Creates a new renewable manager using the plant manager constructor
      *
@@ -24,8 +24,8 @@ public class RenewableManager
      */
     public RenewableManager(UpgradeManager pUpgradeManager)
     {
-	super(pUpgradeManager);
-	mPlant = new Renewable();
+   super(pUpgradeManager);
+   mPlant = new Renewable();
     }
 
     //////////////////// Methods
@@ -37,7 +37,7 @@ public class RenewableManager
      */
     public double getCostRemove()
     {
-	return mPlant.getCostRemove();
+   return mPlant.getCostRemove();
     }
 
     /**
@@ -47,7 +47,7 @@ public class RenewableManager
      */
     public double getCostBuild()
     {
-	return mPlant.getCostBuild() + mUpgrades.getRenewableCost();
+   return mPlant.getCostBuild() + mUpgrades.getRenewableCost();
     }    
 
     /**
@@ -57,7 +57,7 @@ public class RenewableManager
      */
     public double getApproval()
     {
-	return mPlant.getApproval() + mUpgrades.getRenewableApproval();
+   return mPlant.getApproval() + mUpgrades.getRenewableApproval();
     }
 
     /**
@@ -67,7 +67,7 @@ public class RenewableManager
      */
     public double getTotalApproval()
     {
-	return getApproval() * (double)getAmount();
+   return getApproval() * (double)getAmount();
     }
 
     /**
@@ -77,7 +77,7 @@ public class RenewableManager
      */
     public double getPower()
     {
-	return mPlant.getPower() + mUpgrades.getRenewablePower();
+   return mPlant.getPower() + mUpgrades.getRenewablePower();
     }
 
     /**
@@ -87,7 +87,7 @@ public class RenewableManager
      */
     public double getTotalPower()
     {
-	return getPower() * (double)getAmount();
+   return getPower() * (double)getAmount();
     }
 
     /**
@@ -97,7 +97,7 @@ public class RenewableManager
      */
     public double getEmissions()
     {
-	return mPlant.getEmissions() + mUpgrades.getRenewableEmissions();
+   return mPlant.getEmissions() + mUpgrades.getRenewableEmissions();
     }
 
     /**
@@ -107,7 +107,7 @@ public class RenewableManager
      */
     public double getTotalEmissions()
     {
-	return getEmissions() * (double)getAmount();
+   return getEmissions() * (double)getAmount();
     }
 
     /**
@@ -117,7 +117,7 @@ public class RenewableManager
      */
     public double getSecurity()
     {
-	return mPlant.getSecurity() + mUpgrades.getRenewableSecurity();
+   return mPlant.getSecurity() + mUpgrades.getRenewableSecurity();
     }
 
     /**
@@ -127,7 +127,7 @@ public class RenewableManager
      */
     public double getTotalSecurity()
     {
-	return getSecurity() * (double)getAmount();
+   return getSecurity() * (double)getAmount();
     }
 
     /**
@@ -137,7 +137,7 @@ public class RenewableManager
      */
     public double getProfit()
     {
-	return mPlant.getProfit() + mUpgrades.getRenewableProfit();
+   return mPlant.getProfit() + mUpgrades.getRenewableProfit();
     }
 
     /**
@@ -147,6 +147,6 @@ public class RenewableManager
      */
     public double getTotalProfit()
     {
-	return getProfit() * (double)getAmount();
+   return getProfit() * (double)getAmount();
     }
 }

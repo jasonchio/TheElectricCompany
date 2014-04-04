@@ -24,7 +24,7 @@ public class WorldManager
      */
     public double getBudget()
     {
-	return mBudget;
+   return mBudget;
     }
 
     /**
@@ -34,6 +34,6 @@ public class WorldManager
      */
     public void setBudget(double pBudget)
     {
-	mBudget = pBudget;
+   mBudget = pBudget;
     }
 }

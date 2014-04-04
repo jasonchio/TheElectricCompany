@@ -57,7 +57,7 @@ public class EnergyManager
         mFossil         = new FossilManager   (mUpgradeManager);
         mRenewable      = new RenewableManager(mUpgradeManager);
         mOil            = new OilManager      (mUpgradeManager);
-	update();
+   update();
     }
 
     /**
@@ -67,7 +67,7 @@ public class EnergyManager
      */
     public NuclearManager getNuclear()
     {
-	mNuclear.update();
+   mNuclear.update();
         return mNuclear;
     }
 
@@ -78,7 +78,7 @@ public class EnergyManager
      */
     public FossilManager getFossil()
     {
-	mFossil.update();
+   mFossil.update();
         return mFossil;
     }
 
@@ -89,7 +89,7 @@ public class EnergyManager
      */
     public RenewableManager getRenewable()
     {
-	mRenewable.update();
+   mRenewable.update();
         return mRenewable;
     }
 
@@ -100,7 +100,7 @@ public class EnergyManager
      */
     public OilManager getOil()
     {
-	mOil.update();
+   mOil.update();
         return mOil;
     }
 
@@ -109,7 +109,7 @@ public class EnergyManager
      */
     public void update()
     {
-	mUpgrades = mUpgradeManager.update();
+   mUpgrades = mUpgradeManager.update();
     }
 
 
@@ -120,7 +120,7 @@ public class EnergyManager
      */
     public double getPower()
     {
-	return mNuclear.getTotalPower() + mFossil.getTotalPower() 
+   return mNuclear.getTotalPower() + mFossil.getTotalPower() 
                   + mRenewable.getTotalPower();
     }
 
@@ -131,8 +131,8 @@ public class EnergyManager
      */
     public double getSecurity()
     {
-	return mNuclear.getTotalSecurity() + mFossil.getTotalSecurity() +
-	    mRenewable.getTotalSecurity() + mOil.getSecurity();
+   return mNuclear.getTotalSecurity() + mFossil.getTotalSecurity() +
+       mRenewable.getTotalSecurity() + mOil.getSecurity();
     }
 
     /**
@@ -142,7 +142,7 @@ public class EnergyManager
      */
     public int getAmount()
     {
-	return mNuclear.getAmount() + mFossil.getAmount() 
+   return mNuclear.getAmount() + mFossil.getAmount() 
            + mRenewable.getAmount();
     }
 
@@ -153,7 +153,7 @@ public class EnergyManager
      */
     public double getApproval()
     {
-	return ((mNuclear.getApproval() + mFossil.getApproval() 
+   return ((mNuclear.getApproval() + mFossil.getApproval() 
            + mRenewable.getApproval()) / (double)getAmount());
     }
 
@@ -164,8 +164,8 @@ public class EnergyManager
      */
     public double getEmissions()
     {
-	return mNuclear.getTotalEmissions() + mFossil.getTotalEmissions() + 
-	    mRenewable.getTotalEmissions() + mOil.getEmissions();
+   return mNuclear.getTotalEmissions() + mFossil.getTotalEmissions() + 
+       mRenewable.getTotalEmissions() + mOil.getEmissions();
     }
 
     /**
@@ -175,7 +175,7 @@ public class EnergyManager
      */
     public double getProfit()
     {
-	return mNuclear.getTotalProfit() + mFossil.getTotalProfit() 
+   return mNuclear.getTotalProfit() + mFossil.getTotalProfit() 
            + mRenewable.getTotalProfit();
     }
 }

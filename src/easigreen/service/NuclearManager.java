@@ -23,8 +23,8 @@ public class NuclearManager
      */
     public NuclearManager(UpgradeManager pUpgradeManager)
     {
-	super(pUpgradeManager);
-	mPlant = new Nuclear();
+   super(pUpgradeManager);
+   mPlant = new Nuclear();
     }
 
     //////////////////// Methods
@@ -36,7 +36,7 @@ public class NuclearManager
      */
     public double getCostRemove()
     {
-	return mPlant.getCostRemove();
+   return mPlant.getCostRemove();
     }
 
     /**
@@ -46,7 +46,7 @@ public class NuclearManager
      */
     public double getCostBuild()
     {
-	return mPlant.getCostBuild() + mUpgrades.getNuclearCost();
+   return mPlant.getCostBuild() + mUpgrades.getNuclearCost();
     }    
 
     /**
@@ -56,7 +56,7 @@ public class NuclearManager
      */
     public double getApproval()
     {
-	return mPlant.getApproval() + mUpgrades.getNuclearApproval();
+   return mPlant.getApproval() + mUpgrades.getNuclearApproval();
     }
 
     /**
@@ -66,7 +66,7 @@ public class NuclearManager
      */
     public double getTotalApproval()
     {
-	return getApproval() * (double)getAmount();
+   return getApproval() * (double)getAmount();
     }
 
     /**
@@ -76,7 +76,7 @@ public class NuclearManager
      */
     public double getPower()
     {
-	return mPlant.getPower() + mUpgrades.getNuclearPower();
+   return mPlant.getPower() + mUpgrades.getNuclearPower();
     }
 
     /**
@@ -86,7 +86,7 @@ public class NuclearManager
      */
     public double getTotalPower()
     {
-	return getPower() * (double)getAmount();
+   return getPower() * (double)getAmount();
     }
 
     /**
@@ -96,7 +96,7 @@ public class NuclearManager
      */
     public double getEmissions()
     {
-	return mPlant.getEmissions() + mUpgrades.getNuclearEmissions();
+   return mPlant.getEmissions() + mUpgrades.getNuclearEmissions();
     }
 
     /**
@@ -106,7 +106,7 @@ public class NuclearManager
      */
     public double getTotalEmissions()
     {
-	return getEmissions() * (double)getAmount();
+   return getEmissions() * (double)getAmount();
     }
 
     /**
@@ -116,7 +116,7 @@ public class NuclearManager
      */
     public double getSecurity()
     {
-	return mPlant.getSecurity() + mUpgrades.getNuclearSecurity();
+   return mPlant.getSecurity() + mUpgrades.getNuclearSecurity();
     }
 
     /**
@@ -126,7 +126,7 @@ public class NuclearManager
      */
     public double getTotalSecurity()
     {
-	return getSecurity() * (double)getAmount();
+   return getSecurity() * (double)getAmount();
     }
 
     /**
@@ -136,7 +136,7 @@ public class NuclearManager
      */
     public double getProfit()
     {
-	return mPlant.getProfit() + mUpgrades.getNuclearProfit();
+   return mPlant.getProfit() + mUpgrades.getNuclearProfit();
     }
 
     /**
@@ -146,6 +146,6 @@ public class NuclearManager
      */
     public double getTotalProfit()
     {
-	return getProfit() * (double)getAmount();
+   return getProfit() * (double)getAmount();
     }
 }
