@@ -126,7 +126,7 @@ public class FossilUpgradePane
         mActionButton = new Button("Apply");
         mCodeButton   = new Button("Apply");
 
-	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+   mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -134,33 +134,33 @@ public class FossilUpgradePane
                                           mModel.getResourceManager().spendActionPoints   (Math.abs(mFossilSci.getChange()));
                                           mModel.getUpgradeManager ().addFossilEngineering(mFossilEng.getChange());
                                           mModel.getResourceManager().spendActionPoints   (Math.abs(mFossilEng.getChange()));
-					  mFossilSci.saveChanges();
-					  mFossilEng.saveChanges();
+                 mFossilSci.saveChanges();
+                 mFossilEng.saveChanges();
                                           update();
                                       }
                                   });
 
-	mCodeButton.setOnAction(new EventHandler<ActionEvent>()
-				{
-				    public void handle(ActionEvent event)
-				    {
-					mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
-					mCodeValue.setText("");
-					update();
-				    }
-				});
+   mCodeButton.setOnAction(new EventHandler<ActionEvent>()
+            {
+                public void handle(ActionEvent event)
+                {
+               mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
+               mCodeValue.setText("");
+               update();
+                }
+            });
 
-	mTechList = new FossilTechList(mModel);
-	mTechList.getSelectionModel().selectedItemProperty()
-	    .addListener(new ChangeListener<String>()
-			 {
-			     public void changed(ObservableValue<?
-						 extends String> observable,
-						 String oldValue, String newValue)
-			     {
-				 mTechEntry.update(newValue);
-			     }
-			 });
+   mTechList = new FossilTechList(mModel);
+   mTechList.getSelectionModel().selectedItemProperty()
+       .addListener(new ChangeListener<String>()
+          {
+              public void changed(ObservableValue<?
+                   extends String> observable,
+                   String oldValue, String newValue)
+              {
+             mTechEntry.update(newValue);
+              }
+          });
 
 
         setHalignment(mCodeButton, HPos.CENTER);
@@ -179,7 +179,7 @@ public class FossilUpgradePane
         mTechEntry   = new TechEntry        (mModel);
         mCodeLabel   = new Label            ("Tech Code:");
         mCodeValue   = new TextField        ();
-	
+   
         setHalignment(mActionLabel, HPos.RIGHT);
         setHalignment(mActionValue, HPos.CENTER);
         setHalignment(mCodeLabel  , HPos.RIGHT);
@@ -210,9 +210,9 @@ public class FossilUpgradePane
      */
     protected void update()
     {
-	mTechList.update();
-	mFossilSci.update();
-	mFossilEng.update();
+   mTechList.update();
+   mFossilSci.update();
+   mFossilEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
     

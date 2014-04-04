@@ -58,7 +58,7 @@ public class RenewablePane
         mRenewableUpgrades = new ImageButton("renewableupgrade.png", upgradeEvent);
         mApply = new Button("Apply");
 
-	EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
+   EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -159,7 +159,7 @@ public class RenewablePane
 
     protected void update()
     {
-	mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getRenewable().getAmount   ());
+   mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getRenewable().getAmount   ());
         mValues.get("Supply Provided"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getPower    ()));
         mValues.get("Cost"               ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getCostBuild()));
         mValues.get("Public Approval"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getRenewable().getApproval ()));

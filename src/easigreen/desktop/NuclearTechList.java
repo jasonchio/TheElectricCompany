@@ -37,10 +37,10 @@ class NuclearTechList
      */
     protected void update()
     {
-	mData.clear();
-	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getNuclear())
-	    {
-		mData.add(t.getName());
-	    }
+   mData.clear();
+   for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getNuclear())
+       {
+      mData.add(t.getName());
+       }
     }
 }

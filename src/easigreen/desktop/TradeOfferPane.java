@@ -30,7 +30,7 @@ public class TradeOfferPane
      */
     public void update()
     {
-	mTechs.update();
+   mTechs.update();
     }
     
     /**

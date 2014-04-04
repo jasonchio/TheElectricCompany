@@ -146,7 +146,7 @@ public class RenewableUpgradePane
         mActionButton = new Button("Apply");
         mCodeButton   = new Button("Apply");
 
-	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+   mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -154,21 +154,21 @@ public class RenewableUpgradePane
                                           mModel.getResourceManager().spendActionPoints     (Math.abs(mRenewSci.getChange()));
                                           mModel.getUpgradeManager().addRenewableEngineering(mRenewEng.getChange());
                                           mModel.getResourceManager().spendActionPoints     (Math.abs(mRenewEng.getChange()));
-					  mRenewSci.saveChanges();
-					  mRenewEng.saveChanges();
+                 mRenewSci.saveChanges();
+                 mRenewEng.saveChanges();
                                           update();
                                       }
                                   });
 
         mCodeButton.setOnAction(new EventHandler<ActionEvent>()
-				{
-				    public void handle(ActionEvent event)
-				    {
-					mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
+            {
+                public void handle(ActionEvent event)
+                {
+               mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
                                         mCodeValue.setText("");
                                         update();
-				    }
-				});
+                }
+            });
 
         mTechList = new RenewableTechList(mModel);
         mTechList.getSelectionModel().selectedItemProperty()
@@ -230,9 +230,9 @@ public class RenewableUpgradePane
      */
     protected void update()
     {
-	mTechList.update();
-	mRenewSci.update();
-	mRenewEng.update();
+   mTechList.update();
+   mRenewSci.update();
+   mRenewEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 }

@@ -67,7 +67,7 @@ public class EngineeringPane
     {
         mActionButton = new Button("Apply");
 
-	    mActionButton.setOnAction(new EventHandler<ActionEvent>()
+       mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -77,9 +77,9 @@ public class EngineeringPane
                                           mModel.getResourceManager().spendActionPoints      (Math.abs(mFosEng.getChange()));
                                           mModel.getUpgradeManager ().addRenewableEngineering(mRenEng.getChange());
                                           mModel.getResourceManager().spendActionPoints      (Math.abs(mRenEng.getChange()));
-					  mNucEng.saveChanges();
-					  mFosEng.saveChanges();
-					  mRenEng.saveChanges();
+                 mNucEng.saveChanges();
+                 mFosEng.saveChanges();
+                 mRenEng.saveChanges();
                                           update();
                                       }
                                   });
@@ -123,9 +123,9 @@ public class EngineeringPane
      */
     protected void update()
     {
-	    mNucEng.update();
-	    mFosEng.update();
-	    mRenEng.update();
+       mNucEng.update();
+       mFosEng.update();
+       mRenEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 

@@ -66,24 +66,24 @@ public class SciencePane
         mActionButton = new Button("Apply");
 
         mActionButton.setOnAction(new EventHandler<ActionEvent>()
-				  {
-				      public void handle(ActionEvent event)
-				      {
-					  mModel.getUpgradeManager().addNuclearScience  (mNucSci.getChange());
-					  mModel.getResourceManager().spendActionPoints (Math.abs(mNucSci.getChange()));
-					  mModel.getUpgradeManager().addFossilScience   (mFosSci.getChange());
-					  mModel.getResourceManager().spendActionPoints (Math.abs(mFosSci.getChange()));
-					  mModel.getUpgradeManager().addRenewableScience(mRenSci.getChange());
-					  mModel.getResourceManager().spendActionPoints (Math.abs(mRenSci.getChange()));
-					  mModel.getUpgradeManager().addOilScience      (mOilSci.getChange());
-					  mModel.getResourceManager().spendActionPoints (Math.abs(mOilSci.getChange()));
-					  mNucSci.saveChanges();
-					  mFosSci.saveChanges();
-					  mRenSci.saveChanges();
-					  mOilSci.saveChanges();
-					  update();
-				      }
-				  });
+              {
+                  public void handle(ActionEvent event)
+                  {
+                 mModel.getUpgradeManager().addNuclearScience  (mNucSci.getChange());
+                 mModel.getResourceManager().spendActionPoints (Math.abs(mNucSci.getChange()));
+                 mModel.getUpgradeManager().addFossilScience   (mFosSci.getChange());
+                 mModel.getResourceManager().spendActionPoints (Math.abs(mFosSci.getChange()));
+                 mModel.getUpgradeManager().addRenewableScience(mRenSci.getChange());
+                 mModel.getResourceManager().spendActionPoints (Math.abs(mRenSci.getChange()));
+                 mModel.getUpgradeManager().addOilScience      (mOilSci.getChange());
+                 mModel.getResourceManager().spendActionPoints (Math.abs(mOilSci.getChange()));
+                 mNucSci.saveChanges();
+                 mFosSci.saveChanges();
+                 mRenSci.saveChanges();
+                 mOilSci.saveChanges();
+                 update();
+                  }
+              });
 
         setHalignment(mActionButton, HPos.LEFT);
     }
@@ -109,10 +109,10 @@ public class SciencePane
      */
     protected void update()
     {
-	mNucSci.update();
-	mFosSci.update();
-	mRenSci.update();
-	mOilSci.update();
+   mNucSci.update();
+   mFosSci.update();
+   mRenSci.update();
+   mOilSci.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 

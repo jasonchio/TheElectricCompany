@@ -23,7 +23,7 @@ class RenewableTechList
      */
     public RenewableTechList(SimCity pModel)
     {
-	   super(pModel);
+      super(pModel);
     }
 
     /**
@@ -31,10 +31,10 @@ class RenewableTechList
      */
     protected void update()
     {
-	mData.clear();
-	for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getRenewable())
-	    {
-		mData.add(t.getName());
-	    }
+   mData.clear();
+   for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getRenewable())
+       {
+      mData.add(t.getName());
+       }
     }
 }

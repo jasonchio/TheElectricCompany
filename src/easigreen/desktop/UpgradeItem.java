@@ -75,9 +75,9 @@ public class UpgradeItem
      */
     protected void setup()
     {
-    	mChange      = 0;
-	mTotalChange = 0;
-	mSaveChange = 0;
+       mChange      = 0;
+   mTotalChange = 0;
+   mSaveChange = 0;
         setLabels();
         add(mTitle, 0, 0, 3, 1);
 
@@ -128,15 +128,15 @@ public class UpgradeItem
         {
             public void handle(ActionEvent event)
             {
-		int currentActionPoints = Integer.parseInt(mActionPoints.getText());
-		if ((mTotalChange < 5) && ((currentActionPoints > 0) || (mChange < 0)))
+      int currentActionPoints = Integer.parseInt(mActionPoints.getText());
+      if ((mTotalChange < 5) && ((currentActionPoints > 0) || (mChange < 0)))
                 {
                     mValue.setText("" + (Integer.parseInt(mValue.getText()) + 1));
-		    int change = (mChange < 0) ? 1 : -1;
-		    mActionPoints.setText("" + (currentActionPoints + change));
+          int change = (mChange < 0) ? 1 : -1;
+          mActionPoints.setText("" + (currentActionPoints + change));
                     mChange += 1;
-		    mTotalChange += 1;
-		}
+          mTotalChange += 1;
+      }
             }
         };
 
@@ -144,15 +144,15 @@ public class UpgradeItem
         {
             public void handle(ActionEvent event)
             {
-		int currentActionPoints = Integer.parseInt(mActionPoints.getText());
-		if ((mTotalChange > -5) && ((currentActionPoints > 0) || (mChange > 0)))
-		{
+      int currentActionPoints = Integer.parseInt(mActionPoints.getText());
+      if ((mTotalChange > -5) && ((currentActionPoints > 0) || (mChange > 0)))
+      {
                     mValue.setText("" + (Integer.parseInt(mValue.getText()) - 1));
-		    int change = (mChange > 0) ? 1 : -1;
-		    mActionPoints.setText("" + (currentActionPoints + change));
+          int change = (mChange > 0) ? 1 : -1;
+          mActionPoints.setText("" + (currentActionPoints + change));
                     mChange -= 1;
-		    mTotalChange -= 1;
-		}
+          mTotalChange -= 1;
+      }
             }
         };
 
@@ -172,7 +172,7 @@ public class UpgradeItem
      */
     public void setChange(int pChange)
     {
-	    mChange = pChange;
+       mChange = pChange;
     }
     
     //////////////////////// Getters
@@ -183,7 +183,7 @@ public class UpgradeItem
      */
     public int getChange()
     {
-	return mChange;
+   return mChange;
     }
     
     /**
@@ -227,7 +227,7 @@ public class UpgradeItem
      */
     protected void saveChanges()
     {
-	mSaveChange = mTotalChange;
+   mSaveChange = mTotalChange;
     }
     
     ////////////////////////////// Constructor
@@ -239,6 +239,6 @@ public class UpgradeItem
     public UpgradeItem(SimCity pModel, Label pActionPoints)
     {
         super(pModel);
-	mActionPoints = pActionPoints;
+   mActionPoints = pActionPoints;
     }
 }

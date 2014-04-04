@@ -53,8 +53,8 @@ public class RenewableScience
      */
     protected void update()
     {
-	mChange = 0;
-	mTotalChange = mSaveChange;
+   mChange = 0;
+   mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getRenewableScience());
     }
 }

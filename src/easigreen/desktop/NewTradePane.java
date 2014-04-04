@@ -94,8 +94,8 @@ public class NewTradePane
      */
     protected void update()
     {
-	mOffer.update();
-	mRequest.update();
+   mOffer.update();
+   mRequest.update();
     }
     
     /**

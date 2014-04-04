@@ -30,7 +30,7 @@ public class TradeRequestPane
      */
     public void update()
     {
-	mTechs.update();
+   mTechs.update();
     }
     
     /**

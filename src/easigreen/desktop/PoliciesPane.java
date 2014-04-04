@@ -33,8 +33,8 @@ public class PoliciesPane
     protected void init()
     {
         mActionButton = new Button("Apply");
-	
-	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+   
+   mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -44,9 +44,9 @@ public class PoliciesPane
                                           mModel.getResourceManager().spendActionPoints (Math.abs(mOil.getChange()));
                                           mModel.getUpgradeManager ().addPriceChange    (mPrice.getChange());
                                           mModel.getResourceManager().spendActionPoints (Math.abs(mPrice.getChange()));
-					  mLobby.saveChanges();
-					  mOil  .saveChanges();
-					  mPrice.saveChanges();
+                 mLobby.saveChanges();
+                 mOil  .saveChanges();
+                 mPrice.saveChanges();
                                           update();
                                       }
                                   });
@@ -68,9 +68,9 @@ public class PoliciesPane
 
     protected void update()
     {
-	mPrice.update();
-	mLobby.update();
-	mOil  .update();
+   mPrice.update();
+   mLobby.update();
+   mOil  .update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 

@@ -38,10 +38,10 @@ class ImplementedTechList
      */
     protected void update()
     {
-	   mData.clear();
-	   for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getImplemented())
-	   {
-	       mData.add(t.getName() + t.getQuality());
-	   }
+      mData.clear();
+      for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getImplemented())
+      {
+          mData.add(t.getName() + t.getQuality());
+      }
     }
 }

@@ -83,7 +83,7 @@ public class OilUpgradePane
         mActionButton = new Button("Apply");
         mCodeButton   = new Button("Apply");
 
-	mActionButton.setOnAction(new EventHandler<ActionEvent>()
+   mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -91,21 +91,21 @@ public class OilUpgradePane
                                           mModel.getResourceManager().spendActionPoints (Math.abs(mOilSci.getChange()));
                                           mModel.getUpgradeManager ().addOilDrilling    (mOilDrill.getChange());
                                           mModel.getResourceManager().spendActionPoints (Math.abs(mOilDrill.getChange()));
-					  mOilSci.saveChanges();
-					  mOilDrill.saveChanges();
+                 mOilSci.saveChanges();
+                 mOilDrill.saveChanges();
                                           update();
                                       }
                                   });
 
         mCodeButton.setOnAction(new EventHandler<ActionEvent>()
-				{
-				    public void handle(ActionEvent event)
-				    {
-					mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
+            {
+                public void handle(ActionEvent event)
+                {
+               mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
                                         mCodeValue.setText("");
                                         update();
-				    }
-				});
+                }
+            });
 
         mTechList = new OilTechList(mModel);
         mTechList.getSelectionModel().selectedItemProperty()
@@ -161,9 +161,9 @@ public class OilUpgradePane
 
     protected void update()
     {
-	mTechList.update();
-	mOilSci  .update();
-	mOilDrill.update();
+   mTechList.update();
+   mOilSci  .update();
+   mOilDrill.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 }

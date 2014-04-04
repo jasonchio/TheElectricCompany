@@ -127,7 +127,7 @@ public class NuclearUpgradePane
         mActionButton = new Button("Apply");
         mCodeButton   = new Button("Apply");
 
-	    mActionButton.setOnAction(new EventHandler<ActionEvent>()
+       mActionButton.setOnAction(new EventHandler<ActionEvent>()
                                   {
                                       public void handle(ActionEvent event)
                                       {
@@ -135,23 +135,23 @@ public class NuclearUpgradePane
                                           mModel.getResourceManager().spendActionPoints    (Math.abs(mNucSci.getChange()));
                                           mModel.getUpgradeManager ().addNuclearEngineering(mNucEng.getChange());
                                           mModel.getResourceManager().spendActionPoints    (Math.abs(mNucEng.getChange()));
-					  mNucSci.saveChanges();
-					  mNucEng.saveChanges();
+                 mNucSci.saveChanges();
+                 mNucEng.saveChanges();
                                           update();
                                       }
                                   });
 
         mCodeButton.setOnAction(new EventHandler<ActionEvent>()
-				{
-				    public void handle(ActionEvent event)
-				    {
-					mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
-					mCodeValue.setText("");
-					update();
-				    }
-				});
+            {
+                public void handle(ActionEvent event)
+                {
+               mModel.getUpgradeManager().getTechnologyManager().addTechnology(mCodeValue.getText());
+               mCodeValue.setText("");
+               update();
+                }
+            });
 
-	mTechList = new NuclearTechList(mModel);
+   mTechList = new NuclearTechList(mModel);
         mTechList.getSelectionModel().selectedItemProperty()
             .addListener(new ChangeListener<String>()
                          {
@@ -211,9 +211,9 @@ public class NuclearUpgradePane
      */
     protected void update()
     {
-	mTechList.update();
-	mNucSci.update();
-	mNucEng.update();
+   mTechList.update();
+   mNucSci.update();
+   mNucEng.update();
         mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
     

@@ -156,48 +156,48 @@ public class NuclearPane
         mApply = new Button("Apply");
 
 
-	   EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
-	   {
-	       public void handle(ActionEvent event)
-	       {
+      EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
+      {
+          public void handle(ActionEvent event)
+          {
                    int current = mModel.getEnergyManager().getNuclear().getAmount();
                    int newAmount = Integer.parseInt(mValues.get("Plants in Operation").getText());
        
                    if (current < newAmount)
-	           {
+              {
                        mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
-	   					            - mModel.getEnergyManager().getNuclear().getCostBuild() * (newAmount - current));
-	           }
+                                 - mModel.getEnergyManager().getNuclear().getCostBuild() * (newAmount - current));
+              }
        
-	           else if (current > newAmount)
-	           {
-	   	       mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
-	   	               			            - mModel.getEnergyManager().getNuclear().getCostRemove() * (current - newAmount));
-	           }
+              else if (current > newAmount)
+              {
+                mModel.getResourceManager().setFunds(mModel.getResourceManager().getFunds() 
+                                             - mModel.getEnergyManager().getNuclear().getCostRemove() * (current - newAmount));
+              }
        
-	           mModel.getEnergyManager().getNuclear().setAmount(Integer.parseInt(mValues.get("Plants in Operation").getText()));
-	       }
-	   };
+              mModel.getEnergyManager().getNuclear().setAmount(Integer.parseInt(mValues.get("Plants in Operation").getText()));
+          }
+      };
 
        EventHandler<ActionEvent> upEvent = new EventHandler<ActionEvent>()
-	   {
-	       public void handle(ActionEvent event)
-	       {
-		      mValues.get("Plants in Operation").setText("" +
-		   					   (Integer.parseInt(mValues.get("Plants in Operation").getText()) + 1));
-	       }
+      {
+          public void handle(ActionEvent event)
+          {
+            mValues.get("Plants in Operation").setText("" +
+                           (Integer.parseInt(mValues.get("Plants in Operation").getText()) + 1));
+          }
            };
 
         EventHandler<ActionEvent> downEvent = new EventHandler<ActionEvent>()
-	    {
-	        public void handle(ActionEvent event)
-	        {
+       {
+           public void handle(ActionEvent event)
+           {
                     if (Integer.parseInt(mValues.get("Plants in Operation").getText()) != 0)
-		    {
-		        mValues.get("Plants in Operation").setText("" +
-		        					   (Integer.parseInt(mValues.get("Plants in Operation").getText()) - 1));
-		    }
-	        }
+          {
+              mValues.get("Plants in Operation").setText("" +
+                                (Integer.parseInt(mValues.get("Plants in Operation").getText()) - 1));
+          }
+           }
         };
 
         mApply.setOnAction(applyEvent);
