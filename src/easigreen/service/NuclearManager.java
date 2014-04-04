@@ -11,7 +11,8 @@ import easigreen.system.*;
  * @author Sam Graham
  * @author Haru McClellan
  */
-public class NuclearManager extends PlantManager
+public class NuclearManager 
+    extends PlantManager
 {
     //////////////////// Consructor
 

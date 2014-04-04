@@ -12,7 +12,8 @@ import easigreen.system.*;
  * @author Sam Graham
  * @author Haru McClellan
  */
-public class RenewableManager extends PlantManager
+public class RenewableManager 
+    extends PlantManager
 {
     //////////////////// Constructor
 	

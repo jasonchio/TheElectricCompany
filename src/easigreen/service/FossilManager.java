@@ -11,7 +11,8 @@ import easigreen.system.*;
  * @author Sam Graham
  * @author Haru McClellan
  */
-public class FossilManager extends PlantManager
+public class FossilManager 
+   extends PlantManager
 {
     //////////////////// Constructors
 	

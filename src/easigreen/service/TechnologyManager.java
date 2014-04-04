@@ -79,15 +79,15 @@ public class TechnologyManager
         mImplemented = new ArrayList<Technology>();
         mAvailable   = new ArrayList<Technology>();
         mNuclear     = new ArrayList<Technology>();
-	mFossil      = new ArrayList<Technology>();
-	mRenewable   = new ArrayList<Technology>();
-	mOil         = new ArrayList<Technology>();
+        mFossil      = new ArrayList<Technology>();
+        mRenewable   = new ArrayList<Technology>();
+        mOil         = new ArrayList<Technology>();
         mAll         = new TechnologyGetter().getTechnologies();
-	mCodes       = new TechCodeManager(mAll);
-	mNames       = new HashMap<String, Technology>();
-	mLookup      = new HashMap<String, Technology>();
-	setPlantLists();
-	setLookup();
+        mCodes       = new TechCodeManager(mAll);
+        mNames       = new HashMap<String, Technology>();
+        mLookup      = new HashMap<String, Technology>();
+        setPlantLists();
+        setLookup();
     }
 
     //////////////////// Methods
@@ -171,34 +171,58 @@ public class TechnologyManager
         UpgradeMerger allChanges = new UpgradeMerger();
         for (int i = 0; i < mImplemented.size(); i++) {
             // General
-            allChanges.addBudgetChange      (mImplemented.get(i).getOther().getBudget   ());
-            allChanges.addDemandRateChange  (mImplemented.get(i).getOther().getDemand   ());
-            allChanges.addEmissionsChange   (mImplemented.get(i).getOther().getEmissions());
+            allChanges.addBudgetChange      (mImplemented.
+                get(i).getOther().getBudget   ());
+            allChanges.addDemandRateChange  (mImplemented.
+                get(i).getOther().getDemand   ());
+            allChanges.addEmissionsChange   (mImplemented.
+                get(i).getOther().getEmissions());
             // Nuclear
-            allChanges.addNuclearPower      (mImplemented.get(i).getNuclear().getPower    ());
-            allChanges.addNuclearCost       (mImplemented.get(i).getNuclear().getCost     ());
-            allChanges.addNuclearApproval   (mImplemented.get(i).getNuclear().getApproval ());
-            allChanges.addNuclearEmissions  (mImplemented.get(i).getNuclear().getEmissions());
-            allChanges.addNuclearSecurity   (mImplemented.get(i).getNuclear().getSecurity ());
-            allChanges.addNuclearProfit     (mImplemented.get(i).getNuclear().getProfit   ());
+            allChanges.addNuclearPower      (mImplemented.
+                get(i).getNuclear().getPower    ());
+            allChanges.addNuclearCost       (mImplemented.
+                get(i).getNuclear().getCost     ());
+            allChanges.addNuclearApproval   (mImplemented.
+                get(i).getNuclear().getApproval ());
+            allChanges.addNuclearEmissions  (mImplemented.
+                get(i).getNuclear().getEmissions());
+            allChanges.addNuclearSecurity   (mImplemented.
+                get(i).getNuclear().getSecurity ());
+            allChanges.addNuclearProfit     (mImplemented.
+                get(i).getNuclear().getProfit   ());
             // Fossil
-            allChanges.addFossilPower       (mImplemented.get(i).getFossil().getPower    ());
-            allChanges.addFossilCost        (mImplemented.get(i).getFossil().getCost     ());
-            allChanges.addFossilApproval    (mImplemented.get(i).getFossil().getApproval ());
-            allChanges.addFossilEmissions   (mImplemented.get(i).getFossil().getEmissions());
-            allChanges.addFossilSecurity    (mImplemented.get(i).getFossil().getSecurity ());
-            allChanges.addFossilProfit      (mImplemented.get(i).getFossil().getProfit   ());
+            allChanges.addFossilPower       (mImplemented.
+                get(i).getFossil().getPower    ());
+            allChanges.addFossilCost        (mImplemented.
+                get(i).getFossil().getCost     ());
+            allChanges.addFossilApproval    (mImplemented.
+                get(i).getFossil().getApproval ());
+            allChanges.addFossilEmissions   (mImplemented.
+                get(i).getFossil().getEmissions());
+            allChanges.addFossilSecurity    (mImplemented.
+                get(i).getFossil().getSecurity ());
+            allChanges.addFossilProfit      (mImplemented.
+                get(i).getFossil().getProfit   ());
             // Renewable
-            allChanges.addRenewablePower    (mImplemented.get(i).getRenewable().getPower    ());
-            allChanges.addRenewableCost     (mImplemented.get(i).getRenewable().getCost     ());
-            allChanges.addRenewableApproval (mImplemented.get(i).getRenewable().getApproval ());
-            allChanges.addRenewableEmissions(mImplemented.get(i).getRenewable().getEmissions());
-            allChanges.addRenewableSecurity (mImplemented.get(i).getRenewable().getSecurity ());
-            allChanges.addRenewableProfit   (mImplemented.get(i).getRenewable().getProfit   ());
+            allChanges.addRenewablePower    (mImplemented.
+                get(i).getRenewable().getPower    ());
+            allChanges.addRenewableCost     (mImplemented.
+                get(i).getRenewable().getCost     ());
+            allChanges.addRenewableApproval (mImplemented.
+                get(i).getRenewable().getApproval ());
+            allChanges.addRenewableEmissions(mImplemented.
+                get(i).getRenewable().getEmissions());
+            allChanges.addRenewableSecurity (mImplemented.
+                get(i).getRenewable().getSecurity ());
+            allChanges.addRenewableProfit   (mImplemented.
+                get(i).getRenewable().getProfit   ());
             // Oil
-            allChanges.addOilConsumption    (mImplemented.get(i).getOil().getConsumption());
-            allChanges.addOilSecurity       (mImplemented.get(i).getOil().getSecurity   ());
-            allChanges.addOilGrowth         (mImplemented.get(i).getOil().getGrowth     ());
+            allChanges.addOilConsumption    (mImplemented.
+                get(i).getOil().getConsumption());
+            allChanges.addOilSecurity       (mImplemented.
+                get(i).getOil().getSecurity   ());
+            allChanges.addOilGrowth         (mImplemented.
+                get(i).getOil().getGrowth     ());
         }
         return allChanges;
     }
