@@ -124,7 +124,7 @@ public class Shell
    /**
     * Gets if verbose mode is or not
     *
-    * @return True of false for verbose mode 
+    * @return True of false for verbose mode
     */
    public boolean getVerbose()
    {
@@ -135,7 +135,7 @@ public class Shell
     * Sets if verbose mode is or not
     *
     * @param pVerbose True or false for verbose mode
-    *   
+    *
     * @return verbose mode before setting the parameter to the member varible
     */
    public boolean setVerbose(boolean pVerbose)
@@ -161,7 +161,7 @@ public class Shell
     *
     * @param pSilent boolean for silent mode
     *
-    * @return silent mode before setting the parameter to the member varible 
+    * @return silent mode before setting the parameter to the member varible
     */
    public boolean setSilent(boolean pSilent)
    {
@@ -209,7 +209,7 @@ public class Shell
    /**
     * Sets an output steam object
     *
-    * @param pOutputStream An output stream  
+    * @param pOutputStream An output stream
     *
     * @return An output stream before setting
     */
@@ -225,7 +225,7 @@ public class Shell
    /**
     * Gets an error output stream
     *
-    * @return An error output stream 
+    * @return An error output stream
     */
    public OutputStream getErrorStream()
    {
@@ -375,7 +375,7 @@ public class Shell
 
    /**
     * Print out a message
-    *  
+    *
     * @param pMessage A message string
     */
    public void echo(String pMessage) // Echo cannot be made silent
@@ -535,7 +535,7 @@ public class Shell
    }
 
    /**
-    * Renames a file 
+    * Renames a file
     *
     * @param pSource The source file of renaming
     * @param pTarget The target file of renaming
@@ -549,7 +549,7 @@ public class Shell
    }
 
    /**
-    * Removes a file 
+    * Removes a file
     *
     * @param pFile The file which want be removed.
     *
@@ -602,7 +602,7 @@ public class Shell
    }
 
    /**
-    * Invokes a parsed command 
+    * Invokes a parsed command
     *
     * @param pCommand A string array of command
     *
@@ -615,7 +615,7 @@ public class Shell
    }
 
    /**
-    * Invokes a parsed command with an environment 
+    * Invokes a parsed command with an environment
     *
     * @param pCommand A string array of command
     * @param pEnvironment A string array of environment
@@ -869,7 +869,7 @@ public class Shell
     *
     * @param pArguments A string array of arguments
     *
-    * @throws Throwable Throws if rename command is not working 
+    * @throws Throwable Throws if rename command is not working
     */
    public void intrinsic_rename(String[] pArguments)
       throws Throwable

@@ -89,12 +89,12 @@ public class ResourceGetter
    {
       String externalForm = "Sorry---Resource_Not_Found---" + pName;
 
-      String resourceFilename = (pName.startsWith("/") ? pName :
-                                 cResourcesPathPrefix + pName);
+      String resourceFilename =
+         (pName.startsWith("/") ? pName : (cResourcesPathPrefix + pName));
+
       try
       {
-         externalForm = 
-            pClass.getResource(resourceFilename).toExternalForm();
+         externalForm = pClass.getResource(resourceFilename).toExternalForm();
       }
       catch (Exception e)
       {
@@ -109,12 +109,11 @@ public class ResourceGetter
     *
     * @param pSpecification the URL specification.
     * @param pFoldername the name of the folder in which to save it,
-                         which must already exist.
+                           which must already exist.
     * @param pFilenames the file names in the URL resource.
     */
-   public static void extractToFile(String pSpecification,
-                                    String pFoldername,
-                                    String ... pFilenames)
+   public static void extractToFile(String pSpecification, String pFoldername,
+      String... pFilenames)
    {
       try
       {
@@ -128,6 +127,7 @@ public class ResourceGetter
             for (int i = 0; i < pFilenames.length; i++)
             {
                String filename = pFilenames[i];
+
                if (ze.getName().equals(filename))
                {
                   File file = new File(folder, new File(filename).getName());
@@ -138,10 +138,12 @@ public class ResourceGetter
                   {
                      target.write(bytes, 0, numRead);
                   }
+
                   target.close();
                }
             }
          }
+
          source.close();
       }
       catch (Exception e)
