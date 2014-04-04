@@ -158,9 +158,9 @@ public class SimCity
    //////////////////////////// Setters
 
    /**
-    * Sets the RoundNumber
+    * Sets the BaseManager
     *
-    * @param pRoundNumber the round number
+    * @param pBaseManager the round number
     */
    public void setBaseManager(BaseManager pBaseManager)
    {

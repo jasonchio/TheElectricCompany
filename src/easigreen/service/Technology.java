@@ -108,7 +108,7 @@ public class Technology
    /**
     * Sets the quality of the technology
     *
-    * @param int pQuality the quality on a scale from 1 to ten
+    * @param pQuality the quality on a scale from 1 to ten
     */
    public void setQuality(int pQuality)
    {

@@ -216,9 +216,9 @@ public class Upgrade
    }
 
    /**
-    * Set the change in the energy price
+    * Set the change in the price change
     *
-    * @param pNRGChange change in the energy price
+    * @param pPriceChange
     */
    public void setPriceChange(int pPriceChange)
    {
@@ -228,7 +228,7 @@ public class Upgrade
    /**
     * Set the change in approval
     *
-    * @param pEmissionsChange change in approval
+    * @param pApprovalChange
     */
    public void setApprovalChange(double pApprovalChange)
    {

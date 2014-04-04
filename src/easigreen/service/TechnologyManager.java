@@ -164,7 +164,7 @@ public class TechnologyManager
    /**
     * Updates the Merger
     *
-    * @returns UpgradeMerger the UpgradeMerger
+    * @return UpgradeMerger the UpgradeMerger
     */
    public UpgradeMerger update()
    {

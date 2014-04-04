@@ -36,9 +36,9 @@ class TechCodeManager
    //////////////////// Constructors
 
    /**
-    * Instansiates some member varables using parameters
+    * Instantiates some member variables using parameters
     *
-    * @param List-Technology pTechs, from Technology Manager
+    * @param pTechs, from Technology Manager
     */
    public TechCodeManager(List<Technology> pTechs)
    {
