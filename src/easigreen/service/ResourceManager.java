@@ -180,7 +180,7 @@ public class ResourceManager
    /**
     * Action points can be traded for money here
     *
-    * @param actions amount of action points to trade for cash
+    * @param amount of action points to trade for cash
     */
    public void cashInActionPoints(int amount)
    {
@@ -275,7 +275,7 @@ public class ResourceManager
    /**
     * Sets the budget to a new value
     *
-    * @param pBudget the new budget value
+    * @param pFunds the new budget value
     */
    public void setFunds(double pFunds)
    {

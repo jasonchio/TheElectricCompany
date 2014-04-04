@@ -25,7 +25,12 @@ import javafx.scene.layout.*;
 import javafx.stage.*;
 
 /**
- * The main Graphical User Interface for the "Sim City" Application
+ * Main Entry-point
+ *
+ * @version 0.2.1
+ * @author Sam Graham
+ * @author Haru McClellan
+ * @author Larson Caldwell
  */
 public class GUI
    extends Application
@@ -175,8 +180,6 @@ public class GUI
 
    /**
     * Initializes the GUI.
-    *
-    * @param primaryStage the primary stage.
     */
    private void initialize()
    {

@@ -63,7 +63,7 @@ public class Action
     * For this to work, the method named must have a void return type
     * and take no arguments. Ideally, the method name could be overridden
     * in the constructor call. For now, it defaults to the camelCase
-    * transformation of the action name (e.g., "Start Thread" -->
+    * transformation of the action name (e.g., "Start Thread"
     * "startThread").
     *
     * @param pName the action name.

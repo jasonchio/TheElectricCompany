@@ -127,7 +127,7 @@ public class PlantAspect
    /**
     * Sets the plants Power upgrade
     *
-    * @param double pPower
+    * @param pPower
     */
    public void setPower(double pPower)
    {
@@ -137,7 +137,7 @@ public class PlantAspect
    /**
     * Sets the plants cost upgrade
     *
-    * @param double pCost
+    * @param pCost
     */
    public void setCost(double pCost)
    {
@@ -147,7 +147,7 @@ public class PlantAspect
    /**
     * Sets the plants approval upgrade
     *
-    * @param double pApproval
+    * @param pApproval
     */
    public void setApproval(double pApproval)
    {
@@ -157,7 +157,7 @@ public class PlantAspect
    /**
     * Sets the plants emissions upgrade
     *
-    * @param double pEmissions
+    * @param pEmissions
     */
    public void setEmissions(double pEmissions)
    {
@@ -167,7 +167,7 @@ public class PlantAspect
    /**
     * Sets the plants security upgrade
     *
-    * @param double pSecurity
+    * @param pSecurity
     */
    public void setSecurity(double pSecurity)
    {
@@ -177,7 +177,7 @@ public class PlantAspect
    /**
     * Sets the plants profit upgrade
     *
-    * @param double pProfit
+    * @param pProfit
     */
    public void setProfit(double pProfit)
    {

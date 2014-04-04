@@ -79,7 +79,7 @@ public class OilAspect
    /**
     * Sets the oil consumption upgrade
     *
-    * @param double pConsumption
+    * @param pConsumption
     */
    public void setConsumption(double pConsumption)
    {
@@ -89,7 +89,7 @@ public class OilAspect
    /**
     * Sets the oil security upgrade
     *
-    * @param double pSecurity
+    * @param pSecurity
     */
    public void setSecurity(double pSecurity)
    {
@@ -99,7 +99,7 @@ public class OilAspect
    /**
     * Sets the oil growth upgrade
     *
-    * @param double pGrowth
+    * @param pGrowth
     */
    public void setGrowth(double pGrowth)
    {

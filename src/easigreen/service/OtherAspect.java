@@ -49,7 +49,7 @@ public class OtherAspect
    /**
     * Sets the budget upgrade
     *
-    * @param double pBudget
+    * @param pBudget
     */
    public void setBudget(double pBudget)
    {
@@ -59,7 +59,7 @@ public class OtherAspect
    /**
     * Sets the demand upgrade
     *
-    * @param double pDemand
+    * @param pDemand
     */
    public void setDemand(double pDemand)
    {
@@ -69,7 +69,7 @@ public class OtherAspect
    /**
     * Sets the net emissions upgrade
     *
-    * @param double pEmissions
+    * @param pEmissions
     */
    public void setEmissions(double pEmissions)
    {
