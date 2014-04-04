@@ -1,12 +1,14 @@
 package easigreen.desktop;
 
 import easigreen.desktop.*;
+
 import easigreen.service.*;
 
 import java.util.*;
 
-import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javafx.scene.control.ListView;
 
 /**
@@ -16,32 +18,34 @@ import javafx.scene.control.ListView;
  * @author Sam Graham
  * @author Haru McClellan
  * @author Larson Caldwell
- */ 
+ */
 class AvailableTechList
-    extends AppDataList
+   extends AppDataList
 {
-    ///////////////////////////// Constructor
+   ///////////////////////////// Constructor
 
-    /**
-     * Basic Constructor
-     * @param pModel the model, a SimCity
-     */
-    public AvailableTechList(SimCity pModel)
-    {
-        super(pModel);
-    }
+   /**
+    * Basic Constructor
+    * @param pModel the model, a SimCity
+    */
+   public AvailableTechList(SimCity pModel)
+   {
+      super(pModel);
+   }
 
-    //////////////////////////// Methods
-    
-    /**
-     * Update the Technology List
-     */
-    protected void update()
-    {
+   //////////////////////////// Methods
+
+   /**
+    * Update the Technology List
+    */
+   protected void update()
+   {
       mData.clear();
-      for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getAvailable())
+
+      for (Technology t : mModel.getUpgradeManager().getTechnologyManager()
+                                .getAvailable())
       {
-          mData.add(t.getName() + t.getQuality());
+         mData.add(t.getName() + t.getQuality());
       }
-    }
+   }
 }

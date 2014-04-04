@@ -1,12 +1,14 @@
 package easigreen.desktop;
 
 import easigreen.desktop.*;
+
 import easigreen.service.*;
 
 import java.util.*;
 
-import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javafx.scene.control.ListView;
 
 /**
@@ -15,21 +17,21 @@ import javafx.scene.control.ListView;
  * @author Haru McClellan
  */
 class TradeList
-    extends AppDataList
+   extends AppDataList
 {
-    /**
-     * TradeList Constructor
-     * @param pModel the reference to the model
-     */
-    public TradeList(SimCity pModel)
-    {
-        super(pModel);
-    }
+   /**
+    * TradeList Constructor
+    * @param pModel the reference to the model
+    */
+   public TradeList(SimCity pModel)
+   {
+      super(pModel);
+   }
 
-    /**
-     * Updater
-     */
-    protected void update()
-    {
-    }
+   /**
+    * Updater
+    */
+   protected void update()
+   {
+   }
 }

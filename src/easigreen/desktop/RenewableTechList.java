@@ -1,12 +1,14 @@
 package easigreen.desktop;
 
 import easigreen.desktop.*;
+
 import easigreen.service.*;
 
 import java.util.*;
 
-import javafx.collections.ObservableList;
 import javafx.collections.FXCollections;
+import javafx.collections.ObservableList;
+
 import javafx.scene.control.ListView;
 
 /**
@@ -15,26 +17,28 @@ import javafx.scene.control.ListView;
  * @author Haru McClellan
  */
 class RenewableTechList
-    extends AppDataList
+   extends AppDataList
 {
-    /**
-     * Basic Constructor
-     * @param pModel a reference to SimCity
-     */
-    public RenewableTechList(SimCity pModel)
-    {
+   /**
+    * Basic Constructor
+    * @param pModel a reference to SimCity
+    */
+   public RenewableTechList(SimCity pModel)
+   {
       super(pModel);
-    }
+   }
 
-    /**
-     * Updater
-     */
-    protected void update()
-    {
-   mData.clear();
-   for (Technology t : mModel.getUpgradeManager().getTechnologyManager().getRenewable())
-       {
-      mData.add(t.getName());
-       }
-    }
+   /**
+    * Updater
+    */
+   protected void update()
+   {
+      mData.clear();
+
+      for (Technology t : mModel.getUpgradeManager().getTechnologyManager()
+                                .getRenewable())
+      {
+         mData.add(t.getName());
+      }
+   }
 }

@@ -4,13 +4,14 @@ import easigreen.service.*;
 
 import java.util.*;
 
-import javafx.scene.control.*;
-import javafx.scene.layout.*;
-
 import javafx.event.*;
+
 import javafx.geometry.*;
+
 import javafx.scene.*;
+import javafx.scene.control.*;
 import javafx.scene.image.*;
+import javafx.scene.layout.*;
 import javafx.scene.text.*;
 
 /**
@@ -22,48 +23,51 @@ import javafx.scene.text.*;
  * @author Haru McClellan
  */
 public class OilDrilling
-    extends UpgradeItem
+   extends UpgradeItem
 {
-    ///////////////////////////// Updater
-    
-    /**
-     * Updater
-     */
-    protected void update()
-    {
-   mChange = 0;
-   mTotalChange = mSaveChange;
-        mValue.setText("" + mModel.getUpgradeManager().getOilDrilling());
-    }
+   ///////////////////////////// Updater
 
-    ///////////////////////////// Getters
+   /**
+    * Updater
+    */
+   protected void update()
+   {
+      mChange = 0;
+      mTotalChange = mSaveChange;
+      mValue.setText("" + mModel.getUpgradeManager().getOilDrilling());
+   }
 
-    /**
-     * Gets the title
-     * @return the title a string
-     */
-    protected String getTitle()
-    {
-        return new String("Oil Drilling");
-    }
-    
-    /**
-     * Gets the tips
-     * @return tips array of Strings
-     */
-    protected String[] getTips()
-    {
-        return new String[] {"+Short Term Security", "-Long Term Security", "+Emissions"};
-    }
+   ///////////////////////////// Getters
 
-    ///////////////////////////// Constructor
-    
-    /**
-     * Constructor
-     * @param pModel the current SimCity Model
-     */
-    public OilDrilling(SimCity pModel, Label pLabel)
-    {
-        super(pModel, pLabel);
-    }
+   /**
+    * Gets the title
+    * @return the title a string
+    */
+   protected String getTitle()
+   {
+      return new String("Oil Drilling");
+   }
+
+   /**
+    * Gets the tips
+    * @return tips array of Strings
+    */
+   protected String[] getTips()
+   {
+      return new String[]
+      {
+         "+Short Term Security", "-Long Term Security", "+Emissions"
+      };
+   }
+
+   ///////////////////////////// Constructor
+
+   /**
+    * Constructor
+    * @param pModel the current SimCity Model
+    */
+   public OilDrilling(SimCity pModel, Label pLabel)
+   {
+      super(pModel, pLabel);
+   }
 }
