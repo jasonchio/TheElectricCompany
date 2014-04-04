@@ -20,10 +20,10 @@ public class Technology
      * 1 to 10 scale of the technology quality
      */
     protected int mQuality;
-    	
-     /**
-     * Name of the Technology
-     */
+
+    /**
+    * Name of the Technology
+    */
     protected String mName;
 
     /**
@@ -40,7 +40,7 @@ public class Technology
      * The Fossil Aspect of the tech
      */
     protected PlantAspect mFossil;
-    
+
     /**
      * The Renewable Aspect of the tech
      */
@@ -59,17 +59,17 @@ public class Technology
     //////////////////// Constructor
 
     /**
-     * Member varables are instanciated as default values
+     * Member variables are instantiated as default values
      */
     public Technology()
     {
-	mName      = "Unknown";
-	mCode      = "0";
-	mNuclear   = new PlantAspect();
-	mFossil    = new PlantAspect();
-	mRenewable = new PlantAspect();
-	mOil       = new OilAspect  ();
-	mOther     = new OtherAspect();
+        mName      = "Unknown";
+        mCode      = "0";
+        mNuclear   = new PlantAspect();
+        mFossil    = new PlantAspect();
+        mRenewable = new PlantAspect();
+        mOil       = new OilAspect  ();
+        mOther     = new OtherAspect();
     }
 
     //////////////////// Methods
@@ -81,9 +81,9 @@ public class Technology
      */
     public String getName()
     {
-       return mName;
+        return mName;
     }
-    
+
     /**
      * Sets the name of the technology
      *
@@ -91,7 +91,7 @@ public class Technology
      */
     public void setName(String pName)
     {
-	mName = pName;
+        mName = pName;
     }
 
     /**
@@ -101,7 +101,7 @@ public class Technology
      */
     public int getQuality()
     {
-	return mQuality;
+        return mQuality;
     }
 
     /**
@@ -111,17 +111,17 @@ public class Technology
      */
     public void setQuality(int pQuality)
     {
-	mQuality = pQuality;
+        mQuality = pQuality;
     }
-    
+
     /**
      * Sets current technology code
      *
-     * @param String pCode 
+     * @param String pCode
      */
     public void setCode(String pCode)
     {
-	mCode = pCode;
+        mCode = pCode;
     }
 
     /**
@@ -131,7 +131,7 @@ public class Technology
      */
     public String getCode()
     {
-	return mCode;
+        return mCode;
     }
 
     /**
@@ -141,7 +141,7 @@ public class Technology
      */
     public PlantAspect getNuclear()
     {
-	return mNuclear;
+        return mNuclear;
     }
 
     /**
@@ -151,7 +151,7 @@ public class Technology
      */
     public PlantAspect getFossil()
     {
-	return mFossil;
+        return mFossil;
     }
 
     /**
@@ -161,7 +161,7 @@ public class Technology
      */
     public PlantAspect getRenewable()
     {
-	return mRenewable;
+        return mRenewable;
     }
 
     /**
@@ -171,7 +171,7 @@ public class Technology
      */
     public OilAspect getOil()
     {
-	return mOil;
+        return mOil;
     }
 
     /**
@@ -181,6 +181,6 @@ public class Technology
      */
     public OtherAspect getOther()
     {
-	return mOther;
+        return mOther;
     }
 }
