@@ -4,6 +4,7 @@ build
 *.class
 *~
 *#
+CodeVerifier.java
 
 # Package Files #
 *.jar
