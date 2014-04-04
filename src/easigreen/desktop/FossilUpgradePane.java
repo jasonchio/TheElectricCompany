@@ -126,19 +126,19 @@ public class FossilUpgradePane
         mActionButton = new Button("Apply");
         mCodeButton   = new Button("Apply");
 
-   mActionButton.setOnAction(new EventHandler<ActionEvent>()
-                                  {
-                                      public void handle(ActionEvent event)
-                                      {
-                                          mModel.getUpgradeManager ().addFossilScience    (mFossilSci.getChange());
-                                          mModel.getResourceManager().spendActionPoints   (Math.abs(mFossilSci.getChange()));
-                                          mModel.getUpgradeManager ().addFossilEngineering(mFossilEng.getChange());
-                                          mModel.getResourceManager().spendActionPoints   (Math.abs(mFossilEng.getChange()));
-                 mFossilSci.saveChanges();
-                 mFossilEng.saveChanges();
-                                          update();
-                                      }
-                                  });
+        mActionButton.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mModel.getUpgradeManager ().addFossilScience    (mFossilSci.getChange());
+                mModel.getResourceManager().spendActionPoints   (Math.abs(mFossilSci.getChange()));
+                mModel.getUpgradeManager ().addFossilEngineering(mFossilEng.getChange());
+                mModel.getResourceManager().spendActionPoints   (Math.abs(mFossilEng.getChange()));
+                mFossilSci.saveChanges();
+                mFossilEng.saveChanges();
+                update();
+            }
+        });
 
    mCodeButton.setOnAction(new EventHandler<ActionEvent>()
             {

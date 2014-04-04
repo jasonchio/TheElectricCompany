@@ -86,7 +86,7 @@ public class FossilPane
         mFossilUpgrades = new ImageButton("fossilfuelupgrade.png", upgradeEvent);
         mApply = new Button("Apply");
 
-       EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
+        EventHandler<ActionEvent> applyEvent = new EventHandler<ActionEvent>()
         {
             public void handle(ActionEvent event)
             {
@@ -164,7 +164,8 @@ public class FossilPane
         mLabels = new HashMap<String, Label>();
         mValues = new HashMap<String, Label>();
 
-        for (String name : mLabelNames) {
+        for (String name : mLabelNames) 
+        {
             Label newLabel1 = new Label(name);
             Label newLabel2 = new Label();
             newLabel1.setFont(new Font("Arial", 20));
@@ -186,7 +187,7 @@ public class FossilPane
      */
     protected void update()
     {
-   mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getFossil().getAmount   ());
+        mValues.get("Plants in Operation").setText("" + mModel.getEnergyManager().getFossil().getAmount   ());
         mValues.get("Supply Provided"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getPower    ()));
         mValues.get("Cost"               ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getCostBuild()));
         mValues.get("Public Approval"    ).setText(String.format(FORMAT, mModel.getEnergyManager().getFossil().getApproval ()));

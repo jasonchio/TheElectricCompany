@@ -57,7 +57,7 @@ class AppDataList
     protected void initialize()
     {
         mDataNames = new ArrayList<String>();
-       mData = FXCollections.observableArrayList(mDataNames);
+        mData = FXCollections.observableArrayList(mDataNames);
         setItems(mData);
         setPrefSize(50, 50);
         update();

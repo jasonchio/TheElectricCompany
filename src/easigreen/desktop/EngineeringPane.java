@@ -67,22 +67,22 @@ public class EngineeringPane
     {
         mActionButton = new Button("Apply");
 
-       mActionButton.setOnAction(new EventHandler<ActionEvent>()
-                                  {
-                                      public void handle(ActionEvent event)
-                                      {
-                                          mModel.getUpgradeManager ().addNuclearEngineering  (mNucEng.getChange());
-                                          mModel.getResourceManager().spendActionPoints      (Math.abs(mNucEng.getChange()));
-                                          mModel.getUpgradeManager ().addFossilEngineering   (mFosEng.getChange());
-                                          mModel.getResourceManager().spendActionPoints      (Math.abs(mFosEng.getChange()));
-                                          mModel.getUpgradeManager ().addRenewableEngineering(mRenEng.getChange());
-                                          mModel.getResourceManager().spendActionPoints      (Math.abs(mRenEng.getChange()));
-                 mNucEng.saveChanges();
-                 mFosEng.saveChanges();
-                 mRenEng.saveChanges();
-                                          update();
-                                      }
-                                  });
+        mActionButton.setOnAction(new EventHandler<ActionEvent>()
+        {
+            public void handle(ActionEvent event)
+            {
+                mModel.getUpgradeManager ().addNuclearEngineering  (mNucEng.getChange());
+                mModel.getResourceManager().spendActionPoints      (Math.abs(mNucEng.getChange()));
+                mModel.getUpgradeManager ().addFossilEngineering   (mFosEng.getChange());
+                mModel.getResourceManager().spendActionPoints      (Math.abs(mFosEng.getChange()));
+                mModel.getUpgradeManager ().addRenewableEngineering(mRenEng.getChange());
+                mModel.getResourceManager().spendActionPoints      (Math.abs(mRenEng.getChange()));
+                mNucEng.saveChanges();
+                mFosEng.saveChanges();
+                mRenEng.saveChanges();
+                update();
+                }
+            });
 
         setHalignment(mActionButton, HPos.LEFT);
     }
@@ -126,7 +126,7 @@ public class EngineeringPane
        mNucEng.update();
        mFosEng.update();
        mRenEng.update();
-        mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
+       mActionValue.setText("" + mModel.getResourceManager().getActionPoints());
     }
 
     ////////////////////// Getters

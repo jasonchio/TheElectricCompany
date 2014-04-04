@@ -131,7 +131,8 @@ public class EnergyPane
         mLabels = new HashMap<String, Label>();
         mValues = new HashMap<String, Label>();
         // Set main labels
-        for (String name : mMainLabelNames) {
+        for (String name : mMainLabelNames) 
+        {
             Label newLabel1 = new Label(name + ":");
             Label newLabel2 = new Label();
             newLabel1.setFont(new Font("Arial", 20));
@@ -140,7 +141,8 @@ public class EnergyPane
             mValues.put(name, newLabel2);
         }
         // Set sub labels
-        for (String name : mSubLabelNames) {
+        for (String name : mSubLabelNames) 
+        {
             Label newLabel1 = new Label(name + ":");
             Label newLabel2 = new Label();
             mLabels.put(name, newLabel1);
@@ -180,17 +182,17 @@ public class EnergyPane
      */
     protected void update()
     {
-   double energySupplied  = mModel.getEnergyManager().getPower    ();
-   double nuclearEnergy   = mModel.getEnergyManager().getNuclear  ().getTotalPower();
-   double fossilEnergy    = mModel.getEnergyManager().getFossil   ().getTotalPower();
-   double renewableEnergy = mModel.getEnergyManager().getRenewable().getTotalPower();
-   double energyDemand    = mModel.getBaseManager  ().getDemand   ();
-   int    nuclearPlants   = mModel.getEnergyManager().getNuclear  ().getAmount();
-   int    fossilPlants    = mModel.getEnergyManager().getFossil   ().getAmount();
-   int    renewablePlants = mModel.getEnergyManager().getRenewable().getAmount();
-   double oil             = mModel.getEnergyManager().getOil      ().getConsumption();
+        double energySupplied  = mModel.getEnergyManager().getPower    ();
+        double nuclearEnergy   = mModel.getEnergyManager().getNuclear  ().getTotalPower();
+        double fossilEnergy    = mModel.getEnergyManager().getFossil   ().getTotalPower();
+        double renewableEnergy = mModel.getEnergyManager().getRenewable().getTotalPower();
+        double energyDemand    = mModel.getBaseManager  ().getDemand   ();
+        int    nuclearPlants   = mModel.getEnergyManager().getNuclear  ().getAmount();
+        int    fossilPlants    = mModel.getEnergyManager().getFossil   ().getAmount();
+        int    renewablePlants = mModel.getEnergyManager().getRenewable().getAmount();
+        double oil             = mModel.getEnergyManager().getOil      ().getConsumption();
 
-   mValues.get("Energy Demand"     ).setText(String.format(FORMAT, energyDemand   ));
+        mValues.get("Energy Demand"     ).setText(String.format(FORMAT, energyDemand   ));
         mValues.get("Energy Supplied"   ).setText(String.format(FORMAT, energySupplied ));
         mValues.get("Nuclear Plants"    ).setText("" + nuclearPlants  );
         mValues.get("Nuclear Energy"    ).setText(String.format(FORMAT, nuclearEnergy  ));

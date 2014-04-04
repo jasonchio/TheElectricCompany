@@ -31,8 +31,8 @@ public class FossilScience
      */
     protected void update()
     {
-   mChange = 0;
-   mTotalChange = mSaveChange;
+        mChange = 0;
+        mTotalChange = mSaveChange;
         mValue.setText("" + mModel.getUpgradeManager().getFossilScience());
     }
 
