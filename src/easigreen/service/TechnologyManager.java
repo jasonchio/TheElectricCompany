@@ -76,18 +76,18 @@ public class TechnologyManager
      */
     public TechnologyManager()
     {
-        mImplemented = new ArrayList<Technology>();
-        mAvailable   = new ArrayList<Technology>();
-        mNuclear     = new ArrayList<Technology>();
-        mFossil      = new ArrayList<Technology>();
-        mRenewable   = new ArrayList<Technology>();
-        mOil         = new ArrayList<Technology>();
-        mAll         = new TechnologyGetter().getTechnologies();
-        mCodes       = new TechCodeManager(mAll);
-        mNames       = new HashMap<String, Technology>();
-        mLookup      = new HashMap<String, Technology>();
-        setPlantLists();
-        setLookup();
+       mImplemented = new ArrayList<Technology>();
+       mAvailable   = new ArrayList<Technology>();
+       mNuclear     = new ArrayList<Technology>();
+       mFossil      = new ArrayList<Technology>();
+       mRenewable   = new ArrayList<Technology>();
+       mOil         = new ArrayList<Technology>();
+       mAll         = new TechnologyGetter().getTechnologies();
+       mCodes       = new TechCodeManager(mAll);
+       mNames       = new HashMap<String, Technology>();
+       mLookup      = new HashMap<String, Technology>();
+       setPlantLists();
+       setLookup();
     }
 
     //////////////////// Methods
@@ -121,43 +121,43 @@ public class TechnologyManager
     {
        for (Technology t : mAll)
        {
-           // Add to nuclear if it affects nuclear plants
-           if ((t.getNuclear().getPower    () > 0) ||
-              (t.getNuclear().getCost     () < 0) ||
-              (t.getNuclear().getApproval () > 0) ||
-              (t.getNuclear().getSecurity () > 0) ||
-              (t.getNuclear().getEmissions() < 0) ||
-              (t.getNuclear().getProfit   () > 0)) 
-           {
-              mNuclear.add(t);
-           }
-           // Add to fossil if it affects fossil plants
-           if ((t.getFossil().getPower    () > 0) ||
-              (t.getFossil().getCost     () < 0) ||
-              (t.getFossil().getApproval () > 0) ||
-              (t.getFossil().getSecurity () > 0) ||
-              (t.getFossil().getEmissions() < 0) ||
-              (t.getFossil().getProfit   () > 0)) 
-           {
-              mFossil.add(t);
-           } 
-           // Add to renewable if it affects renewable plants
-           if ((t.getRenewable().getPower    () > 0) ||
-              (t.getRenewable().getCost     () < 0) ||
-              (t.getRenewable().getApproval () > 0) ||
-              (t.getRenewable().getSecurity () > 0) ||
-              (t.getRenewable().getEmissions() < 0) ||
-              (t.getRenewable().getProfit   () > 0)) 
-           {
-              mRenewable.add(t);
-           } 
-           // Add to oil if it affects oil plants
-           if ((t.getOil().getConsumption() < 0) ||
-              (t.getOil().getSecurity   () > 0) ||
-              (t.getOil().getGrowth     () < 0)) 
-           {
-              mOil.add(t);
-           } 
+          // Add to nuclear if it affects nuclear plants
+          if ((t.getNuclear().getPower    () > 0) ||
+             (t.getNuclear().getCost     () < 0) ||
+             (t.getNuclear().getApproval () > 0) ||
+             (t.getNuclear().getSecurity () > 0) ||
+             (t.getNuclear().getEmissions() < 0) ||
+             (t.getNuclear().getProfit   () > 0)) 
+          {
+             mNuclear.add(t);
+          }
+          // Add to fossil if it affects fossil plants
+          if ((t.getFossil().getPower    () > 0) ||
+             (t.getFossil().getCost     () < 0) ||
+             (t.getFossil().getApproval () > 0) ||
+             (t.getFossil().getSecurity () > 0) ||
+             (t.getFossil().getEmissions() < 0) ||
+             (t.getFossil().getProfit   () > 0)) 
+          {
+             mFossil.add(t);
+          } 
+          // Add to renewable if it affects renewable plants
+          if ((t.getRenewable().getPower    () > 0) ||
+             (t.getRenewable().getCost     () < 0) ||
+             (t.getRenewable().getApproval () > 0) ||
+             (t.getRenewable().getSecurity () > 0) ||
+             (t.getRenewable().getEmissions() < 0) ||
+             (t.getRenewable().getProfit   () > 0)) 
+          {
+             mRenewable.add(t);
+          } 
+          // Add to oil if it affects oil plants
+          if ((t.getOil().getConsumption() < 0) ||
+             (t.getOil().getSecurity   () > 0) ||
+             (t.getOil().getGrowth     () < 0)) 
+          {
+             mOil.add(t);
+          } 
        }
     }
 
@@ -168,63 +168,64 @@ public class TechnologyManager
      */
     public UpgradeMerger update()
     {
-        UpgradeMerger allChanges = new UpgradeMerger();
-        for (int i = 0; i < mImplemented.size(); i++) {
-            // General
-            allChanges.addBudgetChange      (mImplemented.
-                get(i).getOther().getBudget   ());
-            allChanges.addDemandRateChange  (mImplemented.
-                get(i).getOther().getDemand   ());
-            allChanges.addEmissionsChange   (mImplemented.
-                get(i).getOther().getEmissions());
-            // Nuclear
-            allChanges.addNuclearPower      (mImplemented.
-                get(i).getNuclear().getPower    ());
-            allChanges.addNuclearCost       (mImplemented.
-                get(i).getNuclear().getCost     ());
-            allChanges.addNuclearApproval   (mImplemented.
-                get(i).getNuclear().getApproval ());
-            allChanges.addNuclearEmissions  (mImplemented.
-                get(i).getNuclear().getEmissions());
-            allChanges.addNuclearSecurity   (mImplemented.
-                get(i).getNuclear().getSecurity ());
-            allChanges.addNuclearProfit     (mImplemented.
-                get(i).getNuclear().getProfit   ());
-            // Fossil
-            allChanges.addFossilPower       (mImplemented.
-                get(i).getFossil().getPower    ());
-            allChanges.addFossilCost        (mImplemented.
-                get(i).getFossil().getCost     ());
-            allChanges.addFossilApproval    (mImplemented.
-                get(i).getFossil().getApproval ());
-            allChanges.addFossilEmissions   (mImplemented.
-                get(i).getFossil().getEmissions());
-            allChanges.addFossilSecurity    (mImplemented.
-                get(i).getFossil().getSecurity ());
-            allChanges.addFossilProfit      (mImplemented.
-                get(i).getFossil().getProfit   ());
-            // Renewable
-            allChanges.addRenewablePower    (mImplemented.
-                get(i).getRenewable().getPower    ());
-            allChanges.addRenewableCost     (mImplemented.
-                get(i).getRenewable().getCost     ());
-            allChanges.addRenewableApproval (mImplemented.
-                get(i).getRenewable().getApproval ());
-            allChanges.addRenewableEmissions(mImplemented.
-                get(i).getRenewable().getEmissions());
-            allChanges.addRenewableSecurity (mImplemented.
-                get(i).getRenewable().getSecurity ());
-            allChanges.addRenewableProfit   (mImplemented.
-                get(i).getRenewable().getProfit   ());
-            // Oil
-            allChanges.addOilConsumption    (mImplemented.
-                get(i).getOil().getConsumption());
-            allChanges.addOilSecurity       (mImplemented.
-                get(i).getOil().getSecurity   ());
-            allChanges.addOilGrowth         (mImplemented.
-                get(i).getOil().getGrowth     ());
-        }
-        return allChanges;
+       UpgradeMerger allChanges = new UpgradeMerger();
+       for (int i = 0; i < mImplemented.size(); i++) 
+       {
+          // General
+          allChanges.addBudgetChange      (mImplemented.
+              get(i).getOther().getBudget   ());
+          allChanges.addDemandRateChange  (mImplemented.
+              get(i).getOther().getDemand   ());
+          allChanges.addEmissionsChange   (mImplemented.
+              get(i).getOther().getEmissions());
+          // Nuclear
+          allChanges.addNuclearPower      (mImplemented.
+              get(i).getNuclear().getPower    ());
+          allChanges.addNuclearCost       (mImplemented.
+              get(i).getNuclear().getCost     ());
+          allChanges.addNuclearApproval   (mImplemented.
+              get(i).getNuclear().getApproval ());
+          allChanges.addNuclearEmissions  (mImplemented.
+              get(i).getNuclear().getEmissions());
+          allChanges.addNuclearSecurity   (mImplemented.
+              get(i).getNuclear().getSecurity ());
+          allChanges.addNuclearProfit     (mImplemented.
+              get(i).getNuclear().getProfit   ());
+          // Fossil
+          allChanges.addFossilPower       (mImplemented.
+              get(i).getFossil().getPower    ());
+          allChanges.addFossilCost        (mImplemented.
+              get(i).getFossil().getCost     ());
+          allChanges.addFossilApproval    (mImplemented.
+              get(i).getFossil().getApproval ());
+          allChanges.addFossilEmissions   (mImplemented.
+              get(i).getFossil().getEmissions());
+          allChanges.addFossilSecurity    (mImplemented.
+              get(i).getFossil().getSecurity ());
+          allChanges.addFossilProfit      (mImplemented.
+              get(i).getFossil().getProfit   ());
+          // Renewable
+          allChanges.addRenewablePower    (mImplemented.
+              get(i).getRenewable().getPower    ());
+          allChanges.addRenewableCost     (mImplemented.
+              get(i).getRenewable().getCost     ());
+          allChanges.addRenewableApproval (mImplemented.
+              get(i).getRenewable().getApproval ());
+          allChanges.addRenewableEmissions(mImplemented.
+              get(i).getRenewable().getEmissions());
+          allChanges.addRenewableSecurity (mImplemented.
+              get(i).getRenewable().getSecurity ());
+          allChanges.addRenewableProfit   (mImplemented.
+              get(i).getRenewable().getProfit   ());
+          // Oil
+          allChanges.addOilConsumption    (mImplemented.
+              get(i).getOil().getConsumption());
+          allChanges.addOilSecurity       (mImplemented.
+              get(i).getOil().getSecurity   ());
+          allChanges.addOilGrowth         (mImplemented.
+              get(i).getOil().getGrowth     ());
+       }
+       return allChanges;
     }
 
 
@@ -237,7 +238,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getImplemented()
     {
-        return mImplemented;
+       return mImplemented;
     }
 
     /**
@@ -247,7 +248,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getAvailable()
     {
-        return mAvailable;
+       return mAvailable;
     }
 
     /**
@@ -257,7 +258,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getAll()
     {
-        return mAll;
+       return mAll;
     }
 
     /**
@@ -287,7 +288,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getRenewable()
     {
-        return mRenewable;
+       return mRenewable;
     }
 
     /**
@@ -297,7 +298,7 @@ public class TechnologyManager
      */
     public ArrayList<Technology> getOil()
     {
-        return mOil;
+       return mOil;
     }
 
     //////////////////// Setters
@@ -309,7 +310,7 @@ public class TechnologyManager
      */
     public void setImplemented(ArrayList<Technology> pImplemented)
     {
-        mImplemented = pImplemented;
+       mImplemented = pImplemented;
     }
 
     /**
@@ -320,7 +321,7 @@ public class TechnologyManager
      */
     public Technology getTechnology(String techName)
     {
-          return mNames.get(techName);
+       return mNames.get(techName);
     }
 
     /**
@@ -330,10 +331,10 @@ public class TechnologyManager
      */
     public void implementTechnology(Technology pTech)
     {
-        if (!isImplemented(pTech))
-        {
-            mImplemented.add(pTech);
-        }
+       if (!isImplemented(pTech))
+       {
+           mImplemented.add(pTech);
+       }
     }
 
     /**
@@ -347,11 +348,11 @@ public class TechnologyManager
        boolean isTrue = false;
        for (Technology t : mImplemented)
        {
-           if (t == pTech)
-           {
-               isTrue = true;
-               break;
-           }
+          if (t == pTech)
+          {
+              isTrue = true;
+              break;
+          }
        }
        return isTrue;
     }
@@ -377,8 +378,8 @@ public class TechnologyManager
      */
     public void addTechnology(Technology pTech)
     {
-        mAvailable.add(pTech);
-        mNames.put(pTech.getName() + pTech.getQuality(), pTech);
+       mAvailable.add(pTech);
+       mNames.put(pTech.getName() + pTech.getQuality(), pTech);
     }
 
     /**
@@ -391,8 +392,8 @@ public class TechnologyManager
        Technology newTech = mCodes.getTech(pCode);
        if (newTech != null)
        {
-           mAvailable.add(newTech);
-           mNames.put(newTech.getName() + newTech.getQuality(), newTech);
+          mAvailable.add(newTech);
+          mNames.put(newTech.getName() + newTech.getQuality(), newTech);
        }
     }
 
@@ -403,6 +404,6 @@ public class TechnologyManager
      */
     public void setAll(ArrayList<Technology> pAll)
     {
-        mAll = pAll;
+       mAll = pAll;
     }
 }
