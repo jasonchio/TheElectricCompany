@@ -12,20 +12,20 @@ import easigreen.system.*;
  * @author Haru McClellan
  */
 public class Renewable
-    extends Energy
+   extends Energy
 {
-    /**
-     * Sets default values to a renewable plant
-     */
-    public Renewable()
-    {
-        mAmount        = 140;
-   mCostBuild     = .2;
-        mCostRemove    = -.1;
-        mApproval      = 35;
-        mProduction    = 0.1;
-        mEmissions     = .05;
-        mSecurity      = .03;
-        mProfitPercent = 20;
-    }
+   /**
+    * Sets default values to a renewable plant
+    */
+   public Renewable()
+   {
+      mAmount = 140;
+      mCostBuild = .2;
+      mCostRemove = -.1;
+      mApproval = 35;
+      mProduction = 0.1;
+      mEmissions = .05;
+      mSecurity = .03;
+      mProfitPercent = 20;
+   }
 }

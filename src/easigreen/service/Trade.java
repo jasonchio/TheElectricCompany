@@ -18,87 +18,87 @@ import java.util.ArrayList;
  */
 public class Trade
 {
-    //////////////////// Variables
+   //////////////////// Variables
 
-    /**
-     * The budget that has been placed into the trade
-     */
-    private int mBudget;
+   /**
+    * The budget that has been placed into the trade
+    */
+   private int mBudget;
 
-    /**
-     * The emission credits that has been placed into the trade
-     */
-    private int mEmissionCredits;
+   /**
+    * The emission credits that has been placed into the trade
+    */
+   private int mEmissionCredits;
 
-    /**
-     * The market shares that has been placed into the trade
-     */
-    private int mMarketShares;
+   /**
+    * The market shares that has been placed into the trade
+    */
+   private int mMarketShares;
 
-    /**
-     * The budget that has been placed into the trade
-     */
-    private ArrayList<Technology> mTechnologies;
+   /**
+    * The budget that has been placed into the trade
+    */
+   private ArrayList<Technology> mTechnologies;
 
-    //////////////////// Constructor
+   //////////////////// Constructor
 
-    /**
-     * Constructs a trade with specific values for the amount of assets that 
-     * are being traded.
-     *
-     * @param pBudget the money that is being traded
-     * @param pEmissionCredits the emission credits that are being traded
-     * @param pMarketShares the market shares that are being traded
-     * @param pTechnologies the technologies being traded
-     */
-    public Trade(int pBudget, int pEmissionCredits, int pMarketShares,
-                 ArrayList<Technology> pTechnologies)
-    {
-        mBudget = pBudget;
-        mEmissionCredits = pEmissionCredits;
-        mMarketShares = pMarketShares;
-        mTechnologies = pTechnologies;
-    }
+   /**
+    * Constructs a trade with specific values for the amount of assets that
+    * are being traded.
+    *
+    * @param pBudget the money that is being traded
+    * @param pEmissionCredits the emission credits that are being traded
+    * @param pMarketShares the market shares that are being traded
+    * @param pTechnologies the technologies being traded
+    */
+   public Trade(int pBudget, int pEmissionCredits, int pMarketShares,
+      ArrayList<Technology> pTechnologies)
+   {
+      mBudget = pBudget;
+      mEmissionCredits = pEmissionCredits;
+      mMarketShares = pMarketShares;
+      mTechnologies = pTechnologies;
+   }
 
-    //////////////////// Methods
+   //////////////////// Methods
 
-    /**
-     * returns the budget to be traded
-     *
-     * @return mBudget the money that is being traded
-     */
-    public int getBudget()
-    {
-        return mBudget;
-    }
+   /**
+    * returns the budget to be traded
+    *
+    * @return mBudget the money that is being traded
+    */
+   public int getBudget()
+   {
+      return mBudget;
+   }
 
-    /**
-     * returns the emission credits to be traded
-     *
-     * @return mEmissionCredits the emission credits that are being traded
-     */
-    public int getEmissionCredits()
-    {
-        return mEmissionCredits;
-    }
+   /**
+    * returns the emission credits to be traded
+    *
+    * @return mEmissionCredits the emission credits that are being traded
+    */
+   public int getEmissionCredits()
+   {
+      return mEmissionCredits;
+   }
 
-    /**
-     * returns the market shares to be traded
-     *
-     * @return mMarketShares the market shares that are being traded
-     */
-    public int getMarketShares()
-    {
-        return mMarketShares;
-    }
+   /**
+    * returns the market shares to be traded
+    *
+    * @return mMarketShares the market shares that are being traded
+    */
+   public int getMarketShares()
+   {
+      return mMarketShares;
+   }
 
-    /**
-     * returns the technologies
-     *
-     * @return mTechnologies the technologies that are being traded
-     */
-    public ArrayList<Technology> getTechnologies()
-    {
-        return mTechnologies;
-    }
+   /**
+    * returns the technologies
+    *
+    * @return mTechnologies the technologies that are being traded
+    */
+   public ArrayList<Technology> getTechnologies()
+   {
+      return mTechnologies;
+   }
 }

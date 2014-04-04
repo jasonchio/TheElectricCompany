@@ -1,5 +1,6 @@
 package easigreen.service;
 
+
 /**
  * The Trade Manager class.
  *
@@ -10,28 +11,28 @@ package easigreen.service;
  */
 public class TradeManager
 {
-    //////////////////// Variables
+   //////////////////// Variables
 
-    /**
-     * The technology manager
-     */
-    private UpgradeManager mUpgradeManager;
+   /**
+    * The technology manager
+    */
+   private UpgradeManager mUpgradeManager;
 
-    /**
-     * The resource manager
-     */
-    private ResourceManager mResourceManager;
+   /**
+    * The resource manager
+    */
+   private ResourceManager mResourceManager;
 
-    /**
-     * The Constructor for this class
-     *
-     * @param pUpgradeManager the upgrade manager
-     * @param pResourceManager   the resource manager
-     */
-    public TradeManager(ResourceManager pResourceManager, 
-                        UpgradeManager pUpgradeManager)
-    {
-        mUpgradeManager = pUpgradeManager;
-        mResourceManager   = pResourceManager;
-    }
+   /**
+    * The Constructor for this class
+    *
+    * @param pUpgradeManager the upgrade manager
+    * @param pResourceManager   the resource manager
+    */
+   public TradeManager(ResourceManager pResourceManager,
+      UpgradeManager pUpgradeManager)
+   {
+      mUpgradeManager = pUpgradeManager;
+      mResourceManager = pResourceManager;
+   }
 }

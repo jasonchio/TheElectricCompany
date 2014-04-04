@@ -1,7 +1,9 @@
 package easigreen.service;
 
 import easigreen.system.*;
+
 import java.io.*;
+
 import javafx.scene.image.Image;
 
 /**
@@ -15,29 +17,29 @@ import javafx.scene.image.Image;
  */
 public class ImageGetter
 {
-    /**
-     * The path prefix for images resources.
-     */
-    public static final String cImagesPathPrefix = "/resources/images/";
+   /**
+    * The path prefix for images resources.
+    */
+   public static final String cImagesPathPrefix = "/resources/images/";
 
-    /**
-     * Encapsulates getting an image from a resource file.
-     */
-    public static Image getImage(String pName)
-    {
-        Image im = null;
+   /**
+    * Encapsulates getting an image from a resource file.
+    */
+   public static Image getImage(String pName)
+   {
+      Image im = null;
 
-        String imageFilename = cImagesPathPrefix + pName;
+      String imageFilename = cImagesPathPrefix + pName;
 
-        try 
-        {
-            im = new Image(ResourceGetter.getResourceAsStream(imageFilename));
-        } 
-        catch (Exception e) 
-        {
-            e.printStackTrace();
-        }
+      try
+      {
+         im = new Image(ResourceGetter.getResourceAsStream(imageFilename));
+      }
+      catch (Exception e)
+      {
+         e.printStackTrace();
+      }
 
-        return im;
-    }
+      return im;
+   }
 }

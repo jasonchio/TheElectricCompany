@@ -1,6 +1,7 @@
 package easigreen.service;
 
 import easigreen.service.*;
+
 import easigreen.system.*;
 
 /**
@@ -13,145 +14,145 @@ import easigreen.system.*;
  */
 public abstract class PlantManager
 {
-    //////////////////// Variables
+   //////////////////// Variables
 
-    /**
-     * The Manager of upgrades
-     */
-    protected UpgradeManager mUpgradeManager;
+   /**
+    * The Manager of upgrades
+    */
+   protected UpgradeManager mUpgradeManager;
 
-    /**
-     * The actual upgrades
-     */
-    protected UpgradeMerger mUpgrades;
-   
-    /**
-     * The Plant Object
-     */
-    protected Energy mPlant;
+   /**
+    * The actual upgrades
+    */
+   protected UpgradeMerger mUpgrades;
 
-    //////////////////// Constructor
-   
-    /**
-     * The plant manager manager is created with a new upgrade manager
-     *
-     * @param pUpgradeManager the new upgrade manager
-     */
-    public PlantManager(UpgradeManager pUpgradeManager)
-    {
-   mUpgradeManager = pUpgradeManager;
-   update();
-    }
+   /**
+    * The Plant Object
+    */
+   protected Energy mPlant;
 
-    //////////////////// Methods
+   //////////////////// Constructor
 
-    /**
-     * Updates the system as the data changes
-     */
-    public void update()
-    {
-   mUpgrades = mUpgradeManager.update();
-    }
+   /**
+    * The plant manager manager is created with a new upgrade manager
+    *
+    * @param pUpgradeManager the new upgrade manager
+    */
+   public PlantManager(UpgradeManager pUpgradeManager)
+   {
+      mUpgradeManager = pUpgradeManager;
+      update();
+   }
 
-    /**
-     * Adds new plants the the manager
-     *
-     * @param num the number of new plants
-     */
-    public void add(int num)
-    {
-   mPlant.add(num);
-    }
+   //////////////////// Methods
 
-    /**
-     * Removes existing plants form the manager
-     *
-     * @param num amount of plants to be removed
-     */
-    public void remove(int num)
-    {
-   mPlant.remove(num);
-    }
+   /**
+    * Updates the system as the data changes
+    */
+   public void update()
+   {
+      mUpgrades = mUpgradeManager.update();
+   }
 
-    /**
-     * Gets the amount of a plants
-     *
-     * @return amount the amount of plants
-     */
-    public int getAmount()
-    {
-   return mPlant.getAmount();
-    }
+   /**
+    * Adds new plants the the manager
+    *
+    * @param num the number of new plants
+    */
+   public void add(int num)
+   {
+      mPlant.add(num);
+   }
 
-    /**
-     * Sets the amount of plants to a value
-     *
-     * @param num the new amount of plants
-     */
-    public void setAmount(int num)
-    {
-   mPlant.setAmount(num);
-    }
+   /**
+    * Removes existing plants form the manager
+    *
+    * @param num amount of plants to be removed
+    */
+   public void remove(int num)
+   {
+      mPlant.remove(num);
+   }
 
-    //////////////////// Abstract Methods
+   /**
+    * Gets the amount of a plants
+    *
+    * @return amount the amount of plants
+    */
+   public int getAmount()
+   {
+      return mPlant.getAmount();
+   }
 
-    /**
-     * Gets the cost to build a plant
-     */
-    public abstract double getCostBuild     ();
+   /**
+    * Sets the amount of plants to a value
+    *
+    * @param num the new amount of plants
+    */
+   public void setAmount(int num)
+   {
+      mPlant.setAmount(num);
+   }
 
-    /**
-     * Gets the approval rating for each plant
-     */
-    public abstract double getCostRemove    ();
+   //////////////////// Abstract Methods
 
-    /**
-     * Gets the net approval rating
-     */
-    public abstract double getApproval      ();
+   /**
+    * Gets the cost to build a plant
+    */
+   public abstract double getCostBuild();
 
-    /**
-     * Gets the power production for each plant
-     */
-    public abstract double getTotalApproval ();
+   /**
+    * Gets the approval rating for each plant
+    */
+   public abstract double getCostRemove();
 
-    /**
-     * Gets the net power production
-     */
-    public abstract double getPower         ();
+   /**
+    * Gets the net approval rating
+    */
+   public abstract double getApproval();
 
-    /**
-     * Gets the net power production
-     */
-    public abstract double getTotalPower    ();
+   /**
+    * Gets the power production for each plant
+    */
+   public abstract double getTotalApproval();
 
-    /**
-     * Gets the emissions for each plant
-     */
-    public abstract double getEmissions     ();
+   /**
+    * Gets the net power production
+    */
+   public abstract double getPower();
 
-    /**
-     * Gets the net emissions
-     */
-    public abstract double getTotalEmissions();
+   /**
+    * Gets the net power production
+    */
+   public abstract double getTotalPower();
 
-    /**
-     * Gets the security for each plant
-     */
-    public abstract double getSecurity      ();
+   /**
+    * Gets the emissions for each plant
+    */
+   public abstract double getEmissions();
 
-    /**
-     * Gets the net security
-     */
-    public abstract double getTotalSecurity ();
+   /**
+    * Gets the net emissions
+    */
+   public abstract double getTotalEmissions();
 
-    /**
-     * Gets the profit for each plant
-     */
-    public abstract double getProfit        ();
+   /**
+    * Gets the security for each plant
+    */
+   public abstract double getSecurity();
 
-    /**
-     * Gets the net profit
-     */
-    public abstract double getTotalProfit   ();
+   /**
+    * Gets the net security
+    */
+   public abstract double getTotalSecurity();
+
+   /**
+    * Gets the profit for each plant
+    */
+   public abstract double getProfit();
+
+   /**
+    * Gets the net profit
+    */
+   public abstract double getTotalProfit();
 }

@@ -12,20 +12,20 @@ import easigreen.system.*;
  * @author Haru McClellan
  */
 public class Nuclear
-    extends Energy
+   extends Energy
 {
-    /**
-     * Sets default values to a nuclear plant
-     */
-    public Nuclear()
-    {
-        mAmount        = 18;
-   mCostBuild     = 2.5;
-   mCostRemove    = .5;
-   mApproval      = 35;
-   mProduction    = 1;
-   mEmissions     = 0;
-   mSecurity      = 0;
-   mProfitPercent = 50;
-    }
+   /**
+    * Sets default values to a nuclear plant
+    */
+   public Nuclear()
+   {
+      mAmount = 18;
+      mCostBuild = 2.5;
+      mCostRemove = .5;
+      mApproval = 35;
+      mProduction = 1;
+      mEmissions = 0;
+      mSecurity = 0;
+      mProfitPercent = 50;
+   }
 }
