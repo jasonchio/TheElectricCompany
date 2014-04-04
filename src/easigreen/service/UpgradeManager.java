@@ -42,17 +42,17 @@ public class UpgradeManager
    private int mOilSci;
 
    /**
-    * amount of action points for nuclear engenering
+    * amount of action points for nuclear engineering
     */
    private int mNuclearEng;
 
    /**
-    * amount of action points for fossil engenering
+    * amount of action points for fossil engineering
     */
    private int mFossilEng;
 
    /**
-    * amount of action points for renewable engenering
+    * amount of action points for renewable engineering
     */
    private int mRenewableEng;
 
@@ -228,9 +228,9 @@ public class UpgradeManager
 
    //////////////////// Getters
    /**
-    * DOCUMENT ME!
+    * Gets the Nuclear Data
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getNuclearScience()
    {
@@ -238,9 +238,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Gets the Fossil data
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getFossilScience()
    {
@@ -248,9 +248,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Get Renewable Science
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getRenewableScience()
    {
@@ -258,9 +258,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Get the Oil Science
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getOilScience()
    {
@@ -268,9 +268,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Get the Nuclear Engineering
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getNuclearEngineering()
    {
@@ -278,9 +278,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Get the Fossil Engineering
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getFossilEngineering()
    {
@@ -288,9 +288,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Renewable Engineering
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getRenewableEngineering()
    {
@@ -298,9 +298,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Oil Drilling
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getOilDrilling()
    {
@@ -308,9 +308,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Gets Lobby
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getLobby()
    {
@@ -318,9 +318,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Gets Price Change
     *
-    * @return DOCUMENT ME!
+    * @return integer
     */
    public int getPriceChange()
    {
@@ -328,9 +328,9 @@ public class UpgradeManager
    }
 
    /**
-    * DOCUMENT ME!
+    * Gets TechnologyManager
     *
-    * @return DOCUMENT ME!
+    * @return TechnologyManager
     */
    public TechnologyManager getTechnologyManager()
    {
