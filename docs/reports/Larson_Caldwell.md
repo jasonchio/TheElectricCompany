@@ -89,3 +89,11 @@ Next Week's Goals
     Finish the program.
     Fill the code with comments and style corrections.
     Create the final report.
+    
+Apr 2 - Apr 9
+Accomplishments
+
+    10.1 hours
+        Finishing the program.
+        Fully commenting the code.
+        Group self grading.
