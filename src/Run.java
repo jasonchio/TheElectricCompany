@@ -19,6 +19,6 @@ public class Run
    public static void main(String[] args)
       throws Exception
    {
-      javafx.application.Application.launch(easigreen.desktop.GUI.class, args);
+      javafx.application.Application.launch(TheElectricCompany.desktop.GUI.class, args);
    }
 }

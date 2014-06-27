@@ -14,7 +14,13 @@ CodeVerifier.java
 # For NetBeans
 *.mf
 *.xml
-nbproject
+nbproject/private/
+build/
+nbbuild/
+dist/
+nbdist/
+nbactions.xml
+nb-configuration.xml
 
 # For Eclipse/Android
 .classpath
