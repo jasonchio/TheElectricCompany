@@ -12,15 +12,13 @@ CodeVerifier.java
 *.ear
 
 # For NetBeans
-*.mf
-*.xml
 nbproject/private/
 build/
 nbbuild/
 dist/
 nbdist/
-nbactions.xml
-nb-configuration.xml
+#nbactions.xml
+#nb-configuration.xml
 
 # For Eclipse/Android
 .classpath
