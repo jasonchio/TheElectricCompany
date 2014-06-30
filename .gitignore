@@ -11,9 +11,10 @@ CodeVerifier.java
 *.war
 *.ear
 *.xml
+*.mf
 
 # For NetBeans
-nbproject/private/
+nbproject/
 build/
 nbbuild/
 dist/
