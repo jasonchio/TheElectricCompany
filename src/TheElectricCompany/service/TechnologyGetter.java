@@ -15,12 +15,15 @@ public class TechnologyGetter
 {
    /**
     * The path prefix for the technology resource.
+    * resources/data/Technologies.csv
     */
+   
    public static final String cTechFilename =
-      "/resources/data/Technologies.csv";
+      "/data/Technologies.csv";
 
    /**
     * Encapsulates getting the technologies from a resource file.
+     * @return 
     */
    public ArrayList<Technology> getTechnologies()
    {
